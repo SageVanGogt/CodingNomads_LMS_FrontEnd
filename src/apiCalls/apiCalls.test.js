@@ -1,16 +1,36 @@
 import * as apiCalls from './apiCalls.js';
 
 describe('getAllTasks', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve(['task1', 'task2', 'task3'])
+    }))
+  })
   it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/tasks';
 
+    apiCalls.getAllTasks();
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
   })
 
   it('returns an array of all tasks', async () => {
+    const expected = ['task1', 'task2', 'task3'];
+    const result = await apiCalls.getAllTasks();
 
+    expect(result).toEqual(expected);
   })
 
-  it('throws an error if the status is not ok', () => {
+  it('throws an error if the status is not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
 
+    const expected = 'Error: There was a problem with the fetch request.';
+    const result = await apiCalls.getAllTasks();
+
+    expect(result).rejects.toEqual(expected);
   })
 })
 
