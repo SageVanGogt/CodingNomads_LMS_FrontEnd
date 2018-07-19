@@ -23,13 +23,13 @@ describe('getAllTasks', () => {
     expect(result).toEqual(expected);
   })
 
-  it('throws an error if the status is not ok', async () => {
+  it('throws an error if the status is not ok', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       status: 500
     }))
 
     const expected = Error('There was a problem with the fetch request.');
-    const result = await apiCalls.getAllTasks();
+    const result = apiCalls.getAllTasks();
 
     expect(result).rejects.toEqual(expected);
   })
@@ -64,7 +64,7 @@ describe('getTask', () => {
     }))
 
     const expected = Error('There was a problem with the fetch request.');
-    const result = await apiCalls.getTask(1);
+    const result = apiCalls.getTask(1);
 
     expect(result).rejects.toEqual(expected);
   })
@@ -76,7 +76,7 @@ describe('addTask', () => {
   beforeEach(() => {
     newTask = { name: 'this is a new task' };
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      status: 200,
+      status: 201,
       json: () => Promise.resolve({ id: 3, name: 'this is a new task' })
     }))
   })
@@ -107,7 +107,7 @@ describe('addTask', () => {
     }))
 
     const expected = Error('There was a problem with the fetch request.');
-    const result = await apiCalls.addTask(newTask);
+    const result = apiCalls.addTask(newTask);
 
     expect(result).rejects.toEqual(expected);
   })
@@ -152,25 +152,45 @@ describe('updateTask', () => {
     }))
 
     const expected = Error('There was a problem with the fetch request.');
-    const result = await apiCalls.udpateTask(newTask);
+    const result = apiCalls.udpateTask(newTask);
 
     expect(result).rejects.toEqual(expected);
   })
 })
 
 describe('deleteTask', () => {
-  it('calls fetch with the correct arguments', () => {
-
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }))
   })
 
-  it('returns the deleted task', async () => {
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/tasks/3';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' }
+    };
+    
+    apiCalls.deleteTask(3);
 
+    expect(window.fetch).toHaveBeenCalledWith(url, option);
   })
 
   it('throws an error if the status is not ok', () => {
+     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
 
+    const expected = Error('There was a problem with the fetch request.');
+    const result = apiCalls.deleteTask(3);
+
+    expect(result).rejects.toEqual(expected);
   })
 })
+
+
+
 
 describe('getAllCourses', () => {
   it('calls fetch with the correct arguments', () => {
