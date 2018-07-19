@@ -148,7 +148,7 @@ describe('updateTask', () => {
   })
 
   it('throws an error if the status is not ok', () => {
-     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       status: 500
     }))
 
@@ -159,36 +159,36 @@ describe('updateTask', () => {
   })
 })
 
-// describe('deleteTask', () => {
-//   beforeEach(() => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 204,
-//     }))
-//   })
+describe('deleteTask', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }))
+  })
 
-//   it('calls fetch with the correct arguments', () => {
-//     const url = '/api/v1/tasks/3';
-//     const options = {
-//       method: 'DELETE',
-//       headers: { 'content-type': 'application/json' }
-//     };
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/tasks/3';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' }
+    };
     
-//     apiCalls.deleteTask(3);
+    apiCalls.deleteTask(3);
 
-//     expect(window.fetch).toHaveBeenCalledWith(url, options);
-//   })
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
 
-//   it('throws an error if the status is not ok', () => {
-//      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }))
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
 
-//     const expected = Error('There was a problem with the fetch request.');
-//     const result = apiCalls.deleteTask(3);
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteTask(3);
 
-//     expect(result).rejects.toEqual(expected);
-//   })
-// })
+    expect(result).rejects.toEqual(expected);
+  })
+})
 
 
 

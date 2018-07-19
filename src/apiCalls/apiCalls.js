@@ -65,5 +65,17 @@ export const updateTask = async (updatedTask) => {
 };
 
 export const deleteTask = async (taskId) => {
-
+  const url = `/api/v1/tasks/${taskId}`;
+  const options = {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' }
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 204) {
+      throw Error('That id could not be found.');
+    }
+  } catch (error) {
+    throw error;
+  }
 };
