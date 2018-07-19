@@ -109,8 +109,7 @@ describe('addTask', () => {
     const expected = Error('There was a problem with the fetch request.');
     const result = await apiCalls.addTask(newTask);
 
-    expect(result).toEqual(expected);
-
+    expect(result).rejects.toEqual(expected);
   })
 })
 
@@ -148,7 +147,14 @@ describe('updateTask', () => {
   })
 
   it('throws an error if the status is not ok', () => {
+     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
 
+    const expected = Error('There was a problem with the fetch request.');
+    const result = await apiCalls.udpateTask(newTask);
+
+    expect(result).rejects.toEqual(expected);
   })
 })
 
