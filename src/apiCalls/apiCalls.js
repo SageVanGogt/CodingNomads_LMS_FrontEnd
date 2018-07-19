@@ -107,3 +107,22 @@ export const getCourse = async (courseId) => {
     throw error;
   }
 };
+
+export const addCourse = async (newCourse) => {
+  const url = '/api/v1/courses';
+  const options = {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(newCourse)
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 201) {
+      throw Error('Does not have necessary info');
+    }
+    const course = await response.json();
+    return course;
+  } catch (error) {
+    throw error;
+  }
+}; 
