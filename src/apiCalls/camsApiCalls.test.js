@@ -78,81 +78,33 @@ describe('addTeacherToCourse', () => {
   });
 });
 
-// describe('updateCourse', () => {
-//   let updatedCourse;
+describe('deleteCourse', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }));
+  });
 
-//   beforeEach(() => {
-//     updatedCourse = {
-//       id: 3,
-//       name: 'this is an updated course'
-//     }
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 200,
-//       json: () => Promise.resolve({ id: 3, name: 'this is an updated course' })
-//     }))
-//   })
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/courses/3/teachers/1';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' }
+    };
 
-//   it('calls fetch with the correct arguments', () => {
-//     const url = '/api/v1/courses/3';
-//     const options = {
-//       method: 'PATCH',
-//       headers: { 'content-type': 'application/json' },
-//       body: JSON.stringify(updatedCourse)
-//     };
+    apiCalls.deleteTeacherFromCourse(3, 1);
 
-//     apiCalls.updateCourse(updatedCourse);
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  });
 
-//     expect(window.fetch).toHaveBeenCalledWith(url, options);
-//   })
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }));
 
-//   it('returns the updated course', async () => {
-//     const expected = { id: 3, name: 'this is an updated course' };
-//     const result = await apiCalls.updateCourse(updatedCourse);
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteTeacherFromCourse(3);
 
-//     expect(result).toEqual(expected);
-//   })
-
-//   it('throws an error if the status is not ok', () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }))
-
-//     const expected = Error('Failed to update course.');
-//     const result = apiCalls.updateCourse(updatedCourse);
-
-//     expect(result).rejects.toEqual(expected);
-//   })
-// })
-
-// describe('deleteCourse', () => {
-//   beforeEach(() => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 204,
-//     }))
-//   })
-
-//   it('calls fetch with the correct arguments', () => {
-//     const url = '/api/v1/courses/3';
-//     const options = {
-//       method: 'DELETE',
-//       headers: { 'content-type': 'application/json' }
-//     };
-
-//     apiCalls.deleteCourse(3);
-
-//     expect(window.fetch).toHaveBeenCalledWith(url, options);
-//   })
-
-//   it('throws an error if the status is not ok', () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }))
-
-//     const expected = Error('That id could not be found.');
-//     const result = apiCalls.deleteCourse(3);
-
-//     expect(result).rejects.toEqual(expected);
-//   })
-// })
-
-
+    expect(result).rejects.toEqual(expected);
+  });
+});
