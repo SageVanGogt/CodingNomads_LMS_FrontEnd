@@ -175,3 +175,26 @@ export const getAllCourseStudents = async (courseId) => {
     throw error;
   }
 };
+
+export const addCourseStudent = async (newCourseStudent, course) => {
+  const studentCourseRelation = {
+    studentId: newCourseStudent.id,
+    courseId: course.id
+  };
+  const url = '/api/v1/courses/students';
+  const options = {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(studentCourseRelation)
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 201) {
+      throw Error('Does not have necessary info');
+    }
+    const course = await response.json();
+    return course;
+  } catch (error) {
+    throw error;
+  }
+}; 

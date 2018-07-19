@@ -470,11 +470,11 @@ describe('addCourseStudent', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/3/students';
+    const url = '/api/v1/courses/students';
     const options = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newCourseStudent)
+      body: JSON.stringify({studentId: 1, courseId: 3})
     };
 
     apiCalls.addCourseStudent(newCourseStudent, course);
