@@ -161,3 +161,17 @@ export const deleteCourse = async (courseId) => {
     throw error;
   }
 };
+
+export const getAllCourseStudents = async (courseId) => {
+  const url = `/api/v1/courses/${courseId}/students`;
+  try {
+    const response = await fetch(url);
+    if (response.status !== 200) {
+      throw Error('Error.');
+    }
+    const course = await response.json();
+    return course;
+  } catch (error) {
+    throw error;
+  }
+};

@@ -397,7 +397,7 @@ describe('getAllCourseStudents', () => {
   it('calls fetch with the correct arguments', () => {
     const url = '/api/v1/courses/1/students';
 
-    apiCalls.getAllCourseStudents();
+    apiCalls.getAllCourseStudents(1);
 
     expect(window.fetch).toHaveBeenCalledWith(url);
   })
