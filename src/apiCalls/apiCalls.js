@@ -45,8 +45,23 @@ export const addTask = async (newTask) => {
   }
 }; 
 
-export const updateTask = async (task) => {
-
+export const updateTask = async (updatedTask) => {
+  const url = `/api/v1/task/${updatedTask.id}`;
+  const options = {
+    method: 'PATCH',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(updatedTask)
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 200) {
+      throw Error('Failed to update task.');
+    }
+    const task = await response.json();
+    return task;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const deleteTask = async (taskId) => {

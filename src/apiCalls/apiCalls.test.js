@@ -113,50 +113,51 @@ describe('addTask', () => {
   })
 })
 
-// describe('updateTask', () => {
-//   let updatedTask;
+describe('updateTask', () => {
+  let updatedTask;
 
-//   beforeEach(() => {
-//     updatedTask = {
-//       name: 'this is an updated task'
-//     }
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 200,
-//       json: () => Promise.resolve({ id: 3, name: 'this is an updated task' })
-//     }))
-//   })
+  beforeEach(() => {
+    updatedTask = {
+      id: 3,
+      name: 'this is an updated task'
+    }
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve({ id: 3, name: 'this is an updated task' })
+    }))
+  })
 
-//   it('calls fetch with the correct arguments', () => {
-//     const url = '/api/v1/task/3';
-//     const options = {
-//       method: 'PATCH',
-//       headers: { 'content-type': 'application/json' },
-//       body: JSON.stringify(updatedTask)
-//     };
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/task/3';
+    const options = {
+      method: 'PATCH',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(updatedTask)
+    };
 
-//     apiCalls.updateTask(updatedTask);
+    apiCalls.updateTask(updatedTask);
 
-//     expect(window.fetch).toHaveBeenCalledWith(url, options);
-//   })
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
 
-//   it('returns the updated task', async () => {
-//     const expected = { id: 3, name: 'this is an updated task' };
-//     const result = await apiCalls.updateTask(updatedTask);
+  it('returns the updated task', async () => {
+    const expected = { id: 3, name: 'this is an updated task' };
+    const result = await apiCalls.updateTask(updatedTask);
 
-//     expect(result).toEqual(expected);
-//   })
+    expect(result).toEqual(expected);
+  })
 
-//   it('throws an error if the status is not ok', () => {
-//      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }))
+  it('throws an error if the status is not ok', () => {
+     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
 
-//     const expected = Error('There was a problem with the fetch request.');
-//     const result = apiCalls.udpateTask(updatedTask);
+    const expected = Error('Failed to update task.');
+    const result = apiCalls.updateTask(updatedTask);
 
-//     expect(result).rejects.toEqual(expected);
-//   })
-// })
+    expect(result).rejects.toEqual(expected);
+  })
+})
 
 // describe('deleteTask', () => {
 //   beforeEach(() => {
