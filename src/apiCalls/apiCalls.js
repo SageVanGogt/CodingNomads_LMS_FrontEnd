@@ -46,7 +46,7 @@ export const addTask = async (newTask) => {
 }; 
 
 export const updateTask = async (updatedTask) => {
-  const url = `/api/v1/task/${updatedTask.id}`;
+  const url = `/api/v1/tasks/${updatedTask.id}`;
   const options = {
     method: 'PATCH',
     headers: { 'content-type': 'application/json' },
@@ -126,3 +126,4 @@ export const addCourse = async (newCourse) => {
     throw error;
   }
 }; 
+
