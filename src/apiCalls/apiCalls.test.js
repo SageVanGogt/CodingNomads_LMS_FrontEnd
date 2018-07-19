@@ -141,7 +141,10 @@ describe('updateTask', () => {
   })
 
   it('returns the updated task', async () => {
+    const expected = { id: 3, name: 'this is an updated task' };
+    const result = await apiCalls.updateTask(updatedTask);
 
+    expect(result).toEqual(expected);
   })
 
   it('throws an error if the status is not ok', () => {
