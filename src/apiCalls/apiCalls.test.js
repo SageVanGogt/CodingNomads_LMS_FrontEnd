@@ -456,48 +456,50 @@ describe('getAllCourseStudents', () => {
 //   })
 // })
 
-// describe('addCourse', () => {
-//   let newCourse;
+describe('addCourseStudent', () => {
+  let newCourseStudent;
+  let course;
 
-//   beforeEach(() => {
-//     newCourse = { name: 'this is a new course' };
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 201,
-//       json: () => Promise.resolve({ id: 3, name: 'this is a new course' })
-//     }))
-//   })
+  beforeEach(() => {
+    newCourseStudent = { id: 1, name: 'chucho' };
+    course = {id: 3}
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 201,
+      json: () => Promise.resolve({ id: 3, studentId: 1, courseId: 1 })
+    }))
+  })
 
-//   it('calls fetch with the correct arguments', () => {
-//     const url = '/api/v1/courses';
-//     const options = {
-//       method: 'POST',
-//       headers: { 'content-type': 'application/json' },
-//       body: JSON.stringify(newCourse)
-//     };
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/courses/3/students';
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newCourseStudent)
+    };
 
-//     apiCalls.addCourse(newCourse);
+    apiCalls.addCourseStudent(newCourseStudent, course);
 
-//     expect(window.fetch).toHaveBeenCalledWith(url, options);
-//   })
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
 
-//   it('returns a new course object with course id', async () => {
-//     const expected = { id: 3, name: 'this is a new course' };
-//     const result = await apiCalls.addCourse(newCourse);
+  it('returns a new course student relation object with course id and student id', async () => {
+    const expected = { id: 3, studentId: 1, courseId: 1 };
+    const result = await apiCalls.addCourseStudent(newCourseStudent, course);
 
-//     expect(result).toEqual(expected);
-//   })
+    expect(result).toEqual(expected);
+  })
 
-//   it('throws an error if the status is not ok', () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }))
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
 
-//     const expected = Error('Does not have necessary info');
-//     const result = apiCalls.addCourse(newCourse);
+    const expected = Error('Does not have necessary info');
+    const result = apiCalls.addCourseStudent(newCourseStudent, course);
 
-//     expect(result).rejects.toEqual(expected);
-//   })
-// })
+    expect(result).rejects.toEqual(expected);
+  })
+})
 
 
 
