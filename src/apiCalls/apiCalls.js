@@ -145,3 +145,19 @@ export const updateCourse = async (updatedCourse) => {
     throw error;
   }
 };
+
+export const deleteCourse = async (courseId) => {
+  const url = `/api/v1/courses/${courseId}`;
+  const options = {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' }
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 204) {
+      throw Error('That id could not be found.');
+    }
+  } catch (error) {
+    throw error;
+  }
+};
