@@ -1,12 +1,12 @@
-export const getAllCourses = async () => {
-  const url = '/api/v1/courses';
+export const getCourseTeachers = async (courseID) => {
+  const url = `/api/v1/courses/${courseID}/teachers`;
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
-      throw Error('User can not do that.');
+      throw Error('Teachers not found.');
     }
-    const tasks = await response.json();
-    return tasks;
+    const teachers = await response.json();
+    return teachers;
   } catch (error) {
     throw error;
   }
