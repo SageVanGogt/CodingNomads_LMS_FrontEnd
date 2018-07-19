@@ -70,48 +70,48 @@ describe('getAllTasks', () => {
 //   })
 // })
 
-// describe('addTask', () => {
-//   let newTask;
+describe('addTask', () => {
+  let newTask;
 
-//   beforeEach(() => {
-//     newTask = { name: 'this is a new task' };
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 201,
-//       json: () => Promise.resolve({ id: 3, name: 'this is a new task' })
-//     }))
-//   })
+  beforeEach(() => {
+    newTask = { name: 'this is a new task' };
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 201,
+      json: () => Promise.resolve({ id: 3, name: 'this is a new task' })
+    }))
+  })
 
-//   it('calls fetch with the correct arguments', () => {
-//     const url = '/api/v1/tasks'
-//     const options = {
-//       method: 'POST',
-//       headers: { 'content-type': 'application/json' },
-//       body: JSON.stringify(newTask)
-//     }
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/tasks';
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newTask)
+    };
 
-//     apiCalls.addTask(newTask);
+    apiCalls.addTask(newTask);
 
-//     expect(window.fetch).toHaveBeenCalledWith(url, option);
-//   })
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
 
-//   it('returns a new task object with task id', async () => {
-//     const expected = { id: 3, name: 'this is a new task' };
-//     const result = await apiCalls.addTask(newTask);
+  it('returns a new task object with task id', async () => {
+    const expected = { id: 3, name: 'this is a new task' };
+    const result = await apiCalls.addTask(newTask);
 
-//     expect(result).toEqual(expected);
-//   })
+    expect(result).toEqual(expected);
+  })
 
-//   it('throws an error if the status is not ok', () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }))
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
 
-//     const expected = Error('There was a problem with the fetch request.');
-//     const result = apiCalls.addTask(newTask);
+    const expected = Error('Does not have necessary info');
+    const result = apiCalls.addTask(newTask);
 
-//     expect(result).rejects.toEqual(expected);
-//   })
-// })
+    expect(result).rejects.toEqual(expected);
+  })
+})
 
 // describe('updateTask', () => {
 //   let updatedTask;
