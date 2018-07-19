@@ -12,12 +12,12 @@ export const getCourseTeachers = async (courseID) => {
   }
 };
 
-export const addTeacherToCourse = async (courseId, newTeacher) => {
+export const addTeacherToCourse = async (courseId, teacherID) => {
   const url = `/api/v1/courses/${courseId}/teachers`;
   const options = {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify(newTeacher)
+    body: JSON.stringify(teacherID)
   };
   try {
     const response = await fetch(url, options);

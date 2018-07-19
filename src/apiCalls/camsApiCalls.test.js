@@ -36,13 +36,13 @@ describe('getCourseTeachers', () => {
 });
 
 describe('addTeacherToCourse', () => {
-  let newTeacher;
+  let teacherID;
 
   beforeEach(() => {
-    newTeacher = { name: 'Joe Shmo' };
+    teacherID = 1;
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       status: 201,
-      json: () => Promise.resolve({ id: 3, name: 'Joe Shmo' })
+      json: () => Promise.resolve({ status: 201})
     }));
   });
 
@@ -51,17 +51,17 @@ describe('addTeacherToCourse', () => {
     const options = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newTeacher)
+      body: JSON.stringify(teacherID)
     };
 
-    apiCalls.addTeacherToCourse(1, newTeacher);
+    apiCalls.addTeacherToCourse(1, teacherID);
 
     expect(window.fetch).toHaveBeenCalledWith(url, options);
   });
 
-  it('returns a new course object with course id', async () => {
-    const expected = { id: 3, name: 'Joe Shmo' };
-    const result = await apiCalls.addTeacherToCourse(1, newTeacher);
+  it('returns a 201 status code if successful', async () => {
+    const expected = { status: 201 };
+    const result = await apiCalls.addTeacherToCourse(1, teacherID);
 
     expect(result).toEqual(expected);
   });
