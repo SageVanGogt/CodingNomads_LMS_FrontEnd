@@ -13,7 +13,17 @@ export const getAllTasks = async () => {
 };
 
 export const getTask = async (taskId) => {
-
+  const url = `api/v1/tasks/${taskId}`;
+  try {
+    const response = await fetch(url);
+    if (response.status !== 200) {
+      throw Error('Fetched task could not be found.');
+    }
+    const task = await response.json();
+    return task;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const addTask = async (newTask) => {

@@ -35,40 +35,40 @@ describe('getAllTasks', () => {
   })
 })
 
-// describe('getTask', () => {
-//   beforeEach(() => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 200,
-//       json: () => Promise.resolve({ id: 1, name: 'this is a task' })
-//     }))
-//   })
+describe('getTask', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve({ id: 1, name: 'this is a task' })
+    }))
+  })
 
-//   it('calls fetch with the correct arguments', () => {
-//     const url = 'api/v1/tasks/1';
+  it('calls fetch with the correct arguments', () => {
+    const url = 'api/v1/tasks/1';
 
-//     apiCalls.getTask(1);
+    apiCalls.getTask(1);
 
-//     expect(window.fetch).toHaveBeenCalledWith(url);
-//   })
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  })
 
-//   it('returns a task object', async () => {
-//     const expected = { id: 1, name: 'this is a task' };
-//     const result = await apiCalls.getTask(1);
+  it('returns a task object', async () => {
+    const expected = { id: 1, name: 'this is a task' };
+    const result = await apiCalls.getTask(1);
 
-//     expect(result).toEqual(expected);
-//   })
+    expect(result).toEqual(expected);
+  })
 
-//   it('throws an error if the status is not ok', () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }))
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
 
-//     const expected = Error('There was a problem with the fetch request.');
-//     const result = apiCalls.getTask(1);
+    const expected = Error('Fetched task could not be found.');
+    const result = apiCalls.getTask(1);
 
-//     expect(result).rejects.toEqual(expected);
-//   })
-// })
+    expect(result).rejects.toEqual(expected);
+  })
+})
 
 describe('addTask', () => {
   let newTask;
