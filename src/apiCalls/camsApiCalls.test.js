@@ -35,83 +35,48 @@ describe('getCourseTeachers', () => {
   });
 });
 
-// describe('getCourse', () => {
-//   beforeEach(() => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 200,
-//       json: () => Promise.resolve({ id: 1, name: 'this is a course' })
-//     }))
-//   })
+describe('addTeacherToCourse', () => {
+  let newTeacher;
 
-//   it('calls fetch with the correct arguments', () => {
-//     const url = 'api/v1/courses/1';
+  beforeEach(() => {
+    newTeacher = { name: 'Joe Shmo' };
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 201,
+      json: () => Promise.resolve({ id: 3, name: 'Joe Shmo' })
+    }));
+  });
 
-//     apiCalls.getCourse(1);
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/courses/1/teachers';
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newTeacher)
+    };
 
-//     expect(window.fetch).toHaveBeenCalledWith(url);
-//   })
+    apiCalls.addTeacherToCourse(1, newTeacher);
 
-//   it('returns a course object', async () => {
-//     const expected = { id: 1, name: 'this is a course' };
-//     const result = await apiCalls.getCourse(1);
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  });
 
-//     expect(result).toEqual(expected);
-//   })
+  it('returns a new course object with course id', async () => {
+    const expected = { id: 3, name: 'Joe Shmo' };
+    const result = await apiCalls.addTeacherToCourse(1, newTeacher);
 
-//   it('throws an error if the status is not ok', () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }))
+    expect(result).toEqual(expected);
+  });
 
-//     const expected = Error('Fetched course could not be found.');
-//     const result = apiCalls.getCourse(1);
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }));
 
-//     expect(result).rejects.toEqual(expected);
-//   })
-// })
+    const expected = Error('Does not have necessary info');
+    const result = apiCalls.addTeacherToCourse(1);
 
-// describe('addCourse', () => {
-//   let newCourse;
-
-//   beforeEach(() => {
-//     newCourse = { name: 'this is a new course' };
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 201,
-//       json: () => Promise.resolve({ id: 3, name: 'this is a new course' })
-//     }))
-//   })
-
-//   it('calls fetch with the correct arguments', () => {
-//     const url = '/api/v1/courses';
-//     const options = {
-//       method: 'POST',
-//       headers: { 'content-type': 'application/json' },
-//       body: JSON.stringify(newCourse)
-//     };
-
-//     apiCalls.addCourse(newCourse);
-
-//     expect(window.fetch).toHaveBeenCalledWith(url, options);
-//   })
-
-//   it('returns a new course object with course id', async () => {
-//     const expected = { id: 3, name: 'this is a new course' };
-//     const result = await apiCalls.addCourse(newCourse);
-
-//     expect(result).toEqual(expected);
-//   })
-
-//   it('throws an error if the status is not ok', () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }))
-
-//     const expected = Error('Does not have necessary info');
-//     const result = apiCalls.addCourse(newCourse);
-
-//     expect(result).rejects.toEqual(expected);
-//   })
-// })
+    expect(result).rejects.toEqual(expected);
+  });
+});
 
 // describe('updateCourse', () => {
 //   let updatedCourse;

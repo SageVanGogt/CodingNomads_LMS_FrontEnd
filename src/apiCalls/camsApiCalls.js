@@ -12,6 +12,25 @@ export const getCourseTeachers = async (courseID) => {
   }
 };
 
+export const addTeacherToCourse = async (courseId, newTeacher) => {
+  const url = `/api/v1/courses/${courseId}/teachers`;
+  const options = {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(newTeacher)
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 201) {
+      throw Error('Does not have necessary info');
+    }
+    const course = await response.json();
+    return course;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const getCourse = async (courseId) => {
   const url = `api/v1/courses/${courseId}`;
   try {
