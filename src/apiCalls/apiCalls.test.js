@@ -346,7 +346,7 @@ describe('updateCourse', () => {
     }))
 
     const expected = Error('Failed to update course.');
-    const result = apiCalls.updateTask(updatedCourse);
+    const result = apiCalls.updateCourse(updatedCourse);
 
     expect(result).rejects.toEqual(expected);
   })

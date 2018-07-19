@@ -127,3 +127,21 @@ export const addCourse = async (newCourse) => {
   }
 }; 
 
+export const updateCourse = async (updatedCourse) => {
+  const url = `/api/v1/courses/${updatedCourse.id}`;
+  const options = {
+    method: 'PATCH',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(updatedCourse)
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 200) {
+      throw Error('Failed to update course.');
+    }
+    const course = await response.json();
+    return course;
+  } catch (error) {
+    throw error;
+  }
+};
