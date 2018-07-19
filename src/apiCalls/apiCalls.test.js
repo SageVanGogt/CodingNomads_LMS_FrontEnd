@@ -193,19 +193,40 @@ describe('deleteTask', () => {
 
 
 
-// describe('getAllCourses', () => {
-//   it('calls fetch with the correct arguments', () => {
+describe('getAllCourses', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve(['course1', 'course2', 'course3'])
+    }))
+  })
 
-//   })
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/courses';
 
-//   it('returns an array of all courses', async () => {
+    apiCalls.getAllCourses();
 
-//   })
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  })
 
-//   it('throws an error if the status is not ok', () => {
+  it('returns an array of all courses', async () => {
+    const expected = ['course1', 'course2', 'course3'];
+    const result = await apiCalls.getAllTasks();
 
-//   })
-// })
+    expect(result).toEqual(expected);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }));
+
+    const expected = Error('User can not do that.');
+    const result = apiCalls.getAllCourses();
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
 
 // describe('getCourse', () => {
 //   it('calls fetch with the correct arguments', () => {

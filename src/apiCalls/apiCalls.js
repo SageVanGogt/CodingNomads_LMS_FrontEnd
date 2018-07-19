@@ -79,3 +79,17 @@ export const deleteTask = async (taskId) => {
     throw error;
   }
 };
+
+export const getAllCourses = async () => {
+  const url = '/api/v1/courses';
+  try {
+    const response = await fetch(url);
+    if (response.status !== 200) {
+      throw Error('User can not do that.');
+    }
+    const tasks = await response.json();
+    return tasks;
+  } catch (error) {
+    throw error;
+  }
+};
