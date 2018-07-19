@@ -93,3 +93,17 @@ export const getAllCourses = async () => {
     throw error;
   }
 };
+
+export const getCourse = async (courseId) => {
+  const url = `api/v1/courses/${courseId}`;
+  try {
+    const response = await fetch(url);
+    if (response.status !== 200) {
+      throw Error('Fetched course could not be found.');
+    }
+    const course = await response.json();
+    return course;
+  } catch (error) {
+    throw error;
+  }
+};

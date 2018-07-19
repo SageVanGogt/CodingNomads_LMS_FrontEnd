@@ -228,19 +228,40 @@ describe('getAllCourses', () => {
   })
 })
 
-// describe('getCourse', () => {
-//   it('calls fetch with the correct arguments', () => {
+describe('getCourse', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve({ id: 1, name: 'this is a course' })
+    }))
+  })
 
-//   })
+  it('calls fetch with the correct arguments', () => {
+    const url = 'api/v1/courses/1';
 
-//   it('returns a course object', async () => {
+    apiCalls.getCourse(1);
 
-//   })
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  })
 
-//   it('throws an error if the status is not ok', () => {
+  it('returns a course object', async () => {
+    const expected = { id: 1, name: 'this is a course' };
+    const result = await apiCalls.getCourse(1);
 
-//   })
-// })
+    expect(result).toEqual(expected);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
+
+    const expected = Error('Fetched course could not be found.');
+    const result = apiCalls.getCourse(1);
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
 
 // describe('addCourse', () => {
 //   it('calls fetch with the correct arguments', () => {
