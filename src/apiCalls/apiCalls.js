@@ -10,7 +10,7 @@ export const addTask = (task) => {
 
 } 
 
-export const udpateTask = (task) => {
+export const updateTask = (task) => {
 
 }
 

@@ -174,7 +174,7 @@ describe('deleteTask', () => {
     
     apiCalls.deleteTask(3);
 
-    expect(window.fetch).toHaveBeenCalledWith(url, option);
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
   })
 
   it('throws an error if the status is not ok', () => {
