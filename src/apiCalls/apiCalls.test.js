@@ -152,7 +152,7 @@ describe('updateTask', () => {
     }))
 
     const expected = Error('There was a problem with the fetch request.');
-    const result = apiCalls.udpateTask(newTask);
+    const result = apiCalls.udpateTask(updatedTask);
 
     expect(result).rejects.toEqual(expected);
   })
