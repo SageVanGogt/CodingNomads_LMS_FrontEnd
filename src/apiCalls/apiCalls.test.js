@@ -192,7 +192,6 @@ describe('deleteTask', () => {
 
 
 
-
 describe('getAllCourses', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
@@ -352,18 +351,35 @@ describe('updateCourse', () => {
   })
 })
 
-// describe('deleteCourse', () => {
-//   it('calls fetch with the correct arguments', () => {
+describe('deleteCourse', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }))
+  })
 
-//   })
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/courses/3';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' }
+    };
+    
+    apiCalls.deleteCourse(3);
 
-//   it('returns the deleted course', async () => {
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
 
-//   })
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
 
-//   it('throws an error if the status is not ok', () => {
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteCourse(3);
 
-//   })
-// })
+    expect(result).rejects.toEqual(expected);
+  })
+})
 
 
