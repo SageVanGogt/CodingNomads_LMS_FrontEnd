@@ -122,14 +122,14 @@ describe('getCourseTasks', () => {
   it('calls fetch with the correct arguments', () => {
     const url = '/api/v1/courses/1/tasks';
 
-    apiCalls.getCourseTasks();
+    apiCalls.getCourseTasks(1);
 
     expect(window.fetch).toHaveBeenCalledWith(url);
   });
 
   it('returns an array of all tasks', async () => {
     const expected = [{ id: 1, name: 'task 1' }, { id: 2, name: 'task 2' }];
-    const result = await apiCalls.getCourseTasks();
+    const result = await apiCalls.getCourseTasks(1);
 
     expect(result).toEqual(expected);
   });
@@ -140,7 +140,7 @@ describe('getCourseTasks', () => {
     }));
 
     const expected = Error('Tasks not found.');
-    const result = apiCalls.getCourseTeachers(1);
+    const result = apiCalls.getCourseTasks(1);
 
     expect(result).rejects.toEqual(expected);
   });

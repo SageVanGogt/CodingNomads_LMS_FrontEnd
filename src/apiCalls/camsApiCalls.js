@@ -46,3 +46,17 @@ export const deleteTeacherFromCourse = async (courseId, teacherId) => {
     throw error;
   }
 };
+
+export const getCourseTasks = async (courseID) => {
+  const url = `/api/v1/courses/${courseID}/tasks`;
+  try {
+    const response = await fetch(url);
+    if (response.status !== 200) {
+      throw Error('Tasks not found.');
+    }
+    const teachers = await response.json();
+    return teachers;
+  } catch (error) {
+    throw error;
+  }
+}
