@@ -59,4 +59,23 @@ export const getCourseTasks = async (courseID) => {
   } catch (error) {
     throw error;
   }
-}
+};
+
+export const addTaskToCourse = async (courseId, taskID) => {
+  const url = `/api/v1/courses/${courseId}/tasks`;
+  const options = {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(taskID)
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 201) {
+      throw Error('Does not have necessary info');
+    }
+    const course = await response.json();
+    return course;
+  } catch (error) {
+    throw error;
+  }
+};

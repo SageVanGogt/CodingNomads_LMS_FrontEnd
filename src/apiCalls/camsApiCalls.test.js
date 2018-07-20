@@ -146,48 +146,48 @@ describe('getCourseTasks', () => {
   });
 });
 
-// describe('addTeacherToCourse', () => {
-//   let teacherID;
+describe('addTaskToCourse', () => {
+  let taskID;
 
-//   beforeEach(() => {
-//     teacherID = 1;
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 201,
-//       json: () => Promise.resolve({ status: 201 })
-//     }));
-//   });
+  beforeEach(() => {
+    taskID = 1;
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 201,
+      json: () => Promise.resolve({ status: 201 })
+    }));
+  });
 
-//   it('calls fetch with the correct arguments', () => {
-//     const url = '/api/v1/courses/1/teachers';
-//     const options = {
-//       method: 'POST',
-//       headers: { 'content-type': 'application/json' },
-//       body: JSON.stringify(teacherID)
-//     };
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/courses/1/teachers';
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(taskID)
+    };
 
-//     apiCalls.addTeacherToCourse(1, teacherID);
+    apiCalls.addTeacherToCourse(1, taskID);
 
-//     expect(window.fetch).toHaveBeenCalledWith(url, options);
-//   });
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  });
 
-//   it('returns a 201 status code if successful', async () => {
-//     const expected = { status: 201 };
-//     const result = await apiCalls.addTeacherToCourse(1, teacherID);
+  it('returns a 201 status code if successful', async () => {
+    const expected = { status: 201 };
+    const result = await apiCalls.addTeacherToCourse(1, taskID);
 
-//     expect(result).toEqual(expected);
-//   });
+    expect(result).toEqual(expected);
+  });
 
-//   it('throws an error if the status is not ok', () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }));
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }));
 
-//     const expected = Error('Does not have necessary info');
-//     const result = apiCalls.addTeacherToCourse(1);
+    const expected = Error('Does not have necessary info');
+    const result = apiCalls.addTeacherToCourse(1);
 
-//     expect(result).rejects.toEqual(expected);
-//   });
-// });
+    expect(result).rejects.toEqual(expected);
+  });
+});
 
 // describe('deleteCourse', () => {
 //   beforeEach(() => {
