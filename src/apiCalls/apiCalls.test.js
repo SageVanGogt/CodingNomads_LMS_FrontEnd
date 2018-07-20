@@ -210,7 +210,7 @@ describe('getAllCourses', () => {
 
   it('returns an array of all courses', async () => {
     const expected = ['course1', 'course2', 'course3'];
-    const result = await apiCalls.getAllTasks();
+    const result = await apiCalls.getAllCourses();
 
     expect(result).toEqual(expected);
   })
@@ -381,5 +381,161 @@ describe('deleteCourse', () => {
     expect(result).rejects.toEqual(expected);
   })
 })
+
+
+
+
+
+describe('getAllCourseStudents', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve(['student1', 'student2', 'student3'])
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/courses/1/students';
+
+    apiCalls.getAllCourseStudents(1);
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  })
+
+  it('returns an array of all students', async () => {
+    const expected = ['student1', 'student2', 'student3'];
+    const result = await apiCalls.getAllCourseStudents();
+
+    expect(result).toEqual(expected);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }));
+
+    const expected = Error('Error.');
+    const result = apiCalls.getAllCourseStudents();
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
+// describe('getCourse', () => {
+//   beforeEach(() => {
+//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+//       status: 200,
+//       json: () => Promise.resolve({ id: 1, name: 'this is a course' })
+//     }))
+//   })
+
+//   it('calls fetch with the correct arguments', () => {
+//     const url = 'api/v1/courses/1';
+
+//     apiCalls.getCourse(1);
+
+//     expect(window.fetch).toHaveBeenCalledWith(url);
+//   })
+
+//   it('returns a course object', async () => {
+//     const expected = { id: 1, name: 'this is a course' };
+//     const result = await apiCalls.getCourse(1);
+
+//     expect(result).toEqual(expected);
+//   })
+
+//   it('throws an error if the status is not ok', () => {
+//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+//       status: 500
+//     }))
+
+//     const expected = Error('Fetched course could not be found.');
+//     const result = apiCalls.getCourse(1);
+
+//     expect(result).rejects.toEqual(expected);
+//   })
+// })
+
+describe('addCourseStudent', () => {
+  let newCourseStudent;
+  let course;
+
+  beforeEach(() => {
+    newCourseStudent = { id: 1, name: 'chucho' };
+    course = {id: 3}
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 201,
+      json: () => Promise.resolve({ id: 3, studentId: 1, courseId: 1 })
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/courses/students';
+    const options = {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({studentId: 1, courseId: 3})
+    };
+
+    apiCalls.addCourseStudent(newCourseStudent, course);
+
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
+
+  it('returns a new course student relation object with course id and student id', async () => {
+    const expected = { id: 3, studentId: 1, courseId: 1 };
+    const result = await apiCalls.addCourseStudent(newCourseStudent, course);
+
+    expect(result).toEqual(expected);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
+
+    const expected = Error('Does not have necessary info');
+    const result = apiCalls.addCourseStudent(newCourseStudent, course);
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
+describe('deleteCourseStudent', () => {
+  let student;
+  let course;
+
+  beforeEach(() => {
+    student = {id: 1};
+    course = {id: 1};
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/courses/1/student/1';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' }
+    };
+    
+    apiCalls.deleteCourseStudent(student, course);
+
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
+
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteCourseStudent(student, course);
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
 
 
