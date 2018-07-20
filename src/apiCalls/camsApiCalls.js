@@ -79,3 +79,19 @@ export const addTaskToCourse = async (courseId, taskID) => {
     throw error;
   }
 };
+
+export const deleteTaskFromCourse = async (courseId, taskID) => {
+  const url = `/api/v1/courses/${courseId}/tasks/${taskID}`;
+  const options = {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' }
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 204) {
+      throw Error('That id could not be found.');
+    }
+  } catch (error) {
+    throw error;
+  }
+};

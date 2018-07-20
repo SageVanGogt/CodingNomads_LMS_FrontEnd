@@ -78,7 +78,7 @@ describe('addTeacherToCourse', () => {
   });
 });
 
-describe('deleteCourse', () => {
+describe('deleteTeacherFromCourse', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       status: 204,
@@ -108,8 +108,6 @@ describe('deleteCourse', () => {
     expect(result).rejects.toEqual(expected);
   });
 });
-
-// ====
 
 describe('getCourseTasks', () => {
   beforeEach(() => {
@@ -189,33 +187,33 @@ describe('addTaskToCourse', () => {
   });
 });
 
-// describe('deleteCourse', () => {
-//   beforeEach(() => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 204,
-//     }));
-//   });
+describe('deleteTaskFromCourse', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }));
+  });
 
-//   it('calls fetch with the correct arguments', () => {
-//     const url = '/api/v1/courses/3/teachers/1';
-//     const options = {
-//       method: 'DELETE',
-//       headers: { 'content-type': 'application/json' }
-//     };
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/courses/3/tasks/1';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' }
+    };
 
-//     apiCalls.deleteTeacherFromCourse(3, 1);
+    apiCalls.deleteTaskFromCourse(3, 1);
 
-//     expect(window.fetch).toHaveBeenCalledWith(url, options);
-//   });
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  });
 
-//   it('throws an error if the status is not ok', () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }));
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }));
 
-//     const expected = Error('That id could not be found.');
-//     const result = apiCalls.deleteTeacherFromCourse(3);
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteTaskFromCourse(3);
 
-//     expect(result).rejects.toEqual(expected);
-//   });
-// });
+    expect(result).rejects.toEqual(expected);
+  });
+});
