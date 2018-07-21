@@ -62,12 +62,14 @@ export class LogIn extends Component {
         {tabs}
         <form onSubmit={this.onSubmit} className='signIn authentication'>
           <input
+            className='LogIn__email'
             value={email}
             onChange={event => this.setState({email: event.target.value})}
             type="text"
             placeholder="Email Address"
           />
           <input
+            className='LogIn__password'
             value={password}
             onChange={event => this.setState({ password: event.target.value})}
             type="password"

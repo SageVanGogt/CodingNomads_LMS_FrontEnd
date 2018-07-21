@@ -43,12 +43,14 @@ ShallowWrapper {
           onSubmit={[Function]}
 >
           <input
+                    className="LogIn__email"
                     onChange={[Function]}
                     placeholder="Email Address"
                     type="text"
                     value=""
           />
           <input
+                    className="LogIn__password"
                     onChange={[Function]}
                     placeholder="Password"
                     type="password"
@@ -153,12 +155,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <input
+              className="LogIn__email"
               onChange={[Function]}
               placeholder="Email Address"
               type="text"
               value=""
 />,
             <input
+              className="LogIn__password"
               onChange={[Function]}
               placeholder="Password"
               type="password"
@@ -181,6 +185,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "className": "LogIn__email",
               "onChange": [Function],
               "placeholder": "Email Address",
               "type": "text",
@@ -195,6 +200,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "className": "LogIn__password",
               "onChange": [Function],
               "placeholder": "Password",
               "type": "password",
@@ -255,12 +261,14 @@ ShallowWrapper {
             onSubmit={[Function]}
 >
             <input
+                        className="LogIn__email"
                         onChange={[Function]}
                         placeholder="Email Address"
                         type="text"
                         value=""
             />
             <input
+                        className="LogIn__password"
                         onChange={[Function]}
                         placeholder="Password"
                         type="password"
@@ -365,12 +373,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <input
+                className="LogIn__email"
                 onChange={[Function]}
                 placeholder="Email Address"
                 type="text"
                 value=""
 />,
               <input
+                className="LogIn__password"
                 onChange={[Function]}
                 placeholder="Password"
                 type="password"
@@ -393,6 +403,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "className": "LogIn__email",
                 "onChange": [Function],
                 "placeholder": "Email Address",
                 "type": "text",
@@ -407,6 +418,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "className": "LogIn__password",
                 "onChange": [Function],
                 "placeholder": "Password",
                 "type": "password",
@@ -489,12 +501,14 @@ ShallowWrapper {
           onSubmit={[Function]}
 >
           <input
+                    className="LogIn__email"
                     onChange={[Function]}
                     placeholder="Email Address"
                     type="text"
                     value=""
           />
           <input
+                    className="LogIn__password"
                     onChange={[Function]}
                     placeholder="Password"
                     type="password"
@@ -599,12 +613,14 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <input
+              className="LogIn__email"
               onChange={[Function]}
               placeholder="Email Address"
               type="text"
               value=""
 />,
             <input
+              className="LogIn__password"
               onChange={[Function]}
               placeholder="Password"
               type="password"
@@ -627,6 +643,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "className": "LogIn__email",
               "onChange": [Function],
               "placeholder": "Email Address",
               "type": "text",
@@ -641,6 +658,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "className": "LogIn__password",
               "onChange": [Function],
               "placeholder": "Password",
               "type": "password",
@@ -701,12 +719,14 @@ ShallowWrapper {
             onSubmit={[Function]}
 >
             <input
+                        className="LogIn__email"
                         onChange={[Function]}
                         placeholder="Email Address"
                         type="text"
                         value=""
             />
             <input
+                        className="LogIn__password"
                         onChange={[Function]}
                         placeholder="Password"
                         type="password"
@@ -811,12 +831,14 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <input
+                className="LogIn__email"
                 onChange={[Function]}
                 placeholder="Email Address"
                 type="text"
                 value=""
 />,
               <input
+                className="LogIn__password"
                 onChange={[Function]}
                 placeholder="Password"
                 type="password"
@@ -839,6 +861,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "className": "LogIn__email",
                 "onChange": [Function],
                 "placeholder": "Email Address",
                 "type": "text",
@@ -853,6 +876,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
+                "className": "LogIn__password",
                 "onChange": [Function],
                 "placeholder": "Password",
                 "type": "password",
