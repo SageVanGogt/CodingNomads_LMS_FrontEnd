@@ -10,7 +10,7 @@ export class TaskCard extends Component {
   }
 
   editOption = () => {
-    return <button className="Task_edit-btn">edit</button>
+    return <button className="Task_edit-btn">edit</button>;
   }
 
   render() {

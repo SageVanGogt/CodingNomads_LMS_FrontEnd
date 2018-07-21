@@ -4,7 +4,14 @@ exports[`TaskCard should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TaskCard />,
+  Symbol(enzyme.__unrendered__): <TaskCard
+    user={
+        Object {
+            "id": 1,
+            "roleId": 2,
+          }
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -21,6 +28,7 @@ ShallowWrapper {
         <h3
           className="Task_name"
 />,
+        false,
         <hr />,
         <p
           className="Task_desc"
@@ -41,6 +49,165 @@ ShallowWrapper {
         "ref": null,
         "rendered": null,
         "type": "h3",
+      },
+      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "hr",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+          "className": "Task_desc",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3
+            className="Task_name"
+/>,
+          false,
+          <hr />,
+          <p
+            className="Task_desc"
+/>,
+        ],
+        "className": "Task_card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "className": "Task_name",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "h3",
+        },
+        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "hr",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+            "className": "Task_desc",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`TaskCard should match the snapshot for admin permissions 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <TaskCard
+    user={
+        Object {
+            "id": 1,
+            "roleId": 1,
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3
+          className="Task_name"
+/>,
+        <button
+          className="Task_edit-btn"
+>
+          edit
+</button>,
+        <hr />,
+        <p
+          className="Task_desc"
+/>,
+      ],
+      "className": "Task_card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": undefined,
+          "className": "Task_name",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "edit",
+          "className": "Task_edit-btn",
+        },
+        "ref": null,
+        "rendered": "edit",
+        "type": "button",
       },
       Object {
         "instance": null,
@@ -76,6 +243,11 @@ ShallowWrapper {
           <h3
             className="Task_name"
 />,
+          <button
+            className="Task_edit-btn"
+>
+            edit
+</button>,
           <hr />,
           <p
             className="Task_desc"
@@ -96,6 +268,18 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "edit",
+            "className": "Task_edit-btn",
+          },
+          "ref": null,
+          "rendered": "edit",
+          "type": "button",
         },
         Object {
           "instance": null,
