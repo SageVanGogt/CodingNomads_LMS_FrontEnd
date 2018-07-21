@@ -9,7 +9,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          REACT YO FACE!
+          <Route 
+            exact path={routes.HOME}
+            component={() => <p>REACT YO FACE!</p>}
+          />
 
           <Route
             exact path={routes.SIGN_IN}
