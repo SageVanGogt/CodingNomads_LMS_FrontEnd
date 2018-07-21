@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as routes from '../../constants/routes';
-import LogIn from '../LogIn/LogIn';
+import LogIn from '../../components/LogIn/LogIn';
+import AdminHome from '../AdminHome/AdminHome';
 import './App.css';
 
 class App extends Component {
@@ -17,6 +18,11 @@ class App extends Component {
           <Route
             exact path={routes.SIGN_IN}
             component={() => <LogIn />}
+          />
+
+          <Route
+            exact path={routes.ADMIN_HOME}
+            component={() => <AdminHome />}
           />
         </div>
       </Router>
