@@ -39,10 +39,15 @@ class App extends Component {
             exact path={routes.ADMIN_HOME}
             component={() => <AdminHome />}
           />
+
+          <Route
+            exact path={routes.TASK_VIEW}
+            component={() => <Tasks />}
+          />
         </div>
       </Router>
     );
-  }
+  } 
 }
 
 export default App;

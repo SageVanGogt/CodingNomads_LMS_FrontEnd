@@ -1,4 +1,4 @@
-export const tasks = [
+export const mockTasks = [
   {
     id: 1, 
     name: 'while loops', 
