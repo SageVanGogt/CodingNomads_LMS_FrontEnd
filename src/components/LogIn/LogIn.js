@@ -19,6 +19,11 @@ export class LogIn extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
+
+    this.setState({
+      email: '',
+      password: ''
+    });
   }
 
   render() {
