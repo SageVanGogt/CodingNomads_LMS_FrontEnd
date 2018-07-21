@@ -1,0 +1,17 @@
+.LogIn {
+  border: 1px solid black;
+  width: 300px;
+  height: 250px;
+  margin: 200px auto; }
+
+.LogIn_tab {
+  box-sizing: border-box;
+  width: 50%;
+  border: 1px solid black;
+  display: inline-block;
+  height: 25px;
+  padding-top: 3px;
+  cursor: pointer; }
+
+.LogIn_tab__active {
+  background-color: #d1d2d3; }
