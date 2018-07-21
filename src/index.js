@@ -1,9 +1,9 @@
-import { BrowserRouter as Router} from '../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-router-dom';
-import React from '../../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
-import { render } from '../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-dom';
-import { Provider } from '../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-redux';
-import { createStore } from '../../../../../Library/Caches/typescript/2.9/node_modules/redux';
-import { rootReducer } from './reducers';
+import { BrowserRouter as Router} from 'react-router-dom';
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { rootReducer } from './reducers/index';
 import App from './components/App/App';
 import './index.css';
 
