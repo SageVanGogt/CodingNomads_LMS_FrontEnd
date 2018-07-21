@@ -2,5 +2,5 @@ import { combineReducers } from 'redux';
 import signinReducer from './signinReducer';
 
 export const rootReducer = combineReducers({
-  user: {id: 1, roleId: 1}
+  user: signinReducer
 });
