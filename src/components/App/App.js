@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 import LogIn from '../../components/LogIn/LogIn';
 import AdminHome from '../AdminHome/AdminHome';
+import Tasks from '../Tasks/Tasks';
 import './App.css';
 
 class App extends Component {
