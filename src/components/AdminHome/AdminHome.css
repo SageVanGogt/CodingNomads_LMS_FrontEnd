@@ -2,7 +2,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 80vw; }
+  width: 80vw;
+  margin-left: 200px; }
 
 .Teacher_view {
   display: flex;
@@ -36,7 +37,7 @@
 
 .nav__site {
   position: fixed;
-  left: 0;
+  z-index: 1;
   width: 200px;
   background-color: #364051; }
 
@@ -75,7 +76,7 @@
 .nav__site li {
   font-size: .9rem;
   transition: .3s;
-  list-style: none;
+  list-style-type: none;
   float: left; }
 
 .nav__site li:hover {
