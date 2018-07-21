@@ -1,0 +1,36 @@
+.Teacher_board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 80vw;
+  margin-left: 200px; }
+
+.Teacher_view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 400px;
+  height: 250px;
+  background-color: grey; }
+
+.Teacher_options {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  width: 150px;
+  margin-left: 250px;
+  height: 250px;
+  background-color: #0F94FB50; }
+
+.Teacher_options div {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.Teacher_view:hover .Teacher_options {
+  visibility: visible; }
+
+.Teacher_options div:hover {
+  background-color: #0F94FB; }
