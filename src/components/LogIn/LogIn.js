@@ -17,6 +17,10 @@ class LogIn extends Component {
     this.setState({userbase});
   }
 
+  onSubmit = (event) => {
+    event.preventDefault();
+  }
+
   render() {
     const tabs = this.state.userbase === 'student' ? 
       <div className='LogIn_tabs'>
@@ -49,10 +53,7 @@ class LogIn extends Component {
         </div>
       </div>;
 
-    const {
-      email,
-      password
-    } = this.state;
+    const { email, password } = this.state;
 
     const isInvalid = password === '' || email === '';
 

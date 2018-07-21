@@ -1,17 +1,32 @@
 .LogIn {
-  border: 1px solid black;
+  border: 1px solid #0066B4;
   width: 300px;
-  height: 250px;
+  height: 150px;
   margin: 200px auto; }
 
 .LogIn_tab {
   box-sizing: border-box;
   width: 50%;
-  border: 1px solid black;
+  border-bottom: 1px solid #0066B430;
   display: inline-block;
   height: 25px;
   padding-top: 3px;
   cursor: pointer; }
 
 .LogIn_tab__active {
-  background-color: #d1d2d3; }
+  background-color: #0066B430; }
+
+.LogIn input {
+  width: 70%;
+  height: 20px;
+  margin: 10px auto;
+  display: block;
+  padding-left: 5px; }
+
+.LogIn button {
+  width: 70%;
+  height: 25px;
+  border: .5px solid #0066B430; }
+
+.LogIn button:enabled {
+  background-color: #0066B430; }
