@@ -8,7 +8,7 @@ class LogIn extends Component {
 
     this.state = {
       userbase: 'student',
-      username: '',
+      email: '',
       password: ''
     };
   }
@@ -49,10 +49,33 @@ class LogIn extends Component {
         </div>
       </div>;
 
+    const {
+      email,
+      password
+    } = this.state;
+
+    const isInvalid = password === '' || email === '';
+
     return (
       <div className='LogIn'>
         {tabs}
-        <form action=""></form>
+        <form onSubmit={this.onSubmit} className='signIn authentication'>
+          <input
+            value={email}
+            onChange={event => this.setState({email: event.target.value})}
+            type="text"
+            placeholder="Email Address"
+          />
+          <input
+            value={password}
+            onChange={event => this.setState({ password: event.target.value})}
+            type="password"
+            placeholder="Password"
+          />
+          <button disabled={isInvalid} type="submit">
+            Sign In
+          </button>
+        </form>
       </div>
     );
   }
