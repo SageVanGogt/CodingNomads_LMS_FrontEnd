@@ -9,7 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  margin-top: 50px;
+  width: 400px;
   height: 250px;
   background-color: grey;
 }
@@ -18,8 +19,8 @@
   visibility: hidden;
   position: fixed;
   z-index: 1;
-  width: 100px;
-  margin-left: 200px;
+  width: 150px;
+  margin-left: 250px;
   height: 250px;
   background-color: #0F94FB50;
 }
@@ -37,4 +38,75 @@
 
 .Teacher_options div:hover {
   background-color: #0F94FB;
+}
+
+.nav__site {
+  position: fixed;
+  left: 0;
+  width: 200px;
+  background-color: #364051;
+}
+
+.user {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  flex-direction: column;
+}
+
+.user img {
+  height: 80px;
+  border-radius: 50%;
+}
+
+.user p {
+  margin-top:30px;
+  color: #aebacc;
+}
+
+.nav__site h3 {
+  margin-left: 30px;
+  line-height: 3;
+  font-size: .8rem;
+  color: rgb(98, 111, 129);
+}
+
+.nav__site a {
+  padding: 13px 60px 13px 30px;
+  line-height: 3;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #aebacc;
+}
+
+.nav__site a:hover {
+  color: rgb(240, 246, 247);
+  cursor: pointer;
+}
+
+.nav__site li {
+  font-size: .9rem;
+  transition: .3s;
+  list-style: none;
+  float:left;
+}
+
+.nav__site li:hover {
+  border-left: 3px solid aqua;
+  background-color: rgb(48, 58, 75);
+  cursor: pointer;
+}
+
+.nav__icon {
+  margin-right: 10px;
+}
+
+.nav__icon:hover {
+  color: rgb(240, 246, 247);
+  cursor: pointer;
+}
+
+hr {
+  border: 1px solid rgb(48, 58, 75);
 }
