@@ -1,0 +1,993 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminHome should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AdminHome />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <section
+        className="Teacher_board"
+>
+        <article
+                className="Teacher_view"
+        >
+                <h3>
+                        courses
+                </h3>
+                <div
+                        className="Teacher_options"
+                >
+                        <div>
+                                add
+                        </div>
+                        <div>
+                                view
+                        </div>
+                </div>
+        </article>
+        <article
+                className="Teacher_view"
+        >
+                <h3>
+                        notifications
+                </h3>
+                <div
+                        className="Teacher_options"
+                >
+                        <div>
+                                add
+                        </div>
+                        <div>
+                                view
+                        </div>
+                </div>
+        </article>
+        <article
+                className="Teacher_view"
+        >
+                <h3>
+                        tasks
+                </h3>
+                <div
+                        className="Teacher_options"
+                >
+                        <div>
+                                add
+                        </div>
+                        <div>
+                                view
+                        </div>
+                </div>
+        </article>
+        <article
+                className="Teacher_view"
+        >
+                <h3>
+                        students
+                </h3>
+                <div
+                        className="Teacher_options"
+                >
+                        <div>
+                                add
+                        </div>
+                        <div>
+                                view
+                        </div>
+                </div>
+        </article>
+</section>,
+      "className": "Teacher_home",
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <article
+            className="Teacher_view"
+>
+            <h3>
+                        courses
+            </h3>
+            <div
+                        className="Teacher_options"
+            >
+                        <div>
+                                    add
+                        </div>
+                        <div>
+                                    view
+                        </div>
+            </div>
+</article>,
+          <article
+            className="Teacher_view"
+>
+            <h3>
+                        notifications
+            </h3>
+            <div
+                        className="Teacher_options"
+            >
+                        <div>
+                                    add
+                        </div>
+                        <div>
+                                    view
+                        </div>
+            </div>
+</article>,
+          <article
+            className="Teacher_view"
+>
+            <h3>
+                        tasks
+            </h3>
+            <div
+                        className="Teacher_options"
+            >
+                        <div>
+                                    add
+                        </div>
+                        <div>
+                                    view
+                        </div>
+            </div>
+</article>,
+          <article
+            className="Teacher_view"
+>
+            <h3>
+                        students
+            </h3>
+            <div
+                        className="Teacher_options"
+            >
+                        <div>
+                                    add
+                        </div>
+                        <div>
+                                    view
+                        </div>
+            </div>
+</article>,
+        ],
+        "className": "Teacher_board",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                courses
+</h3>,
+              <div
+                className="Teacher_options"
+>
+                <div>
+                                add
+                </div>
+                <div>
+                                view
+                </div>
+</div>,
+            ],
+            "className": "Teacher_view",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "courses",
+              },
+              "ref": null,
+              "rendered": "courses",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div>
+                    add
+</div>,
+                  <div>
+                    view
+</div>,
+                ],
+                "className": "Teacher_options",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "add",
+                  },
+                  "ref": null,
+                  "rendered": "add",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "view",
+                  },
+                  "ref": null,
+                  "rendered": "view",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "article",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                notifications
+</h3>,
+              <div
+                className="Teacher_options"
+>
+                <div>
+                                add
+                </div>
+                <div>
+                                view
+                </div>
+</div>,
+            ],
+            "className": "Teacher_view",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "notifications",
+              },
+              "ref": null,
+              "rendered": "notifications",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div>
+                    add
+</div>,
+                  <div>
+                    view
+</div>,
+                ],
+                "className": "Teacher_options",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "add",
+                  },
+                  "ref": null,
+                  "rendered": "add",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "view",
+                  },
+                  "ref": null,
+                  "rendered": "view",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "article",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                tasks
+</h3>,
+              <div
+                className="Teacher_options"
+>
+                <div>
+                                add
+                </div>
+                <div>
+                                view
+                </div>
+</div>,
+            ],
+            "className": "Teacher_view",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "tasks",
+              },
+              "ref": null,
+              "rendered": "tasks",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div>
+                    add
+</div>,
+                  <div>
+                    view
+</div>,
+                ],
+                "className": "Teacher_options",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "add",
+                  },
+                  "ref": null,
+                  "rendered": "add",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "view",
+                  },
+                  "ref": null,
+                  "rendered": "view",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "article",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                students
+</h3>,
+              <div
+                className="Teacher_options"
+>
+                <div>
+                                add
+                </div>
+                <div>
+                                view
+                </div>
+</div>,
+            ],
+            "className": "Teacher_view",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "students",
+              },
+              "ref": null,
+              "rendered": "students",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div>
+                    add
+</div>,
+                  <div>
+                    view
+</div>,
+                ],
+                "className": "Teacher_options",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "add",
+                  },
+                  "ref": null,
+                  "rendered": "add",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "view",
+                  },
+                  "ref": null,
+                  "rendered": "view",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "article",
+        },
+      ],
+      "type": "section",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <section
+          className="Teacher_board"
+>
+          <article
+                    className="Teacher_view"
+          >
+                    <h3>
+                              courses
+                    </h3>
+                    <div
+                              className="Teacher_options"
+                    >
+                              <div>
+                                        add
+                              </div>
+                              <div>
+                                        view
+                              </div>
+                    </div>
+          </article>
+          <article
+                    className="Teacher_view"
+          >
+                    <h3>
+                              notifications
+                    </h3>
+                    <div
+                              className="Teacher_options"
+                    >
+                              <div>
+                                        add
+                              </div>
+                              <div>
+                                        view
+                              </div>
+                    </div>
+          </article>
+          <article
+                    className="Teacher_view"
+          >
+                    <h3>
+                              tasks
+                    </h3>
+                    <div
+                              className="Teacher_options"
+                    >
+                              <div>
+                                        add
+                              </div>
+                              <div>
+                                        view
+                              </div>
+                    </div>
+          </article>
+          <article
+                    className="Teacher_view"
+          >
+                    <h3>
+                              students
+                    </h3>
+                    <div
+                              className="Teacher_options"
+                    >
+                              <div>
+                                        add
+                              </div>
+                              <div>
+                                        view
+                              </div>
+                    </div>
+          </article>
+</section>,
+        "className": "Teacher_home",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <article
+              className="Teacher_view"
+>
+              <h3>
+                            courses
+              </h3>
+              <div
+                            className="Teacher_options"
+              >
+                            <div>
+                                          add
+                            </div>
+                            <div>
+                                          view
+                            </div>
+              </div>
+</article>,
+            <article
+              className="Teacher_view"
+>
+              <h3>
+                            notifications
+              </h3>
+              <div
+                            className="Teacher_options"
+              >
+                            <div>
+                                          add
+                            </div>
+                            <div>
+                                          view
+                            </div>
+              </div>
+</article>,
+            <article
+              className="Teacher_view"
+>
+              <h3>
+                            tasks
+              </h3>
+              <div
+                            className="Teacher_options"
+              >
+                            <div>
+                                          add
+                            </div>
+                            <div>
+                                          view
+                            </div>
+              </div>
+</article>,
+            <article
+              className="Teacher_view"
+>
+              <h3>
+                            students
+              </h3>
+              <div
+                            className="Teacher_options"
+              >
+                            <div>
+                                          add
+                            </div>
+                            <div>
+                                          view
+                            </div>
+              </div>
+</article>,
+          ],
+          "className": "Teacher_board",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  courses
+</h3>,
+                <div
+                  className="Teacher_options"
+>
+                  <div>
+                                    add
+                  </div>
+                  <div>
+                                    view
+                  </div>
+</div>,
+              ],
+              "className": "Teacher_view",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "courses",
+                },
+                "ref": null,
+                "rendered": "courses",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div>
+                      add
+</div>,
+                    <div>
+                      view
+</div>,
+                  ],
+                  "className": "Teacher_options",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "add",
+                    },
+                    "ref": null,
+                    "rendered": "add",
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "view",
+                    },
+                    "ref": null,
+                    "rendered": "view",
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "article",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  notifications
+</h3>,
+                <div
+                  className="Teacher_options"
+>
+                  <div>
+                                    add
+                  </div>
+                  <div>
+                                    view
+                  </div>
+</div>,
+              ],
+              "className": "Teacher_view",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "notifications",
+                },
+                "ref": null,
+                "rendered": "notifications",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div>
+                      add
+</div>,
+                    <div>
+                      view
+</div>,
+                  ],
+                  "className": "Teacher_options",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "add",
+                    },
+                    "ref": null,
+                    "rendered": "add",
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "view",
+                    },
+                    "ref": null,
+                    "rendered": "view",
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "article",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  tasks
+</h3>,
+                <div
+                  className="Teacher_options"
+>
+                  <div>
+                                    add
+                  </div>
+                  <div>
+                                    view
+                  </div>
+</div>,
+              ],
+              "className": "Teacher_view",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "tasks",
+                },
+                "ref": null,
+                "rendered": "tasks",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div>
+                      add
+</div>,
+                    <div>
+                      view
+</div>,
+                  ],
+                  "className": "Teacher_options",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "add",
+                    },
+                    "ref": null,
+                    "rendered": "add",
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "view",
+                    },
+                    "ref": null,
+                    "rendered": "view",
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "article",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  students
+</h3>,
+                <div
+                  className="Teacher_options"
+>
+                  <div>
+                                    add
+                  </div>
+                  <div>
+                                    view
+                  </div>
+</div>,
+              ],
+              "className": "Teacher_view",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "students",
+                },
+                "ref": null,
+                "rendered": "students",
+                "type": "h3",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div>
+                      add
+</div>,
+                    <div>
+                      view
+</div>,
+                  ],
+                  "className": "Teacher_options",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "add",
+                    },
+                    "ref": null,
+                    "rendered": "add",
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "view",
+                    },
+                    "ref": null,
+                    "rendered": "view",
+                    "type": "div",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "article",
+          },
+        ],
+        "type": "section",
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
