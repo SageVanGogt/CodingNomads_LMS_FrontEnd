@@ -89,8 +89,4 @@ export class LogIn extends Component {
   }
 }
 
-// export const mapDispatchToProps = dispatch => ({
-
-// });
-
 export default connect(null, null)(LogIn);
