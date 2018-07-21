@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React, { Component } from '../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react';
+import { BrowserRouter as Router, Route } from '../../../../../../../Library/Caches/typescript/2.9/node_modules/@types/react-router-dom';
 import * as routes from '../../constants/routes';
-import LogIn from '../../components/LogIn/LogIn';
+import LogIn from '../LogIn/LogIn';
 import AdminHome from '../AdminHome/AdminHome';
 import './App.css';
 
