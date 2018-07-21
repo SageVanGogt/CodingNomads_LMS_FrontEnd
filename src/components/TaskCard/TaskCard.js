@@ -24,10 +24,15 @@ export class TaskCard extends Component {
   }
 }
 
+export const mapStateToProps = (state) => ({
+  user: state.user
+});
+
+
 TaskCard.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
   description: PropTypes.string
 };
 
-export default TaskCard;
+export default connect(mapStateToProps, null)(TaskCard);

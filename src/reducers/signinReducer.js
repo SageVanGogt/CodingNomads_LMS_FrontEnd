@@ -1,5 +1,5 @@
 const signinReducer = (state = {}, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'SIGNIN_USER':
       return action.user;
     default: 
