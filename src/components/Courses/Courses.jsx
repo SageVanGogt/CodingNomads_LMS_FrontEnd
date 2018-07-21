@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { mockCourses } from '../../mockData/mockCourses';
 import './Courses.css';
-import CourseCard from '../CourseCard/CourseCard';
+import { CourseCard } from '../CourseCard/CourseCard';
 
 export class Courses extends Component {
   constructor(props) {
