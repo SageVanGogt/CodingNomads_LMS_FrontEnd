@@ -1,8 +1,9 @@
 import React, { Component} from 'react';
 import { connect} from 'react-redux';
+import './Login.css';
 
 class LogIn extends Component {
-  constructor() {
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -12,7 +13,7 @@ class LogIn extends Component {
 
   render() {
     return (
-      <div>
+      <div className='LogIn'>
         TEST
       </div>
     );
