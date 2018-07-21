@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './Login.css';
 
-class LogIn extends Component {
+export class LogIn extends Component {
   constructor(props) {
     super(props);
 
@@ -15,6 +15,15 @@ class LogIn extends Component {
 
   setUserbase = (userbase) => {
     this.setState({userbase});
+  }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+
+    this.setState({
+      email: '',
+      password: ''
+    });
   }
 
   render() {
@@ -49,10 +58,7 @@ class LogIn extends Component {
         </div>
       </div>;
 
-    const {
-      email,
-      password
-    } = this.state;
+    const { email, password } = this.state;
 
     const isInvalid = password === '' || email === '';
 
@@ -61,12 +67,14 @@ class LogIn extends Component {
         {tabs}
         <form onSubmit={this.onSubmit} className='signIn authentication'>
           <input
+            className='LogIn__email'
             value={email}
             onChange={event => this.setState({email: event.target.value})}
             type="text"
             placeholder="Email Address"
           />
           <input
+            className='LogIn__password'
             value={password}
             onChange={event => this.setState({ password: event.target.value})}
             type="password"
@@ -80,10 +88,5 @@ class LogIn extends Component {
     );
   }
 }
-
-
-// export const mapDispatchToProps = dispatch => ({
-
-// });
 
 export default connect(null, null)(LogIn);
