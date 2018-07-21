@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './Login.css';
 
-class LogIn extends Component {
+export class LogIn extends Component {
   constructor(props) {
     super(props);
 
@@ -81,7 +81,6 @@ class LogIn extends Component {
     );
   }
 }
-
 
 // export const mapDispatchToProps = dispatch => ({
 
