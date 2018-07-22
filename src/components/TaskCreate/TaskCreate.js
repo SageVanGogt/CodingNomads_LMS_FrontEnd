@@ -3,6 +3,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './TaskCreate.css';
 import PropTypes from 'prop-types';
+import { mapStateToProps } from '../TaskCard/TaskCard';
 
 export class TaskCreate extends Component {
   constructor() {
@@ -54,3 +55,5 @@ export class TaskCreate extends Component {
     );
   }
 }
+
+export default TaskCreate;

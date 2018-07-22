@@ -5,6 +5,7 @@ import LogIn from '../LogIn/LogIn';
 import AdminHome from '../AdminHome/AdminHome';
 import { Courses } from '../Courses/Courses';
 import Tasks from '../Tasks/Tasks';
+import TaskCreate from '../TaskCreate/TaskCreate';
 import './App.css';
 
 class App extends Component {
@@ -49,6 +50,11 @@ class App extends Component {
           <Route
             exact path={routes.TASK_VIEW}
             component={() => <Tasks />}
+          />
+
+          <Route
+            exact path={routes.TASK_CREATE}
+            component={() => <TaskCreate />}
           />
         </div>
       </Router>
