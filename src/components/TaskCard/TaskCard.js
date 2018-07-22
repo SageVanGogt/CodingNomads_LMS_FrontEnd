@@ -9,18 +9,23 @@ export class TaskCard extends Component {
     super();
   }
 
-  editOption = () => {
+  editBtn = () => {
     return <button className="Task_edit-btn">edit</button>;
+  }
+
+  viewBtn = () => {
+    return <button className="Task_edit-btn">view</button>;
   }
 
   render() {
     const { id, name, description, user } = this.props;
-    const adminEditBtn = this.editOption();
+    const adminEditBtn = this.editBtn();
+    const studentViewBtn = this.viewBtn();
 
     return (
       <div className="Task_card">
         <h3 className="Task_name">{name}</h3>
-        {user.roleId === 1 && adminEditBtn}
+        {user.roleId === 1 ? adminEditBtn : studentViewBtn}
         <hr/>
         <p className="Task_desc">
           {description}
