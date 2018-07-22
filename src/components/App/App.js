@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 import LogIn from '../LogIn/LogIn';
 import AdminHome from '../AdminHome/AdminHome';
+import { Courses } from '../Courses/Courses';
 import Tasks from '../Tasks/Tasks';
 import './App.css';
 
@@ -41,6 +42,10 @@ class App extends Component {
             component={() => <AdminHome />}
           />
 
+          <Route
+            exact path={routes.COURSES}
+            component={() => <Courses />}
+          />
           <Route
             exact path={routes.TASK_VIEW}
             component={() => <Tasks />}
