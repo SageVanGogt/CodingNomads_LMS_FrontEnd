@@ -1,0 +1,11 @@
+.Task_card {
+  width: 250px;
+  height: 200px;
+  margin: 20px;
+  background-color: #CECECE; }
+
+.Task_edit-btn {
+  visibility: hidden; }
+
+.Task_card:hover .Task_edit-btn {
+  visibility: visible; }

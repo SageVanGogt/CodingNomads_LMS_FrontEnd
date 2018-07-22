@@ -1,5 +1,6 @@
-import { combineReducers } from '../../../../../../Library/Caches/typescript/2.9/node_modules/redux';
+import { combineReducers } from 'redux';
+import signinReducer from './signinReducer';
 
 export const rootReducer = combineReducers({
-  
+  user: signinReducer
 });

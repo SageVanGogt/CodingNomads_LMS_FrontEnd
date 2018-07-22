@@ -4,6 +4,7 @@ import * as routes from '../../constants/routes';
 import LogIn from '../../components/LogIn/LogIn';
 import AdminHome from '../AdminHome/AdminHome';
 import { Courses } from '../Courses/Courses';
+import Tasks from '../Tasks/Tasks';
 import './App.css';
 
 class App extends Component {
@@ -45,10 +46,14 @@ class App extends Component {
             exact path={routes.COURSES}
             component={() => <Courses />}
           />
+          <Route
+            exact path={routes.TASK_VIEW}
+            component={() => <Tasks />}
+          />
         </div>
       </Router>
     );
-  }
+  } 
 }
 
 export default App;

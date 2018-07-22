@@ -9,7 +9,7 @@ export class Courses extends Component {
   }
 
   render() {
-    const courses = mockCourses.map(course => <CourseCard {...course} key={'course' + course.id}/>)
+    const courses = mockCourses.map(course => <CourseCard {...course} key={'course' + course.id}/>);
 
     return ( 
       <div className='courses_container'>
