@@ -28,7 +28,11 @@ ShallowWrapper {
         <h3
           className="Task_name"
 />,
-        false,
+        <button
+          className="Task_edit-btn"
+>
+          view
+</button>,
         <hr />,
         <p
           className="Task_desc"
@@ -50,7 +54,18 @@ ShallowWrapper {
         "rendered": null,
         "type": "h3",
       },
-      false,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "view",
+          "className": "Task_edit-btn",
+        },
+        "ref": null,
+        "rendered": "view",
+        "type": "button",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -85,7 +100,11 @@ ShallowWrapper {
           <h3
             className="Task_name"
 />,
-          false,
+          <button
+            className="Task_edit-btn"
+>
+            view
+</button>,
           <hr />,
           <p
             className="Task_desc"
@@ -107,7 +126,18 @@ ShallowWrapper {
           "rendered": null,
           "type": "h3",
         },
-        false,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "view",
+            "className": "Task_edit-btn",
+          },
+          "ref": null,
+          "rendered": "view",
+          "type": "button",
+        },
         Object {
           "instance": null,
           "key": undefined,
