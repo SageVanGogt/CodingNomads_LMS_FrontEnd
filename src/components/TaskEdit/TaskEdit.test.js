@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { TaskCreate } from './TaskCreate';
+import { TaskCreate } from './TaskEdit';
 
 describe('TaskCreate', () => {
   let wrapper;

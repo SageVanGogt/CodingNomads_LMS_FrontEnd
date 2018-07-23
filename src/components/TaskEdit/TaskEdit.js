@@ -1,11 +1,11 @@
 
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
-import './TaskCreate.css';
-import * as API from './../../apiCalls/apiCalls';
+import './TaskEdit.css';
+import * as API from '../../apiCalls/apiCalls';
 import PropTypes from 'prop-types';
 
-export class TaskCreate extends Component {
+export class TaskEdit extends Component {
   constructor() {
     super();
     this.state = {
@@ -89,7 +89,8 @@ export class TaskCreate extends Component {
   }
 
   render() {
-    // const documentation = this.fetchDocs();
+    const documentation = this.fetchDocs();
+    const labs = this.fetchLabs();
     
     return (
       <div className="TaskCreate_page">
@@ -116,7 +117,10 @@ export class TaskCreate extends Component {
             value={this.state.videoLink}
           />
           <select name="" id="">
-            {/* {documentation} */}
+            {documentation}
+          </select>
+          <select name="" id="">
+            {labs}
           </select>
           <input type="submit" />
         </form>
@@ -125,4 +129,4 @@ export class TaskCreate extends Component {
   }
 }
 
-export default TaskCreate;
+export default TaskEdit;

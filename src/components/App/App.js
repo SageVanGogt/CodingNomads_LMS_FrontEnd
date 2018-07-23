@@ -5,7 +5,7 @@ import LogIn from '../LogIn/LogIn';
 import AdminHome from '../AdminHome/AdminHome';
 import { Courses } from '../Courses/Courses';
 import Tasks from '../Tasks/Tasks';
-import TaskCreate from '../TaskCreate/TaskCreate';
+import TaskEdit from '../TaskEdit/TaskEdit';
 import './App.css';
 
 class App extends Component {
@@ -54,7 +54,7 @@ class App extends Component {
 
           <Route
             exact path={routes.TASK_CREATE}
-            component={() => <TaskCreate />}
+            component={() => <TaskEdit />}
           />
         </div>
       </Router>
