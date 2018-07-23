@@ -790,4 +790,39 @@ describe('getAllDocs', () => {
   })
 })
 
+describe('getAllLabs', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve(['lab1', 'lab2', 'lab3'])
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/labs';
+
+    apiCalls.getAllLabs();
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  })
+
+  it('returns an array of all labs', async () => {
+    const expected = ['lab1', 'lab2', 'lab3'];
+    const result = await apiCalls.getAllLabs();
+
+    expect(result).toEqual(expected);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }));
+
+    const expected = Error('Error.');
+    const result = apiCalls.getAllLabs();
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
 

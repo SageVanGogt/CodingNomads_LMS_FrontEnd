@@ -2,6 +2,7 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './TaskCreate.css';
+import * as API from './../../apiCalls/apiCalls';
 import PropTypes from 'prop-types';
 
 export class TaskCreate extends Component {
@@ -11,7 +12,8 @@ export class TaskCreate extends Component {
       topic: '',
       videoLink: '',
       description: '',
-      documentation: []
+      documentation: [],
+      labs: []
     };
   }
 
@@ -27,7 +29,7 @@ export class TaskCreate extends Component {
   fetchDocs = async () => {
     //fetches all documentation and returns 
     //an array of objects
-    const response = await fetch(url);
+    const response = await API.getAllDocs();
     const docs = await response.json();
     const formattedDocs = this.formatDocOptions(docs);
     return formattedDocs;
@@ -55,8 +57,39 @@ export class TaskCreate extends Component {
     return allDocOptions;
   }
 
+  fetchLabs = async () => {
+    //fetches all documentation and returns 
+    //an array of objects
+    const response = await API.getAllLabs();
+    const labs = await response.json();
+    const formattedLabs = this.formatLabOptions(labs);
+    return formattedLabs;
+  }
+
+  formatDocOptions = (labs) => {
+    //should selecting a doc activate a function sending it to state?
+    //how should we store multiple doc choices?
+    const allLabOptions = labs.map((lab, index) => {
+      return (
+        <option 
+          key={`lab-${index}`} 
+          name="lab"
+          onClick={() => this.handleLabSelect(lab)}>
+          {lab.topic}
+        </option>
+      );
+    });
+    //the idea above is to allow us to allow an admin
+    //to select an option, which pushes it's info
+    //into the state documentation array
+    //then, on submit, the info will be mapped over
+    //and multiple fetch calls will make the inputs
+    //for the lookup tables
+    return allLabOptions;
+  }
+
   render() {
-    const documentation = this.fetchDocs();
+    // const documentation = this.fetchDocs();
     
     return (
       <div className="TaskCreate_page">
@@ -83,9 +116,9 @@ export class TaskCreate extends Component {
             value={this.state.videoLink}
           />
           <select name="" id="">
-            {documentation}
+            {/* {documentation} */}
           </select>
-          <input type="submit"/>
+          <input type="submit" />
         </form>
       </div>
     );

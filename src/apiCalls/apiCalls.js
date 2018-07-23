@@ -326,3 +326,17 @@ export const getAllDocs = async () => {
     throw error;
   }
 };
+
+export const getAllLabs = async () => {
+  const url = '/api/v1/labs';
+  try {
+    const response = await fetch(url);
+    if (response.status !== 200) {
+      throw Error('Error.');
+    }
+    const labs = await response.json();
+    return labs;
+  } catch (error) {
+    throw error;
+  }
+};
