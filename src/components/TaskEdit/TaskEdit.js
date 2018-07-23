@@ -63,13 +63,19 @@ export class TaskEdit extends Component {
   deleteChosenLab = (event, labId) => {
     event.preventDefault();
     const updatedLabs = this.state.labs.filter(lab => lab.id !== labId);
-    this.setState({labs: updatedLabs});
+    this.setState({
+      labs: updatedLabs,
+      labsToDelete: [...this.state.labsToDelete, labId]
+    });
   }
 
   deleteChosenDoc = (event, docId) => {
     event.preventDefault();
     const updatedDocs = this.state.documentation.filter(doc => doc.id !== docId);
-    this.setState({documentation: updatedDocs});
+    this.setState({
+      documentation: updatedDocs,
+      docsToDelete: [...this.state.docsToDelete, docId]
+    });
   }
 
   render() {
