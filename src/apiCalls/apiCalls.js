@@ -312,3 +312,17 @@ export const deleteTaskFromCourse = async (courseId, taskID) => {
     throw error;
   }
 };
+
+export const getAllDocs = async () => {
+  const url = '/api/v1/docs';
+  try {
+    const response = await fetch(url);
+    if (response.status !== 200) {
+      throw Error('Error.');
+    }
+    const docs = await response.json();
+    return docs;
+  } catch (error) {
+    throw error;
+  }
+};
