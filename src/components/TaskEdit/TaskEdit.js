@@ -7,7 +7,8 @@ import PropTypes from 'prop-types';
 import { mockDocs } from '../../mockData/mockDocs';
 import { mockLabs } from '../../mockData/mockLabs';
 import ReactTooltip from 'react-tooltip';
-import { LabOptions } from './../LabOptions/LabOptions';
+import { LabOptions } from '../LabOptions/LabOptions';
+import { DocOptions } from '../DocOptions/DocOptions';
 import { ChosenLabs } from '../ChosenLabs/ChosenLabs';
 
 export class TaskEdit extends Component {
@@ -37,24 +38,7 @@ export class TaskEdit extends Component {
     // const response = await API.getAllDocs();
     // const docs = await response.json();
     const docs = mockDocs;
-    const formattedDocs = this.formatDocOptions(docs);
-    return formattedDocs;
-  }
-
-  formatDocOptions = (docs) => {
-    const allDocOptions = docs.map((doc, index) => {
-      return (
-        <option 
-          key={`doc-${index}`} 
-          name="documentation"
-          // onClick={() => this.handleDocSelect(doc)}
-        >
-          {doc.topic}
-        </option>
-      );
-    });
-
-    return allDocOptions;
+    return docs;
   }
 
   fetchLabs = () => {
@@ -104,9 +88,10 @@ export class TaskEdit extends Component {
             onChange={this.handleChange}
             value={this.state.videoLink}
           />
-          <select name="" id="">
-            {documentation}
-          </select>
+          <DocOptions 
+            docs={documentation}
+            handleSelectDoc={this.handleSelectDoc}
+          />
           { 
             this.state.labs.length &&
             <ChosenLabs 

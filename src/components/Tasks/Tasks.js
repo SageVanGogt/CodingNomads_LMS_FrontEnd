@@ -1,8 +1,8 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './Tasks.css';
-import TaskCard from './../TaskCard/TaskCard';
-import { mockTasks } from './../../mockData/mockTasks';
+import TaskCard from '../TaskCard/TaskCard';
+import { mockTasks } from '../../mockData/mockTasks';
 
 export class Tasks extends Component {
   constructor() {
