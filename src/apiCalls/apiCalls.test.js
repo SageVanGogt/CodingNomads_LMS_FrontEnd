@@ -755,4 +755,39 @@ describe('deleteTaskFromCourse', () => {
   });
 });
 
+describe('getAllDocs', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve(['doc1', 'doc2', 'doc3'])
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/docs';
+
+    apiCalls.getAllDocs();
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  })
+
+  it('returns an array of all docs', async () => {
+    const expected = ['doc1', 'doc2', 'doc3'];
+    const result = await apiCalls.getAllDocs();
+
+    expect(result).toEqual(expected);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }));
+
+    const expected = Error('Error.');
+    const result = apiCalls.getAllDocs();
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
 
