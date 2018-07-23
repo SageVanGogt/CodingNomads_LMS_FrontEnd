@@ -6,10 +6,10 @@ import * as API from '../../apiCalls/apiCalls';
 import PropTypes from 'prop-types';
 import { mockDocs } from '../../mockData/mockDocs';
 import { mockLabs } from '../../mockData/mockLabs';
-import ReactTooltip from 'react-tooltip';
 import { LabOptions } from '../LabOptions/LabOptions';
 import { DocOptions } from '../DocOptions/DocOptions';
 import { ChosenLabs } from '../ChosenLabs/ChosenLabs';
+import { ChosenDocs } from '../ChosenDocs/ChosenDocs';
 
 export class TaskEdit extends Component {
   constructor() {
@@ -54,10 +54,22 @@ export class TaskEdit extends Component {
     });
   }
 
+  handleSelectDoc = (doc) => {
+    this.setState({
+      documentation: [...this.state.documentation, doc]
+    });
+  }
+
   deleteChosenLab = (event, labId) => {
     event.preventDefault();
     const updatedLabs = this.state.labs.filter(lab => lab.id !== labId);
     this.setState({labs: updatedLabs});
+  }
+
+  deleteChosenDoc = (event, docId) => {
+    event.preventDefault();
+    const updatedDocs = this.state.documentation.filter(doc => doc.id !== docId);
+    this.setState({documentation: updatedDocs});
   }
 
   render() {
@@ -88,13 +100,20 @@ export class TaskEdit extends Component {
             onChange={this.handleChange}
             value={this.state.videoLink}
           />
+          { 
+            this.state.documentation.length &&
+            <ChosenDocs 
+              docs={this.state.documentation}
+              deleteChosenDoc={this.deleteChosenDoc}
+            />
+          }
           <DocOptions 
             docs={documentation}
             handleSelectDoc={this.handleSelectDoc}
           />
           { 
             this.state.labs.length &&
-            <ChosenLabs 
+            <ChosenLabs
               labs={this.state.labs}
               deleteChosenLab={this.deleteChosenLab}
             />
