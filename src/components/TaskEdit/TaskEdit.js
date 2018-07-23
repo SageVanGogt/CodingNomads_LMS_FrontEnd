@@ -49,15 +49,19 @@ export class TaskEdit extends Component {
   }
 
   handleSelectLab = (lab) => {
-    this.setState({
-      labs: [...this.state.labs, lab]
-    });
+    if (!this.state.labs.includes(lab)) {
+      this.setState({
+        labs: [...this.state.labs, lab]
+      });
+    }
   }
 
   handleSelectDoc = (doc) => {
-    this.setState({
-      documentation: [...this.state.documentation, doc]
-    });
+    if (!this.state.documentation.includes(doc)) {
+      this.setState({
+        documentation: [...this.state.documentation, doc]
+      });
+    }
   }
 
   deleteChosenLab = (event, labId) => {
