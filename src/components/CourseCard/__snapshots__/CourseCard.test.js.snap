@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TaskCard should match the snapshot 1`] = `
+exports[`CourseCard should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TaskCard
+  Symbol(enzyme.__unrendered__): <CourseCard
     user={
         Object {
             "id": 1,
@@ -25,20 +25,16 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3
-          className="Task_name"
-/>,
+        <h2 />,
         <button
-          className="Task_edit-btn"
+          className="Course_edit-btn"
 >
-          view
+          View
 </button>,
         <hr />,
-        <p
-          className="Task_desc"
-/>,
+        <p />,
       ],
-      "className": "Task_card",
+      "className": "course_card",
     },
     "ref": null,
     "rendered": Array [
@@ -48,22 +44,21 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": undefined,
-          "className": "Task_name",
         },
         "ref": null,
         "rendered": null,
-        "type": "h3",
+        "type": "h2",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "view",
-          "className": "Task_edit-btn",
+          "children": "View",
+          "className": "Course_edit-btn",
         },
         "ref": null,
-        "rendered": "view",
+        "rendered": "View",
         "type": "button",
       },
       Object {
@@ -81,7 +76,6 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": undefined,
-          "className": "Task_desc",
         },
         "ref": null,
         "rendered": null,
@@ -97,20 +91,16 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3
-            className="Task_name"
-/>,
+          <h2 />,
           <button
-            className="Task_edit-btn"
+            className="Course_edit-btn"
 >
-            view
+            View
 </button>,
           <hr />,
-          <p
-            className="Task_desc"
-/>,
+          <p />,
         ],
-        "className": "Task_card",
+        "className": "course_card",
       },
       "ref": null,
       "rendered": Array [
@@ -120,22 +110,21 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": undefined,
-            "className": "Task_name",
           },
           "ref": null,
           "rendered": null,
-          "type": "h3",
+          "type": "h2",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "view",
-            "className": "Task_edit-btn",
+            "children": "View",
+            "className": "Course_edit-btn",
           },
           "ref": null,
-          "rendered": "view",
+          "rendered": "View",
           "type": "button",
         },
         Object {
@@ -153,7 +142,6 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": undefined,
-            "className": "Task_desc",
           },
           "ref": null,
           "rendered": null,
@@ -173,11 +161,11 @@ ShallowWrapper {
 }
 `;
 
-exports[`TaskCard should match the snapshot for admin permissions 1`] = `
+exports[`CourseCard should match the snapshot for admin permissions 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TaskCard
+  Symbol(enzyme.__unrendered__): <CourseCard
     user={
         Object {
             "id": 1,
@@ -198,20 +186,16 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3
-          className="Task_name"
-/>,
+        <h2 />,
         <button
-          className="Task_edit-btn"
+          className="Course_edit-btn"
 >
-          edit
+          Edit
 </button>,
         <hr />,
-        <p
-          className="Task_desc"
-/>,
+        <p />,
       ],
-      "className": "Task_card",
+      "className": "course_card",
     },
     "ref": null,
     "rendered": Array [
@@ -221,22 +205,21 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": undefined,
-          "className": "Task_name",
         },
         "ref": null,
         "rendered": null,
-        "type": "h3",
+        "type": "h2",
       },
       Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "edit",
-          "className": "Task_edit-btn",
+          "children": "Edit",
+          "className": "Course_edit-btn",
         },
         "ref": null,
-        "rendered": "edit",
+        "rendered": "Edit",
         "type": "button",
       },
       Object {
@@ -254,7 +237,6 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": undefined,
-          "className": "Task_desc",
         },
         "ref": null,
         "rendered": null,
@@ -270,20 +252,16 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3
-            className="Task_name"
-/>,
+          <h2 />,
           <button
-            className="Task_edit-btn"
+            className="Course_edit-btn"
 >
-            edit
+            Edit
 </button>,
           <hr />,
-          <p
-            className="Task_desc"
-/>,
+          <p />,
         ],
-        "className": "Task_card",
+        "className": "course_card",
       },
       "ref": null,
       "rendered": Array [
@@ -293,22 +271,21 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": undefined,
-            "className": "Task_name",
           },
           "ref": null,
           "rendered": null,
-          "type": "h3",
+          "type": "h2",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "edit",
-            "className": "Task_edit-btn",
+            "children": "Edit",
+            "className": "Course_edit-btn",
           },
           "ref": null,
-          "rendered": "edit",
+          "rendered": "Edit",
           "type": "button",
         },
         Object {
@@ -326,7 +303,6 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": undefined,
-            "className": "Task_desc",
           },
           "ref": null,
           "rendered": null,

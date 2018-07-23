@@ -1,0 +1,293 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskCard should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Tasks />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Connect(TaskCard)
+          description="Lorem Khaled Ipsum is a major key to success. Every chance I get, I water the plants, Lion! Special cloth alert. Congratulations, you played yourself."
+          id={1}
+          name="while loops"
+          videoLink="getlearn.youtube"
+/>,
+        <Connect(TaskCard)
+          description="Celebrate success right, the only way, apple. We don’t see them, we will never see them. In life you have to take the trash out, if you have trash in your life, take it out, throw it away, get rid of it, major key."
+          id={2}
+          name="thunks and sagas"
+          videoLink="getlearn.youtube"
+/>,
+        <Connect(TaskCard)
+          description="Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast. "
+          id={3}
+          name="why javascript is better"
+          videoLink="getlearn.youtube"
+/>,
+        <Connect(TaskCard)
+          description="They never said winning was easy. Some people can’t handle success, I can. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I’m never giving up, I’m just getting started."
+          id={4}
+          name="programmers and their dang opinions"
+          videoLink="getlearn.youtube"
+/>,
+        <Connect(TaskCard)
+          description="It’s important to use cocoa butter. It’s the key to more success, why not live smooth? Why live rough?"
+          id={5}
+          name="programming your future"
+          videoLink="getlearn.youtube"
+/>,
+        <Connect(TaskCard)
+          description="Surround yourself with angels. You smart, you loyal, you a genius. Every chance I get, I water the plants, Lion!"
+          id={6}
+          name="how to use documentation"
+          videoLink="getlearn.youtube"
+/>,
+      ],
+      "className": "Task_container",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "task-card-0",
+        "nodeType": "class",
+        "props": Object {
+          "description": "Lorem Khaled Ipsum is a major key to success. Every chance I get, I water the plants, Lion! Special cloth alert. Congratulations, you played yourself.",
+          "id": 1,
+          "name": "while loops",
+          "videoLink": "getlearn.youtube",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "task-card-1",
+        "nodeType": "class",
+        "props": Object {
+          "description": "Celebrate success right, the only way, apple. We don’t see them, we will never see them. In life you have to take the trash out, if you have trash in your life, take it out, throw it away, get rid of it, major key.",
+          "id": 2,
+          "name": "thunks and sagas",
+          "videoLink": "getlearn.youtube",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "task-card-2",
+        "nodeType": "class",
+        "props": Object {
+          "description": "Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast. ",
+          "id": 3,
+          "name": "why javascript is better",
+          "videoLink": "getlearn.youtube",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "task-card-3",
+        "nodeType": "class",
+        "props": Object {
+          "description": "They never said winning was easy. Some people can’t handle success, I can. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I’m never giving up, I’m just getting started.",
+          "id": 4,
+          "name": "programmers and their dang opinions",
+          "videoLink": "getlearn.youtube",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "task-card-4",
+        "nodeType": "class",
+        "props": Object {
+          "description": "It’s important to use cocoa butter. It’s the key to more success, why not live smooth? Why live rough?",
+          "id": 5,
+          "name": "programming your future",
+          "videoLink": "getlearn.youtube",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "task-card-5",
+        "nodeType": "class",
+        "props": Object {
+          "description": "Surround yourself with angels. You smart, you loyal, you a genius. Every chance I get, I water the plants, Lion!",
+          "id": 6,
+          "name": "how to use documentation",
+          "videoLink": "getlearn.youtube",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Connect(TaskCard)
+            description="Lorem Khaled Ipsum is a major key to success. Every chance I get, I water the plants, Lion! Special cloth alert. Congratulations, you played yourself."
+            id={1}
+            name="while loops"
+            videoLink="getlearn.youtube"
+/>,
+          <Connect(TaskCard)
+            description="Celebrate success right, the only way, apple. We don’t see them, we will never see them. In life you have to take the trash out, if you have trash in your life, take it out, throw it away, get rid of it, major key."
+            id={2}
+            name="thunks and sagas"
+            videoLink="getlearn.youtube"
+/>,
+          <Connect(TaskCard)
+            description="Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast. "
+            id={3}
+            name="why javascript is better"
+            videoLink="getlearn.youtube"
+/>,
+          <Connect(TaskCard)
+            description="They never said winning was easy. Some people can’t handle success, I can. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I’m never giving up, I’m just getting started."
+            id={4}
+            name="programmers and their dang opinions"
+            videoLink="getlearn.youtube"
+/>,
+          <Connect(TaskCard)
+            description="It’s important to use cocoa butter. It’s the key to more success, why not live smooth? Why live rough?"
+            id={5}
+            name="programming your future"
+            videoLink="getlearn.youtube"
+/>,
+          <Connect(TaskCard)
+            description="Surround yourself with angels. You smart, you loyal, you a genius. Every chance I get, I water the plants, Lion!"
+            id={6}
+            name="how to use documentation"
+            videoLink="getlearn.youtube"
+/>,
+        ],
+        "className": "Task_container",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "task-card-0",
+          "nodeType": "class",
+          "props": Object {
+            "description": "Lorem Khaled Ipsum is a major key to success. Every chance I get, I water the plants, Lion! Special cloth alert. Congratulations, you played yourself.",
+            "id": 1,
+            "name": "while loops",
+            "videoLink": "getlearn.youtube",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "task-card-1",
+          "nodeType": "class",
+          "props": Object {
+            "description": "Celebrate success right, the only way, apple. We don’t see them, we will never see them. In life you have to take the trash out, if you have trash in your life, take it out, throw it away, get rid of it, major key.",
+            "id": 2,
+            "name": "thunks and sagas",
+            "videoLink": "getlearn.youtube",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "task-card-2",
+          "nodeType": "class",
+          "props": Object {
+            "description": "Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our breakfast. ",
+            "id": 3,
+            "name": "why javascript is better",
+            "videoLink": "getlearn.youtube",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "task-card-3",
+          "nodeType": "class",
+          "props": Object {
+            "description": "They never said winning was easy. Some people can’t handle success, I can. Put it this way, it took me twenty five years to get these plants, twenty five years of blood sweat and tears, and I’m never giving up, I’m just getting started.",
+            "id": 4,
+            "name": "programmers and their dang opinions",
+            "videoLink": "getlearn.youtube",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "task-card-4",
+          "nodeType": "class",
+          "props": Object {
+            "description": "It’s important to use cocoa butter. It’s the key to more success, why not live smooth? Why live rough?",
+            "id": 5,
+            "name": "programming your future",
+            "videoLink": "getlearn.youtube",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "task-card-5",
+          "nodeType": "class",
+          "props": Object {
+            "description": "Surround yourself with angels. You smart, you loyal, you a genius. Every chance I get, I water the plants, Lion!",
+            "id": 6,
+            "name": "how to use documentation",
+            "videoLink": "getlearn.youtube",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Tasks } from './Tasks';
+import { Courses } from './Courses';
 
 describe('TaskCard', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Tasks />);
+    wrapper = shallow(<Courses />);
   });
 
   it('should match the snapshot', () => {
