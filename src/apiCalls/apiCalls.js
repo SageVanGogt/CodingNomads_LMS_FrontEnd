@@ -340,3 +340,8 @@ export const getAllLabs = async () => {
     throw error;
   }
 };
+
+
+//delete doc from task /api/v1/task/:id/docs
+//delete lab from task /api/v1/task/:id/labs
+//delete /api/v1/course/:id/tasks

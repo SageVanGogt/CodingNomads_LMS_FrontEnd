@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import './TaskEdit.css';
 import * as API from '../../apiCalls/apiCalls';
 import PropTypes from 'prop-types';
+import { mockDocs } from '../../mockData/mockDocs';
+import { mockLabs } from '../../mockData/mockLabs';
+import ReactTooltip from 'react-tooltip';
+import { LabOptions } from './../LabOptions/LabOptions';
 
 export class TaskEdit extends Component {
   constructor() {
@@ -13,7 +17,9 @@ export class TaskEdit extends Component {
       videoLink: '',
       description: '',
       documentation: [],
-      labs: []
+      labs: [],
+      docsToDelete: [],
+      labsToDelete: []
     };
   }
 
@@ -26,72 +32,69 @@ export class TaskEdit extends Component {
     });
   }
 
-  fetchDocs = async () => {
-    //fetches all documentation and returns 
-    //an array of objects
-    const response = await API.getAllDocs();
-    const docs = await response.json();
+  fetchDocs = () => {
+    // const response = await API.getAllDocs();
+    // const docs = await response.json();
+    const docs = mockDocs;
     const formattedDocs = this.formatDocOptions(docs);
     return formattedDocs;
   }
 
   formatDocOptions = (docs) => {
-    //should selecting a doc activate a function sending it to state?
-    //how should we store multiple doc choices?
     const allDocOptions = docs.map((doc, index) => {
       return (
         <option 
           key={`doc-${index}`} 
           name="documentation"
-          onClick={() => this.handleDocSelect(doc)}>
+          // onClick={() => this.handleDocSelect(doc)}
+        >
           {doc.topic}
         </option>
       );
     });
-    //the idea above is to allow us to allow an admin
-    //to select an option, which pushes it's info
-    //into the state documentation array
-    //then, on submit, the info will be mapped over
-    //and multiple fetch calls will make the inputs
-    //for the lookup tables
+
     return allDocOptions;
   }
 
-  fetchLabs = async () => {
-    //fetches all documentation and returns 
-    //an array of objects
-    const response = await API.getAllLabs();
-    const labs = await response.json();
-    const formattedLabs = this.formatLabOptions(labs);
-    return formattedLabs;
+  fetchLabs = () => {
+    // const response = await API.getAllLabs();
+    // const labs = await response.json();
+    const labs = mockLabs;
+    return labs;
   }
 
-  formatDocOptions = (labs) => {
-    //should selecting a doc activate a function sending it to state?
-    //how should we store multiple doc choices?
-    const allLabOptions = labs.map((lab, index) => {
+  handleSelectLab = (lab) => {
+    this.setState({
+      labs: [...this.state.labs, lab]
+    });
+  }
+
+  formatChosenLabs = () => {
+    const chosenLabsToHtml = this.state.labs.map((lab, index) => {
       return (
-        <option 
-          key={`lab-${index}`} 
-          name="lab"
-          onClick={() => this.handleLabSelect(lab)}>
-          {lab.topic}
-        </option>
+        <div 
+          key={`chose-lab-${index}`}
+          className="Lab_chosen" 
+          title={lab.description}
+        >
+          {lab.name}
+          <button>
+            delete
+          </button>
+        </div>
       );
     });
-    //the idea above is to allow us to allow an admin
-    //to select an option, which pushes it's info
-    //into the state documentation array
-    //then, on submit, the info will be mapped over
-    //and multiple fetch calls will make the inputs
-    //for the lookup tables
-    return allLabOptions;
+    return chosenLabsToHtml;
   }
 
   render() {
     const documentation = this.fetchDocs();
     const labs = this.fetchLabs();
-    
+    // const chosenDocs = this.state.documentation.length && this.formatChosenDocs(this.state.documentation);
+    const chosenLabs = 
+      this.state.labs.length && this.formatChosenLabs(this.state.labs);
+    // const addedDoc = this.addDocsSelect();
+
     return (
       <div className="TaskCreate_page">
         <form action="submit" className="TaskCreate_form">
@@ -119,9 +122,13 @@ export class TaskEdit extends Component {
           <select name="" id="">
             {documentation}
           </select>
-          <select name="" id="">
-            {labs}
-          </select>
+          <ul>
+            { chosenLabs }
+          </ul>
+          <LabOptions 
+            labs={labs} 
+            handleSelectLab={this.handleSelectLab}
+          />
           <input type="submit" />
         </form>
       </div>
