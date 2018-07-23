@@ -3,7 +3,6 @@ import './LabOptions';
 import PropTypes from 'prop-types';
 
 export const LabOptions = ({ labs, handleSelectLab }) => {
-  console.log(labs)
   const labOptions = labs.map((lab, index) => {
     return (
       <option 

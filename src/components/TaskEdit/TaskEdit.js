@@ -8,6 +8,7 @@ import { mockDocs } from '../../mockData/mockDocs';
 import { mockLabs } from '../../mockData/mockLabs';
 import ReactTooltip from 'react-tooltip';
 import { LabOptions } from './../LabOptions/LabOptions';
+import { ChosenLabs } from '../ChosenLabs/ChosenLabs';
 
 export class TaskEdit extends Component {
   constructor() {
@@ -69,31 +70,15 @@ export class TaskEdit extends Component {
     });
   }
 
-  formatChosenLabs = () => {
-    const chosenLabsToHtml = this.state.labs.map((lab, index) => {
-      return (
-        <div 
-          key={`chose-lab-${index}`}
-          className="Lab_chosen" 
-          title={lab.description}
-        >
-          {lab.name}
-          <button>
-            delete
-          </button>
-        </div>
-      );
-    });
-    return chosenLabsToHtml;
+  deleteChosenLab = (event, labId) => {
+    event.preventDefault();
+    const updatedLabs = this.state.labs.filter(lab => lab.id !== labId);
+    this.setState({labs: updatedLabs});
   }
 
   render() {
     const documentation = this.fetchDocs();
     const labs = this.fetchLabs();
-    // const chosenDocs = this.state.documentation.length && this.formatChosenDocs(this.state.documentation);
-    const chosenLabs = 
-      this.state.labs.length && this.formatChosenLabs(this.state.labs);
-    // const addedDoc = this.addDocsSelect();
 
     return (
       <div className="TaskCreate_page">
@@ -122,9 +107,13 @@ export class TaskEdit extends Component {
           <select name="" id="">
             {documentation}
           </select>
-          <ul>
-            { chosenLabs }
-          </ul>
+          { 
+            this.state.labs.length &&
+            <ChosenLabs 
+              labs={this.state.labs}
+              deleteChosenLab={this.deleteChosenLab}
+            />
+          }
           <LabOptions 
             labs={labs} 
             handleSelectLab={this.handleSelectLab}
