@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import * as API from '../../apiCalls/apiCalls';
 import { Tasks, mapDispatchToProps } from './Tasks';
+import { updateCurrentTask } from '../../actions/currentTask';
 
 describe('Tasks', () => {
   let mockProps; 
@@ -38,8 +39,8 @@ describe('Tasks', () => {
     })
 
     it('calls this.props.updateCurrentTask with the correct arguments', async () => {
-      let expected = mockTask;
-      let wrapperInst = wrapper.instance();
+      const expected = mockTask;
+      const wrapperInst = wrapper.instance();
       
       await wrapperInst.addTask();
 
@@ -47,8 +48,8 @@ describe('Tasks', () => {
     })
 
     it ('calls this.props.history.push with the correct arguments', async () => {
-      let expected = '/tasks/edit';
-      let wrapperInst = wrapper.instance();
+      const expected = '/tasks/edit';
+      const wrapperInst = wrapper.instance();
 
       await wrapperInst.addTask();
 
@@ -59,11 +60,13 @@ describe('Tasks', () => {
 
   describe('mapDispatchToProps', () => {
     it('calls dispatch with the correct arguments', () => {
+      const dispatch = jest.fn();
+      const expected = updateCurrentTask(mockTask); 
+      const mappedProps = mapDispatchToProps(dispatch);
 
-    })
+      mappedProps.updateCurrentTask(mockTask);
 
-    it('returns an object with updateCurrentTask', () => {
-
+      expect(dispatch).toHaveBeenCalledWith(expected);
     })
   })
 });
