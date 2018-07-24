@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { mockTasks } from '../mockData/mockTasks';
-import './TaskCreate.css';
+import { mockTasks } from '../../mockData/mockTasks';
+import './CourseCreate.css';
 import PropTypes from 'prop-types';
-import * as apiCalls from '../apiCalls/apiCalls';
+import * as apiCalls from '../../apiCalls/apiCalls';
 
 export class CourseCreate extends Component {
   constructor() {
