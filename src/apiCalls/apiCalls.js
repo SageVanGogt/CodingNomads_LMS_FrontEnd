@@ -341,6 +341,22 @@ export const getAllLabs = async () => {
   }
 };
 
+export const deleteDocsFromTask = async (taskId, docsArr) => {
+  const url = `/api/v1/task/${taskId}/docs`;
+  const options = {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({docs: docsArr})
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 204) {
+      throw Error('That id could not be found.')
+    }
+  } catch (error) {
+    throw error;
+  }
+};
 
 //delete doc from task /api/v1/task/:id/docs
 //delete lab from task /api/v1/task/:id/labs

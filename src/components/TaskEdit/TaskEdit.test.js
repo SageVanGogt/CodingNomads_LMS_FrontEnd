@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { TaskCreate } from './TaskEdit';
+import { TaskEdit } from './TaskEdit';
 
-describe('TaskCreate', () => {
+describe('TaskEdit', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<TaskCreate />);
+    wrapper = shallow(<TaskEdit />);
   })
 
   it('should match the snapshot', () => {
