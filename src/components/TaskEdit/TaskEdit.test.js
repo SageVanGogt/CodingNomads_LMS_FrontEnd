@@ -38,7 +38,7 @@ describe('TaskEdit', () => {
         id: 1,
         topic: 'cats',
         videoLink: 'caden@youtube',
-        documentation: [],
+        docs: [],
         labs: []
       };
       let expected = 'caden@youtube';
