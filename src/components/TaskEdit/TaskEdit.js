@@ -15,14 +15,32 @@ export class TaskEdit extends Component {
   constructor() {
     super();
     this.state = {
-      topic: '',
+      id: null,
+      name: '',
       videoLink: '',
       description: '',
-      documentation: [],
+      docs: [],
       labs: [],
       docsToDelete: [],
       labsToDelete: []
     };
+  }
+
+  componentDidUpdate = (prevProps) => {
+    const { currentTask } = this.props;
+    if (prevProps.currentTask !== currentTask) {
+      this.loadTaskInfo(currentTask);
+    }
+  }
+
+  loadTaskInfo = ({id, name, videoLink, docs, labs}) => {
+    this.setState({
+      id,
+      name,
+      videoLink,
+      docs,
+      labs
+    });
   }
 
   handleChange = (event) => {
@@ -57,9 +75,9 @@ export class TaskEdit extends Component {
   }
 
   handleSelectDoc = (doc) => {
-    if (!this.state.documentation.includes(doc)) {
+    if (!this.state.docs.includes(doc)) {
       this.setState({
-        documentation: [...this.state.documentation, doc]
+        docs: [...this.state.docs, doc]
       });
     }
   }
@@ -75,15 +93,15 @@ export class TaskEdit extends Component {
 
   deleteChosenDoc = (event, docId) => {
     event.preventDefault();
-    const updatedDocs = this.state.documentation.filter(doc => doc.id !== docId);
+    const updatedDocs = this.state.docs.filter(doc => doc.id !== docId);
     this.setState({
-      documentation: updatedDocs,
+      docs: updatedDocs,
       docsToDelete: [...this.state.docsToDelete, docId]
     });
   }
 
   render() {
-    const documentation = this.fetchDocs();
+    const docs = this.fetchDocs();
     const labs = this.fetchLabs();
 
     return (
@@ -91,10 +109,10 @@ export class TaskEdit extends Component {
         <form action="submit" className="TaskCreate_form">
           <input 
             type="text" 
-            placeholder="topic" 
-            name="topic"
+            placeholder="name" 
+            name="name"
             onChange={this.handleChange}
-            value={this.state.topic}
+            value={this.state.name}
           />
           <input 
             type="text" 
@@ -111,14 +129,14 @@ export class TaskEdit extends Component {
             value={this.state.videoLink}
           />
           { 
-            this.state.documentation.length &&
+            this.state.docs.length &&
             <ChosenDocs 
-              docs={this.state.documentation}
+              docs={this.state.docs}
               deleteChosenDoc={this.deleteChosenDoc}
             />
           }
           <DocOptions 
-            docs={documentation}
+            docs={docs}
             handleSelectDoc={this.handleSelectDoc}
           />
           { 
@@ -139,4 +157,12 @@ export class TaskEdit extends Component {
   }
 }
 
-export default TaskEdit;
+export const mapStateToProps = (state) => ({
+  currentTask: state.currentTask
+});
+
+TaskEdit.propTypes = {
+  currentTask: PropTypes.object
+};
+
+export default connect(mapStateToProps, null)(TaskEdit);

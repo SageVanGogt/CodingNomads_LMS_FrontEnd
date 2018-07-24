@@ -1,11 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { TaskEdit } from './TaskEdit';
+import { TaskEdit, mapStateToProps } from './TaskEdit';
 
 describe('TaskEdit', () => {
   let wrapper;
+  let mockCurrentTask;
 
   beforeEach(() => {
+    mockCurrentTask = {id: null, name: ''};
     wrapper = shallow(<TaskEdit />);
   })
 
@@ -25,6 +27,37 @@ describe('TaskEdit', () => {
       let expected = 'caden@youtube';
       wrapper.instance().handleChange(mockEvent);
       let actual = wrapper.state('videoLink');
+
+      expect(actual).toEqual(expected);
+    })
+  })
+
+  describe('loadTaskInfo', () => {
+    it('should update the appropriate state with info from store', () => {
+      let mockTask = {
+        id: 1,
+        name: 'cats',
+        videoLink: 'caden@youtube',
+        docs: [],
+        labs: []
+      };
+      let expected = 'caden@youtube';
+      wrapper.instance().loadTaskInfo(mockTask);
+      let actual = wrapper.state('videoLink');
+
+      expect(actual).toEqual(expected);
+    })
+  })
+
+  describe('mapStateToProps', () =>  {
+    it('should return a state with the currentTask prop', () => {
+      let mockState = {
+        currentTask: {id: null, name: ''},
+        user: {id: 1}
+      };
+      let mappedProps = mapStateToProps(mockState);
+      let actual = mappedProps.currentTask;
+      let expected = {id: null, name: ''};
 
       expect(actual).toEqual(expected);
     })
