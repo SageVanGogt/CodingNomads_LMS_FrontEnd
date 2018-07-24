@@ -26,6 +26,23 @@ export class TaskEdit extends Component {
     };
   }
 
+  componentDidUpdate = (prevProps) => {
+    const { currentTask } = this.props;
+    if (prevProps.currentTask !== currentTask) {
+      this.loadTaskInfo(currentTask);
+    }
+  }
+
+  loadTaskInfo = ({id, topic, videoLink, documentation, labs}) => {
+    this.setState({
+      id,
+      topic,
+      videoLink,
+      documentation,
+      labs
+    });
+  }
+
   handleChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
