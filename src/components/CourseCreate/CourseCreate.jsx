@@ -28,13 +28,13 @@ export class CourseCreate extends Component {
     });
   }
 
-  fetchTasks = () => {
+  fetchTasks = async () => {
     // const tasks = await apiCalls.getAllTasks();
     this.setState({allTasks: mockTasks}) //normally tasks
   }
   
   handleTaskSelect = (e) => {
-    const task = this.state.allTasks.find(task => task.name === e.target.value)
+    const task = this.state.allTasks.find(task => task.name === e.target.value);
     if (!this.state.tasks.includes(task)) {
       this.setState({
         tasks: [...this.state.tasks, task]
