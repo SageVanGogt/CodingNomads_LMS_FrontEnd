@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { connect } from 'react-redux';
+import { connect, mapDispatchToProps } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import './Tasks.css';
 import TaskCard from '../TaskCard/TaskCard';
@@ -41,7 +41,5 @@ export class Tasks extends Component {
 export default withRouter(Tasks);
 
 
-// add action creator for currentTask
-// add reducer to update currentTask in store
 // add mdtp for updateCurrentTask
 
