@@ -114,6 +114,17 @@ export class TaskEdit extends Component {
     } catch (error) {
       //mdp this error
     }
+    this.handleDeletedLabs();
+    // this.handleDeletedDocs();
+  }
+
+  handleDeletedLabs = async () => {
+    const labsToDelete = this.state.labsToDelete;
+    try {
+      await API.deleteLabsFromTask(labsToDelete);
+    } catch (error) {
+      //mdp this error
+    }
   }
 
   render() {

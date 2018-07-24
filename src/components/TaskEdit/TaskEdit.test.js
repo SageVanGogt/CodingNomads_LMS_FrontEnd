@@ -68,6 +68,17 @@ describe('TaskEdit', () => {
     })
   })
 
+  describe('handleDeletedLabs', () => {
+    it('should call  with the correct params', async () => {
+      let mockLabs = [{}, {}];
+      wrapper.setState({labsToDelete: mockLabs});
+      let expected = mockLabs;
+      await wrapper.instance().handleDeletedLabs();
+
+      expect(API.deleteLabsFromTask).toHaveBeenCalledWith(expected);
+    })
+  })
+
   describe('mapStateToProps', () =>  {
     it('should return a state with the currentTask prop', () => {
       let mockState = {
