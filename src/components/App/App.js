@@ -48,12 +48,12 @@ class App extends Component {
             component={() => <Courses />}
           />
           <Route
-            exact path={routes.TASK_VIEW}
+            exact path={routes.TASKS}
             component={() => <Tasks />}
           />
 
           <Route
-            exact path={routes.TASK_CREATE}
+            exact path={routes.TASKS_EDIT}
             component={() => <TaskEdit />}
           />
         </div>
