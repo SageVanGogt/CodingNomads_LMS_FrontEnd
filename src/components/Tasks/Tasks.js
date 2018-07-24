@@ -14,7 +14,7 @@ export class Tasks extends Component {
     super(props);
   }
 
-  addTask = () => {
+  addTask = async () => {
     // const newTask = await postTask()
     const newTask = {
       id: 1,

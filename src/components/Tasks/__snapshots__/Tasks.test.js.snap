@@ -1,10 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TaskCard should match the snapshot 1`] = `
+exports[`Tasks should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Tasks />,
+  Symbol(enzyme.__unrendered__): <Tasks
+    history={
+        Object {
+            "push": [Function],
+          }
+    }
+    updateCurrentTask={[Function]}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
