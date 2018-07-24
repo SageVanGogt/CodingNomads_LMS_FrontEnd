@@ -26,7 +26,7 @@ export const getTask = async (taskId) => {
   }
 };
 
-export const addTask = async (newTask) => {
+export const postTask = async (newTask) => {
   const url = '/api/v1/tasks';
   const options = {
     method: 'POST',
@@ -278,7 +278,7 @@ export const getCourseTasks = async (courseID) => {
   }
 };
 
-export const addTaskToCourse = async (courseId, taskID) => {
+export const postTaskToCourse = async (courseId, taskID) => {
   const url = `/api/v1/courses/${courseId}/tasks`;
   const options = {
     method: 'POST',

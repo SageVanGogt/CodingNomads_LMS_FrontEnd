@@ -4,7 +4,8 @@ import { withRouter } from 'react-router-dom';
 import './Tasks.css';
 import TaskCard from '../TaskCard/TaskCard';
 import { mockTasks } from '../../mockData/mockTasks';
-import { TASKS_EDIT } from '../../constants/routes.js';
+import { TASKS_EDIT } from '../../constants/routes';
+import { postTask } from '../../apiCalls/apiCalls';
 
 export class Tasks extends Component {
   constructor() {
@@ -12,7 +13,7 @@ export class Tasks extends Component {
   }
 
   addTask = () => {
-    // const taskId = await addTask({})
+    // const taskId = await postTask({})
     // update store?
 
     this.props.history.push(TASKS_EDIT)

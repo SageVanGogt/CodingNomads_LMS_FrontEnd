@@ -70,7 +70,7 @@ describe('getTask', () => {
   })
 })
 
-describe('addTask', () => {
+describe('postTask', () => {
   let newTask;
 
   beforeEach(() => {
@@ -89,14 +89,14 @@ describe('addTask', () => {
       body: JSON.stringify(newTask)
     };
 
-    apiCalls.addTask(newTask);
+    apiCalls.postTask(newTask);
 
     expect(window.fetch).toHaveBeenCalledWith(url, options);
   })
 
   it('returns a new task object with task id', async () => {
     const expected = { id: 3, name: 'this is a new task' };
-    const result = await apiCalls.addTask(newTask);
+    const result = await apiCalls.postTask(newTask);
 
     expect(result).toEqual(expected);
   })
@@ -107,7 +107,7 @@ describe('addTask', () => {
     }))
 
     const expected = Error('Does not have necessary info');
-    const result = apiCalls.addTask(newTask);
+    const result = apiCalls.postTask(newTask);
 
     expect(result).rejects.toEqual(expected);
   })
@@ -681,7 +681,7 @@ describe('getCourseTasks', () => {
   });
 });
 
-describe('addTaskToCourse', () => {
+describe('postTaskToCourse', () => {
   let taskID;
 
   beforeEach(() => {
