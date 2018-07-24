@@ -13,7 +13,7 @@ export class Tasks extends Component {
   }
 
   addTask = () => {
-    // const taskId = await postTask({})
+    // const taskId = await postTask()
     // update store?
 
     this.props.history.push(TASKS_EDIT)
@@ -39,4 +39,9 @@ export class Tasks extends Component {
 }
 
 export default withRouter(Tasks);
+
+
+// add action creator for currentTask
+// add reducer to update currentTask in store
+// add mdtp for updateCurrentTask
 
