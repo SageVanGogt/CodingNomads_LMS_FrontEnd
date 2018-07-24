@@ -408,7 +408,3 @@ export const deleteStudentsFromCourse = async (courseId, studentsArr) => {
     throw error;
   }
 };
-
-//deleteTasksFromCourse and deleteStudentsFromCourse
-
-//delete /api/v1/course/:id/tasks
