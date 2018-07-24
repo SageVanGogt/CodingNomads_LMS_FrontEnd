@@ -10,8 +10,8 @@ import { postTask } from '../../apiCalls/apiCalls';
 import { updateCurrentTask } from '../../actions/currentTask'
 
 export class Tasks extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   addTask = () => {
