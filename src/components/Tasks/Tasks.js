@@ -23,8 +23,8 @@ export class Tasks extends Component {
       docs: [],
       labs: []
     };
-    this.props.updateCurrentTask(newTask);
 
+    this.props.updateCurrentTask(newTask);
     this.props.history.push(TASKS_EDIT)
   }
 
