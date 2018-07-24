@@ -100,6 +100,22 @@ export class TaskEdit extends Component {
     });
   }
 
+  handleSubmit = async () => {
+    const { id, name, videoLink, docs, labs } = this.state;
+    const taskToUpdate = {
+      id,
+      name,
+      videoLink,
+      docs,
+      labs
+    };
+    try {
+      await API.updateTask(taskToUpdate);
+    } catch (error) {
+      //mdp this error
+    }
+  }
+
   render() {
     const docs = this.fetchDocs();
     const labs = this.fetchLabs();

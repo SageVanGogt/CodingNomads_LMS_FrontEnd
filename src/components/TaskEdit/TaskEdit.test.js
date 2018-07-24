@@ -1,6 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { TaskEdit, mapStateToProps } from './TaskEdit';
+import * as API from './../../apiCalls/apiCalls';
+
+jest.mock('./../../apiCalls/apiCalls');
 
 describe('TaskEdit', () => {
   let wrapper;
@@ -46,6 +49,22 @@ describe('TaskEdit', () => {
       let actual = wrapper.state('videoLink');
 
       expect(actual).toEqual(expected);
+    })
+  })
+
+  describe('handleSubmit', () => {
+    it('should call updateTask with the correct params', async () => {
+      let mockTask = {
+        id: null,
+        name: '',
+        videoLink: '',
+        docs: [],
+        labs: []
+      };
+      let expected = mockTask;
+      await wrapper.instance().handleSubmit();
+
+      expect(API.updateTask).toHaveBeenCalledWith(expected);
     })
   })
 

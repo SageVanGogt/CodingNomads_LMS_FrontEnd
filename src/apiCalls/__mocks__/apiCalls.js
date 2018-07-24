@@ -6,3 +6,6 @@ Promise.resolve(mockDocs));
 
 export const getAllLabs = jest.fn().mockImplementation(() => 
 Promise.resolve(mockLabs));
+
+export const updateTask = jest.fn().mockImplementation(() => 
+Promise.resolve());
