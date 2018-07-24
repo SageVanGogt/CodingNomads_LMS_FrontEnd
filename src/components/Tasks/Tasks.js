@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { func } from 'prop-types';
 import './Tasks.css';
 import TaskCard from '../TaskCard/TaskCard';
 import { mockTasks } from '../../mockData/mockTasks';
@@ -50,6 +51,10 @@ export class Tasks extends Component {
 export const mapDispatchToProps = (dispatch) => ({
   updateCurrentTask: (currentTask) => dispatch(updateCurrentTask(currentTask))
 })
+
+Tasks.propTypes = {
+  updateCurrentTask: func.isRequired
+}
 
 export default withRouter(connect(null, mapDispatchToProps)(Tasks));
 
