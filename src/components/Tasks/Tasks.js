@@ -12,9 +12,8 @@ export class Tasks extends Component {
   }
 
   addTask = () => {
-    // post new task
-    // get taskId from response
-    // update store
+    // const taskId = await addTask({})
+    // update store?
 
     this.props.history.push(TASKS_EDIT)
   }
