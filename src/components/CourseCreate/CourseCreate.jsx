@@ -14,7 +14,8 @@ export class CourseCreate extends Component {
       tasks: [],
       students: [],
       tasksToDelete: [],
-      labsToDelete: []
+      labsToDelete: [],
+      allTasks: []
     };
   }
 
@@ -29,27 +30,11 @@ export class CourseCreate extends Component {
 
   fetchTasks = () => {
     // const tasks = await apiCalls.getAllTasks();
-    const formattedTasks = this.formatTaskOptions(mockTasks);
-    return formattedTasks;
+    this.setState({allTasks: mockTasks}) //normally tasks
   }
-
-  formatTaskOptions = (tasks) => {
-    //should selecting a doc activate a function sending it to state?
-    //how should we store multiple doc choices?
-    const allTaskOptions = tasks.map((task, index) => {
-      return (
-        <option
-          key={`task-${index}`}
-          name="task"
-          onClick={() => this.handleTaskSelect(task)}>
-          {task.name}
-        </option>
-      );
-    });
-    return allTaskOptions;
-  }
-
-  handleTaskSelect = task => {
+  
+  handleTaskSelect = (e) => {
+    const task = this.state.allTasks.find(task => task.name === e.target.value)
     if (!this.state.tasks.includes(task)) {
       this.setState({
         tasks: [...this.state.tasks, task]
@@ -57,12 +42,30 @@ export class CourseCreate extends Component {
     }
   }
 
+  componentDidMount() {
+    this.fetchTasks();
+  }
+
   render() {
-    const tasks = this.fetchTasks();
+    const tasks = this.state.allTasks.map((task, index) => {
+      return (
+        <option
+          key={`task-${index}`}
+          name="task"
+          title={task.description}>
+          {task.name}
+        </option>
+      );
+    });
 
     return (
       <div className="CourseCreate_page">
-        <form action="submit" className="CourseCreate_form">
+        <h1>Edit course</h1>
+        <form 
+          action="submit" 
+          className="CourseCreate_form"
+          onSubmit={(e) => e.preventDefault()}
+        >
           <input
             type="text"
             placeholder="Name"
@@ -70,17 +73,26 @@ export class CourseCreate extends Component {
             onChange={this.handleChange}
             value={this.state.name}
           />
-          <input
+          <textarea
             type="text"
-            placeholder="description"
+            placeholder="Description"
             name="description"
             onChange={this.handleChange}
             value={this.state.description}
           />
-          <select name="" id="">
+          <h2>Tasks</h2>
+          {
+            this.state.tasks.map((task, index) => {
+              return <p key={`task-${index}`}>{task.name}</p>;
+            })
+          }
+          <span>Add task: </span>
+          <select
+            onChange={(e) => this.handleTaskSelect(e)}
+          >
             {tasks}
           </select>
-          <input type="submit" />
+          <button type="submit">Submit Course</button>
         </form>
       </div>
     );

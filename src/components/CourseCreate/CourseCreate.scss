@@ -1,0 +1,29 @@
+.CourseCreate_page {
+  margin-left: 200px;
+  width: calc(100% - 200px);
+  padding-top: 20px;
+}
+
+.CourseCreate_page h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.CourseCreate_form input {
+  display: block;
+  margin: 10px auto;
+  width: 400px;
+  height: 20px;
+}
+
+.CourseCreate_form textarea {
+  display: block;
+  margin: 10px auto;
+  width: 400px;
+  min-height: 100px;
+}
+
+.CourseCreate_form button {
+  display: block;
+  margin: 20px auto
+}
