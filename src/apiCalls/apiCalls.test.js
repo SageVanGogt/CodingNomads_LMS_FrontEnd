@@ -924,3 +924,36 @@ describe('deleteTasksFromCourse', () => {
   })
 })
 
+describe('deleteStudentsFromCourse', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/course/3/students';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({students: [{id: 1}, {id: 2}]})
+    };
+    const mockStudents = [{id: 1}, {id: 2}];
+    const mockCourseId = 3;
+    apiCalls.deleteStudentsFromCourse(mockCourseId, mockStudents);
+
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
+
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteStudentsFromCourse(99, {});
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
