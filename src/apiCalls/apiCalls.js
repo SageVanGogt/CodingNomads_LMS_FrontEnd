@@ -375,4 +375,6 @@ export const deleteLabsFromTask = async (taskId, labsArr) => {
   }
 };
 
+//deleteTasksFromCourse and deleteStudentsFromCourse
+
 //delete /api/v1/course/:id/tasks
