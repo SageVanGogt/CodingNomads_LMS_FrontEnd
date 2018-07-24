@@ -375,6 +375,23 @@ export const deleteLabsFromTask = async (taskId, labsArr) => {
   }
 };
 
+export const deleteTasksFromCourse = async (courseId, tasksArr) => {
+  const url = `/api/v1/course/${courseId}/tasks`;
+  const options = {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ tasks: tasksArr })
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 204) {
+      throw Error('That id could not be found.');
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
 //deleteTasksFromCourse and deleteStudentsFromCourse
 
 //delete /api/v1/course/:id/tasks
