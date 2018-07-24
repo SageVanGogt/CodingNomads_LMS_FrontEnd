@@ -1,21 +1,31 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import { func } from 'prop-types';
 import './Tasks.css';
 import TaskCard from '../TaskCard/TaskCard';
 import { mockTasks } from '../../mockData/mockTasks';
 import { TASKS_EDIT } from '../../constants/routes';
 import { postTask } from '../../apiCalls/apiCalls';
+import { updateCurrentTask } from '../../actions/currentTask'
 
 export class Tasks extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
-  addTask = () => {
-    // const taskId = await postTask({})
-    // update store?
+  addTask = async () => {
+    // const newTask = await postTask()
+    const newTask = {
+      id: 1,
+      name: '',
+      description: '',
+      videoLink: '',
+      docs: [],
+      labs: []
+    };
 
+    this.props.updateCurrentTask(newTask);
     this.props.history.push(TASKS_EDIT)
   }
 
@@ -38,5 +48,13 @@ export class Tasks extends Component {
   }
 }
 
-export default withRouter(Tasks);
+export const mapDispatchToProps = (dispatch) => ({
+  updateCurrentTask: (currentTask) => dispatch(updateCurrentTask(currentTask))
+})
+
+Tasks.propTypes = {
+  updateCurrentTask: func.isRequired
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(Tasks));
 
