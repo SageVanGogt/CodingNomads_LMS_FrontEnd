@@ -10,6 +10,14 @@ export class Tasks extends Component {
     super();
   }
 
+  addTask() {
+    // post new task
+    // get taskId from response
+    // update store
+
+    this.props.history.push('/task/create')
+  }
+
   render() {
     const tasks = mockTasks.map((task, index) => {
       return (
@@ -22,7 +30,7 @@ export class Tasks extends Component {
 
     return (
       <div className="Task_container">
-        <button onClick={ () => this.props.history.push('/task/create') }>Add New Task</button>
+        <button onClick={ this.addTask }>Add New Task</button>
         {tasks}
       </div>
     );
