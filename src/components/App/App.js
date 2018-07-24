@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 import LogIn from '../LogIn/LogIn';
 import AdminHome from '../AdminHome/AdminHome';
@@ -62,4 +62,4 @@ class App extends Component {
   } 
 }
 
-export default withRouter(App);
+export default App;
