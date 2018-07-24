@@ -11,7 +11,7 @@ export class Tasks extends Component {
     super();
   }
 
-  addTask() {
+  addTask = () => {
     // post new task
     // get taskId from response
     // update store
