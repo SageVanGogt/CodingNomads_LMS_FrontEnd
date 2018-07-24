@@ -16,7 +16,7 @@ export class TaskEdit extends Component {
     super();
     this.state = {
       id: null,
-      topic: '',
+      name: '',
       videoLink: '',
       description: '',
       docs: [],
@@ -33,10 +33,10 @@ export class TaskEdit extends Component {
     }
   }
 
-  loadTaskInfo = ({id, topic, videoLink, docs, labs}) => {
+  loadTaskInfo = ({id, name, videoLink, docs, labs}) => {
     this.setState({
       id,
-      topic,
+      name,
       videoLink,
       docs,
       labs
@@ -109,10 +109,10 @@ export class TaskEdit extends Component {
         <form action="submit" className="TaskCreate_form">
           <input 
             type="text" 
-            placeholder="topic" 
-            name="topic"
+            placeholder="name" 
+            name="name"
             onChange={this.handleChange}
-            value={this.state.topic}
+            value={this.state.name}
           />
           <input 
             type="text" 

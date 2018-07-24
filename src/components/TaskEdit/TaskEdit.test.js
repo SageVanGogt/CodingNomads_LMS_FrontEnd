@@ -7,7 +7,7 @@ describe('TaskEdit', () => {
   let mockCurrentTask;
 
   beforeEach(() => {
-    mockCurrentTask = {id: null, topic: ''};
+    mockCurrentTask = {id: null, name: ''};
     wrapper = shallow(<TaskEdit />);
   })
 
@@ -36,7 +36,7 @@ describe('TaskEdit', () => {
     it('should update the appropriate state with info from store', () => {
       let mockTask = {
         id: 1,
-        topic: 'cats',
+        name: 'cats',
         videoLink: 'caden@youtube',
         docs: [],
         labs: []
@@ -52,12 +52,12 @@ describe('TaskEdit', () => {
   describe('mapStateToProps', () =>  {
     it('should return a state with the currentTask prop', () => {
       let mockState = {
-        currentTask: {id: null, topic: ''},
+        currentTask: {id: null, name: ''},
         user: {id: 1}
       };
       let mappedProps = mapStateToProps(mockState);
       let actual = mappedProps.currentTask;
-      let expected = {id: null, topic: ''};
+      let expected = {id: null, name: ''};
 
       expect(actual).toEqual(expected);
     })
