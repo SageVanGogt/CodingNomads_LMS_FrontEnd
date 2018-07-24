@@ -15,7 +15,7 @@ export class Tasks extends Component {
     // get taskId from response
     // update store
 
-    this.props.history.push('/task/create')
+    this.props.history.push('/tasks/edit')
   }
 
   render() {
