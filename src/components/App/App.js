@@ -15,7 +15,7 @@ class App extends Component {
         <div className="App">
           <nav className="nav__site">
             <article className="user" aria-label="user profile">
-              <img src="" alt="user profile image"/>
+              <img src="" alt="user profile"/>
               <p aria-label="user profile name">Coconut Head</p>
             </article>
             <hr/>
