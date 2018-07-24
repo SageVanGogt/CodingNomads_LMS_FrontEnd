@@ -346,12 +346,12 @@ export const deleteDocsFromTask = async (taskId, docsArr) => {
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({docs: docsArr})
+    body: JSON.stringify({ docs: docsArr })
   };
   try {
     const response = await fetch(url, options);
     if (response.status !== 204) {
-      throw Error('That id could not be found.')
+      throw Error('That id could not be found.');
     }
   } catch (error) {
     throw error;

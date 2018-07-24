@@ -858,5 +858,37 @@ describe('deleteDocsFromTask', () => {
   })
 })
 
+describe('deleteLabsFromTask', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/task/3/labs';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({labs: [{id: 1}, {id: 2}]})
+    };
+    const mockLabs = [{id: 1}, {id: 2}];
+    const mockTaskId = 3;
+    apiCalls.deleteLabsFromTask(mockTaskId, mockLabs);
+
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
+
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteLabsFromTask(99, {});
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
 
 
