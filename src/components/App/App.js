@@ -5,6 +5,7 @@ import LogIn from '../LogIn/LogIn';
 import AdminHome from '../AdminHome/AdminHome';
 import { Courses } from '../Courses/Courses';
 import Tasks from '../Tasks/Tasks';
+import TaskEdit from '../TaskEdit/TaskEdit';
 import './App.css';
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
         <div className="App">
           <nav className="nav__site">
             <article className="user" aria-label="user profile">
-              <img src="" alt="user profile image"/>
+              <img src="" alt="user profile"/>
               <p aria-label="user profile name">Coconut Head</p>
             </article>
             <hr/>
@@ -47,8 +48,13 @@ class App extends Component {
             component={() => <Courses />}
           />
           <Route
-            exact path={routes.TASK_VIEW}
+            exact path={routes.TASKS}
             component={() => <Tasks />}
+          />
+
+          <Route
+            exact path={routes.TASKS_EDIT}
+            component={() => <TaskEdit />}
           />
         </div>
       </Router>

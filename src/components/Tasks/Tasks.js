@@ -1,12 +1,22 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import './Tasks.css';
-import TaskCard from './../TaskCard/TaskCard';
-import { mockTasks } from './../../mockData/mockTasks';
+import TaskCard from '../TaskCard/TaskCard';
+import { mockTasks } from '../../mockData/mockTasks';
+import { TASKS_EDIT } from '../../constants/routes';
+import { postTask } from '../../apiCalls/apiCalls';
 
 export class Tasks extends Component {
   constructor() {
     super();
+  }
+
+  addTask = () => {
+    // const taskId = await postTask({})
+    // update store?
+
+    this.props.history.push(TASKS_EDIT)
   }
 
   render() {
@@ -18,13 +28,15 @@ export class Tasks extends Component {
         />
       );
     });
+
     return (
       <div className="Task_container">
+        <button onClick={ this.addTask }>Add New Task</button>
         {tasks}
       </div>
     );
   }
 }
 
-export default Tasks;
+export default withRouter(Tasks);
 

@@ -26,7 +26,7 @@ export const getTask = async (taskId) => {
   }
 };
 
-export const addTask = async (newTask) => {
+export const postTask = async (newTask) => {
   const url = '/api/v1/tasks';
   const options = {
     method: 'POST',
@@ -278,7 +278,7 @@ export const getCourseTasks = async (courseID) => {
   }
 };
 
-export const addTaskToCourse = async (courseId, taskID) => {
+export const postTaskToCourse = async (courseId, taskID) => {
   const url = `/api/v1/courses/${courseId}/tasks`;
   const options = {
     method: 'POST',
@@ -302,6 +302,102 @@ export const deleteTaskFromCourse = async (courseId, taskID) => {
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' }
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 204) {
+      throw Error('That id could not be found.');
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getAllDocs = async () => {
+  const url = '/api/v1/docs';
+  try {
+    const response = await fetch(url);
+    if (response.status !== 200) {
+      throw Error('Error.');
+    }
+    const docs = await response.json();
+    return docs;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const getAllLabs = async () => {
+  const url = '/api/v1/labs';
+  try {
+    const response = await fetch(url);
+    if (response.status !== 200) {
+      throw Error('Error.');
+    }
+    const labs = await response.json();
+    return labs;
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteDocsFromTask = async (taskId, docsArr) => {
+  const url = `/api/v1/task/${taskId}/docs`;
+  const options = {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ docs: docsArr })
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 204) {
+      throw Error('That id could not be found.');
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteLabsFromTask = async (taskId, labsArr) => {
+  const url = `/api/v1/task/${taskId}/labs`;
+  const options = {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ labs: labsArr })
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 204) {
+      throw Error('That id could not be found.');
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteTasksFromCourse = async (courseId, tasksArr) => {
+  const url = `/api/v1/course/${courseId}/tasks`;
+  const options = {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ tasks: tasksArr })
+  };
+  try {
+    const response = await fetch(url, options);
+    if (response.status !== 204) {
+      throw Error('That id could not be found.');
+    }
+  } catch (error) {
+    throw error;
+  }
+};
+
+export const deleteStudentsFromCourse = async (courseId, studentsArr) => {
+  const url = `/api/v1/course/${courseId}/students`;
+  const options = {
+    method: 'DELETE',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ students: studentsArr })
   };
   try {
     const response = await fetch(url, options);

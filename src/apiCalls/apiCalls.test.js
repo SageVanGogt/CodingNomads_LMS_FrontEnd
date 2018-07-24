@@ -70,7 +70,7 @@ describe('getTask', () => {
   })
 })
 
-describe('addTask', () => {
+describe('postTask', () => {
   let newTask;
 
   beforeEach(() => {
@@ -89,14 +89,14 @@ describe('addTask', () => {
       body: JSON.stringify(newTask)
     };
 
-    apiCalls.addTask(newTask);
+    apiCalls.postTask(newTask);
 
     expect(window.fetch).toHaveBeenCalledWith(url, options);
   })
 
   it('returns a new task object with task id', async () => {
     const expected = { id: 3, name: 'this is a new task' };
-    const result = await apiCalls.addTask(newTask);
+    const result = await apiCalls.postTask(newTask);
 
     expect(result).toEqual(expected);
   })
@@ -107,7 +107,7 @@ describe('addTask', () => {
     }))
 
     const expected = Error('Does not have necessary info');
-    const result = apiCalls.addTask(newTask);
+    const result = apiCalls.postTask(newTask);
 
     expect(result).rejects.toEqual(expected);
   })
@@ -681,7 +681,7 @@ describe('getCourseTasks', () => {
   });
 });
 
-describe('addTaskToCourse', () => {
+describe('postTaskToCourse', () => {
   let taskID;
 
   beforeEach(() => {
@@ -755,4 +755,205 @@ describe('deleteTaskFromCourse', () => {
   });
 });
 
+describe('getAllDocs', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve(['doc1', 'doc2', 'doc3'])
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/docs';
+
+    apiCalls.getAllDocs();
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  })
+
+  it('returns an array of all docs', async () => {
+    const expected = ['doc1', 'doc2', 'doc3'];
+    const result = await apiCalls.getAllDocs();
+
+    expect(result).toEqual(expected);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }));
+
+    const expected = Error('Error.');
+    const result = apiCalls.getAllDocs();
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
+describe('getAllLabs', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      json: () => Promise.resolve(['lab1', 'lab2', 'lab3'])
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/labs';
+
+    apiCalls.getAllLabs();
+
+    expect(window.fetch).toHaveBeenCalledWith(url);
+  })
+
+  it('returns an array of all labs', async () => {
+    const expected = ['lab1', 'lab2', 'lab3'];
+    const result = await apiCalls.getAllLabs();
+
+    expect(result).toEqual(expected);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }));
+
+    const expected = Error('Error.');
+    const result = apiCalls.getAllLabs();
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
+describe('deleteDocsFromTask', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/task/3/docs';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({docs: [{id: 1}, {id: 2}]})
+    };
+    const mockDocs = [{id: 1}, {id: 2}];
+    const mockTaskId = 3;
+    apiCalls.deleteDocsFromTask(mockTaskId, mockDocs);
+
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
+
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteDocsFromTask(99, {});
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
+describe('deleteLabsFromTask', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/task/3/labs';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({labs: [{id: 1}, {id: 2}]})
+    };
+    const mockLabs = [{id: 1}, {id: 2}];
+    const mockTaskId = 3;
+    apiCalls.deleteLabsFromTask(mockTaskId, mockLabs);
+
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
+
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteLabsFromTask(99, {});
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
+describe('deleteTasksFromCourse', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/course/3/tasks';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({tasks: [{id: 1}, {id: 2}]})
+    };
+    const mockTasks = [{id: 1}, {id: 2}];
+    const mockCourseId = 3;
+    apiCalls.deleteTasksFromCourse(mockCourseId, mockTasks);
+
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
+
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteTasksFromCourse(99, {});
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
+
+describe('deleteStudentsFromCourse', () => {
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 204,
+    }))
+  })
+
+  it('calls fetch with the correct arguments', () => {
+    const url = '/api/v1/course/3/students';
+    const options = {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({students: [{id: 1}, {id: 2}]})
+    };
+    const mockStudents = [{id: 1}, {id: 2}];
+    const mockCourseId = 3;
+    apiCalls.deleteStudentsFromCourse(mockCourseId, mockStudents);
+
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
+  })
+
+  it('throws an error if the status is not ok', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 500
+    }))
+
+    const expected = Error('That id could not be found.');
+    const result = apiCalls.deleteStudentsFromCourse(99, {});
+
+    expect(result).rejects.toEqual(expected);
+  })
+})
 
