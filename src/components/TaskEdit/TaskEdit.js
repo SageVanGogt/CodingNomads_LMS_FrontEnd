@@ -10,6 +10,7 @@ import { LabOptions } from '../LabOptions/LabOptions';
 import { DocOptions } from '../DocOptions/DocOptions';
 import { ChosenLabs } from '../ChosenLabs/ChosenLabs';
 import { ChosenDocs } from '../ChosenDocs/ChosenDocs';
+import { mapStateToProps } from '../TaskCard/TaskCard';
 
 export class TaskEdit extends Component {
   constructor() {
@@ -139,4 +140,12 @@ export class TaskEdit extends Component {
   }
 }
 
-export default TaskEdit;
+export const mapStateToProps = (state) => ({
+  currentTask: state.currentTask
+});
+
+TaskEdit.propTypes = {
+  currentTask: PropTypes.object
+};
+
+export default (mapStateToProps, null)(TaskEdit);
