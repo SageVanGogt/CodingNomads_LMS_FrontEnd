@@ -32,6 +32,23 @@ describe('TaskEdit', () => {
     })
   })
 
+  describe('loadTaskInfo', () => {
+    it('should update the appropriate state with info from store', () => {
+      let mockTask = {
+        id: 1,
+        topic: 'cats',
+        videoLink: 'caden@youtube',
+        documentation: [],
+        labs: []
+      };
+      let expected = 'caden@youtube';
+      wrapper.instance().loadTaskInfo(mockTask);
+      let actual = wrapper.state('videoLink');
+
+      expect(actual).toEqual(expected);
+    })
+  })
+
   describe('mapStateToProps', () =>  {
     it('should return a state with the currentTask prop', () => {
       let mockState = {
