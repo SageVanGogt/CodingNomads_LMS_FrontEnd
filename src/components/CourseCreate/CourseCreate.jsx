@@ -7,8 +7,9 @@ import * as apiCalls from '../../apiCalls/apiCalls';
 import { CourseTaskCard } from '../CourseTaskCard/CourseTaskCard';
 
 export class CourseCreate extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    
     this.state = {
       name: '',
       description: '',
