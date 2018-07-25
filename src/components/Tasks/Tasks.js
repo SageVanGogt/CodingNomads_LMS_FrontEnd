@@ -6,7 +6,7 @@ import './Tasks.css';
 import TaskCard from '../TaskCard/TaskCard';
 import { mockTasks } from '../../mockData/mockTasks';
 import { TASKS_EDIT } from '../../constants/routes';
-import { postTask } from '../../apiCalls/apiCalls';
+import { postTask, getAllTasks } from '../../apiCalls/apiCalls';
 import { updateCurrentTask } from '../../actions/currentTask'
 
 export class Tasks extends Component {
@@ -15,6 +15,11 @@ export class Tasks extends Component {
     this.state = {
       allTasks: []
     }
+  }
+
+  componentDidMount = async () => {
+    const allTasks = await getAllTasks();
+    this.setState({ allTasks })
   }
 
   addTask = async () => {
