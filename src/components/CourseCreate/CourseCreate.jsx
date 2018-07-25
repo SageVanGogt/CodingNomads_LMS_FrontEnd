@@ -81,11 +81,13 @@ export class CourseCreate extends Component {
             value={this.state.description}
           />
           <h2>Tasks</h2>
-          {
-            this.state.tasks.map((task, index) => {
-              return <p key={`task-${index}`}>{task.name}</p>;
-            })
-          }
+          <div className='tasksArea'>
+            {
+              this.state.tasks.map((task, index) => {
+                return <p key={`task-${index}`}>{task.name}</p>;
+              })
+            }
+          </div>
           <span>Add task: </span>
           <select
             onChange={(e) => this.handleTaskSelect(e)}
