@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import { func } from 'prop-types';
 import './Tasks.css';
 import TaskCard from '../TaskCard/TaskCard';
-import { mockTasks } from '../../mockData/mockTasks';
 import { TASKS_EDIT } from '../../constants/routes';
 import { postTask, getAllTasks } from '../../apiCalls/apiCalls';
 import { updateCurrentTask } from '../../actions/currentTask'
@@ -19,7 +18,8 @@ export class Tasks extends Component {
 
   componentDidMount = async () => {
     const allTasks = await getAllTasks();
-    this.setState({ allTasks })
+    console.log(allTasks)
+    this.setState({ allTasks: allTasks.data })
   }
 
   addTask = async () => {
@@ -38,7 +38,7 @@ export class Tasks extends Component {
   }
 
   render() {
-    const tasks = mockTasks.map((task, index) => {
+    const tasks = this.state.allTasks.map((task, index) => {
       return (
         <TaskCard 
           key={`task-card-${index}`}
