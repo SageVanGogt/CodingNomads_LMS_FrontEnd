@@ -19,10 +19,8 @@ export class Courses extends Component {
     })
       .then(response => response.json())
       .then(results => {
-        console.log(1)
         this.setState({courses: results.data});
-        // results.data.map(course => <CourseCard {...course} key={'course'+ course.id}/>);
-      })
+      });
   }
 
   render() {
@@ -30,7 +28,9 @@ export class Courses extends Component {
 
     return ( 
       <div className='courses_container'>
-        {courses}
+        {this.state.courses.length ? 
+          courses : 
+          <img height='200' width='200' src='http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif'/>}
       </div>
     );
   }
