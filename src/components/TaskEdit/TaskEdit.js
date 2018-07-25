@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import './TaskEdit.css';
 import * as API from '../../apiCalls/apiCalls';
 import PropTypes from 'prop-types';
-import { mockDocs } from '../../mockData/mockDocs';
-import { mockLabs } from '../../mockData/mockLabs';
 import { LabOptions } from '../LabOptions/LabOptions';
 import { DocOptions } from '../DocOptions/DocOptions';
 
@@ -19,6 +17,8 @@ export class TaskEdit extends Component {
       description: '',
       docs: [],
       labs: [],
+      allDocs: [],
+      allLabs: [],
       docsToDelete: [],
       labsToDelete: [],
       docOptions: [],
@@ -26,6 +26,11 @@ export class TaskEdit extends Component {
     };
   }
 
+  componentDidMount = async () => {
+    await this.fetchDocs();
+    await this.fetchLabs();
+  }
+  
   componentDidUpdate = (prevProps) => {
     const { currentTask } = this.props;
     if (prevProps.currentTask !== currentTask) {
@@ -52,18 +57,18 @@ export class TaskEdit extends Component {
     });
   }
 
-  fetchDocs = () => {
-    // const response = await API.getAllDocs();
-    // const docs = await response.json();
-    const docs = mockDocs;
-    return docs;
+  fetchDocs = async () => {
+    const docs = await API.getAllDocs();
+    this.setState({
+      allDocs: docs.data
+    });
   }
 
-  fetchLabs = () => {
-    // const response = await API.getAllLabs();
-    // const labs = await response.json();
-    const labs = mockLabs;
-    return labs;
+  fetchLabs = async () => {
+    const labs = await API.getAllLabs();
+    this.setState({
+      allLabs: labs.data
+    });
   }
 
   handleSelectLab = (event) => {
@@ -206,9 +211,6 @@ export class TaskEdit extends Component {
   }
 
   render() {
-    const docs = this.fetchDocs();
-    const labs = this.fetchLabs();
-
     return (
       <div className="TaskCreate_page">
         <form action="submit" className="TaskCreate_form">
@@ -235,21 +237,21 @@ export class TaskEdit extends Component {
           />
           <DocOptions
             id={`doc-option-0`}
-            docs={docs}
+            docs={this.state.allDocs}
             handleSelectDoc={this.handleSelectDoc}
             deleteDoc={this.deleteDoc}
           />
           {this.state.docOptions}
-          <button onClick={(event) => this.addDocOptions(event, docs)}>new doc</button>
+          <button onClick={(event) => this.addDocOptions(event, this.state.allDocs)}>new doc</button>
 
           <LabOptions
             id={`lab-option-0`}
-            labs={labs}
+            labs={this.state.allLabs}
             handleSelectLab={this.handleSelectLab}
             deleteLab={this.deleteLab}
           />
           {this.state.labOptions}
-          <button onClick={(event) => this.addLabOptions(event, labs)}>new lab</button>
+          <button onClick={(event) => this.addLabOptions(event, this.state.allLabs)}>new lab</button>
           <input type="submit" />
         </form>
       </div>
