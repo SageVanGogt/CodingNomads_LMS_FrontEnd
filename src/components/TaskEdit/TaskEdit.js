@@ -22,7 +22,8 @@ export class TaskEdit extends Component {
       docs: [],
       labs: [],
       docsToDelete: [],
-      labsToDelete: []
+      labsToDelete: [],
+      docOptions: []
     };
   }
 
@@ -74,10 +75,14 @@ export class TaskEdit extends Component {
     }
   }
 
-  handleSelectDoc = (doc) => {
-    if (!this.state.docs.includes(doc)) {
+  handleSelectDoc = (event) => {
+    event.preventDefault();
+    const docId = {
+      id: event.target.value
+    };
+    if (!this.state.docs.find(doc => doc.id === docId.id)) {
       this.setState({
-        docs: [...this.state.docs, doc]
+        docs: [...this.state.docs, docId]
       });
     }
   }
@@ -91,11 +96,19 @@ export class TaskEdit extends Component {
     });
   }
 
-  deleteChosenDoc = (event, docId) => {
+  deleteDoc = (event, key) => {
     event.preventDefault();
-    const updatedDocs = this.state.docs.filter(doc => doc.id !== docId);
+    const docId = event.target.previousElementSibling.value;
+    if (!docId) {
+      return;
+    }
+    const updatedDocs = 
+      this.state.docs.filter(doc => doc.id !== docId);
+    const docOptions = 
+      this.state.docOptions.filter(doc => doc.props.id !== key);
     this.setState({
       docs: updatedDocs,
+      docOptions,
       docsToDelete: [...this.state.docsToDelete, docId]
     });
   }
@@ -136,6 +149,24 @@ export class TaskEdit extends Component {
     }
   }
 
+  addDocOptions = (event, docs) => {
+    event.preventDefault();
+   
+    this.setState({
+      docOptions: 
+        [
+          ...this.state.docOptions, 
+          <DocOptions 
+            key={`doc-${this.state.docOptions}`}
+            id={`doc-option-${this.state.docOptions.length += 1}`} 
+            docs={docs}
+            handleSelectDoc={this.handleSelectDoc}
+            deleteDoc={this.deleteDoc}
+          />
+        ]
+    });
+  }
+
   render() {
     const docs = this.fetchDocs();
     const labs = this.fetchLabs();
@@ -164,17 +195,23 @@ export class TaskEdit extends Component {
             onChange={this.handleChange}
             value={this.state.videoLink}
           />
-          { 
-            this.state.docs.length &&
-            <ChosenDocs 
-              docs={this.state.docs}
-              deleteChosenDoc={this.deleteChosenDoc}
-            />
-          }
-          <DocOptions 
+          <DocOptions
+            id={`doc-option-0`} 
             docs={docs}
             handleSelectDoc={this.handleSelectDoc}
+            deleteDoc={this.deleteDoc}
           />
+          { this.state.docOptions }
+          <button onClick={(event) => this.addDocOptions(event, docs)}>new doc</button>
+          
+          <LabOptions
+            id={`lab-option-0`} 
+            labs={labs}
+            handleSelectDoc={this.handleSelectDoc}
+            deleteLab={this.deleteLab}
+          />
+          { this.state.docOptions }
+          <button onClick={(event) => this.addDocOptions(event, docs)}>new doc</button>
           { 
             this.state.labs.length &&
             <ChosenLabs
