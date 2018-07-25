@@ -8,8 +8,6 @@ import { mockDocs } from '../../mockData/mockDocs';
 import { mockLabs } from '../../mockData/mockLabs';
 import { LabOptions } from '../LabOptions/LabOptions';
 import { DocOptions } from '../DocOptions/DocOptions';
-import { ChosenLabs } from '../ChosenLabs/ChosenLabs';
-import { ChosenDocs } from '../ChosenDocs/ChosenDocs';
 
 export class TaskEdit extends Component {
   constructor() {
