@@ -103,4 +103,8 @@ export class CourseCreate extends Component {
   }
 }
 
-export default CourseCreate;
+export const mapStateToProps = (state) => ({
+  currentCourse: state.currentCourse
+});
+
+export default connect(mapStateToProps, null)(CourseCreate);

@@ -4,7 +4,7 @@ import * as routes from '../../constants/routes';
 import LogIn from '../LogIn/LogIn';
 import AdminHome from '../AdminHome/AdminHome';
 import Courses from '../Courses/Courses';
-import { CourseCreate } from '../CourseCreate/CourseCreate';
+import CourseCreate from '../CourseCreate/CourseCreate';
 import Tasks from '../Tasks/Tasks';
 import TaskEdit from '../TaskEdit/TaskEdit';
 import './App.css';
