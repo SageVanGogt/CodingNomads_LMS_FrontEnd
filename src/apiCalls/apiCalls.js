@@ -1,7 +1,7 @@
 import { apiPath } from '../constants/apiPath';
 
 export const getAllTasks = async () => {
-  const url = '/api/v1/tasks';
+  const url = apiPath + '/tasks';
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
@@ -15,7 +15,7 @@ export const getAllTasks = async () => {
 };
 
 export const getTask = async (taskId) => {
-  const url = `api/v1/tasks/${taskId}`;
+  const url = apiPath + `api/v1/tasks/${taskId}`;
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
@@ -29,7 +29,7 @@ export const getTask = async (taskId) => {
 };
 
 export const postTask = async (newTask) => {
-  const url = '/api/v1/tasks';
+  const url = apiPath + '/tasks';
   const options = {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -48,7 +48,7 @@ export const postTask = async (newTask) => {
 }; 
 
 export const updateTask = async (updatedTask) => {
-  const url = `/api/v1/tasks/${updatedTask.id}`;
+  const url = apiPath + `/tasks/${updatedTask.id}`;
   const options = {
     method: 'PATCH',
     headers: { 'content-type': 'application/json' },
@@ -67,7 +67,7 @@ export const updateTask = async (updatedTask) => {
 };
 
 export const deleteTask = async (taskId) => {
-  const url = `/api/v1/tasks/${taskId}`;
+  const url = apiPath + `/tasks/${taskId}`;
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' }
@@ -83,7 +83,7 @@ export const deleteTask = async (taskId) => {
 };
 
 export const getAllCourses = async () => {
-  const url = '/api/v1/courses';
+  const url = apiPath + '/courses';
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
@@ -97,7 +97,7 @@ export const getAllCourses = async () => {
 };
 
 export const getCourse = async (courseId) => {
-  const url = `api/v1/courses/${courseId}`;
+  const url = apiPath + `api/v1/courses/${courseId}`;
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
@@ -111,7 +111,7 @@ export const getCourse = async (courseId) => {
 };
 
 export const addCourse = async (newCourse) => {
-  const url = '/api/v1/courses';
+  const url = apiPath + '/courses';
   const options = {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -130,7 +130,7 @@ export const addCourse = async (newCourse) => {
 }; 
 
 export const updateCourse = async (updatedCourse) => {
-  const url = `/api/v1/courses/${updatedCourse.id}`;
+  const url = apiPath + `/courses/${updatedCourse.id}`;
   const options = {
     method: 'PATCH',
     headers: { 'content-type': 'application/json' },
@@ -149,7 +149,7 @@ export const updateCourse = async (updatedCourse) => {
 };
 
 export const deleteCourse = async (courseId) => {
-  const url = `/api/v1/courses/${courseId}`;
+  const url = apiPath + `/courses/${courseId}`;
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' }
@@ -165,7 +165,7 @@ export const deleteCourse = async (courseId) => {
 };
 
 export const getAllCourseStudents = async (courseId) => {
-  const url = `/api/v1/courses/${courseId}/students`;
+  const url = apiPath + `/courses/${courseId}/students`;
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
@@ -183,7 +183,7 @@ export const addCourseStudent = async (newCourseStudent, course) => {
     studentId: newCourseStudent.id,
     courseId: course.id
   };
-  const url = '/api/v1/courses/students';
+  const url = apiPath + '/courses/students';
   const options = {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -202,7 +202,7 @@ export const addCourseStudent = async (newCourseStudent, course) => {
 }; 
 
 export const deleteCourseStudent = async (student, course) => {
-  const url = `/api/v1/courses/${course.id}/student/${student.id}`;
+  const url = apiPath + `/courses/${course.id}/student/${student.id}`;
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' }
@@ -218,7 +218,7 @@ export const deleteCourseStudent = async (student, course) => {
 };
 
 export const getCourseTeachers = async (courseID) => {
-  const url = `/api/v1/courses/${courseID}/teachers`;
+  const url = apiPath + `/courses/${courseID}/teachers`;
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
@@ -232,7 +232,7 @@ export const getCourseTeachers = async (courseID) => {
 };
 
 export const addTeacherToCourse = async (courseId, teacherID) => {
-  const url = `/api/v1/courses/${courseId}/teachers`;
+  const url = apiPath + `/courses/${courseId}/teachers`;
   const options = {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -251,7 +251,7 @@ export const addTeacherToCourse = async (courseId, teacherID) => {
 };
 
 export const deleteTeacherFromCourse = async (courseId, teacherId) => {
-  const url = `/api/v1/courses/${courseId}/teachers/${teacherId}`;
+  const url = apiPath + `/courses/${courseId}/teachers/${teacherId}`;
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' }
@@ -267,7 +267,7 @@ export const deleteTeacherFromCourse = async (courseId, teacherId) => {
 };
 
 export const getCourseTasks = async (courseID) => {
-  const url = `/api/v1/courses/${courseID}/tasks`;
+  const url = apiPath + `/courses/${courseID}/tasks`;
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
@@ -281,7 +281,7 @@ export const getCourseTasks = async (courseID) => {
 };
 
 export const postTaskToCourse = async (courseId, taskID) => {
-  const url = `/api/v1/courses/${courseId}/tasks`;
+  const url = apiPath + `/courses/${courseId}/tasks`;
   const options = {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -300,7 +300,7 @@ export const postTaskToCourse = async (courseId, taskID) => {
 };
 
 export const deleteTaskFromCourse = async (courseId, taskID) => {
-  const url = `/api/v1/courses/${courseId}/tasks/${taskID}`;
+  const url = apiPath + `/courses/${courseId}/tasks/${taskID}`;
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' }
@@ -316,7 +316,7 @@ export const deleteTaskFromCourse = async (courseId, taskID) => {
 };
 
 export const getAllDocs = async () => {
-  const url = '/api/v1/docs';
+  const url = apiPath + '/docs';
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
@@ -330,7 +330,7 @@ export const getAllDocs = async () => {
 };
 
 export const getAllLabs = async () => {
-  const url = '/api/v1/labs';
+  const url = apiPath + '/labs';
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
@@ -344,7 +344,7 @@ export const getAllLabs = async () => {
 };
 
 export const deleteDocsFromTask = async (taskId, docsArr) => {
-  const url = `/api/v1/task/${taskId}/docs`;
+  const url = apiPath + `/task/${taskId}/docs`;
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' },
@@ -361,7 +361,7 @@ export const deleteDocsFromTask = async (taskId, docsArr) => {
 };
 
 export const deleteLabsFromTask = async (taskId, labsArr) => {
-  const url = `/api/v1/task/${taskId}/labs`;
+  const url = apiPath + `/task/${taskId}/labs`;
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' },
@@ -378,7 +378,7 @@ export const deleteLabsFromTask = async (taskId, labsArr) => {
 };
 
 export const deleteTasksFromCourse = async (courseId, tasksArr) => {
-  const url = `/api/v1/course/${courseId}/tasks`;
+  const url = apiPath + `/course/${courseId}/tasks`;
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' },
@@ -395,7 +395,7 @@ export const deleteTasksFromCourse = async (courseId, tasksArr) => {
 };
 
 export const deleteStudentsFromCourse = async (courseId, studentsArr) => {
-  const url = `/api/v1/course/${courseId}/students`;
+  const url = apiPath + `/course/${courseId}/students`;
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' },
