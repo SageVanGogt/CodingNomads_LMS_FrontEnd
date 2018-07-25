@@ -30,7 +30,7 @@ export class TaskEdit extends Component {
     await this.fetchDocs();
     await this.fetchLabs();
   }
-  
+
   componentDidUpdate = (prevProps) => {
     const { currentTask } = this.props;
     if (prevProps.currentTask !== currentTask) {
