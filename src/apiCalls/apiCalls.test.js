@@ -45,7 +45,7 @@ describe('getTask', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = apiPath + 'api/v1/tasks/1';
+    const url = apiPath + '/tasks/1';
 
     apiCalls.getTask(1);
 
@@ -237,7 +237,7 @@ describe('getCourse', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = apiPath + 'api/v1/courses/1';
+    const url = apiPath + '/courses/1';
 
     apiCalls.getCourse(1);
 
@@ -431,7 +431,7 @@ describe('getAllCourseStudents', () => {
 //   })
 
 //   it('calls fetch with the correct arguments', () => {
-//     const url = apiPath + 'api/v1/courses/1';
+//     const url = apiPath + '/courses/1';
 
 //     apiCalls.getCourse(1);
 

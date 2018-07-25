@@ -15,7 +15,7 @@ export const getAllTasks = async () => {
 };
 
 export const getTask = async (taskId) => {
-  const url = apiPath + `api/v1/tasks/${taskId}`;
+  const url = apiPath + `/tasks/${taskId}`;
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
@@ -97,7 +97,7 @@ export const getAllCourses = async () => {
 };
 
 export const getCourse = async (courseId) => {
-  const url = apiPath + `api/v1/courses/${courseId}`;
+  const url = apiPath + `/courses/${courseId}`;
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
