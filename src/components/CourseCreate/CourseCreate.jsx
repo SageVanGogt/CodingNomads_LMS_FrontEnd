@@ -4,6 +4,7 @@ import { mockTasks } from '../../mockData/mockTasks';
 import './CourseCreate.css';
 import PropTypes from 'prop-types';
 import * as apiCalls from '../../apiCalls/apiCalls';
+import { CourseTaskCard } from '../CourseTaskCard/CourseTaskCard';
 
 export class CourseCreate extends Component {
   constructor() {
@@ -30,7 +31,7 @@ export class CourseCreate extends Component {
 
   fetchTasks = async () => {
     // const tasks = await apiCalls.getAllTasks();
-    this.setState({allTasks: mockTasks}) //normally tasks
+    this.setState({allTasks: [{name: 'Select Task'}, ...mockTasks]});  //normally tasks
   }
   
   handleTaskSelect = (e) => {
@@ -84,7 +85,7 @@ export class CourseCreate extends Component {
           <div className='tasksArea'>
             {
               this.state.tasks.map((task, index) => {
-                return <p key={`task-${index}`}>{task.name}</p>;
+                return <CourseTaskCard {...task} key={`task-${index}`}/>;
               })
             }
           </div>

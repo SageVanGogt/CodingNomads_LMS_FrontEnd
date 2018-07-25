@@ -1,0 +1,7 @@
+.CourseTaskCard {
+  width: 300px;
+  border: 1px dashed black;
+  margin: auto; }
+
+.CourseTaskCard:hover {
+  cursor: pointer; }
