@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import './CourseCard.css';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { updateCurrentCourse } from '../../actions/currentCourse';
+import { COURSE_EDIT } from '../../constants/routes';
 
 export class CourseCard extends Component {
   constructor(props) {
     super(props);
   }
 
+  updateCourse = async () => {
+    this.props.updateCurrentCourse(this.props);
+    this.props.history.push(COURSE_EDIT);
+  }
+
   editBtn = () => {
-    return <button className="Course_edit-btn">Edit</button>;
+    return <button className="Course_edit-btn" onClick={this.updateCourse}>Edit</button>;
   }
 
   viewBtn = () => {
@@ -44,4 +52,8 @@ export const mapStateToProps = (state) => ({
   user: state.user
 });
 
-export default connect(mapStateToProps, null)(CourseCard);
+export const mapDispatchToProps = dispatch => ({
+  updateCurrentCourse: (currentCourse) => dispatch(updateCurrentCourse(currentCourse))
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CourseCard));
