@@ -11,10 +11,10 @@ export class CourseCreate extends Component {
     super(props);
     
     this.state = {
-      name: '',
-      description: '',
-      tasks: [],
-      students: [],
+      name: this.props.currentCourse.name,
+      description: this.props.currentCourse.description,
+      tasks: this.props.currentCourse.tasks || [],
+      students: this.props.currentCourse.students || [],
       tasksToDelete: [],
       labsToDelete: [],
       allTasks: []
