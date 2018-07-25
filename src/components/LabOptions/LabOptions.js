@@ -2,14 +2,14 @@ import React from 'react';
 import './LabOptions';
 import PropTypes from 'prop-types';
 
-export const LabOptions = ({ labs, handleSelectLab }) => {
+export const LabOptions = ({ labs, handleSelectLab, deleteLab, id }) => {
   const labOptions = labs.map((lab, index) => {
     return (
       <option 
         key={`lab-${index}`} 
         name="lab"
         title={lab.description}
-        onClick={() => handleSelectLab(lab)}
+        value={lab.id}
       >
         {lab.name}
       </option>
@@ -17,9 +17,17 @@ export const LabOptions = ({ labs, handleSelectLab }) => {
   });
 
   return (
-    <select name="" id="">
-      { labOptions }
-    </select>
+    <div>
+      <select name="" id="" onChange={(event) => handleSelectLab(event)}>
+        <option value="" disabled selected></option>
+        { labOptions }
+      </select>
+      <button 
+        onClick={(event) => deleteLab(event, id)}
+      >
+        del
+      </button>
+    </div>
   );
 };
 

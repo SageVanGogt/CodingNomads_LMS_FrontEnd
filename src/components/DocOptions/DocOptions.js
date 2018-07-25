@@ -2,13 +2,13 @@ import React from 'react';
 import './DocOptions.css';
 import PropTypes from 'prop-types';
 
-export const DocOptions = ({ docs, handleSelectDoc }) => {
+export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id }) => {
   const docOptions = docs.map((doc, index) => {
     return (
       <option 
         key={`doc-${index}`} 
         name="documentation"
-        onClick={() => handleSelectDoc(doc)}
+        value={doc.id}
       >
         {doc.topic}
       </option>
@@ -16,9 +16,17 @@ export const DocOptions = ({ docs, handleSelectDoc }) => {
   });
 
   return (
-    <select name="" id="">
-      { docOptions }
-    </select>
+    <div>
+      <select name="" id="" onChange={(event) => handleSelectDoc(event)}>
+        <option value="" disabled selected></option>
+        { docOptions }
+      </select>
+      <button 
+        onClick={(event) => deleteDoc(event, id)}
+      >
+        del
+      </button>
+    </div>
   );
 };
 
