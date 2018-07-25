@@ -100,6 +100,42 @@ export class TaskEdit extends Component {
     });
   }
 
+  handleSubmit = async () => {
+    const { id, name, videoLink, docs, labs } = this.state;
+    const taskToUpdate = {
+      id,
+      name,
+      videoLink,
+      docs,
+      labs
+    };
+    try {
+      await API.updateTask(taskToUpdate);
+    } catch (error) {
+      //mdp this error
+    }
+    this.handleDeletedLabs();
+    this.handleDeletedDocs();
+  }
+
+  handleDeletedLabs = async () => {
+    const labsToDelete = this.state.labsToDelete;
+    try {
+      await API.deleteLabsFromTask(labsToDelete);
+    } catch (error) {
+      //mdp this error
+    }
+  }
+
+  handleDeletedDocs = async () => {
+    const docsToDelete = this.state.docsToDelete;
+    try {
+      await API.deleteDocsFromTask(docsToDelete);
+    } catch (error) {
+      //mdp this error
+    }
+  }
+
   render() {
     const docs = this.fetchDocs();
     const labs = this.fetchLabs();
