@@ -27,7 +27,7 @@ export class Courses extends Component {
     const data = await response.json()
 
     this.props.updateCurrentCourse(data.data);
-    this.props.history.push(COURSE_EDIT)
+    this.props.history.push(COURSE_EDIT);
   }
 
   componentDidMount() {
