@@ -1,4 +1,5 @@
 import * as apiCalls from './apiCalls.js';
+import { apiPath } from '../constants/apiPath';
 
 describe('getAllTasks', () => {
   beforeEach(() => {
@@ -9,7 +10,7 @@ describe('getAllTasks', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/tasks';
+    const url = apiPath + '/tasks';
 
     apiCalls.getAllTasks();
 
@@ -44,7 +45,7 @@ describe('getTask', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = 'api/v1/tasks/1';
+    const url = apiPath + '/tasks/1';
 
     apiCalls.getTask(1);
 
@@ -82,7 +83,7 @@ describe('postTask', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/tasks';
+    const url = apiPath + '/tasks';
     const options = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -128,7 +129,7 @@ describe('updateTask', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/tasks/3';
+    const url = apiPath + '/tasks/3';
     const options = {
       method: 'PATCH',
       headers: { 'content-type': 'application/json' },
@@ -167,7 +168,7 @@ describe('deleteTask', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/tasks/3';
+    const url = apiPath + '/tasks/3';
     const options = {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' }
@@ -201,7 +202,7 @@ describe('getAllCourses', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses';
+    const url = apiPath + '/courses';
 
     apiCalls.getAllCourses();
 
@@ -236,7 +237,7 @@ describe('getCourse', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = 'api/v1/courses/1';
+    const url = apiPath + '/courses/1';
 
     apiCalls.getCourse(1);
 
@@ -274,7 +275,7 @@ describe('addCourse', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses';
+    const url = apiPath + '/courses';
     const options = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -320,7 +321,7 @@ describe('updateCourse', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/3';
+    const url = apiPath + '/courses/3';
     const options = {
       method: 'PATCH',
       headers: { 'content-type': 'application/json' },
@@ -359,7 +360,7 @@ describe('deleteCourse', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/3';
+    const url = apiPath + '/courses/3';
     const options = {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' }
@@ -395,7 +396,7 @@ describe('getAllCourseStudents', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/1/students';
+    const url = apiPath + '/courses/1/students';
 
     apiCalls.getAllCourseStudents(1);
 
@@ -430,7 +431,7 @@ describe('getAllCourseStudents', () => {
 //   })
 
 //   it('calls fetch with the correct arguments', () => {
-//     const url = 'api/v1/courses/1';
+//     const url = apiPath + '/courses/1';
 
 //     apiCalls.getCourse(1);
 
@@ -470,7 +471,7 @@ describe('addCourseStudent', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/students';
+    const url = apiPath + '/courses/students';
     const options = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -514,7 +515,7 @@ describe('deleteCourseStudent', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/1/student/1';
+    const url = apiPath + '/courses/1/student/1';
     const options = {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' }
@@ -546,7 +547,7 @@ describe('getCourseTeachers', () => {
   });
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/1/teachers';
+    const url = apiPath + '/courses/1/teachers';
 
     apiCalls.getCourseTeachers(1);
 
@@ -584,7 +585,7 @@ describe('addTeacherToCourse', () => {
   });
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/1/teachers';
+    const url = apiPath + '/courses/1/teachers';
     const options = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -623,7 +624,7 @@ describe('deleteTeacherFromCourse', () => {
   });
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/3/teachers/1';
+    const url = apiPath + '/courses/3/teachers/1';
     const options = {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' }
@@ -655,7 +656,7 @@ describe('getCourseTasks', () => {
   });
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/1/tasks';
+    const url = apiPath + '/courses/1/tasks';
 
     apiCalls.getCourseTasks(1);
 
@@ -693,7 +694,7 @@ describe('postTaskToCourse', () => {
   });
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/1/teachers';
+    const url = apiPath + '/courses/1/teachers';
     const options = {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -732,7 +733,7 @@ describe('deleteTaskFromCourse', () => {
   });
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/courses/3/tasks/1';
+    const url = apiPath + '/courses/3/tasks/1';
     const options = {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' }
@@ -764,7 +765,7 @@ describe('getAllDocs', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/docs';
+    const url = apiPath + '/docs';
 
     apiCalls.getAllDocs();
 
@@ -799,7 +800,7 @@ describe('getAllLabs', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/labs';
+    const url = apiPath + '/labs';
 
     apiCalls.getAllLabs();
 
@@ -833,7 +834,7 @@ describe('deleteDocsFromTask', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/task/3/docs';
+    const url = apiPath + '/task/3/docs';
     const options = {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' },
@@ -866,7 +867,7 @@ describe('deleteLabsFromTask', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/task/3/labs';
+    const url = apiPath + '/task/3/labs';
     const options = {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' },
@@ -899,7 +900,7 @@ describe('deleteTasksFromCourse', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/course/3/tasks';
+    const url = apiPath + '/course/3/tasks';
     const options = {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' },
@@ -932,7 +933,7 @@ describe('deleteStudentsFromCourse', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = '/api/v1/course/3/students';
+    const url = apiPath + '/course/3/students';
     const options = {
       method: 'DELETE',
       headers: { 'content-type': 'application/json' },

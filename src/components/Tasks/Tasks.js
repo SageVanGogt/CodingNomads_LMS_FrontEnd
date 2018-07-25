@@ -12,6 +12,9 @@ import { updateCurrentTask } from '../../actions/currentTask'
 export class Tasks extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      allTasks: []
+    }
   }
 
   addTask = async () => {
