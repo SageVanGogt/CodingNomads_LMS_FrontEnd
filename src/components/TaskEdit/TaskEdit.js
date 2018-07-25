@@ -1,5 +1,5 @@
 
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './TaskEdit.css';
 import * as API from '../../apiCalls/apiCalls';
@@ -23,7 +23,8 @@ export class TaskEdit extends Component {
       labs: [],
       docsToDelete: [],
       labsToDelete: [],
-      docOptions: []
+      docOptions: [],
+      labOptions: []
     };
   }
 
@@ -34,7 +35,7 @@ export class TaskEdit extends Component {
     }
   }
 
-  loadTaskInfo = ({id, name, videoLink, docs, labs}) => {
+  loadTaskInfo = ({ id, name, videoLink, docs, labs }) => {
     this.setState({
       id,
       name,
@@ -67,10 +68,14 @@ export class TaskEdit extends Component {
     return labs;
   }
 
-  handleSelectLab = (lab) => {
-    if (!this.state.labs.includes(lab)) {
+  handleSelectLab = (event) => {
+    event.preventDefault();
+    const labId = {
+      id: event.target.value
+    };
+    if (!this.state.labs.find(lab => lab.id === labId.id)) {
       this.setState({
-        labs: [...this.state.labs, lab]
+        labs: [...this.state.labs, labId]
       });
     }
   }
@@ -102,14 +107,31 @@ export class TaskEdit extends Component {
     if (!docId) {
       return;
     }
-    const updatedDocs = 
+    const updatedDocs =
       this.state.docs.filter(doc => doc.id !== docId);
-    const docOptions = 
+    const docOptions =
       this.state.docOptions.filter(doc => doc.props.id !== key);
     this.setState({
       docs: updatedDocs,
       docOptions,
       docsToDelete: [...this.state.docsToDelete, docId]
+    });
+  }
+
+  deleteLab = (event, key) => {
+    event.preventDefault();
+    const labId = event.target.previousElementSibling.value;
+    if (!labId) {
+      return;
+    }
+    const updatedLabs =
+      this.state.labs.filter(lab => lab.id !== labId);
+    const labOptions =
+      this.state.labOptions.filter(lab => lab.props.id !== key);
+    this.setState({
+      labs: updatedLabs,
+      labOptions,
+      labsToDelete: [...this.state.labsToDelete, labId]
     });
   }
 
@@ -151,17 +173,35 @@ export class TaskEdit extends Component {
 
   addDocOptions = (event, docs) => {
     event.preventDefault();
-   
+
     this.setState({
-      docOptions: 
+      docOptions:
         [
-          ...this.state.docOptions, 
-          <DocOptions 
+          ...this.state.docOptions,
+          <DocOptions
             key={`doc-${this.state.docOptions}`}
-            id={`doc-option-${this.state.docOptions.length += 1}`} 
+            id={`doc-option-${this.state.docOptions.length + 1}`}
             docs={docs}
             handleSelectDoc={this.handleSelectDoc}
             deleteDoc={this.deleteDoc}
+          />
+        ]
+    });
+  }
+
+  addLabOptions = (event, labs) => {
+    event.preventDefault();
+
+    this.setState({
+      labOptions:
+        [
+          ...this.state.labOptions,
+          <LabOptions
+            key={`lab-${this.state.labOptions}`}
+            id={`lab-option-${this.state.labOptions.length + 1}`}
+            labs={labs}
+            handleSelectLab={this.handleSelectLab}
+            deleteLab={this.deleteLab}
           />
         ]
     });
@@ -174,55 +214,44 @@ export class TaskEdit extends Component {
     return (
       <div className="TaskCreate_page">
         <form action="submit" className="TaskCreate_form">
-          <input 
-            type="text" 
-            placeholder="name" 
+          <input
+            type="text"
+            placeholder="name"
             name="name"
             onChange={this.handleChange}
             value={this.state.name}
           />
-          <input 
-            type="text" 
-            placeholder="description" 
+          <input
+            type="text"
+            placeholder="description"
             name="description"
             onChange={this.handleChange}
             value={this.state.description}
           />
-          <input 
-            type="text" 
-            placeholder="url" 
+          <input
+            type="text"
+            placeholder="url"
             name="videoLink"
             onChange={this.handleChange}
             value={this.state.videoLink}
           />
           <DocOptions
-            id={`doc-option-0`} 
+            id={`doc-option-0`}
             docs={docs}
             handleSelectDoc={this.handleSelectDoc}
             deleteDoc={this.deleteDoc}
           />
-          { this.state.docOptions }
+          {this.state.docOptions}
           <button onClick={(event) => this.addDocOptions(event, docs)}>new doc</button>
-          
+
           <LabOptions
-            id={`lab-option-0`} 
+            id={`lab-option-0`}
             labs={labs}
-            handleSelectDoc={this.handleSelectDoc}
+            handleSelectLab={this.handleSelectLab}
             deleteLab={this.deleteLab}
           />
-          { this.state.docOptions }
-          <button onClick={(event) => this.addDocOptions(event, docs)}>new doc</button>
-          { 
-            this.state.labs.length &&
-            <ChosenLabs
-              labs={this.state.labs}
-              deleteChosenLab={this.deleteChosenLab}
-            />
-          }
-          <LabOptions 
-            labs={labs} 
-            handleSelectLab={this.handleSelectLab}
-          />
+          {this.state.labOptions}
+          <button onClick={(event) => this.addLabOptions(event, labs)}>new lab</button>
           <input type="submit" />
         </form>
       </div>

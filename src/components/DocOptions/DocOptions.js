@@ -31,6 +31,6 @@ export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id }) => {
 };
 
 DocOptions.propTypes = {
-  handleSelectOpp: PropTypes.func,
+  handleSelectDoc: PropTypes.func,
   docs: PropTypes.array
 };
