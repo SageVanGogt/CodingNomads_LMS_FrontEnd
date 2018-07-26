@@ -4,7 +4,9 @@ import { mockTasks } from '../../mockData/mockTasks';
 import './CourseCreate.css';
 import PropTypes from 'prop-types';
 import * as apiCalls from '../../apiCalls/apiCalls';
-import { CourseTaskCard } from '../CourseTaskCard/CourseTaskCard';
+// import { CourseTaskCard } from '../CourseTaskCard/CourseTaskCard';
+
+import { CourseTaskContainer } from '../CourseTasksContainer/CourseTaskContainer';
 
 export class CourseCreate extends Component {
   constructor(props) {
@@ -38,7 +40,7 @@ export class CourseCreate extends Component {
   
   handleTaskSelect = (e) => {
     const task = this.state.allTasks.find(task => task.name === e.target.value);
-    if (!this.state.tasks.includes(task)) {
+    if (!this.state.tasks.includes(task) && task.name !== "Select Task") {
       this.setState({
         tasks: [...this.state.tasks, task]
       });
@@ -84,13 +86,7 @@ export class CourseCreate extends Component {
             value={this.state.description}
           />
           <h2>Tasks</h2>
-          <div className='tasksArea'>
-            {
-              this.state.tasks.map((task, index) => {
-                return <CourseTaskCard {...task} key={`task-${index}`}/>;
-              })
-            }
-          </div>
+          <CourseTaskContainer tasks={this.state.tasks} />
           <span>Add task: </span>
           <select
             onChange={(e) => this.handleTaskSelect(e)}
