@@ -138,7 +138,31 @@ export class TaskEdit extends Component {
     });
   }
 
-  handleSubmit = async () => {
+  directToSubmitMethod = () => {
+    if (this.props.currentTask.id) {
+      this.handlePatchSubmit();
+    } else {
+      this.handlePostSubmit();
+    }
+  }
+
+  handlePostSubmit = async () => {
+    const { id, name, videoLink, docs, labs } = this.state;
+    const task = {
+      id,
+      name,
+      videoLink,
+      docs,
+      labs
+    };
+    try {
+      await API.postTask(task);
+    } catch (error) {
+      //mdp this error
+    }
+  }
+
+  handlePatchSubmit = async () => {
     const { id, name, videoLink, docs, labs } = this.state;
     const taskToUpdate = {
       id,
@@ -213,7 +237,11 @@ export class TaskEdit extends Component {
   render() {
     return (
       <div className="TaskCreate_page">
-        <form action="submit" className="TaskCreate_form">
+        <form 
+          action="submit" 
+          className="TaskCreate_form"
+          onSubmit={this.directToSubmitMethod}
+        >
           <input
             type="text"
             placeholder="name"
