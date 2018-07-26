@@ -30,6 +30,7 @@ export const getTask = async (taskId) => {
 
 export const postTask = async (newTask) => {
   const url = apiPath + '/tasks';
+  console.log(newTask)
   const options = {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -37,7 +38,7 @@ export const postTask = async (newTask) => {
   };
   try {
     const response = await fetch(url, options);
-    if (response.status !== 201) {
+    if (response.status !== 200) {
       throw Error('Does not have necessary info');
     }
     const task = await response.json();

@@ -18,22 +18,10 @@ export class Tasks extends Component {
 
   componentDidMount = async () => {
     const allTasks = await getAllTasks();
-    console.log(allTasks)
     this.setState({ allTasks: allTasks.data })
   }
 
-  addTask = async () => {
-    // const newTask = await postTask()
-    const newTask = {
-      id: 1,
-      name: '',
-      description: '',
-      videoLink: '',
-      docs: [],
-      labs: []
-    };
-
-    this.props.updateCurrentTask(newTask);
+  addTask = () => {
     this.props.history.push(TASKS_EDIT)
   }
 
