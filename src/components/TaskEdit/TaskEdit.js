@@ -138,7 +138,8 @@ export class TaskEdit extends Component {
     });
   }
 
-  directToSubmitMethod = () => {
+  directToSubmitMethod = (event) => {
+    event.preventDefault();
     if (this.props.currentTask.id) {
       this.handlePatchSubmit();
     } else {
