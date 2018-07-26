@@ -30,6 +30,7 @@ export const getTask = async (taskId) => {
 
 export const postTask = async (newTask) => {
   const url = apiPath + '/tasks';
+  console.log(newTask)
   const options = {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
