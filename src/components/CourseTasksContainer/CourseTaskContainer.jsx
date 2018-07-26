@@ -32,12 +32,9 @@ export class CourseTaskContainer extends Component {
 
     if (this.state.tasks.length !== 0) {
       tasks = arrayMove(this.state.tasks, oldIndex, newIndex);
-      console.log('!', tasks)
     } else {
       tasks = arrayMove(this.props.tasks, oldIndex, newIndex);
-      console.log('?', tasks)
     }
-    console.log(tasks)
     this.setState({ tasks });
   };
 
