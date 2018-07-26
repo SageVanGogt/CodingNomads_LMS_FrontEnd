@@ -11,8 +11,8 @@ const SortableItem = SortableElement(({ task }) =>
 const SortableList = SortableContainer(({ tasks }) => {
   return (
     <ul>
-      {tasks.map((value, index) => (
-        <SortableItem key={`item-${index}`} index={index} task={...value} />
+      {tasks.map((task, index) => (
+        <SortableItem key={`item-${index}`} index={index} task={task} />
       ))}
     </ul>
   );
@@ -23,20 +23,32 @@ export class CourseTaskContainer extends Component {
     super(props)
 
     this.state = {
-      tasks: this.props.tasks
+      tasks: []
     };
   }
 
   onSortEnd = ({ oldIndex, newIndex }) => {
-    this.setState({
-      tasks: arrayMove(this.state.tasks, oldIndex, newIndex)
-    });
+    let tasks;
+
+    if (this.state.tasks.length !== 0) {
+      tasks = arrayMove(this.state.tasks, oldIndex, newIndex);
+      console.log('!', tasks)
+    } else {
+      tasks = arrayMove(this.props.tasks, oldIndex, newIndex);
+      console.log('?', tasks)
+    }
+    console.log(tasks)
+    this.setState({ tasks });
   };
 
   render() { 
     return (
       <div className='tasksArea'>
-        <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} />
+        {
+          this.state.tasks.length > 0 ? 
+            <SortableList tasks={this.state.tasks} onSortEnd={this.onSortEnd} />
+            : <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} />
+        }
       </div>
     );
   }
