@@ -30,7 +30,7 @@ export class TaskCard extends Component {
       labs
     };
     updateCurrentTask(currentTask);
-    this.props.history.push(TASKS_EDIT);    
+    history.push(TASKS_EDIT);    
   }
 
   editBtn = () => {

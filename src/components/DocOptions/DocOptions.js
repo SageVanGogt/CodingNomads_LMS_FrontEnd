@@ -17,8 +17,12 @@ export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id, doc }) => {
 
   return (
     <div>
-      <select name="" value={doc && doc.name} onChange={(event) => handleSelectDoc(event)}>
-        <option value="" disabled selected></option>
+      <select 
+        name=""  
+        value={doc && doc.topic} 
+        onChange={(event) => handleSelectDoc(event)}
+      >
+        <option value='' disabled selected></option>
         { docOptions }
       </select>
       <button 

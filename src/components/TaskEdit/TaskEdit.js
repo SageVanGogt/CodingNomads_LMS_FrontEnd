@@ -27,23 +27,28 @@ export class TaskEdit extends Component {
     };
   }
 
-  componentDidMount = () => {
-    if (!this.state.allDocs && this.state.allLabs) {
-      this.fetchDocs();
-      this.fetchLabs();
-    }
+  componentDidMount = async () => {
+    await this.fetchDocs();
+    await this.fetchLabs();
+    this.state.docs.map(doc => this.addDocOptions(null, doc));
+    this.state.labs.forEach(lab => this.addLabOptions(null, lab));
+    this.addLabOptions();
+    this.addDocOptions();
   }
 
   componentWillUnmount = () => {
     this.props.removeCurrentTask();
   }
 
-  componentDidUpdate = (prevProps) => {
-    if (prevProps.docs !== this.state.docs) {
-      this.state.docs.map(doc => this.addDocOptions(null, doc));
-      this.state.labs.map(lab => this.addLabOptions(null, lab));
-    }
-  }
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   debugger
+  //   if (prevState.docs.length !== 0 && prevState) {
+  //     this.state.docs.forEach(doc => this.addDocOptions(null, doc));
+  //   }
+  //   if (prevState.labs.length !== 0) {
+  //     this.state.labs.forEach(lab => this.addLabOptions(null, lab));
+  //   }
+  // }
 
   handleChange = (event) => {
     event.preventDefault();
@@ -258,21 +263,8 @@ export class TaskEdit extends Component {
             onChange={this.handleChange}
             value={this.state.videoLink}
           />
-          <DocOptions
-            id={`doc-option-0`}
-            docs={this.state.allDocs}
-            handleSelectDoc={this.handleSelectDoc}
-            deleteDoc={this.deleteDoc}
-          />
           {this.state.docOptions}
           <button onClick={(event) => this.addDocOptions(event)}>new doc</button>
-
-          <LabOptions
-            id={`lab-option-0`}
-            labs={this.state.allLabs}
-            handleSelectLab={this.handleSelectLab}
-            deleteLab={this.deleteLab}
-          />
           {this.state.labOptions}
           <button onClick={(event) => this.addLabOptions(event)}>new lab</button>
           <input type="submit" />
