@@ -30,8 +30,8 @@ export class TaskEdit extends Component {
   componentDidMount = async () => {
     await this.fetchDocs();
     await this.fetchLabs();
-    this.state.docs.forEach(doc => this.addDocOptions(null, doc));
-    this.state.labs.forEach(lab => this.addLabOptions(null, lab));
+    this.state.docs.forEach(doc => this.addDocOptions(doc));
+    this.state.labs.forEach(lab => this.addLabOptions(lab));
     this.addLabOptions();
     this.addDocOptions();
   }
@@ -183,11 +183,7 @@ export class TaskEdit extends Component {
     }
   }
 
-  addDocOptions = (event, doc = null) => {
-    if (event) {
-      event.preventDefault();
-    }
-    
+  addDocOptions = (doc) => {
     this.setState({
       docOptions:
         [
@@ -204,10 +200,7 @@ export class TaskEdit extends Component {
     });
   }
 
-  addLabOptions = (event, lab) => {
-    if (event) {
-      event.preventDefault();
-    }
+  addLabOptions = (lab) => {
     this.setState({
       labOptions:
         [
