@@ -30,7 +30,6 @@ export const getTask = async (taskId) => {
 
 export const postTask = async (newTask) => {
   const url = apiPath + '/tasks';
-  console.log(newTask)
   const options = {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -49,16 +48,16 @@ export const postTask = async (newTask) => {
 }; 
 
 export const updateTask = async (updatedTask) => {
-  const url = apiPath + `/tasks/${updatedTask.id}`;
+  const url = apiPath + `/tasks`;
   const options = {
     method: 'PATCH',
-    headers: { 'content-type': 'application/json' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updatedTask)
   };
   try {
     const response = await fetch(url, options);
-    if (response.status !== 200) {
-      throw Error('Failed to update task.');
+    if (response.status < 200 && response.status > 300) {
+      throw Error('Could not patch request');
     }
     const task = await response.json();
     return task;

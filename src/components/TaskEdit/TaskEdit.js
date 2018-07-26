@@ -30,6 +30,8 @@ export class TaskEdit extends Component {
   componentDidMount = async () => {
     await this.fetchDocs();
     await this.fetchLabs();
+    this.addDocOptions();
+    this.addLabOptions();
     this.loadTaskInfo(this.props.currentTask);
   }
 
@@ -74,7 +76,7 @@ export class TaskEdit extends Component {
   handleSelectLab = (event) => {
     event.preventDefault();
     const labId = {
-      id: event.target.value
+      id: parseInt(event.target.value)
     };
     if (!this.state.labs.find(lab => lab.id === labId.id)) {
       this.setState({
@@ -86,7 +88,7 @@ export class TaskEdit extends Component {
   handleSelectDoc = (event) => {
     event.preventDefault();
     const docId = {
-      id: event.target.value
+      id: parseInt(event.target.value)
     };
     if (!this.state.docs.find(doc => doc.id === docId.id)) {
       this.setState({
@@ -200,8 +202,10 @@ export class TaskEdit extends Component {
     }
   }
 
-  addDocOptions = (event, docs) => {
-    event.preventDefault();
+  addDocOptions = (event) => {
+    if (event) {
+      event.preventDefault();
+    }
 
     this.setState({
       docOptions:
@@ -210,7 +214,7 @@ export class TaskEdit extends Component {
           <DocOptions
             key={`doc-${this.state.docOptions}`}
             id={`doc-option-${this.state.docOptions.length + 1}`}
-            docs={docs}
+            docs={this.state.allDocs}
             handleSelectDoc={this.handleSelectDoc}
             deleteDoc={this.deleteDoc}
           />
@@ -218,8 +222,10 @@ export class TaskEdit extends Component {
     });
   }
 
-  addLabOptions = (event, labs) => {
-    event.preventDefault();
+  addLabOptions = (event) => {
+    if (event) {
+      event.preventDefault();
+    }
 
     this.setState({
       labOptions:
@@ -228,7 +234,7 @@ export class TaskEdit extends Component {
           <LabOptions
             key={`lab-${this.state.labOptions}`}
             id={`lab-option-${this.state.labOptions.length + 1}`}
-            labs={labs}
+            labs={this.state.allLabs}
             handleSelectLab={this.handleSelectLab}
             deleteLab={this.deleteLab}
           />
@@ -272,7 +278,7 @@ export class TaskEdit extends Component {
             deleteDoc={this.deleteDoc}
           />
           {this.state.docOptions}
-          <button onClick={(event) => this.addDocOptions(event, this.state.allDocs)}>new doc</button>
+          <button onClick={(event) => this.addDocOptions(event)}>new doc</button>
 
           <LabOptions
             id={`lab-option-0`}
@@ -281,7 +287,7 @@ export class TaskEdit extends Component {
             deleteLab={this.deleteLab}
           />
           {this.state.labOptions}
-          <button onClick={(event) => this.addLabOptions(event, this.state.allLabs)}>new lab</button>
+          <button onClick={(event) => this.addLabOptions(event)}>new lab</button>
           <input type="submit" />
         </form>
       </div>
