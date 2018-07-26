@@ -2,7 +2,7 @@ import React from 'react';
 import './DocOptions.css';
 import PropTypes from 'prop-types';
 
-export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id, doc }) => {
+export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id, docSelected }) => {
   const docOptions = docs.map((doc, index) => {
     return (
       <option 
@@ -18,11 +18,11 @@ export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id, doc }) => {
   return (
     <div>
       <select 
-        name=""  
-        value={doc && doc.topic} 
+        name=""
+        value={docSelected && docSelected.id}
         onChange={(event) => handleSelectDoc(event)}
       >
-        <option value='' disabled selected></option>
+        <option value='' selected></option>
         { docOptions }
       </select>
       <button 

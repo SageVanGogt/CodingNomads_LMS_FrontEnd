@@ -30,7 +30,7 @@ export class TaskEdit extends Component {
   componentDidMount = async () => {
     await this.fetchDocs();
     await this.fetchLabs();
-    this.state.docs.map(doc => this.addDocOptions(null, doc));
+    this.state.docs.forEach(doc => this.addDocOptions(null, doc));
     this.state.labs.forEach(lab => this.addLabOptions(null, lab));
     this.addLabOptions();
     this.addDocOptions();
@@ -39,16 +39,6 @@ export class TaskEdit extends Component {
   componentWillUnmount = () => {
     this.props.removeCurrentTask();
   }
-
-  // componentDidUpdate = (prevProps, prevState) => {
-  //   debugger
-  //   if (prevState.docs.length !== 0 && prevState) {
-  //     this.state.docs.forEach(doc => this.addDocOptions(null, doc));
-  //   }
-  //   if (prevState.labs.length !== 0) {
-  //     this.state.labs.forEach(lab => this.addLabOptions(null, lab));
-  //   }
-  // }
 
   handleChange = (event) => {
     event.preventDefault();
@@ -193,20 +183,20 @@ export class TaskEdit extends Component {
     }
   }
 
-  addDocOptions = (event, doc) => {
+  addDocOptions = (event, doc = null) => {
     if (event) {
       event.preventDefault();
     }
-    console.log(doc)
+    
     this.setState({
       docOptions:
         [
           ...this.state.docOptions,
           <DocOptions
-            key={`doc-${this.state.docOptions}`}
+            key={`doc-${this.state.docOptions.length + 1}`}
             id={`doc-option-${this.state.docOptions.length + 1}`}
             docs={this.state.allDocs}
-            doc={doc}
+            docSelected={doc}
             handleSelectDoc={this.handleSelectDoc}
             deleteDoc={this.deleteDoc}
           />
@@ -226,7 +216,7 @@ export class TaskEdit extends Component {
             key={`lab-${this.state.labOptions}`}
             id={`lab-option-${this.state.labOptions.length + 1}`}
             labs={this.state.allLabs}
-            lab={lab}
+            labSelected={lab}
             handleSelectLab={this.handleSelectLab}
             deleteLab={this.deleteLab}
           />
