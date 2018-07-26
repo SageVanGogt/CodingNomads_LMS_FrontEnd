@@ -6,6 +6,7 @@ import * as API from '../../apiCalls/apiCalls';
 import PropTypes from 'prop-types';
 import { LabOptions } from '../LabOptions/LabOptions';
 import { DocOptions } from '../DocOptions/DocOptions';
+import { removeCurrentTask } from '../../actions/currentTask';
 
 export class TaskEdit extends Component {
   constructor() {
@@ -29,13 +30,11 @@ export class TaskEdit extends Component {
   componentDidMount = async () => {
     await this.fetchDocs();
     await this.fetchLabs();
+    this.loadTaskInfo(this.props.currentTask);
   }
 
-  componentDidUpdate = (prevProps) => {
-    const { currentTask } = this.props;
-    if (prevProps.currentTask !== currentTask) {
-      this.loadTaskInfo(currentTask);
-    }
+  componentWillUnmount = () => {
+    this.props.removeCurrentTask();
   }
 
   loadTaskInfo = ({ id, name, description, videoLink, docs, labs }) => {
@@ -294,8 +293,12 @@ export const mapStateToProps = (state) => ({
   currentTask: state.currentTask
 });
 
+export const mapDispatchToProps = (dispatch) => ({
+  removeCurrentTask: () => dispatch(removeCurrentTask())
+});
+
 TaskEdit.propTypes = {
   currentTask: PropTypes.object
 };
 
-export default connect(mapStateToProps, null)(TaskEdit);
+export default connect(mapStateToProps, mapDispatchToProps)(TaskEdit);
