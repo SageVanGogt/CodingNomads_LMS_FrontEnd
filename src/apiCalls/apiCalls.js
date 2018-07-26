@@ -38,7 +38,7 @@ export const postTask = async (newTask) => {
   };
   try {
     const response = await fetch(url, options);
-    if (response.status !== 200) {
+    if (response.status !== 201) {
       throw Error('Does not have necessary info');
     }
     const task = await response.json();
