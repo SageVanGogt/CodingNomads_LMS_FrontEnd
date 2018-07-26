@@ -9,15 +9,15 @@ import { DocOptions } from '../DocOptions/DocOptions';
 import { removeCurrentTask } from '../../actions/currentTask';
 
 export class TaskEdit extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      id: null,
-      name: '',
-      videoLink: '',
-      description: '',
-      docs: [],
-      labs: [],
+      id: this.props.currentTask.id || null,
+      name: this.props.currentTask.name || '',
+      videoLink: this.props.currentTask.videoLink || '',
+      description: this.props.currentTask.description || '',
+      docs: this.props.currentTask.docs || [],
+      labs: this.props.currentTask.labs || [],
       allDocs: [],
       allLabs: [],
       docsToDelete: [],
@@ -27,27 +27,22 @@ export class TaskEdit extends Component {
     };
   }
 
-  componentDidMount = async () => {
-    await this.fetchDocs();
-    await this.fetchLabs();
-    this.addDocOptions();
-    this.addLabOptions();
-    this.loadTaskInfo(this.props.currentTask);
+  componentDidMount = () => {
+    if (!this.state.allDocs && this.state.allLabs) {
+      this.fetchDocs();
+      this.fetchLabs();
+    }
   }
 
   componentWillUnmount = () => {
     this.props.removeCurrentTask();
   }
 
-  loadTaskInfo = ({ id, name, description, videoLink, docs, labs }) => {
-    this.setState({
-      id,
-      name,
-      description,
-      videoLink,
-      docs,
-      labs
-    });
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.docs !== this.state.docs) {
+      this.state.docs.map(doc => this.addDocOptions(null, doc));
+      this.state.labs.map(lab => this.addLabOptions(null, lab));
+    }
   }
 
   handleChange = (event) => {
@@ -95,15 +90,6 @@ export class TaskEdit extends Component {
         docs: [...this.state.docs, docId]
       });
     }
-  }
-
-  deleteChosenLab = (event, labId) => {
-    event.preventDefault();
-    const updatedLabs = this.state.labs.filter(lab => lab.id !== labId);
-    this.setState({
-      labs: updatedLabs,
-      labsToDelete: [...this.state.labsToDelete, labId]
-    });
   }
 
   deleteDoc = (event, key) => {
@@ -202,11 +188,11 @@ export class TaskEdit extends Component {
     }
   }
 
-  addDocOptions = (event) => {
+  addDocOptions = (event, doc) => {
     if (event) {
       event.preventDefault();
     }
-
+    console.log(doc)
     this.setState({
       docOptions:
         [
@@ -215,6 +201,7 @@ export class TaskEdit extends Component {
             key={`doc-${this.state.docOptions}`}
             id={`doc-option-${this.state.docOptions.length + 1}`}
             docs={this.state.allDocs}
+            doc={doc}
             handleSelectDoc={this.handleSelectDoc}
             deleteDoc={this.deleteDoc}
           />
@@ -222,11 +209,10 @@ export class TaskEdit extends Component {
     });
   }
 
-  addLabOptions = (event) => {
+  addLabOptions = (event, lab) => {
     if (event) {
       event.preventDefault();
     }
-
     this.setState({
       labOptions:
         [
@@ -235,6 +221,7 @@ export class TaskEdit extends Component {
             key={`lab-${this.state.labOptions}`}
             id={`lab-option-${this.state.labOptions.length + 1}`}
             labs={this.state.allLabs}
+            lab={lab}
             handleSelectLab={this.handleSelectLab}
             deleteLab={this.deleteLab}
           />
