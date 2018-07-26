@@ -147,10 +147,10 @@ export class TaskEdit extends Component {
   }
 
   handlePostSubmit = async () => {
-    const { id, name, videoLink, docs, labs } = this.state;
+    const { name, description, videoLink, docs, labs } = this.state;
     const task = {
-      id,
       name,
+      description,
       videoLink,
       docs,
       labs
@@ -163,10 +163,11 @@ export class TaskEdit extends Component {
   }
 
   handlePatchSubmit = async () => {
-    const { id, name, videoLink, docs, labs } = this.state;
+    const { id, name, description, videoLink, docs, labs } = this.state;
     const taskToUpdate = {
       id,
       name,
+      description,
       videoLink,
       docs,
       labs
