@@ -38,10 +38,11 @@ export class TaskEdit extends Component {
     }
   }
 
-  loadTaskInfo = ({ id, name, videoLink, docs, labs }) => {
+  loadTaskInfo = ({ id, name, description, videoLink, docs, labs }) => {
     this.setState({
       id,
       name,
+      description,
       videoLink,
       docs,
       labs

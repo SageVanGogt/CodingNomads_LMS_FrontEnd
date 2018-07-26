@@ -5,24 +5,24 @@ import { func } from 'prop-types';
 import './Tasks.css';
 import TaskCard from '../TaskCard/TaskCard';
 import { TASKS_EDIT } from '../../constants/routes';
-import { postTask, getAllTasks } from '../../apiCalls/apiCalls';
-import { updateCurrentTask } from '../../actions/currentTask'
+import { getAllTasks } from '../../apiCalls/apiCalls';
+import { updateCurrentTask } from '../../actions/currentTask';
 
 export class Tasks extends Component {
   constructor(props) {
     super(props);
     this.state = {
       allTasks: []
-    }
+    };
   }
 
   componentDidMount = async () => {
     const allTasks = await getAllTasks();
-    this.setState({ allTasks: allTasks.data })
+    this.setState({ allTasks: allTasks.data });
   }
 
   addTask = () => {
-    this.props.history.push(TASKS_EDIT)
+    this.props.history.push(TASKS_EDIT);
   }
 
   render() {
@@ -38,7 +38,7 @@ export class Tasks extends Component {
     return (
       <div className="Task_container">
         <button onClick={ this.addTask }>Add New Task</button>
-        {tasks}
+        { tasks }
       </div>
     );
   }
@@ -46,11 +46,11 @@ export class Tasks extends Component {
 
 export const mapDispatchToProps = (dispatch) => ({
   updateCurrentTask: (currentTask) => dispatch(updateCurrentTask(currentTask))
-})
+});
 
 Tasks.propTypes = {
   updateCurrentTask: func.isRequired
-}
+};
 
 export default withRouter(connect(null, mapDispatchToProps)(Tasks));
 
