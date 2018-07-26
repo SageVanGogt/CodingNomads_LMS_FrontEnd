@@ -40,7 +40,7 @@ export class CourseCreate extends Component {
   
   handleTaskSelect = (e) => {
     const task = this.state.allTasks.find(task => task.name === e.target.value);
-    if (!this.state.tasks.includes(task)) {
+    if (!this.state.tasks.includes(task) && task.name !== "Select Task") {
       this.setState({
         tasks: [...this.state.tasks, task]
       });
