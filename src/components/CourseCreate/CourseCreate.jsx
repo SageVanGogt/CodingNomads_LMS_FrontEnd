@@ -19,7 +19,8 @@ export class CourseCreate extends Component {
       students: this.props.currentCourse.students || [],
       tasksToDelete: [],
       labsToDelete: [],
-      allTasks: []
+      allTasks: [],
+      allStudents: []
     };
   }
 
@@ -39,7 +40,13 @@ export class CourseCreate extends Component {
   fetchTasks = async () => {
     const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/tasks');
     const tasks = await response.json();
-    this.setState({allTasks: [{name: 'Select Task'}, ...tasks.data]});  //normally tasks
+    this.setState({allTasks: [{name: 'Select Task'}, ...tasks.data]});
+  }
+
+  fetchStudents = async () => {
+    const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/students');
+    const students = await response.json();
+    this.setState({ allTasks: [{ name: 'Select Student' }, ...students.data] });
   }
   
   handleTaskSelect = (e) => {
@@ -66,6 +73,8 @@ export class CourseCreate extends Component {
         </option>
       );
     });
+
+    // const students = this.state.allStudents
 
     return (
       <div className="CourseCreate_page">
