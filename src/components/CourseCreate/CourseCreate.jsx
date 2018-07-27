@@ -58,6 +58,15 @@ export class CourseCreate extends Component {
     }
   }
 
+  handleStudentSelect = (e) => {
+    const student = this.state.allStudents.find(student => student.name === e.target.value);
+    if (!this.state.students.includes(student) && student.name !== "Select Student") {
+      this.setState({
+        students: [...this.state.students, student]
+      });
+    }
+  }
+
   componentDidMount() {
     this.fetchTasks();
     this.fetchStudents();
@@ -75,7 +84,15 @@ export class CourseCreate extends Component {
       );
     });
 
-    // const students = this.state.allStudents
+    const students = this.state.allStudents.map((student, index) => {
+      return (
+        <option
+          key={`student-${index}`}
+          name="student">
+          {student.name}
+        </option>
+      );
+    });
 
     return (
       <div className="CourseCreate_page">
@@ -106,6 +123,12 @@ export class CourseCreate extends Component {
             onChange={(e) => this.handleTaskSelect(e)}
           >
             {tasks}
+          </select>
+
+          <select
+            onChange={(e) => this.handleStudentSelect(e)}
+          >
+            {students}
           </select>
           <button type="submit">Submit Course</button>
         </form>
