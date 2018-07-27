@@ -59,8 +59,9 @@ export class CourseCreate extends Component {
   }
 
   handleStudentSelect = (e) => {
-    const student = this.state.allStudents.find(student => student.name === e.target.value);
-    if (!this.state.students.includes(student) && student.name !== "Select Student") {
+    const firstName = e.target.value.split(' ')[0];
+    const student = this.state.allStudents.find(student => student.firstName === firstName);
+    if (!this.state.students.includes(student) && student.firstName !== "Select") {
       this.setState({
         students: [...this.state.students, student]
       });
@@ -116,6 +117,7 @@ export class CourseCreate extends Component {
             onChange={this.handleChange}
             value={this.state.description}
           />
+
           <h2>Tasks</h2>
           <CourseTaskContainer tasks={this.state.tasks} rearrangeTasks={this.rearrangeTasks}/>
           <span>Add task: </span>
@@ -125,6 +127,15 @@ export class CourseCreate extends Component {
             {tasks}
           </select>
 
+          <h2>Students</h2>
+          <div className='studentsArea'>
+            {
+              this.state.students.map((student, index) => {
+                return <div className='CourseStudentCard' key={`student-${index}`}>{student.firstName + ' ' + student.lastName}</div>;
+              })
+            }
+          </div>
+          <span>Add task: </span>
           <select
             onChange={(e) => this.handleStudentSelect(e)}
           >
