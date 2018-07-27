@@ -32,6 +32,10 @@ export class CourseCreate extends Component {
     });
   }
 
+  rearrangeTasks = (tasks) => {
+    this.setState({ tasks });
+  }
+
   fetchTasks = async () => {
     const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/tasks');
     const tasks = await response.json();
@@ -86,7 +90,7 @@ export class CourseCreate extends Component {
             value={this.state.description}
           />
           <h2>Tasks</h2>
-          <CourseTaskContainer tasks={this.state.tasks} />
+          <CourseTaskContainer tasks={this.state.tasks} rearrangeTasks={this.rearrangeTasks}/>
           <span>Add task: </span>
           <select
             onChange={(e) => this.handleTaskSelect(e)}
