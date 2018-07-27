@@ -46,7 +46,7 @@ export class CourseCreate extends Component {
   fetchStudents = async () => {
     const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/students');
     const students = await response.json();
-    this.setState({ allStudents: [{ name: 'Select Student' }, ...students.data] });
+    this.setState({ allStudents: [{ firstName: 'Select', lastName: 'Student' }, ...students.data] });
   }
   
   handleTaskSelect = (e) => {
@@ -89,7 +89,7 @@ export class CourseCreate extends Component {
         <option
           key={`student-${index}`}
           name="student">
-          {student.name}
+          {student.firstName + ' ' + student.lastName}
         </option>
       );
     });
