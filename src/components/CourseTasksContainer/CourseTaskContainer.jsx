@@ -35,6 +35,7 @@ export class CourseTaskContainer extends Component {
     } else {
       tasks = arrayMove(this.props.tasks, oldIndex, newIndex);
     }
+    this.props.rearrangeTasks(tasks);
     this.setState({ tasks });
   };
 
