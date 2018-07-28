@@ -105,6 +105,18 @@ describe('TaskEdit', () => {
     })
   })
 
+  describe('addDocOptions', () => {
+    it('sets state with a new DocOptions component', () => {
+
+    }) 
+  })
+
+  describe('addLabOptions', () => {
+    it('sets state with a new LabOptions component', () => {
+
+    })
+  })
+
   describe('handleInputChange', () => {
     it('should update the appropriate state', () => {
       let mockEvent = {
@@ -184,13 +196,26 @@ describe('TaskEdit', () => {
   })
 
   describe('deleteDoc', () => {
+    it('sets the state with docs, docOptions, and docsToDelete if there is a docId', () => {
 
+    })
   })
 
   describe('deleteLab', () => {
 
   })
 
+  describe('detemineSubmitMethod', () => {
+
+  })
+
+  describe('postNewTask', () => {
+
+  })
+
+  describe('patchTask', () => {
+
+  })
 
   describe('deleteDocsInDatabase', () => {
     it('calls deleteDocsFromTask with the correct params', async () => {

@@ -61,6 +61,42 @@ export class TaskEdit extends Component {
     });
   }
 
+  addDocOptions = (event, docs) => {
+    event.preventDefault();
+
+    this.setState({
+      docOptions:
+        [
+          ...this.state.docOptions,
+          <DocOptions
+            key={`doc-${this.state.docOptions}`}
+            id={`doc-option-${this.state.docOptions.length + 1}`}
+            docs={docs}
+            handleSelectDoc={this.handleSelectDoc}
+            deleteDoc={this.deleteDoc}
+          />
+        ]
+    });
+  }
+
+  addLabOptions = (event, labs) => {
+    event.preventDefault();
+
+    this.setState({
+      labOptions:
+        [
+          ...this.state.labOptions,
+          <LabOptions
+            key={`lab-${this.state.labOptions}`}
+            id={`lab-option-${this.state.labOptions.length + 1}`}
+            labs={labs}
+            handleSelectLab={this.handleSelectLab}
+            deleteLab={this.deleteLab}
+          />
+        ]
+    });
+  }
+
   handleInputChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
@@ -196,42 +232,6 @@ export class TaskEdit extends Component {
     } catch (error) {
       //mdp this error
     }
-  }
-
-  addDocOptions = (event, docs) => {
-    event.preventDefault();
-
-    this.setState({
-      docOptions:
-        [
-          ...this.state.docOptions,
-          <DocOptions
-            key={`doc-${this.state.docOptions}`}
-            id={`doc-option-${this.state.docOptions.length + 1}`}
-            docs={docs}
-            handleSelectDoc={this.handleSelectDoc}
-            deleteDoc={this.deleteDoc}
-          />
-        ]
-    });
-  }
-
-  addLabOptions = (event, labs) => {
-    event.preventDefault();
-
-    this.setState({
-      labOptions:
-        [
-          ...this.state.labOptions,
-          <LabOptions
-            key={`lab-${this.state.labOptions}`}
-            id={`lab-option-${this.state.labOptions.length + 1}`}
-            labs={labs}
-            handleSelectLab={this.handleSelectLab}
-            deleteLab={this.deleteLab}
-          />
-        ]
-    });
   }
 
   render() {
