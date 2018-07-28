@@ -72,14 +72,13 @@ export class TaskEdit extends Component {
 
   handleSelectLab = (event) => {
     event.preventDefault();
-    const labId = {
+    const newLab = {
       id: event.target.value
     };
-    console.log(labId)
 
-    if (!this.state.labs.find(lab => lab.id === labId.id)) {
+    if (!this.state.labs.find(lab => lab.id === newLab.id)) {
       this.setState({
-        labs: [...this.state.labs, labId]
+        labs: [...this.state.labs, newLab]
       });
     }
   }

@@ -126,12 +126,29 @@ describe('TaskEdit', () => {
     it('sets state with the lab if the lab is not yet in state', () => {
       let mockEvent = {
         preventDefault: jest.fn(),
-        target: {
-          name: 'videoLink',
-          value: 'caden@youtube'
-        }
+        target: { value: 1 }
       };
-        wrapper.instance().handleSelectLab(mockEvent)
+      expect(wrapper.state('labs').length).toEqual(0);
+
+      wrapper.instance().handleSelectLab(mockEvent)
+
+      expect(wrapper.state('labs')[0].id).toEqual(1)
+    })
+
+    it('does not set state if the lab is already in state', () => {
+      wrapper.setState({ labs: [{ id: 1 }] });
+      let mockEvent = {
+        preventDefault: jest.fn(),
+        target: { value: 1 }
+      };
+
+      expect(wrapper.state('labs')[0].id).toEqual(1)
+      expect(wrapper.state('labs').length).toEqual(1);
+
+      wrapper.instance().handleSelectLab(mockEvent)
+
+      expect(wrapper.state('labs')[0].id).toEqual(1)
+      expect(wrapper.state('labs').length).toEqual(1);
     })
   })
 
