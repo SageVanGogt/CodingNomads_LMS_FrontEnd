@@ -41,6 +41,7 @@ export class TaskEdit extends Component {
 
   fetchDocs = async () => {
     const docs = await API.getAllDocs();
+
     this.setState({
       allDocs: docs.data
     });
@@ -48,6 +49,7 @@ export class TaskEdit extends Component {
 
   fetchLabs = async () => {
     const labs = await API.getAllLabs();
+
     this.setState({
       allLabs: labs.data
     });
@@ -101,6 +103,7 @@ export class TaskEdit extends Component {
     const newDoc = {
       id: parseInt(event.target.value)
     };
+
     if (!this.state.docs.find(doc => doc.id === newDoc.id)) {
       this.setState({
         docs: [...this.state.docs, newDoc]
@@ -113,6 +116,7 @@ export class TaskEdit extends Component {
     const newLab = {
       id: parseInt(event.target.value)
     };
+
     if (!this.state.labs.find(lab => lab.id === newLab.id)) {
       this.setState({
         labs: [...this.state.labs, newLab]
@@ -123,39 +127,42 @@ export class TaskEdit extends Component {
   deleteDoc = (event, key) => {
     event.preventDefault();
     const docId = event.target.previousElementSibling.value;
-    if (!docId) {
-      return;
+
+    if (docId) {
+      const updatedDocs =
+        this.state.docs.filter(doc => doc.id !== docId);
+      const docOptions =
+        this.state.docOptions.filter(doc => doc.props.id !== key);
+
+      this.setState({
+        docs: updatedDocs,
+        docOptions,
+        docsToDelete: [...this.state.docsToDelete, docId]
+      });
     }
-    const updatedDocs =
-      this.state.docs.filter(doc => doc.id !== docId);
-    const docOptions =
-      this.state.docOptions.filter(doc => doc.props.id !== key);
-    this.setState({
-      docs: updatedDocs,
-      docOptions,
-      docsToDelete: [...this.state.docsToDelete, docId]
-    });
   }
 
   deleteLab = (event, key) => {
     event.preventDefault();
     const labId = event.target.previousElementSibling.value;
-    if (!labId) {
-      return;
+
+    if (labId) {
+      const updatedLabs =
+        this.state.labs.filter(lab => lab.id !== labId);
+      const labOptions =
+        this.state.labOptions.filter(lab => lab.props.id !== key);
+
+      this.setState({
+        labs: updatedLabs,
+        labOptions,
+        labsToDelete: [...this.state.labsToDelete, labId]
+      });
     }
-    const updatedLabs =
-      this.state.labs.filter(lab => lab.id !== labId);
-    const labOptions =
-      this.state.labOptions.filter(lab => lab.props.id !== key);
-    this.setState({
-      labs: updatedLabs,
-      labOptions,
-      labsToDelete: [...this.state.labsToDelete, labId]
-    });
   }
 
   determineSubmitMethod = (event) => {
     event.preventDefault();
+
     if (this.props.currentTask.id) {
       this.patchTask();
     } else {
@@ -172,6 +179,7 @@ export class TaskEdit extends Component {
       docs,
       labs
     };
+
     try {
       await API.postTask(task);
     } catch (error) {
@@ -189,17 +197,20 @@ export class TaskEdit extends Component {
       docs,
       labs
     };
+    
     try {
       await API.updateTask(taskToUpdate);
+      this.handleDeletedDocs();
+      this.handleDeletedLabs();
     } catch (error) {
       //mdp this error
     }
-    this.handleDeletedLabs();
-    this.handleDeletedDocs();
+
   }
 
   handleDeletedDocs = async () => {
     const docsToDelete = this.state.docsToDelete;
+
     try {
       await API.deleteDocsFromTask(docsToDelete);
     } catch (error) {
@@ -209,6 +220,7 @@ export class TaskEdit extends Component {
 
   handleDeletedLabs = async () => {
     const labsToDelete = this.state.labsToDelete;
+
     try {
       await API.deleteLabsFromTask(labsToDelete);
     } catch (error) {
@@ -269,3 +281,5 @@ TaskEdit.propTypes = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskEdit);
+
+
