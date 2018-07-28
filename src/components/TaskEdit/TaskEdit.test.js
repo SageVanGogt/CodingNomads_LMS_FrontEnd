@@ -192,23 +192,23 @@ describe('TaskEdit', () => {
   })
 
 
-  describe('deleteDocsFromTask', () => {
-    it('should call  with the correct params', async () => {
+  describe('deleteDocsInDatabase', () => {
+    it('calls deleteDocsFromTask with the correct params', async () => {
       let mockDocs = [{}, {}];
       wrapper.setState({docsToDelete: mockDocs});
       let expected = mockDocs;
-      await wrapper.instance().deleteDocsFromTask();
+      await wrapper.instance().deleteDocsInDatabase();
 
       expect(API.deleteDocsFromTask).toHaveBeenCalledWith(expected);
     })
   })
 
-  describe('deleteLabsFromTask', () => {
-    it('should call  with the correct params', async () => {
+  describe('deleteLabsInDatabase', () => {
+    it('calls deleteLabsFromTask with the correct params', async () => {
       let mockLabs = [{}, {}];
       wrapper.setState({labsToDelete: mockLabs});
       let expected = mockLabs;
-      await wrapper.instance().deleteLabsFromTask();
+      await wrapper.instance().deleteLabsInDatabase();
 
       expect(API.deleteLabsFromTask).toHaveBeenCalledWith(expected);
     })
