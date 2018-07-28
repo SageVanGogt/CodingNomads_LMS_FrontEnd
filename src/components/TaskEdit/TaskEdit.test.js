@@ -242,4 +242,14 @@ describe('TaskEdit', () => {
       expect(actual).toEqual(expected);
     })
   })
+
+  describe('mapDispatchToProps', () => {
+    it('calls dispatch with the correct arguments', () => {
+
+    })
+
+    it('returns a state object with removeCurrentTask', () => {
+
+    })
+  })
 })
