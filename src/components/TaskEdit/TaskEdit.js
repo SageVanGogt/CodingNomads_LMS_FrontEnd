@@ -167,17 +167,20 @@ export class TaskEdit extends Component {
       docs,
       labs
     };
+
     try {
       await API.updateTask(taskToUpdate);
+      this.deleteDocsInDatabase();
+      this.deleteLabsInDatabase();
     } catch (error) {
       //mdp this error
     }
-    this.deleteLabsFromTask();
-    this.deleteDocsFromTask();
+
   }
 
   deleteLabsInDatabase = async () => {
     const labsToDelete = this.state.labsToDelete;
+
     try {
       await API.deleteLabsFromTask(labsToDelete);
     } catch (error) {
@@ -187,6 +190,7 @@ export class TaskEdit extends Component {
 
   deleteDocsInDatabase = async () => {
     const docsToDelete = this.state.docsToDelete;
+
     try {
       await API.deleteDocsFromTask(docsToDelete);
     } catch (error) {
