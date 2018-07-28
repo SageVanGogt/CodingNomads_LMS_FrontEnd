@@ -5,17 +5,18 @@ import * as API from '../../apiCalls/apiCalls';
 import PropTypes from 'prop-types';
 import { LabOptions } from '../LabOptions/LabOptions';
 import { DocOptions } from '../DocOptions/DocOptions';
+import { removeCurrentTask } from '../../actions/currentTask';
 
 export class TaskEdit extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      id: null,
-      name: '',
-      videoLink: '',
-      description: '',
-      docs: [],
-      labs: [],
+      id: this.props.currentTask.id || null,
+      name: this.props.currentTask.name || '',
+      videoLink: this.props.currentTask.videoLink || '',
+      description: this.props.currentTask.description || '',
+      docs: this.props.currentTask.docs || [],
+      labs: this.props.currentTask.labs || [],
       allDocs: [],
       allLabs: [],
       docsToDelete: [],
@@ -28,6 +29,23 @@ export class TaskEdit extends Component {
   componentDidMount = async () => {
     await this.fetchDocs();
     await this.fetchLabs();
+    this.state.docs.forEach(doc => this.addDocOptions(doc));
+    this.state.labs.forEach(lab => this.addLabOptions(lab));
+    this.addLabOptions();
+    this.addDocOptions();
+  }
+
+  componentWillUnmount = () => {
+    this.props.removeCurrentTask();
+  }
+
+  handleChange = (event) => {
+    event.preventDefault();
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value
+    });
   }
 
   fetchDocs = async () => {
@@ -44,90 +62,26 @@ export class TaskEdit extends Component {
     });
   }
 
-  componentDidUpdate = (prevProps) => {
-    const { currentTask } = this.props;
-    if (prevProps.currentTask !== currentTask) {
-      this.loadTaskInfo(currentTask);
-    }
-  }
-
-  loadTaskInfo = ({ id, name, videoLink, docs, labs }) => {
-    this.setState({
-      id,
-      name,
-      videoLink,
-      docs,
-      labs
-    });
-  }
-
-  addDocOptions = (event, docs) => {
+  handleSelectLab = (event) => {
     event.preventDefault();
-
-    this.setState({
-      docOptions:
-        [
-          ...this.state.docOptions,
-          <DocOptions
-            key={`doc-${this.state.docOptions}`}
-            id={`doc-option-${this.state.docOptions.length + 1}`}
-            docs={docs}
-            handleSelectDoc={this.handleSelectDoc}
-            deleteDoc={this.deleteDoc}
-          />
-        ]
-    });
-  }
-
-  addLabOptions = (event, labs) => {
-    event.preventDefault();
-
-    this.setState({
-      labOptions:
-        [
-          ...this.state.labOptions,
-          <LabOptions
-            key={`lab-${this.state.labOptions}`}
-            id={`lab-option-${this.state.labOptions.length + 1}`}
-            labs={labs}
-            handleSelectLab={this.handleSelectLab}
-            deleteLab={this.deleteLab}
-          />
-        ]
-    });
-  }
-
-  handleInputChange = (event) => {
-    event.preventDefault();
-    const { name, value } = event.target;
-
-    this.setState({
-      [name]: value
-    });
-  }
-
-  handleSelectDoc = (event) => {
-    event.preventDefault();
-    const newDoc = {
-      id: event.target.value
+    const labId = {
+      id: parseInt(event.target.value)
     };
-
-    if (!this.state.docs.find(doc => doc.id === newDoc.id)) {
+    if (!this.state.labs.find(lab => lab.id === labId.id)) {
       this.setState({
-        docs: [...this.state.docs, newDoc]
+        labs: [...this.state.labs, labId]
       });
     }
   }
 
-  handleSelectLab = (event) => {
+  handleSelectDoc = (event) => {
     event.preventDefault();
-    const newLab = {
-      id: event.target.value
+    const docId = {
+      id: parseInt(event.target.value)
     };
-
-    if (!this.state.labs.find(lab => lab.id === newLab.id)) {
+    if (!this.state.docs.find(doc => doc.id === docId.id)) {
       this.setState({
-        labs: [...this.state.labs, newLab]
+        docs: [...this.state.docs, docId]
       });
     }
   }
@@ -135,49 +89,47 @@ export class TaskEdit extends Component {
   deleteDoc = (event, key) => {
     event.preventDefault();
     const docId = event.target.previousElementSibling.value;
-
-    if (docId) {
-      const updatedDocs =
-        this.state.docs.filter(doc => doc.id !== docId);
-      const docOptions =
-        this.state.docOptions.filter(doc => doc.props.id !== key);
-      
-      this.setState({
-        docs: updatedDocs,
-        docOptions,
-        docsToDelete: [...this.state.docsToDelete, docId]
-      });
+    if (!docId) {
+      return;
     }
+    const updatedDocs =
+      this.state.docs.filter(doc => doc.id !== docId);
+    const docOptions =
+      this.state.docOptions.filter(doc => doc.props.id !== key);
+    this.setState({
+      docs: updatedDocs,
+      docOptions,
+      docsToDelete: [...this.state.docsToDelete, docId]
+    });
   }
 
   deleteLab = (event, key) => {
     event.preventDefault();
     const labId = event.target.previousElementSibling.value;
-
-    if (labId) {
-      const updatedLabs =
-        this.state.labs.filter(lab => lab.id !== labId);
-      const labOptions =
-        this.state.labOptions.filter(lab => lab.props.id !== key);
-
-      this.setState({
-        labs: updatedLabs,
-        labOptions,
-        labsToDelete: [...this.state.labsToDelete, labId]
-      });
+    if (!labId) {
+      return;
     }
+    const updatedLabs =
+      this.state.labs.filter(lab => lab.id !== labId);
+    const labOptions =
+      this.state.labOptions.filter(lab => lab.props.id !== key);
+    this.setState({
+      labs: updatedLabs,
+      labOptions,
+      labsToDelete: [...this.state.labsToDelete, labId]
+    });
   }
 
-  determineSubmitMethod = (event) => {
+  directToSubmitMethod = (event) => {
     event.preventDefault();
     if (this.props.currentTask.id) {
-      this.patchTask();
+      this.handlePatchSubmit();
     } else {
-      this.postNewTask();
+      this.handlePostSubmit();
     }
   }
 
-  postNewTask = async () => {
+  handlePostSubmit = async () => {
     const { name, description, videoLink, docs, labs } = this.state;
     const task = {
       name,
@@ -193,7 +145,7 @@ export class TaskEdit extends Component {
     }
   }
 
-  patchTask = async () => {
+  handlePatchSubmit = async () => {
     const { id, name, description, videoLink, docs, labs } = this.state;
     const taskToUpdate = {
       id,
@@ -203,20 +155,26 @@ export class TaskEdit extends Component {
       docs,
       labs
     };
-
     try {
       await API.updateTask(taskToUpdate);
-      this.deleteDocsInDatabase();
-      this.deleteLabsInDatabase();
     } catch (error) {
       //mdp this error
     }
-
+    this.handleDeletedLabs();
+    this.handleDeletedDocs();
   }
 
-  deleteDocsInDatabase = async () => {
-    const docsToDelete = this.state.docsToDelete;
+  handleDeletedLabs = async () => {
+    const labsToDelete = this.state.labsToDelete;
+    try {
+      await API.deleteLabsFromTask(labsToDelete);
+    } catch (error) {
+      //mdp this error
+    }
+  }
 
+  handleDeletedDocs = async () => {
+    const docsToDelete = this.state.docsToDelete;
     try {
       await API.deleteDocsFromTask(docsToDelete);
     } catch (error) {
@@ -224,14 +182,38 @@ export class TaskEdit extends Component {
     }
   }
 
-  deleteLabsInDatabase = async () => {
-    const labsToDelete = this.state.labsToDelete;
+  addDocOptions = (doc) => {
+    this.setState({
+      docOptions:
+        [
+          ...this.state.docOptions,
+          <DocOptions
+            key={`doc-${this.state.docOptions.length + 1}`}
+            id={`doc-option-${this.state.docOptions.length + 1}`}
+            docs={this.state.allDocs}
+            docSelected={doc}
+            handleSelectDoc={this.handleSelectDoc}
+            deleteDoc={this.deleteDoc}
+          />
+        ]
+    });
+  }
 
-    try {
-      await API.deleteLabsFromTask(labsToDelete);
-    } catch (error) {
-      //mdp this error
-    }
+  addLabOptions = (lab) => {
+    this.setState({
+      labOptions:
+        [
+          ...this.state.labOptions,
+          <LabOptions
+            key={`lab-${this.state.labOptions}`}
+            id={`lab-option-${this.state.labOptions.length + 1}`}
+            labs={this.state.allLabs}
+            labSelected={lab}
+            handleSelectLab={this.handleSelectLab}
+            deleteLab={this.deleteLab}
+          />
+        ]
+    });
   }
 
   render() {
@@ -240,46 +222,33 @@ export class TaskEdit extends Component {
         <form 
           action="submit" 
           className="TaskCreate_form"
-          onSubmit={this.determineSubmitMethod}
+          onSubmit={this.directToSubmitMethod}
         >
           <input
             type="text"
             placeholder="name"
             name="name"
-            onChange={this.handleInputChange}
+            onChange={this.handleChange}
             value={this.state.name}
           />
           <input
             type="text"
             placeholder="description"
             name="description"
-            onChange={this.handleInputChange}
+            onChange={this.handleChange}
             value={this.state.description}
           />
           <input
             type="text"
             placeholder="url"
             name="videoLink"
-            onChange={this.handleInputChange}
+            onChange={this.handleChange}
             value={this.state.videoLink}
           />
-          <DocOptions
-            id={`doc-option-0`}
-            docs={this.state.allDocs}
-            handleSelectDoc={this.handleSelectDoc}
-            deleteDoc={this.deleteDoc}
-          />
           {this.state.docOptions}
-          <button onClick={(event) => this.addDocOptions(event, this.state.allDocs)}>new doc</button>
-
-          <LabOptions
-            id={`lab-option-0`}
-            labs={this.state.allLabs}
-            handleSelectLab={this.handleSelectLab}
-            deleteLab={this.deleteLab}
-          />
+          <button onClick={(event) => this.addDocOptions(event)}>new doc</button>
           {this.state.labOptions}
-          <button onClick={(event) => this.addLabOptions(event, this.state.allLabs)}>new lab</button>
+          <button onClick={(event) => this.addLabOptions(event)}>new lab</button>
           <input type="submit" />
         </form>
       </div>
@@ -291,8 +260,12 @@ export const mapStateToProps = (state) => ({
   currentTask: state.currentTask
 });
 
+export const mapDispatchToProps = (dispatch) => ({
+  removeCurrentTask: () => dispatch(removeCurrentTask())
+});
+
 TaskEdit.propTypes = {
   currentTask: PropTypes.object
 };
 
-export default connect(mapStateToProps, null)(TaskEdit);
+export default connect(mapStateToProps, mapDispatchToProps)(TaskEdit);
