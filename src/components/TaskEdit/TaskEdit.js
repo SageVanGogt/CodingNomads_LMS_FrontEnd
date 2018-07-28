@@ -48,7 +48,7 @@ export class TaskEdit extends Component {
     });
   }
 
-  handleChange = (event) => {
+  handleInputChange = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
 
@@ -248,21 +248,21 @@ export class TaskEdit extends Component {
             type="text"
             placeholder="name"
             name="name"
-            onChange={this.handleChange}
+            onChange={this.handleInputChange}
             value={this.state.name}
           />
           <input
             type="text"
             placeholder="description"
             name="description"
-            onChange={this.handleChange}
+            onChange={this.handleInputChange}
             value={this.state.description}
           />
           <input
             type="text"
             placeholder="url"
             name="videoLink"
-            onChange={this.handleChange}
+            onChange={this.handleInputChange}
             value={this.state.videoLink}
           />
           <DocOptions

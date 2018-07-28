@@ -15,10 +15,10 @@ describe('TaskEdit', () => {
   })
 
   it('should match the snapshot', () => {
-
+    expect(wrapper).toMatchSnapshot();
   })
 
-  describe('handleChange', () => {
+  describe('handleInputChange', () => {
     it('should update the appropriate state', () => {
       let mockEvent = {
         preventDefault: jest.fn(),
@@ -28,7 +28,7 @@ describe('TaskEdit', () => {
         }
       };
       let expected = 'caden@youtube';
-      wrapper.instance().handleChange(mockEvent);
+      wrapper.instance().handleInputChange(mockEvent);
       let actual = wrapper.state('videoLink');
 
       expect(actual).toEqual(expected);
