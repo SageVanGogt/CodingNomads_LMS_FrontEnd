@@ -197,32 +197,32 @@ describe('TaskEdit', () => {
 
     })
 
-    it('calls deleteDocsInDatabase', () => {
+    it('calls handleDeletedDocs', () => {
 
     })
 
-    it('calls deleteLabsInDatabase', () => {
+    it('calls handleDeletedLabs', () => {
 
     })
   })
 
-  describe('deleteDocsInDatabase', () => {
+  describe('handleDeletedDocs', () => {
     it('calls deleteDocsFromTask with the correct params', async () => {
       let mockDocs = [{}, {}];
       wrapper.setState({docsToDelete: mockDocs});
       let expected = mockDocs;
-      await wrapper.instance().deleteDocsInDatabase();
+      await wrapper.instance().handleDeletedDocs();
 
       expect(API.deleteDocsFromTask).toHaveBeenCalledWith(expected);
     })
   })
 
-  describe('deleteLabsInDatabase', () => {
+  describe('handleDeletedLabs', () => {
     it('calls deleteLabsFromTask with the correct params', async () => {
       let mockLabs = [{}, {}];
       wrapper.setState({labsToDelete: mockLabs});
       let expected = mockLabs;
-      await wrapper.instance().deleteLabsInDatabase();
+      await wrapper.instance().handleDeletedLabs();
 
       expect(API.deleteLabsFromTask).toHaveBeenCalledWith(expected);
     })
