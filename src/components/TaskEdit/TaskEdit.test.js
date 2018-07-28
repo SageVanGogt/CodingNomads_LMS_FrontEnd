@@ -12,8 +12,14 @@ describe('TaskEdit', () => {
   let mockCurrentTask;
 
   beforeEach(() => {
-    mockCurrentTask = {id: null, name: ''};
-    wrapper = shallow(<TaskEdit />);
+    mockCurrentTask = { 
+      id: null, 
+      name: '',
+      videoLink: '',
+      docs: [],
+      labs: []
+    };
+    wrapper = shallow(<TaskEdit currentTask={ mockCurrentTask }/>);
   })
 
   it('should match the snapshot', () => {
@@ -32,6 +38,8 @@ describe('TaskEdit', () => {
       const wrapperInst = wrapper.instance();
       wrapper.setState({ allDocs: [] })
 
+      expect(wrapper.state('allDocs').length).toEqual(0);
+
       await wrapperInst.fetchDocs();
 
       expect(wrapper.state('allDocs')).toEqual(mockDocs.data);
@@ -48,14 +56,40 @@ describe('TaskEdit', () => {
 
     it('sets state with the labs returned from getAllLabs', async () => {
       const wrapperInst = wrapper.instance();
+      wrapper.setState({ allLabs: [] })
+
+      expect(wrapper.state('allLabs').length).toEqual(0);
+
       await wrapperInst.fetchLabs();
 
+      expect(wrapper.state('allLabs')).toEqual(mockLabs.data);
+    })
+  })
+
+  describe('componentDidUpdate', () => {
+    it('calls loadTaskInfo if there is a new task in the props', () => {
+      const mockDifferentTask = { 
+        id: 1, 
+        name: 'task',
+        videoLink: 'url',
+        docs: [],
+        labs: []
+      };
+      wrapper = shallow(<TaskEdit />, { lifecycleExperimental: true });
+      const wrapperInst = wrapper.instance();
+      wrapperInst.loadTaskInfo = jest.fn();
+      
+      wrapper.update();
+      expect(wrapperInst.loadTaskInfo).not.toHaveBeenCalled();
+
+      wrapper.setProps({ currentTask: mockDifferentTask })
+      expect(wrapperInst.loadTaskInfo).toHaveBeenCalledWith(mockDifferentTask);
     })
   })
 
 
   describe('loadTaskInfo', () => {
-    it('should update the appropriate state with info from store', () => {
+    it('updates the appropriate state with info from store', () => {
       let mockTask = {
         id: 1,
         name: 'cats',
@@ -85,6 +119,19 @@ describe('TaskEdit', () => {
       let actual = wrapper.state('videoLink');
 
       expect(actual).toEqual(expected);
+    })
+  })
+
+  describe('handleSelectLab', () => {
+    it('sets state with the lab if the lab is not yet in state', () => {
+      let mockEvent = {
+        preventDefault: jest.fn(),
+        target: {
+          name: 'videoLink',
+          value: 'caden@youtube'
+        }
+      };
+        wrapper.instance().handleSelectLab(mockEvent)
     })
   })
 

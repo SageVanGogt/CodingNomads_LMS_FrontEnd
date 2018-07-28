@@ -4,7 +4,17 @@ exports[`TaskEdit should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <TaskEdit />,
+  Symbol(enzyme.__unrendered__): <TaskEdit
+    currentTask={
+        Object {
+            "docs": Array [],
+            "id": null,
+            "labs": Array [],
+            "name": "",
+            "videoLink": "",
+          }
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],

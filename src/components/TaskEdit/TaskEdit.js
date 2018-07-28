@@ -69,11 +69,14 @@ export class TaskEdit extends Component {
       [name]: value
     });
   }
+
   handleSelectLab = (event) => {
     event.preventDefault();
     const labId = {
       id: event.target.value
     };
+    console.log(labId)
+
     if (!this.state.labs.find(lab => lab.id === labId.id)) {
       this.setState({
         labs: [...this.state.labs, labId]
@@ -86,6 +89,7 @@ export class TaskEdit extends Component {
     const docId = {
       id: event.target.value
     };
+
     if (!this.state.docs.find(doc => doc.id === docId.id)) {
       this.setState({
         docs: [...this.state.docs, docId]
