@@ -26,6 +26,14 @@ describe('TaskEdit', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
+  describe('componentDidMount', () => {
+
+  })
+
+  describe('componentWillUnmount', () => {
+
+  })
+
   describe('fetchDocs', () => {
     it('calls getAllDocs', async () => {
       const wrapperInst = wrapper.instance();
@@ -63,45 +71,6 @@ describe('TaskEdit', () => {
       await wrapperInst.fetchLabs();
 
       expect(wrapper.state('allLabs')).toEqual(mockLabs.data);
-    })
-  })
-
-  describe('componentDidUpdate', () => {
-    it('calls loadTaskInfo if there is a new task in the props', () => {
-      const mockDifferentTask = { 
-        id: 1, 
-        name: 'task',
-        videoLink: 'url',
-        docs: [],
-        labs: []
-      };
-      wrapper = shallow(<TaskEdit />, { lifecycleExperimental: true });
-      const wrapperInst = wrapper.instance();
-      wrapperInst.loadTaskInfo = jest.fn();
-      
-      wrapper.update();
-      expect(wrapperInst.loadTaskInfo).not.toHaveBeenCalled();
-
-      wrapper.setProps({ currentTask: mockDifferentTask })
-      expect(wrapperInst.loadTaskInfo).toHaveBeenCalledWith(mockDifferentTask);
-    })
-  })
-
-
-  describe('loadTaskInfo', () => {
-    it('updates the appropriate state with info from store', () => {
-      let mockTask = {
-        id: 1,
-        name: 'cats',
-        videoLink: 'caden@youtube',
-        docs: [],
-        labs: []
-      };
-      let expected = 'caden@youtube';
-      wrapper.instance().loadTaskInfo(mockTask);
-      let actual = wrapper.state('videoLink');
-
-      expect(actual).toEqual(expected);
     })
   })
 

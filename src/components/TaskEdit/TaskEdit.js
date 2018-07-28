@@ -96,26 +96,26 @@ export class TaskEdit extends Component {
     });
   }
 
-  handleSelectLab = (event) => {
+  handleSelectDoc = (event) => {
     event.preventDefault();
-    const labId = {
+    const newDoc = {
       id: parseInt(event.target.value)
     };
-    if (!this.state.labs.find(lab => lab.id === labId.id)) {
+    if (!this.state.docs.find(doc => doc.id === newDoc.id)) {
       this.setState({
-        labs: [...this.state.labs, labId]
+        docs: [...this.state.docs, newDoc]
       });
     }
   }
 
-  handleSelectDoc = (event) => {
+  handleSelectLab = (event) => {
     event.preventDefault();
-    const docId = {
+    const newLab = {
       id: parseInt(event.target.value)
     };
-    if (!this.state.docs.find(doc => doc.id === docId.id)) {
+    if (!this.state.labs.find(lab => lab.id === newLab.id)) {
       this.setState({
-        docs: [...this.state.docs, docId]
+        labs: [...this.state.labs, newLab]
       });
     }
   }
@@ -154,16 +154,16 @@ export class TaskEdit extends Component {
     });
   }
 
-  directToSubmitMethod = (event) => {
+  determineSubmitMethod = (event) => {
     event.preventDefault();
     if (this.props.currentTask.id) {
-      this.handlePatchSubmit();
+      this.patchTask();
     } else {
-      this.handlePostSubmit();
+      this.postNewTask();
     }
   }
 
-  handlePostSubmit = async () => {
+  postNewTask = async () => {
     const { name, description, videoLink, docs, labs } = this.state;
     const task = {
       name,
@@ -179,7 +179,7 @@ export class TaskEdit extends Component {
     }
   }
 
-  handlePatchSubmit = async () => {
+  patchTask = async () => {
     const { id, name, description, videoLink, docs, labs } = this.state;
     const taskToUpdate = {
       id,
@@ -222,7 +222,7 @@ export class TaskEdit extends Component {
         <form 
           action="submit" 
           className="TaskCreate_form"
-          onSubmit={this.directToSubmitMethod}
+          onSubmit={this.determineSubmitMethod}
         >
           <input
             type="text"
