@@ -202,19 +202,39 @@ describe('TaskEdit', () => {
   })
 
   describe('deleteLab', () => {
+    it('sets the state with labs, labOptions, and labsToDelete if there is a labId', () => {
 
+    })
   })
 
   describe('detemineSubmitMethod', () => {
+    it('calls patchTask if there is a currentTask id', () => {
 
+    })
+
+    it('calls postNewTask if there is not a currentTask id', () => {
+
+    })
   })
 
   describe('postNewTask', () => {
+    it('calls API.postTask with the task', () => {
 
+    })  
   })
 
   describe('patchTask', () => {
+    it('calls API.updateTask with the updated task', () => {
 
+    })
+
+    it('calls deleteDocsInDatabase', () => {
+
+    })
+
+    it('calls deleteLabsInDatabase', () => {
+
+    })
   })
 
   describe('deleteDocsInDatabase', () => {
