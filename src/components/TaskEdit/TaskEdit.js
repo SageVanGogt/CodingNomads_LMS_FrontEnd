@@ -70,6 +70,19 @@ export class TaskEdit extends Component {
     });
   }
 
+  handleSelectDoc = (event) => {
+    event.preventDefault();
+    const newDoc = {
+      id: event.target.value
+    };
+
+    if (!this.state.docs.find(doc => doc.id === newDoc.id)) {
+      this.setState({
+        docs: [...this.state.docs, newDoc]
+      });
+    }
+  }
+
   handleSelectLab = (event) => {
     event.preventDefault();
     const newLab = {
@@ -79,19 +92,6 @@ export class TaskEdit extends Component {
     if (!this.state.labs.find(lab => lab.id === newLab.id)) {
       this.setState({
         labs: [...this.state.labs, newLab]
-      });
-    }
-  }
-
-  handleSelectDoc = (event) => {
-    event.preventDefault();
-    const docId = {
-      id: event.target.value
-    };
-
-    if (!this.state.docs.find(doc => doc.id === docId.id)) {
-      this.setState({
-        docs: [...this.state.docs, docId]
       });
     }
   }
