@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { TaskEdit, mapStateToProps } from './TaskEdit';
 import * as API from './../../apiCalls/apiCalls';
+import { mockDocs } from '../../mockData/mockDocs';
+import { mockLabs } from '../../mockData/mockLabs';
 
 jest.mock('./../../apiCalls/apiCalls');
 
@@ -16,6 +18,57 @@ describe('TaskEdit', () => {
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  })
+
+  describe('fetchDocs', () => {
+    it('calls getAllDocs', async () => {
+      const wrapperInst = wrapper.instance();
+      await wrapperInst.fetchDocs();
+
+      expect(API.getAllDocs).toHaveBeenCalled();
+    })
+
+    it('sets state with the docs returned from getAllDocs', async () => {
+      const wrapperInst = wrapper.instance();
+      wrapper.setState({ allDocs: [] })
+
+      await wrapperInst.fetchDocs();
+
+      expect(wrapper.state('allDocs')).toEqual(mockDocs.data);
+    })
+  })
+
+  describe('fetchLabs', () => {
+    it('calls getAllLabs', async () => {
+      const wrapperInst = wrapper.instance();
+      await wrapperInst.fetchLabs();
+
+      expect(API.getAllLabs).toHaveBeenCalled();
+    })
+
+    it('sets state with the labs returned from getAllLabs', async () => {
+      const wrapperInst = wrapper.instance();
+      await wrapperInst.fetchLabs();
+
+    })
+  })
+
+
+  describe('loadTaskInfo', () => {
+    it('should update the appropriate state with info from store', () => {
+      let mockTask = {
+        id: 1,
+        name: 'cats',
+        videoLink: 'caden@youtube',
+        docs: [],
+        labs: []
+      };
+      let expected = 'caden@youtube';
+      wrapper.instance().loadTaskInfo(mockTask);
+      let actual = wrapper.state('videoLink');
+
+      expect(actual).toEqual(expected);
+    })
   })
 
   describe('handleInputChange', () => {
@@ -35,38 +88,21 @@ describe('TaskEdit', () => {
     })
   })
 
-  describe('loadTaskInfo', () => {
-    it('should update the appropriate state with info from store', () => {
-      let mockTask = {
-        id: 1,
-        name: 'cats',
-        videoLink: 'caden@youtube',
-        docs: [],
-        labs: []
-      };
-      let expected = 'caden@youtube';
-      wrapper.instance().loadTaskInfo(mockTask);
-      let actual = wrapper.state('videoLink');
+//   describe('handleSubmit', () => {
+//     it('should call updateTask with the correct params', async () => {
+//       let mockTask = {
+//         id: null,
+//         name: '',
+//         videoLink: '',
+//         docs: [],
+//         labs: []
+//       };
+//       let expected = mockTask;
+//       await wrapper.instance().handleSubmit();
 
-      expect(actual).toEqual(expected);
-    })
-  })
-
-  describe('handleSubmit', () => {
-    it('should call updateTask with the correct params', async () => {
-      let mockTask = {
-        id: null,
-        name: '',
-        videoLink: '',
-        docs: [],
-        labs: []
-      };
-      let expected = mockTask;
-      await wrapper.instance().handleSubmit();
-
-      expect(API.updateTask).toHaveBeenCalledWith(expected);
-    })
-  })
+//       expect(API.updateTask).toHaveBeenCalledWith(expected);
+//     })
+//   })
 
   describe('handleDeletedLabs', () => {
     it('should call  with the correct params', async () => {

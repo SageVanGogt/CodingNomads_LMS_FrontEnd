@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './TaskEdit.css';
@@ -31,6 +30,20 @@ export class TaskEdit extends Component {
     await this.fetchLabs();
   }
 
+  fetchDocs = async () => {
+    const docs = await API.getAllDocs();
+    this.setState({
+      allDocs: docs.data
+    });
+  }
+
+  fetchLabs = async () => {
+    const labs = await API.getAllLabs();
+    this.setState({
+      allLabs: labs.data
+    });
+  }
+
   componentDidUpdate = (prevProps) => {
     const { currentTask } = this.props;
     if (prevProps.currentTask !== currentTask) {
@@ -56,21 +69,6 @@ export class TaskEdit extends Component {
       [name]: value
     });
   }
-
-  fetchDocs = async () => {
-    const docs = await API.getAllDocs();
-    this.setState({
-      allDocs: docs.data
-    });
-  }
-
-  fetchLabs = async () => {
-    const labs = await API.getAllLabs();
-    this.setState({
-      allLabs: labs.data
-    });
-  }
-
   handleSelectLab = (event) => {
     event.preventDefault();
     const labId = {
