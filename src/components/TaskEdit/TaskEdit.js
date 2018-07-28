@@ -96,59 +96,52 @@ export class TaskEdit extends Component {
     }
   }
 
-  deleteChosenLab = (event, labId) => {
-    event.preventDefault();
-    const updatedLabs = this.state.labs.filter(lab => lab.id !== labId);
-    this.setState({
-      labs: updatedLabs,
-      labsToDelete: [...this.state.labsToDelete, labId]
-    });
-  }
-
   deleteDoc = (event, key) => {
     event.preventDefault();
     const docId = event.target.previousElementSibling.value;
-    if (!docId) {
-      return;
+
+    if (docId) {
+      const updatedDocs =
+        this.state.docs.filter(doc => doc.id !== docId);
+      const docOptions =
+        this.state.docOptions.filter(doc => doc.props.id !== key);
+      
+      this.setState({
+        docs: updatedDocs,
+        docOptions,
+        docsToDelete: [...this.state.docsToDelete, docId]
+      });
     }
-    const updatedDocs =
-      this.state.docs.filter(doc => doc.id !== docId);
-    const docOptions =
-      this.state.docOptions.filter(doc => doc.props.id !== key);
-    this.setState({
-      docs: updatedDocs,
-      docOptions,
-      docsToDelete: [...this.state.docsToDelete, docId]
-    });
   }
 
   deleteLab = (event, key) => {
     event.preventDefault();
     const labId = event.target.previousElementSibling.value;
-    if (!labId) {
-      return;
+
+    if (labId) {
+      const updatedLabs =
+        this.state.labs.filter(lab => lab.id !== labId);
+      const labOptions =
+        this.state.labOptions.filter(lab => lab.props.id !== key);
+
+      this.setState({
+        labs: updatedLabs,
+        labOptions,
+        labsToDelete: [...this.state.labsToDelete, labId]
+      });
     }
-    const updatedLabs =
-      this.state.labs.filter(lab => lab.id !== labId);
-    const labOptions =
-      this.state.labOptions.filter(lab => lab.props.id !== key);
-    this.setState({
-      labs: updatedLabs,
-      labOptions,
-      labsToDelete: [...this.state.labsToDelete, labId]
-    });
   }
 
-  directToSubmitMethod = (event) => {
+  determineSubmitMethod = (event) => {
     event.preventDefault();
     if (this.props.currentTask.id) {
-      this.handlePatchSubmit();
+      this.patchTask();
     } else {
-      this.handlePostSubmit();
+      this.postNewTask();
     }
   }
 
-  handlePostSubmit = async () => {
+  postNewTask = async () => {
     const { name, description, videoLink, docs, labs } = this.state;
     const task = {
       name,
@@ -164,7 +157,7 @@ export class TaskEdit extends Component {
     }
   }
 
-  handlePatchSubmit = async () => {
+  patchTask = async () => {
     const { id, name, description, videoLink, docs, labs } = this.state;
     const taskToUpdate = {
       id,
@@ -179,11 +172,11 @@ export class TaskEdit extends Component {
     } catch (error) {
       //mdp this error
     }
-    this.handleDeletedLabs();
-    this.handleDeletedDocs();
+    this.deleteLabsFromTask();
+    this.deleteDocsFromTask();
   }
 
-  handleDeletedLabs = async () => {
+  deleteLabsInDatabase = async () => {
     const labsToDelete = this.state.labsToDelete;
     try {
       await API.deleteLabsFromTask(labsToDelete);
@@ -192,7 +185,7 @@ export class TaskEdit extends Component {
     }
   }
 
-  handleDeletedDocs = async () => {
+  deleteDocsInDatabase = async () => {
     const docsToDelete = this.state.docsToDelete;
     try {
       await API.deleteDocsFromTask(docsToDelete);
@@ -243,7 +236,7 @@ export class TaskEdit extends Component {
         <form 
           action="submit" 
           className="TaskCreate_form"
-          onSubmit={this.directToSubmitMethod}
+          onSubmit={this.determineSubmitMethod}
         >
           <input
             type="text"

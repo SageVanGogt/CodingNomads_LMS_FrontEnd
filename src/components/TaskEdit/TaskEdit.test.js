@@ -122,6 +122,37 @@ describe('TaskEdit', () => {
     })
   })
 
+  describe('handleSelectDoc', () => {
+    it('sets state with the doc if the doc is not yet in state', () => {
+      let mockEvent = {
+        preventDefault: jest.fn(),
+        target: { value: 1 }
+      };
+      expect(wrapper.state('docs').length).toEqual(0);
+
+      wrapper.instance().handleSelectDoc(mockEvent)
+
+      expect(wrapper.state('docs')[0].id).toEqual(1)
+    })
+
+    it('does not set state if the doc is already in state', () => {
+      wrapper.setState({ docs: [{ id: 1 }] });
+      let mockEvent = {
+        preventDefault: jest.fn(),
+        target: { value: 1 }
+      };
+
+      expect(wrapper.state('docs')[0].id).toEqual(1)
+      expect(wrapper.state('docs').length).toEqual(1);
+
+      wrapper.instance().handleSelectDoc(mockEvent)
+
+      expect(wrapper.state('docs')[0].id).toEqual(1)
+      expect(wrapper.state('docs').length).toEqual(1);
+    })
+  })
+
+
   describe('handleSelectLab', () => {
     it('sets state with the lab if the lab is not yet in state', () => {
       let mockEvent = {
@@ -152,43 +183,37 @@ describe('TaskEdit', () => {
     })
   })
 
-//   describe('handleSubmit', () => {
-//     it('should call updateTask with the correct params', async () => {
-//       let mockTask = {
-//         id: null,
-//         name: '',
-//         videoLink: '',
-//         docs: [],
-//         labs: []
-//       };
-//       let expected = mockTask;
-//       await wrapper.instance().handleSubmit();
+  describe('deleteDoc', () => {
 
-//       expect(API.updateTask).toHaveBeenCalledWith(expected);
-//     })
-//   })
+  })
 
-  describe('handleDeletedLabs', () => {
+  describe('deleteLab', () => {
+
+  })
+
+
+  describe('deleteDocsFromTask', () => {
+    it('should call  with the correct params', async () => {
+      let mockDocs = [{}, {}];
+      wrapper.setState({docsToDelete: mockDocs});
+      let expected = mockDocs;
+      await wrapper.instance().deleteDocsFromTask();
+
+      expect(API.deleteDocsFromTask).toHaveBeenCalledWith(expected);
+    })
+  })
+
+  describe('deleteLabsFromTask', () => {
     it('should call  with the correct params', async () => {
       let mockLabs = [{}, {}];
       wrapper.setState({labsToDelete: mockLabs});
       let expected = mockLabs;
-      await wrapper.instance().handleDeletedLabs();
+      await wrapper.instance().deleteLabsFromTask();
 
       expect(API.deleteLabsFromTask).toHaveBeenCalledWith(expected);
     })
   })
 
-  describe('handleDeletedDocs', () => {
-    it('should call  with the correct params', async () => {
-      let mockDocs = [{}, {}];
-      wrapper.setState({docsToDelete: mockDocs});
-      let expected = mockDocs;
-      await wrapper.instance().handleDeletedDocs();
-
-      expect(API.deleteDocsFromTask).toHaveBeenCalledWith(expected);
-    })
-  })
 
   describe('mapStateToProps', () =>  {
     it('should return a state with the currentTask prop', () => {
