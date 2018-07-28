@@ -1,11 +1,33 @@
 .TaskEdit_page {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8E8F8F;;
+    width: 50vw;
+    height: 600px;
+    margin-left: 200px;
 }
 
 .TaskEdit_form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    color: white;
+}
 
+.TaskEdit_input {
+    margin-top: 0;
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: #C7C7C7;
 }
 
 .TaskEdit_submit {
+    width: 300px;
+}
 
+.TaskEdit_select-list {
+    width: 300px;
+    border: 1px solid black;
 }

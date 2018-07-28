@@ -230,38 +230,68 @@ export class TaskEdit extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
       <div className="TaskCreate_page">
         <form 
           action="submit" 
           className="TaskCreate_form"
           onSubmit={this.determineSubmitMethod}
+=======
+      <div className="TaskEdit_page">
+        <form
+          action="submit"
+          className="TaskEdit_form"
+          onSubmit={this.directToSubmitMethod}
+>>>>>>> Add basic css positioning to taskEdit
         >
+          <label for="name">Task name:</label>
           <input
             type="text"
             placeholder="name"
             name="name"
+<<<<<<< HEAD
             onChange={this.handleInputChange}
+=======
+            className="TaskEdit_input TaskEdit_input-name"
+            onChange={this.handleChange}
+>>>>>>> Add basic css positioning to taskEdit
             value={this.state.name}
           />
+          <label for="description">Description of task:</label>
           <input
             type="text"
             placeholder="description"
             name="description"
+<<<<<<< HEAD
             onChange={this.handleInputChange}
+=======
+            className="TaskEdit_input TaskEdit_input-description"
+            onChange={this.handleChange}
+>>>>>>> Add basic css positioning to taskEdit
             value={this.state.description}
           />
+          <label for="videoLink">Link to the lesson video:</label>
           <input
             type="text"
             placeholder="url"
             name="videoLink"
+<<<<<<< HEAD
             onChange={this.handleInputChange}
+=======
+            className="TaskEdit_input TaskEdit_input-videoLink"
+            onChange={this.handleChange}
+>>>>>>> Add basic css positioning to taskEdit
             value={this.state.videoLink}
           />
-          {this.state.docOptions}
-          <button onClick={(event) => this.addDocOptions(event)}>new doc</button>
-          {this.state.labOptions}
-          <button onClick={(event) => this.addLabOptions(event)}>new lab</button>
-          <input type="submit" />
+          <div className="TaskEdit_select-list">
+            {this.state.docOptions}
+            <button onClick={(event) => this.addDocOptions(event)}>new doc</button>
+          </div>
+          <div className="TaskEdit_select-list">
+            {this.state.labOptions}
+            <button onClick={(event) => this.addLabOptions(event)}>new lab</button>
+          </div>
+          <input className="TaskEdit_submit" type="submit" />
         </form>
       </div>
     );
@@ -281,5 +311,8 @@ TaskEdit.propTypes = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskEdit);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Add basic css positioning to taskEdit
