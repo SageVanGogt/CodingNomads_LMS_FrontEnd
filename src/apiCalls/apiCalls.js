@@ -56,9 +56,11 @@ export const updateTask = async (updatedTask) => {
   };
   try {
     const response = await fetch(url, options);
-    if (response.status < 200 && response.status > 300) {
+    if (response.status !== 200) {
+      console.log('if')
       throw Error('Could not patch request');
     } else {
+      console.log('else')
       return await response.json();
     }
   } catch (error) {

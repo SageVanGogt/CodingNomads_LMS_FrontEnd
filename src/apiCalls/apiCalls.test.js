@@ -150,7 +150,8 @@ describe('updateTask', () => {
 
   it('throws an error if the status is not ok', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      status: 500
+      status: 500,
+      json: () => {}
     }))
 
     const expected = Error('Could not patch request');
@@ -680,7 +681,7 @@ describe('postTaskToCourse', () => {
       status: 500
     }));
 
-    const expected = Error('Could not add task to course');
+    const expected = Error('Could not add teacher to course');
     const result = apiCalls.addTeacherToCourse(1);
 
     expect(result).rejects.toEqual(expected);
