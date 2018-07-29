@@ -57,6 +57,10 @@ export class CourseCreate extends Component {
     }
   }
 
+  deleteTask = (id) => {
+    console.log(id)
+  }
+
   handleStudentSelect = (e) => {
     const firstName = e.target.value.split(' ')[0];
     const student = this.state.allStudents.find(student => student.firstName === firstName);
@@ -76,7 +80,7 @@ export class CourseCreate extends Component {
       description,
       tasks
     };
-    
+
     try {
       const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/courses', {
         method: 'PATCH',
@@ -126,7 +130,6 @@ export class CourseCreate extends Component {
         <form 
           action="submit" 
           className="CourseCreate_form"
-          onSubmit={this.patchCourse}
         >
           <input
             type="text"
@@ -166,7 +169,7 @@ export class CourseCreate extends Component {
           >
             {students}
           </select>
-          <button type="submit">Submit Course</button>
+          <button type="submit" onSubmit={(e) => this.patchCourse(e)}>Submit Course</button>
         </form>
       </div>
     );
