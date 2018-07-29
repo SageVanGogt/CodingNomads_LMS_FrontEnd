@@ -66,7 +66,8 @@ export class CourseCreate extends Component {
     }
   }
 
-  patchCourse = async () => {
+  patchCourse = async (e) => {
+    e.preventDefault();
     const { name, description, tasks } = this.state;
     const updatedCourse = {
       id: this.props.currentCourse.id,
@@ -74,11 +75,13 @@ export class CourseCreate extends Component {
       description,
       tasks
     };
-
+    
     try {
-      const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/students', {
-        method: 'POST',
-        'content-type': 'application/json',
+      const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/courses', {
+        method: 'PATCH',
+        headers: {
+          'content-type': 'application/json'
+        },
         body: JSON.stringify(updatedCourse)
       });
       if (response.status !== 200) {
@@ -122,7 +125,7 @@ export class CourseCreate extends Component {
         <form 
           action="submit" 
           className="CourseCreate_form"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={this.patchCourse}
         >
           <input
             type="text"
