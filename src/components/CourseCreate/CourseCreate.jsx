@@ -4,7 +4,6 @@ import { mockTasks } from '../../mockData/mockTasks';
 import './CourseCreate.css';
 import PropTypes from 'prop-types';
 import * as apiCalls from '../../apiCalls/apiCalls';
-// import { CourseTaskCard } from '../CourseTaskCard/CourseTaskCard';
 
 import { CourseTaskContainer } from '../CourseTasksContainer/CourseTaskContainer';
 

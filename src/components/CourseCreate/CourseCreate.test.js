@@ -35,6 +35,7 @@ describe('CourseCreate', () => {
   })
 
   it('should match the snapshot', () => {
+    
   });
 
   describe('handleChange', () => {
@@ -54,16 +55,16 @@ describe('CourseCreate', () => {
     });
   });
 
-  // describe('handleStudentSelect', () => {
-  //   it('should call  with the correct params', async () => {
-  //     let mockLabs = [{}, {}];
-  //     wrapper.setState({ labsToDelete: mockLabs });
-  //     let expected = mockLabs;
-  //     await wrapper.instance().handleDeletedLabs();
+  describe('handleStudentSelect', () => {
+    it('should call  with the correct params', async () => {
+      let mockLabs = [{}, {}];
+      wrapper.setState({ labsToDelete: mockLabs });
+      let expected = mockLabs;
+      await wrapper.instance().handleDeletedLabs();
 
-  //     expect(API.deleteLabsFromTask).toHaveBeenCalledWith(expected);
-  //   })
-  // })
+      expect(API.deleteLabsFromTask).toHaveBeenCalledWith(expected);
+    })
+  })
 
   // describe('handleDeletedDocs', () => {
   //   it('should call  with the correct params', async () => {
