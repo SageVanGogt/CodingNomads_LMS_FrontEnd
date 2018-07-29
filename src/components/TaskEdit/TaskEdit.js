@@ -266,12 +266,14 @@ export class TaskEdit extends Component {
             value={this.state.videoLink}
           />
           <div className="TaskEdit_select-list">
+            <p>Select documents for your students to read with this task</p>
             {this.state.docOptions}
-            <button className="TaskEdit_new-select" onClick={(event) => this.addDocOptions(event)}>new doc</button>
+            <button className="TaskEdit_new-select" onClick={(event) => this.addDocOptions(event)}>new doc +</button>
           </div>
           <div className="TaskEdit_select-list">
+            <p>Select labs for your students to do with this task</p>
             {this.state.labOptions}
-            <button className="TaskEdit_new-select" onClick={(event) => this.addLabOptions(event)}>new lab</button>
+            <button className="TaskEdit_new-select" onClick={(event) => this.addLabOptions(event)}>new lab +</button>
           </div>
           <input className="TaskEdit_submit" type="submit" />
         </form>
