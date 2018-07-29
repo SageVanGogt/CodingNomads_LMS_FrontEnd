@@ -55,15 +55,15 @@ describe('CourseCreate', () => {
     });
   });
 
-  describe('handleStudentSelect', () => {
-    it('should call  with the correct params', async () => {
-      let mockLabs = [{}, {}];
-      wrapper.setState({ labsToDelete: mockLabs });
-      let expected = mockLabs;
-      await wrapper.instance().handleDeletedLabs();
+  describe('rearrangeTasks', () => {
+    wrapper.setState({ tasks: [1, 2]});
+    const expected = [2, 1];
 
-      expect(API.deleteLabsFromTask).toHaveBeenCalledWith(expected);
-    })
+    wrapper.instance().rearrangeTasks(expected);
+
+    let actual = wrapper.state('tasks');
+    expect(actual).toEqual(expected);
+
   })
 
   // describe('handleDeletedDocs', () => {
