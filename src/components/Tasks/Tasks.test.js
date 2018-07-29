@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import * as API from '../../apiCalls/apiCalls';
-import { Tasks, mapDispatchToProps } from './Tasks';
-import { updateCurrentTask } from '../../actions/currentTask';
+import { Tasks } from './Tasks';
 jest.mock('../../apiCalls/apiCalls');
 
 describe('Tasks', () => {
@@ -30,23 +29,20 @@ describe('Tasks', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  describe('componentDidMount', () => {
+    it('calls getAllTasks', async () => {
+      
+    })
+
+    it('sets the state with the tasks returned from getAllTasks', async () => {
+
+    })
+  });
+
   describe('addTask', () => {
     beforeEach(() => {
       API.postTask = jest.fn().mockImplementation(() => Promise.resolve(mockTask));
     })
-
-    it('calls postTask', async () => {
-      
-    })
-
-    // it('calls this.props.updateCurrentTask with the correct arguments', async () => {
-    //   const expected = mockTask;
-    //   const wrapperInst = wrapper.instance();
-      
-    //   await wrapperInst.addTask();
-
-    //   expect(wrapperInst.props.updateCurrentTask).toHaveBeenCalledWith(expected);
-    // })
 
     it ('calls this.props.history.push with the correct arguments', async () => {
       const expected = '/tasks/edit';
@@ -59,15 +55,4 @@ describe('Tasks', () => {
     })
   })
 
-  // describe('mapDispatchToProps', () => {
-  //   it('calls dispatch with the correct arguments', () => {
-  //     const dispatch = jest.fn();
-  //     const expected = updateCurrentTask(mockTask); 
-  //     const mappedProps = mapDispatchToProps(dispatch);
-
-  //     mappedProps.updateCurrentTask(mockTask);
-
-  //     expect(dispatch).toHaveBeenCalledWith(expected);
-  //   })
-  // })
 });

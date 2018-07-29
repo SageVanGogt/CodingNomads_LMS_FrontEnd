@@ -6,7 +6,6 @@ import './Tasks.css';
 import TaskCard from '../TaskCard/TaskCard';
 import { TASKS_EDIT } from '../../constants/routes';
 import { getAllTasks } from '../../apiCalls/apiCalls';
-import { updateCurrentTask } from '../../actions/currentTask';
 
 export class Tasks extends Component {
   constructor(props) {
@@ -43,14 +42,6 @@ export class Tasks extends Component {
     );
   }
 }
-
-// export const mapDispatchToProps = (dispatch) => ({
-//   updateCurrentTask: (currentTask) => dispatch(updateCurrentTask(currentTask))
-// });
-
-// Tasks.propTypes = {
-//   updateCurrentTask: func.isRequired
-// };
 
 export default withRouter(Tasks);
 
