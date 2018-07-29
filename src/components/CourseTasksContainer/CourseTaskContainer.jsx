@@ -42,11 +42,7 @@ export class CourseTaskContainer extends Component {
   render() { 
     return (
       <div className='tasksArea'>
-        {
-          this.state.tasks.length > 0 ? 
-            <SortableList tasks={this.state.tasks} onSortEnd={this.onSortEnd} shouldCancelStart={this.shouldCancelStart} />
-            : <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} shouldCancelStart={this.shouldCancelStart} />
-        }
+        <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} shouldCancelStart={this.shouldCancelStart} />
       </div>
     );
   }
