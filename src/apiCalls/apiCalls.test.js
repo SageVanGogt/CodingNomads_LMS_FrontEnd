@@ -29,7 +29,7 @@ describe('getAllTasks', () => {
       status: 500
     }));
 
-    const expected = Error('User can not do that.');
+    const expected = Error('Could not fetch tasks');
     const result = apiCalls.getAllTasks();
 
     expect(result).rejects.toEqual(expected);
@@ -64,7 +64,7 @@ describe('getTask', () => {
       status: 500
     }))
 
-    const expected = Error('Fetched task could not be found.');
+    const expected = Error('Task could not be found.');
     const result = apiCalls.getTask(1);
 
     expect(result).rejects.toEqual(expected);
@@ -107,7 +107,7 @@ describe('postTask', () => {
       status: 500
     }))
 
-    const expected = Error('Does not have necessary info');
+    const expected = Error('Could not post task');
     const result = apiCalls.postTask(newTask);
 
     expect(result).rejects.toEqual(expected);
@@ -153,7 +153,7 @@ describe('updateTask', () => {
       status: 500
     }))
 
-    const expected = Error('Failed to update task.');
+    const expected = Error('Could not patch request');
     const result = apiCalls.updateTask(updatedTask);
 
     expect(result).rejects.toEqual(expected);
@@ -221,7 +221,7 @@ describe('getAllCourses', () => {
       status: 500
     }));
 
-    const expected = Error('User can not do that.');
+    const expected = Error('Could not get courses');
     const result = apiCalls.getAllCourses();
 
     expect(result).rejects.toEqual(expected);
@@ -256,7 +256,7 @@ describe('getCourse', () => {
       status: 500
     }))
 
-    const expected = Error('Fetched course could not be found.');
+    const expected = Error('Could not find course');
     const result = apiCalls.getCourse(1);
 
     expect(result).rejects.toEqual(expected);
@@ -299,7 +299,7 @@ describe('addCourse', () => {
       status: 500
     }))
 
-    const expected = Error('Does not have necessary info');
+    const expected = Error('Could not add course');
     const result = apiCalls.addCourse(newCourse);
 
     expect(result).rejects.toEqual(expected);
@@ -384,9 +384,6 @@ describe('deleteCourse', () => {
 })
 
 
-
-
-
 describe('getAllCourseStudents', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
@@ -415,47 +412,12 @@ describe('getAllCourseStudents', () => {
       status: 500
     }));
 
-    const expected = Error('Error.');
+    const expected = Error('Could not get students in course');
     const result = apiCalls.getAllCourseStudents();
 
     expect(result).rejects.toEqual(expected);
   })
 })
-
-// describe('getCourse', () => {
-//   beforeEach(() => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 200,
-//       json: () => Promise.resolve({ id: 1, name: 'this is a course' })
-//     }))
-//   })
-
-//   it('calls fetch with the correct arguments', () => {
-//     const url = apiPath + '/courses/1';
-
-//     apiCalls.getCourse(1);
-
-//     expect(window.fetch).toHaveBeenCalledWith(url);
-//   })
-
-//   it('returns a course object', async () => {
-//     const expected = { id: 1, name: 'this is a course' };
-//     const result = await apiCalls.getCourse(1);
-
-//     expect(result).toEqual(expected);
-//   })
-
-//   it('throws an error if the status is not ok', () => {
-//     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-//       status: 500
-//     }))
-
-//     const expected = Error('Fetched course could not be found.');
-//     const result = apiCalls.getCourse(1);
-
-//     expect(result).rejects.toEqual(expected);
-//   })
-// })
 
 describe('addCourseStudent', () => {
   let newCourseStudent;
@@ -495,7 +457,7 @@ describe('addCourseStudent', () => {
       status: 500
     }))
 
-    const expected = Error('Does not have necessary info');
+    const expected = Error('Could not add student to course');
     const result = apiCalls.addCourseStudent(newCourseStudent, course);
 
     expect(result).rejects.toEqual(expected);
@@ -566,7 +528,7 @@ describe('getCourseTeachers', () => {
       status: 500
     }));
 
-    const expected = Error('Teachers not found.');
+    const expected = Error('Could not get teachers');
     const result = apiCalls.getCourseTeachers(1);
 
     expect(result).rejects.toEqual(expected);
@@ -609,7 +571,7 @@ describe('addTeacherToCourse', () => {
       status: 500
     }));
 
-    const expected = Error('Does not have necessary info');
+    const expected = Error('Could not add teacher to course');
     const result = apiCalls.addTeacherToCourse(1);
 
     expect(result).rejects.toEqual(expected);
@@ -675,7 +637,7 @@ describe('getCourseTasks', () => {
       status: 500
     }));
 
-    const expected = Error('Tasks not found.');
+    const expected = Error('Could not get tasks for that course');
     const result = apiCalls.getCourseTasks(1);
 
     expect(result).rejects.toEqual(expected);
@@ -718,7 +680,7 @@ describe('postTaskToCourse', () => {
       status: 500
     }));
 
-    const expected = Error('Does not have necessary info');
+    const expected = Error('Could not add task to course');
     const result = apiCalls.addTeacherToCourse(1);
 
     expect(result).rejects.toEqual(expected);
@@ -784,7 +746,7 @@ describe('getAllDocs', () => {
       status: 500
     }));
 
-    const expected = Error('Error.');
+    const expected = Error('');
     const result = apiCalls.getAllDocs();
 
     expect(result).rejects.toEqual(expected);
@@ -819,7 +781,7 @@ describe('getAllLabs', () => {
       status: 500
     }));
 
-    const expected = Error('Error.');
+    const expected = Error('');
     const result = apiCalls.getAllLabs();
 
     expect(result).rejects.toEqual(expected);

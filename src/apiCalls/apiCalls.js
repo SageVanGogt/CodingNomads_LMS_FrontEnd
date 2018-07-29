@@ -5,10 +5,10 @@ export const getAllTasks = async () => {
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
-      throw Error('User can not do that.');
+      throw Error('Could not fetch tasks');
+    } else {
+      return await response.json();
     }
-    const tasks = await response.json();
-    return tasks;
   } catch (error) {
     throw error;
   }
@@ -19,10 +19,10 @@ export const getTask = async (taskId) => {
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
-      throw Error('Fetched task could not be found.');
+      throw Error('Task could not be found.');
+    } else {
+      return await response.json();
     }
-    const task = await response.json();
-    return task;
   } catch (error) {
     throw error;
   }
@@ -38,10 +38,10 @@ export const postTask = async (newTask) => {
   try {
     const response = await fetch(url, options);
     if (response.status !== 201) {
-      throw Error('Does not have necessary info');
+      throw Error('Could not post task');
+    } else {
+      return await response.json();
     }
-    const task = await response.json();
-    return task;
   } catch (error) {
     throw error;
   }
@@ -58,9 +58,9 @@ export const updateTask = async (updatedTask) => {
     const response = await fetch(url, options);
     if (response.status < 200 && response.status > 300) {
       throw Error('Could not patch request');
+    } else {
+      return await response.json();
     }
-    const task = await response.json();
-    return task;
   } catch (error) {
     throw error;
   }
@@ -87,10 +87,10 @@ export const getAllCourses = async () => {
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
-      throw Error('User can not do that.');
+      throw Error('Could not get courses');
+    } else {
+      return await response.json();
     }
-    const tasks = await response.json();
-    return tasks;
   } catch (error) {
     throw error;
   }
@@ -101,10 +101,10 @@ export const getCourse = async (courseId) => {
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
-      throw Error('Fetched course could not be found.');
+      throw Error('Could not find course');
+    } else {
+      return await response.json();
     }
-    const course = await response.json();
-    return course;
   } catch (error) {
     throw error;
   }
@@ -120,10 +120,10 @@ export const addCourse = async (newCourse) => {
   try {
     const response = await fetch(url, options);
     if (response.status !== 201) {
-      throw Error('Does not have necessary info');
+      throw Error('Could not add course');
+    } else {
+      return await response.json();
     }
-    const course = await response.json();
-    return course;
   } catch (error) {
     throw error;
   }
@@ -140,9 +140,9 @@ export const updateCourse = async (updatedCourse) => {
     const response = await fetch(url, options);
     if (response.status !== 200) {
       throw Error('Failed to update course.');
+    } else {
+      return await response.json();
     }
-    const course = await response.json();
-    return course;
   } catch (error) {
     throw error;
   }
@@ -169,10 +169,10 @@ export const getAllCourseStudents = async (courseId) => {
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
-      throw Error('Error.');
+      throw Error('Could not get students in course');
+    } else {
+      return await response.json();
     }
-    const course = await response.json();
-    return course;
   } catch (error) {
     throw error;
   }
@@ -192,10 +192,10 @@ export const addCourseStudent = async (newCourseStudent, course) => {
   try {
     const response = await fetch(url, options);
     if (response.status !== 201) {
-      throw Error('Does not have necessary info');
+      throw Error('Could not add student to course');
+    } else {
+      return await response.json();
     }
-    const course = await response.json();
-    return course;
   } catch (error) {
     throw error;
   }
@@ -222,10 +222,10 @@ export const getCourseTeachers = async (courseID) => {
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
-      throw Error('Teachers not found.');
+      throw Error('Could not get teachers');
+    } else {
+      return await response.json();
     }
-    const teachers = await response.json();
-    return teachers;
   } catch (error) {
     throw error;
   }
@@ -241,10 +241,10 @@ export const addTeacherToCourse = async (courseId, teacherID) => {
   try {
     const response = await fetch(url, options);
     if (response.status !== 201) {
-      throw Error('Does not have necessary info');
+      throw Error('Could not add teacher to course');
+    } else {
+      return await response.json();
     }
-    const course = await response.json();
-    return course;
   } catch (error) {
     throw error;
   }
@@ -271,10 +271,10 @@ export const getCourseTasks = async (courseID) => {
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
-      throw Error('Tasks not found.');
+      throw Error('Could not get tasks for that course');
+    } else {
+      return await response.json();
     }
-    const teachers = await response.json();
-    return teachers;
   } catch (error) {
     throw error;
   }
@@ -290,10 +290,10 @@ export const postTaskToCourse = async (courseId, taskID) => {
   try {
     const response = await fetch(url, options);
     if (response.status !== 201) {
-      throw Error('Does not have necessary info');
+      throw Error('Could not add task to course');
+    } else {
+      return await response.json();
     }
-    const course = await response.json();
-    return course;
   } catch (error) {
     throw error;
   }
@@ -320,10 +320,10 @@ export const getAllDocs = async () => {
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
-      throw Error('Error.');
+      throw Error('');
+    } else {
+      return await response.json();
     }
-    const docs = await response.json();
-    return docs;
   } catch (error) {
     throw error;
   }
@@ -334,10 +334,10 @@ export const getAllLabs = async () => {
   try {
     const response = await fetch(url);
     if (response.status !== 200) {
-      throw Error('Error.');
+      throw Error('');
+    } else {
+      return await response.json();
     }
-    const labs = await response.json();
-    return labs;
   } catch (error) {
     throw error;
   }
