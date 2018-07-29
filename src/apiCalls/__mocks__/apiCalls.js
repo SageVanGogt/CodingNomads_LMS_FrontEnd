@@ -7,11 +7,11 @@ Promise.resolve(mockDocs));
 export const getAllLabs = jest.fn().mockImplementation(() => 
 Promise.resolve(mockLabs));
 
-export const updateTask = jest.fn().mockImplementation(() => 
-Promise.resolve());
+export const deleteLabsFromTask = jest.fn(); 
 
-export const deleteLabsFromTask = jest.fn().mockImplementation(() => 
-Promise.resolve());
+export const deleteDocsFromTask = jest.fn();
 
-export const deleteDocsFromTask = jest.fn().mockImplementation(() => 
-Promise.resolve());
+export const postTask = jest.fn();
+
+export const updateTask = jest.fn();
+
