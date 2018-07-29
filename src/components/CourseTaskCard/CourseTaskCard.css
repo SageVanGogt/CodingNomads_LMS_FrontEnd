@@ -5,3 +5,13 @@
 
 .CourseTaskCard:hover {
   cursor: pointer; }
+
+.CourseTaskCard h4 {
+  display: inline-block; }
+
+.CourseTaskCard img {
+  float: right;
+  padding: 3px 3px 0px 0px;
+  cursor: initial;
+  width: 10px;
+  height: 10px; }
