@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id, docSelected }) => {
   const docOptions = docs.map((doc, index) => {
     return (
-      <option 
-        key={`doc-${index}`} 
+      <option
+        key={`doc-${index}`}
         name="documentation"
         value={doc.id}
       >
@@ -17,18 +17,20 @@ export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id, docSelected }
 
   return (
     <div>
-      <select 
+      <select
         name=""
+        className="DocOptions_select"
         value={docSelected && docSelected.id}
         onChange={(event) => handleSelectDoc(event)}
       >
         <option value='' selected></option>
         { docOptions }
       </select>
-      <button 
+      <button
+        className="DocOptions_delete"
         onClick={(event) => deleteDoc(event, id)}
       >
-        del
+        X
       </button>
     </div>
   );

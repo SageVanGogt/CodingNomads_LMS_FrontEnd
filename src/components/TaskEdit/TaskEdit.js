@@ -197,7 +197,7 @@ export class TaskEdit extends Component {
       docs,
       labs
     };
-    
+
     try {
       await API.updateTask(taskToUpdate);
       this.handleDeletedDocs();
@@ -230,66 +230,48 @@ export class TaskEdit extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div className="TaskCreate_page">
-        <form 
-          action="submit" 
-          className="TaskCreate_form"
-          onSubmit={this.determineSubmitMethod}
-=======
       <div className="TaskEdit_page">
         <form
           action="submit"
           className="TaskEdit_form"
-          onSubmit={this.directToSubmitMethod}
->>>>>>> Add basic css positioning to taskEdit
+          onSubmit={this.determineSubmitMethod}
         >
+          <h1 className="TaskEdit_title">EDIT A TASK</h1>
           <label for="name">Task name:</label>
           <input
             type="text"
             placeholder="name"
             name="name"
-<<<<<<< HEAD
-            onChange={this.handleInputChange}
-=======
             className="TaskEdit_input TaskEdit_input-name"
-            onChange={this.handleChange}
->>>>>>> Add basic css positioning to taskEdit
+            onChange={this.handleInputChange}
             value={this.state.name}
           />
           <label for="description">Description of task:</label>
-          <input
+          <textarea
             type="text"
             placeholder="description"
             name="description"
-<<<<<<< HEAD
-            onChange={this.handleInputChange}
-=======
             className="TaskEdit_input TaskEdit_input-description"
-            onChange={this.handleChange}
->>>>>>> Add basic css positioning to taskEdit
+            onChange={this.handleInputChange}
             value={this.state.description}
-          />
+          >
+          </textarea>
           <label for="videoLink">Link to the lesson video:</label>
           <input
             type="text"
             placeholder="url"
             name="videoLink"
-<<<<<<< HEAD
-            onChange={this.handleInputChange}
-=======
             className="TaskEdit_input TaskEdit_input-videoLink"
-            onChange={this.handleChange}
->>>>>>> Add basic css positioning to taskEdit
+            onChange={this.handleInputChange}
             value={this.state.videoLink}
           />
           <div className="TaskEdit_select-list">
             {this.state.docOptions}
-            <button onClick={(event) => this.addDocOptions(event)}>new doc</button>
+            <button className="TaskEdit_new-select" onClick={(event) => this.addDocOptions(event)}>new doc</button>
           </div>
           <div className="TaskEdit_select-list">
             {this.state.labOptions}
-            <button onClick={(event) => this.addLabOptions(event)}>new lab</button>
+            <button className="TaskEdit_new-select" onClick={(event) => this.addLabOptions(event)}>new lab</button>
           </div>
           <input className="TaskEdit_submit" type="submit" />
         </form>
@@ -311,8 +293,5 @@ TaskEdit.propTypes = {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskEdit);
-<<<<<<< HEAD
 
 
-=======
->>>>>>> Add basic css positioning to taskEdit

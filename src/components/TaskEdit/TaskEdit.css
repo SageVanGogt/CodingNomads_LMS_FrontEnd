@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #8E8F8F;
+  background-color: #efefef;
   width: 50vw;
-  height: 600px;
+  height: 800px;
   margin-left: 200px; }
 
 .TaskEdit_form {
@@ -14,15 +14,37 @@
   color: white; }
 
 .TaskEdit_input {
-  margin-top: 0;
+  margin-top: 30px;
   height: 50px;
   width: 300px;
-  border-radius: 10px;
-  background-color: #C7C7C7; }
+  padding-left: 15px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #0F94FB;
+  font-size: 1.3rem;
+  font-family: 'Open Sans', sans-serif; }
+
+.TaskEdit_input-description {
+  background-color: white; }
 
 .TaskEdit_submit {
   width: 300px; }
 
 .TaskEdit_select-list {
   width: 300px;
-  border: 1px solid black; }
+  margin-top: 30px;
+  border: 1px solid black;
+  padding: 40px 0; }
+
+.TaskEdit_form label {
+  display: none; }
+
+.TaskEdit_title {
+  position: absolute;
+  color: #666666; }
+
+.TaskEdit_new-select {
+  width: 210px;
+  height: 15px;
+  background-color: #0F94FB;
+  box-shadow: 0 5px 6px -4px rgba(0, 0, 0, 0.22), 0 10px 13px -4px rgba(0, 0, 0, 0.34), inset 0 30px 30px 0 rgba(255, 255, 255, 0.35), inset 0 -30px 30px 0 rgba(0, 0, 0, 0.1); }
