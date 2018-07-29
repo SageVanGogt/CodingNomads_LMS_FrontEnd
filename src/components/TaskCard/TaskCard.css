@@ -4,7 +4,12 @@
   margin: 20px;
   background-color: #CECECE; }
 
+.Task_top {
+  display: flex;
+  justify-content: space-between; }
+
 .Task_edit-btn {
+  position: absolute;
   visibility: hidden; }
 
 .Task_card:hover .Task_edit-btn {
