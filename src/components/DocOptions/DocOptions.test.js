@@ -26,7 +26,19 @@ describe('DocOptions', () => {
     const wrapper = shallow(<DocOptions { ...mockProps } />)
 
     expect(wrapper).toMatchSnapshot();
+  })
 
+  it('matches the snapshot if a array of docs is passed in', () => {
+    const mockProps = {
+      docs: [{ id: 1, topic: 'doc topic' }],
+      handleSelectDoc: () => {},
+      deleteDoc: () => {},
+      id: 1,
+      docSelected: { id: 1 }
+    }
+    const wrapper = shallow(<DocOptions { ...mockProps } />)
+
+    expect(wrapper).toMatchSnapshot();
   })
 
 })
