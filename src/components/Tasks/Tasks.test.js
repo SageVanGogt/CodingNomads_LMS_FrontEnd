@@ -31,11 +31,17 @@ describe('Tasks', () => {
 
   describe('componentDidMount', () => {
     it('calls getAllTasks', async () => {
-      
+      await shallow(<Tasks { ...mockProps } />)
+
+      expect(API.getAllTasks).toHaveBeenCalled(); 
     })
 
     it('sets the state with the tasks returned from getAllTasks', async () => {
+      wrapper = await shallow(<Tasks { ...mockProps } />, { disableLifecycleMethods: true })
+      expect(wrapper.state('allTasks').length).toEqual(0)
 
+      await wrapper.instance().componentDidMount()
+      expect(wrapper.state('allTasks').length).toEqual(6);
     })
   });
 
