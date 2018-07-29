@@ -27,6 +27,13 @@ export class CourseTaskContainer extends Component {
     };
   }
 
+  shouldCancelStart = (e) => {
+    // Cancel sorting if the event target is an `input`, `textarea`, `select` or `option`
+    if (['input', 'textarea', 'select', 'option', 'img', 'image'].indexOf(e.target.tagName.toLowerCase()) !== -1) {
+      return true; // Return true to cancel sorting
+    }
+  }
+
   onSortEnd = ({ oldIndex, newIndex }) => {
     let tasks = arrayMove(this.props.tasks, oldIndex, newIndex);
     this.props.rearrangeTasks(tasks);
@@ -37,8 +44,8 @@ export class CourseTaskContainer extends Component {
       <div className='tasksArea'>
         {
           this.state.tasks.length > 0 ? 
-            <SortableList tasks={this.state.tasks} onSortEnd={this.onSortEnd} />
-            : <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} />
+            <SortableList tasks={this.state.tasks} onSortEnd={this.onSortEnd} shouldCancelStart={this.shouldCancelStart} />
+            : <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} shouldCancelStart={this.shouldCancelStart} />
         }
       </div>
     );
