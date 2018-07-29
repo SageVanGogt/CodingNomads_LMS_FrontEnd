@@ -18,20 +18,15 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(CourseCard)
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra nibh lacinia, sodales ipsum id, efficitur quam. Cras et felis tincidunt, ornare erat in, accumsan erat. Nulla facilisi."
-          id={1}
-          name="Java"
-/>,
-        <Connect(CourseCard)
-          description="Lorem ipsum variable semicolon, consectetur adipiscing elit.Praesent viverra nibh lacinia, sodales ipsum id, tincidunt, ornare erat in, accumsan erat."
-          id={2}
-          name="Javascript"
-/>,
-        <Connect(CourseCard)
-          description="elit. Praesent viverra nibh lacinia, sodales ipsum id, efficitur quam. Cras et felis tincidunt, ornare erat in, accumsan erat. Nulla facilisi.  "
-          id={3}
-          name="Python"
+        <button
+          onClick={[Function]}
+>
+          Add New Course
+</button>,
+        <img
+          height="200"
+          src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif"
+          width="200"
 />,
       ],
       "className": "courses_container",
@@ -40,42 +35,28 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "course1",
-        "nodeType": "class",
+        "key": undefined,
+        "nodeType": "host",
         "props": Object {
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra nibh lacinia, sodales ipsum id, efficitur quam. Cras et felis tincidunt, ornare erat in, accumsan erat. Nulla facilisi.",
-          "id": 1,
-          "name": "Java",
+          "children": "Add New Course",
+          "onClick": [Function],
         },
         "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "rendered": "Add New Course",
+        "type": "button",
       },
       Object {
         "instance": null,
-        "key": "course2",
-        "nodeType": "class",
+        "key": undefined,
+        "nodeType": "host",
         "props": Object {
-          "description": "Lorem ipsum variable semicolon, consectetur adipiscing elit.Praesent viverra nibh lacinia, sodales ipsum id, tincidunt, ornare erat in, accumsan erat.",
-          "id": 2,
-          "name": "Javascript",
+          "height": "200",
+          "src": "http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif",
+          "width": "200",
         },
         "ref": null,
         "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": "course3",
-        "nodeType": "class",
-        "props": Object {
-          "description": "elit. Praesent viverra nibh lacinia, sodales ipsum id, efficitur quam. Cras et felis tincidunt, ornare erat in, accumsan erat. Nulla facilisi.  ",
-          "id": 3,
-          "name": "Python",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
+        "type": "img",
       },
     ],
     "type": "div",
@@ -87,20 +68,15 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(CourseCard)
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra nibh lacinia, sodales ipsum id, efficitur quam. Cras et felis tincidunt, ornare erat in, accumsan erat. Nulla facilisi."
-            id={1}
-            name="Java"
-/>,
-          <Connect(CourseCard)
-            description="Lorem ipsum variable semicolon, consectetur adipiscing elit.Praesent viverra nibh lacinia, sodales ipsum id, tincidunt, ornare erat in, accumsan erat."
-            id={2}
-            name="Javascript"
-/>,
-          <Connect(CourseCard)
-            description="elit. Praesent viverra nibh lacinia, sodales ipsum id, efficitur quam. Cras et felis tincidunt, ornare erat in, accumsan erat. Nulla facilisi.  "
-            id={3}
-            name="Python"
+          <button
+            onClick={[Function]}
+>
+            Add New Course
+</button>,
+          <img
+            height="200"
+            src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif"
+            width="200"
 />,
         ],
         "className": "courses_container",
@@ -109,42 +85,28 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "course1",
-          "nodeType": "class",
+          "key": undefined,
+          "nodeType": "host",
           "props": Object {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent viverra nibh lacinia, sodales ipsum id, efficitur quam. Cras et felis tincidunt, ornare erat in, accumsan erat. Nulla facilisi.",
-            "id": 1,
-            "name": "Java",
+            "children": "Add New Course",
+            "onClick": [Function],
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "rendered": "Add New Course",
+          "type": "button",
         },
         Object {
           "instance": null,
-          "key": "course2",
-          "nodeType": "class",
+          "key": undefined,
+          "nodeType": "host",
           "props": Object {
-            "description": "Lorem ipsum variable semicolon, consectetur adipiscing elit.Praesent viverra nibh lacinia, sodales ipsum id, tincidunt, ornare erat in, accumsan erat.",
-            "id": 2,
-            "name": "Javascript",
+            "height": "200",
+            "src": "http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif",
+            "width": "200",
           },
           "ref": null,
           "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "course3",
-          "nodeType": "class",
-          "props": Object {
-            "description": "elit. Praesent viverra nibh lacinia, sodales ipsum id, efficitur quam. Cras et felis tincidunt, ornare erat in, accumsan erat. Nulla facilisi.  ",
-            "id": 3,
-            "name": "Python",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+          "type": "img",
         },
       ],
       "type": "div",
@@ -156,6 +118,7 @@ ShallowWrapper {
         "enableComponentDidUpdateOnSetState": true,
       },
     },
+    "disableLifecycleMethods": true,
   },
 }
 `;

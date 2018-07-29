@@ -28,6 +28,26 @@ describe('currentTaskReducer', () => {
     expect(actual).toEqual(expected);
   })
 
+  it('returns new state if type is REMOVE_CURRENT_TASK', () => {
+    let mockAction = {
+      type: 'REMOVE_CURRENT_TASK',
+    };
+    let expected = {};
+    
+    let initialState = { 
+      id: 1,
+      name: '',
+      description: '',
+      videoLink: '',
+      docs: [],
+      labs: []
+    };
+    let actual = currentTaskReducer(initialState, mockAction);
+    
+    expect(actual).toEqual(expected);
+
+  })
+
   it('returns default state if action type does not match', () => {
     let mockAction = {
       type: 'I_AM_NOT_AN_ACTION',

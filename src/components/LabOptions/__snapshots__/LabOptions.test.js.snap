@@ -1,0 +1,611 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabOptions matches the snapshot if a array of labs is passed in 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    deleteLab={[Function]}
+    handleSelectLab={[Function]}
+    id={1}
+    labSelected={
+        Object {
+            "id": 1,
+          }
+    }
+    labs={
+        Array [
+            Object {
+              "id": 1,
+              "topic": "lab topic",
+            },
+          ]
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <select
+          name=""
+          onChange={[Function]}
+          value={1}
+>
+          <option
+                    disabled={true}
+                    selected={true}
+                    value=""
+          />
+          <option
+                    name="lab"
+                    title={undefined}
+                    value={1}
+          />
+</select>,
+        <button
+          onClick={[Function]}
+>
+          del
+</button>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <option
+              disabled={true}
+              selected={true}
+              value=""
+/>,
+            Array [
+              <option
+                name="lab"
+                title={undefined}
+                value={1}
+/>,
+            ],
+          ],
+          "name": "",
+          "onChange": [Function],
+          "value": 1,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "disabled": true,
+              "selected": true,
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "option",
+          },
+          Object {
+            "instance": null,
+            "key": "lab-0",
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "name": "lab",
+              "title": undefined,
+              "value": 1,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "option",
+          },
+        ],
+        "type": "select",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "del",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "del",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <select
+            name=""
+            onChange={[Function]}
+            value={1}
+>
+            <option
+                        disabled={true}
+                        selected={true}
+                        value=""
+            />
+            <option
+                        name="lab"
+                        title={undefined}
+                        value={1}
+            />
+</select>,
+          <button
+            onClick={[Function]}
+>
+            del
+</button>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <option
+                disabled={true}
+                selected={true}
+                value=""
+/>,
+              Array [
+                <option
+                  name="lab"
+                  title={undefined}
+                  value={1}
+/>,
+              ],
+            ],
+            "name": "",
+            "onChange": [Function],
+            "value": 1,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "disabled": true,
+                "selected": true,
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "option",
+            },
+            Object {
+              "instance": null,
+              "key": "lab-0",
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "name": "lab",
+                "title": undefined,
+                "value": 1,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "option",
+            },
+          ],
+          "type": "select",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "del",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "del",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`LabOptions matches the snapshot if there is a selectedLab 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    deleteLab={[Function]}
+    handleSelectLab={[Function]}
+    id={1}
+    labSelected={
+        Object {
+            "id": 1,
+          }
+    }
+    labs={Array []}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <select
+          name=""
+          onChange={[Function]}
+          value={1}
+>
+          <option
+                    disabled={true}
+                    selected={true}
+                    value=""
+          />
+</select>,
+        <button
+          onClick={[Function]}
+>
+          del
+</button>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <option
+              disabled={true}
+              selected={true}
+              value=""
+/>,
+            Array [],
+          ],
+          "name": "",
+          "onChange": [Function],
+          "value": 1,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "disabled": true,
+              "selected": true,
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "option",
+          },
+        ],
+        "type": "select",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "del",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "del",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <select
+            name=""
+            onChange={[Function]}
+            value={1}
+>
+            <option
+                        disabled={true}
+                        selected={true}
+                        value=""
+            />
+</select>,
+          <button
+            onClick={[Function]}
+>
+            del
+</button>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <option
+                disabled={true}
+                selected={true}
+                value=""
+/>,
+              Array [],
+            ],
+            "name": "",
+            "onChange": [Function],
+            "value": 1,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "disabled": true,
+                "selected": true,
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "option",
+            },
+          ],
+          "type": "select",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "del",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "del",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`LabOptions matches the snapshot if there is not a selectedLab 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    deleteLab={[Function]}
+    handleSelectLab={[Function]}
+    id={1}
+    labs={Array []}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <select
+          name=""
+          onChange={[Function]}
+          value={undefined}
+>
+          <option
+                    disabled={true}
+                    selected={true}
+                    value=""
+          />
+</select>,
+        <button
+          onClick={[Function]}
+>
+          del
+</button>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <option
+              disabled={true}
+              selected={true}
+              value=""
+/>,
+            Array [],
+          ],
+          "name": "",
+          "onChange": [Function],
+          "value": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "disabled": true,
+              "selected": true,
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "option",
+          },
+        ],
+        "type": "select",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "del",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "del",
+        "type": "button",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <select
+            name=""
+            onChange={[Function]}
+            value={undefined}
+>
+            <option
+                        disabled={true}
+                        selected={true}
+                        value=""
+            />
+</select>,
+          <button
+            onClick={[Function]}
+>
+            del
+</button>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <option
+                disabled={true}
+                selected={true}
+                value=""
+/>,
+              Array [],
+            ],
+            "name": "",
+            "onChange": [Function],
+            "value": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "disabled": true,
+                "selected": true,
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "option",
+            },
+          ],
+          "type": "select",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "del",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "del",
+          "type": "button",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

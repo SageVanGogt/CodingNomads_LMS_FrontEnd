@@ -203,6 +203,7 @@ ShallowWrapper {
 />,
         <button
           className="Task_edit-btn"
+          onClick={[Function]}
 >
           edit
 </button>,
@@ -234,6 +235,7 @@ ShallowWrapper {
         "props": Object {
           "children": "edit",
           "className": "Task_edit-btn",
+          "onClick": [Function],
         },
         "ref": null,
         "rendered": "edit",
@@ -275,6 +277,7 @@ ShallowWrapper {
 />,
           <button
             className="Task_edit-btn"
+            onClick={[Function]}
 >
             edit
 </button>,
@@ -306,6 +309,7 @@ ShallowWrapper {
           "props": Object {
             "children": "edit",
             "className": "Task_edit-btn",
+            "onClick": [Function],
           },
           "ref": null,
           "rendered": "edit",

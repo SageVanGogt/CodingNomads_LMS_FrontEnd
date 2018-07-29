@@ -6,7 +6,7 @@ describe('TaskCard', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<Courses />);
+    wrapper = shallow(<Courses />, { disableLifecycleMethods: true });
   });
 
   it('should match the snapshot', () => {
