@@ -48,7 +48,7 @@ export const postTask = async (newTask) => {
 }; 
 
 export const updateTask = async (updatedTask) => {
-  const url = apiPath + `/tasks`;
+  const url = apiPath + `/tasks/${updatedTask.id}`;
   const options = {
     method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },

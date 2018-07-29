@@ -132,7 +132,7 @@ describe('updateTask', () => {
     const url = apiPath + '/tasks/3';
     const options = {
       method: 'PATCH',
-      headers: { 'content-type': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedTask)
     };
 

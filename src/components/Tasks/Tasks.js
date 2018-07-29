@@ -16,10 +16,10 @@ export class Tasks extends Component {
     };
   }
 
-  componentDidMount = async () => {
-    const allTasks = await getAllTasks();
-    this.setState({ allTasks: allTasks.data });
-  }
+//   componentDidMount = async () => {
+//     const allTasks = await getAllTasks();
+//     this.setState({ allTasks: allTasks.data });
+//   }
 
   addTask = () => {
     this.props.history.push(TASKS_EDIT);
