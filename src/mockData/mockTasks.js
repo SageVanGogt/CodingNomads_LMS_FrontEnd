@@ -1,4 +1,5 @@
-export const mockTasks = [
+export const mockTasks = {
+  data: [
   {
     id: 1, 
     name: 'while loops', 
@@ -29,4 +30,5 @@ export const mockTasks = [
     name: 'how to use documentation', 
     description: 'Surround yourself with angels. You smart, you loyal, you a genius. Every chance I get, I water the plants, Lion!', 
     videoLink: 'getlearn.youtube'}
-];
+  ]
+};

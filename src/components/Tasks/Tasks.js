@@ -16,10 +16,10 @@ export class Tasks extends Component {
     };
   }
 
-//   componentDidMount = async () => {
-//     const allTasks = await getAllTasks();
-//     this.setState({ allTasks: allTasks.data });
-//   }
+  componentDidMount = async () => {
+    const allTasks = await getAllTasks();
+    this.setState({ allTasks: allTasks.data });
+  }
 
   addTask = () => {
     this.props.history.push(TASKS_EDIT);
@@ -44,13 +44,13 @@ export class Tasks extends Component {
   }
 }
 
-export const mapDispatchToProps = (dispatch) => ({
-  updateCurrentTask: (currentTask) => dispatch(updateCurrentTask(currentTask))
-});
+// export const mapDispatchToProps = (dispatch) => ({
+//   updateCurrentTask: (currentTask) => dispatch(updateCurrentTask(currentTask))
+// });
 
-Tasks.propTypes = {
-  updateCurrentTask: func.isRequired
-};
+// Tasks.propTypes = {
+//   updateCurrentTask: func.isRequired
+// };
 
-export default withRouter(connect(null, mapDispatchToProps)(Tasks));
+export default withRouter(Tasks);
 
