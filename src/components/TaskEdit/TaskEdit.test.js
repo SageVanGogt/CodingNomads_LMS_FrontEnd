@@ -1,6 +1,7 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import { TaskEdit, mapStateToProps } from './TaskEdit';
+import { shallow, mount } from 'enzyme';
+import { TaskEdit, mapStateToProps, mapDispatchToProps } from './TaskEdit';
+import { removeCurrentTask } from '../../actions/currentTask';
 import * as API from './../../apiCalls/apiCalls';
 import { mockDocs } from '../../mockData/mockDocs';
 import { mockLabs } from '../../mockData/mockLabs';
@@ -27,11 +28,11 @@ describe('TaskEdit', () => {
   })
 
   describe('componentDidMount', () => {
-
+    // need to figure out how to mock component methods before mount so that I can test that they were called upon mount    
   })
 
   describe('componentWillUnmount', () => {
-
+    // same as above but on unmount
   })
 
   describe('fetchDocs', () => {
@@ -76,13 +77,25 @@ describe('TaskEdit', () => {
 
   describe('addDocOptions', () => {
     it('sets state with a new DocOptions component', () => {
+      expect(wrapper.state('docOptions').length).toEqual(0);
 
+      const newDoc = 'mockDoc';
+      wrapper.instance().addDocOptions(newDoc);
+
+      expect(wrapper.state('docOptions').length).toEqual(1);
+      expect(wrapper.state('docOptions')[0].key).toEqual('doc-1');
     }) 
   })
 
   describe('addLabOptions', () => {
     it('sets state with a new LabOptions component', () => {
+      expect(wrapper.state('labOptions').length).toEqual(0);
 
+      const newLab = 'mockLab';
+      wrapper.instance().addLabOptions(newLab);
+
+      expect(wrapper.state('labOptions').length).toEqual(1);
+      expect(wrapper.state('labOptions')[0].key).toEqual('lab-1');
     })
   })
 
@@ -166,43 +179,175 @@ describe('TaskEdit', () => {
 
   describe('deleteDoc', () => {
     it('sets the state with docs, docOptions, and docsToDelete if there is a docId', () => {
+      const mockDocs = [{ id: 1 }];
+      const mockDocOptions = [{ props: { id: 1 } }]
+      
+      wrapper.setState({ docs: mockDocs, docOptions: mockDocOptions });
+      expect(wrapper.state('docs').length).toEqual(1);
+      expect(wrapper.state('docOptions').length).toEqual(1);
+      expect(wrapper.state('docsToDelete').length).toEqual(0);
+
+      const mockEvent = {
+        preventDefault: () => {},
+        target: { previousElementSibling: { value: 1 } }
+      };
+      const mockKey = 1;
+
+      wrapper.instance().deleteDoc(mockEvent, mockKey);
+
+      expect(wrapper.state('docs').length).toEqual(0);
+      expect(wrapper.state('docOptions').length).toEqual(0);
+      expect(wrapper.state('docsToDelete').length).toEqual(1);
+    })
+
+    it('does not set state if there is no docId', () => {
+      const mockDocs = [{ id: 1 }];
+      const mockDocOptions = [{ props: { id: 1 } }]
+      
+      wrapper.setState({ docs: mockDocs, docOptions: mockDocOptions });
+      expect(wrapper.state('docs').length).toEqual(1);
+      expect(wrapper.state('docOptions').length).toEqual(1);
+      expect(wrapper.state('docsToDelete').length).toEqual(0);
+
+      const mockEvent = {
+        preventDefault: () => {},
+        target: { previousElementSibling: { } }
+      };
+      const mockKey = 1;
+
+      wrapper.instance().deleteDoc(mockEvent, mockKey);
+
+      expect(wrapper.state('docs').length).toEqual(1);
+      expect(wrapper.state('docOptions').length).toEqual(1);
+      expect(wrapper.state('docsToDelete').length).toEqual(0);
 
     })
   })
 
   describe('deleteLab', () => {
     it('sets the state with labs, labOptions, and labsToDelete if there is a labId', () => {
+      const mockLabs = [{ id: 1 }];
+      const mockLabOptions = [{ props: { id: 1 } }]
+      
+      wrapper.setState({ labs: mockLabs, labOptions: mockLabOptions });
+      expect(wrapper.state('labs').length).toEqual(1);
+      expect(wrapper.state('labOptions').length).toEqual(1);
+      expect(wrapper.state('labsToDelete').length).toEqual(0);
 
+      const mockEvent = {
+        preventDefault: () => {},
+        target: { previousElementSibling: { value: 1 } }
+      };
+      const mockKey = 1;
+
+      wrapper.instance().deleteLab(mockEvent, mockKey);
+
+      expect(wrapper.state('labs').length).toEqual(0);
+      expect(wrapper.state('labOptions').length).toEqual(0);
+      expect(wrapper.state('labsToDelete').length).toEqual(1);
+
+    })
+
+    it('does not set state if there is no LabId', () => {
+      const mockLabs = [{ id: 1 }];
+      const mockLabOptions = [{ props: { id: 1 } }]
+      
+      wrapper.setState({ labs: mockLabs, labOptions: mockLabOptions });
+      expect(wrapper.state('labs').length).toEqual(1);
+      expect(wrapper.state('labOptions').length).toEqual(1);
+      expect(wrapper.state('labsToDelete').length).toEqual(0);
+
+      const mockEvent = {
+        preventDefault: () => {},
+        target: { previousElementSibling: {  } }
+      };
+      const mockKey = 1;
+
+      wrapper.instance().deleteLab(mockEvent, mockKey);
+
+      expect(wrapper.state('labs').length).toEqual(1);
+      expect(wrapper.state('labOptions').length).toEqual(1);
+      expect(wrapper.state('labsToDelete').length).toEqual(0);
     })
   })
 
   describe('detemineSubmitMethod', () => {
     it('calls patchTask if there is a currentTask id', () => {
+      const mockEvent = { preventDefault: () => {} };
+      mockCurrentTask.id = 1; 
+      wrapper = shallow(<TaskEdit currentTask={ mockCurrentTask }/>);
+      const wrapperInst = wrapper.instance();
+      wrapperInst.patchTask = jest.fn();
+      
+      wrapperInst.determineSubmitMethod(mockEvent);
 
+      expect(wrapperInst.patchTask).toHaveBeenCalled();
     })
 
     it('calls postNewTask if there is not a currentTask id', () => {
+      const mockEvent = { preventDefault: () => {} };
+      const wrapperInst = wrapper.instance();
+      wrapperInst.postNewTask = jest.fn();
+      
+      wrapperInst.determineSubmitMethod(mockEvent);
 
+      expect(wrapperInst.postNewTask).toHaveBeenCalled();
     })
   })
 
   describe('postNewTask', () => {
     it('calls API.postTask with the task', () => {
+      const expected = { 
+        name: '', 
+        description: '', 
+        videoLink: '', 
+        docs: [], 
+        labs: [] 
+      };
 
+      wrapper.instance().postNewTask();
+
+      expect(API.postTask).toHaveBeenCalledWith(expected)
     })  
   })
 
   describe('patchTask', () => {
     it('calls API.updateTask with the updated task', () => {
+      const wrapperInst = wrapper.instance();
+      wrapperInst.handleDeletedDocs = jest.fn();
+      wrapperInst.handleDeletedLabs = jest.fn();
+      const expected = { 
+        id: null,
+        name: '', 
+        description: '', 
+        videoLink: '', 
+        docs: [], 
+        labs: [] 
+      };
 
+      wrapperInst.patchTask();
+
+      expect(API.updateTask).toHaveBeenCalledWith(expected)
     })
 
-    it('calls handleDeletedDocs', () => {
+    it('calls handleDeletedDocs', async () => {
+      const wrapperInst = wrapper.instance();
+      wrapperInst.handleDeletedDocs = jest.fn();
+      wrapperInst.handleDeletedLabs = jest.fn();
 
+      await wrapperInst.patchTask();
+
+      expect(wrapperInst.handleDeletedDocs).toHaveBeenCalled();
     })
 
-    it('calls handleDeletedLabs', () => {
+    it('calls handleDeletedLabs', async () => {
+      const wrapperInst = wrapper.instance();
+      wrapperInst.handleDeletedDocs = jest.fn();
+      wrapperInst.handleDeletedLabs = jest.fn();
 
+      await wrapperInst.patchTask();
+
+      expect(wrapperInst.handleDeletedLabs).toHaveBeenCalled();
     })
   })
 
@@ -245,11 +390,13 @@ describe('TaskEdit', () => {
 
   describe('mapDispatchToProps', () => {
     it('calls dispatch with the correct arguments', () => {
+      const dispatch = jest.fn();
+      const mappedProps = mapDispatchToProps(dispatch)
 
+      mappedProps.removeCurrentTask();
+
+      expect(dispatch).toHaveBeenCalledWith(removeCurrentTask())
     })
 
-    it('returns a state object with removeCurrentTask', () => {
-
-    })
   })
 })

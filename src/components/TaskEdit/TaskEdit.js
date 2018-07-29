@@ -78,7 +78,7 @@ export class TaskEdit extends Component {
         [
           ...this.state.labOptions,
           <LabOptions
-            key={`lab-${this.state.labOptions}`}
+            key={`lab-${this.state.labOptions + 1}`}
             id={`lab-option-${this.state.labOptions.length + 1}`}
             labs={this.state.allLabs}
             labSelected={lab}
