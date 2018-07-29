@@ -27,16 +27,21 @@ export class Tasks extends Component {
   render() {
     const tasks = this.state.allTasks.map((task, index) => {
       return (
-        <TaskCard 
+        <TaskCard
           key={`task-card-${index}`}
-          {...task} 
+          {...task}
         />
       );
     });
 
     return (
       <div className="Task_container">
-        <button onClick={ this.addTask }>Add New Task</button>
+        <button
+          className="Task_new"
+          onClick={ this.addTask }
+        >
+          Add New Task
+        </button>
         { tasks }
       </div>
     );

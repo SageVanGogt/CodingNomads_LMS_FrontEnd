@@ -197,7 +197,7 @@ export class TaskEdit extends Component {
       docs,
       labs
     };
-    
+
     try {
       await API.updateTask(taskToUpdate);
       this.handleDeletedDocs();
@@ -230,38 +230,52 @@ export class TaskEdit extends Component {
 
   render() {
     return (
-      <div className="TaskCreate_page">
-        <form 
-          action="submit" 
-          className="TaskCreate_form"
+      <div className="TaskEdit_page">
+        <form
+          action="submit"
+          className="TaskEdit_form"
           onSubmit={this.determineSubmitMethod}
         >
+          <h1 className="TaskEdit_title">EDIT A TASK</h1>
+          <label for="name">Task name:</label>
           <input
             type="text"
             placeholder="name"
             name="name"
+            className="TaskEdit_input TaskEdit_input-name"
             onChange={this.handleInputChange}
             value={this.state.name}
           />
-          <input
+          <label for="description">Description of task:</label>
+          <textarea
             type="text"
             placeholder="description"
             name="description"
+            className="TaskEdit_input TaskEdit_input-description"
             onChange={this.handleInputChange}
             value={this.state.description}
-          />
+          >
+          </textarea>
+          <label for="videoLink">Link to the lesson video:</label>
           <input
             type="text"
             placeholder="url"
             name="videoLink"
+            className="TaskEdit_input TaskEdit_input-videoLink"
             onChange={this.handleInputChange}
             value={this.state.videoLink}
           />
-          {this.state.docOptions}
-          <button onClick={(event) => this.addDocOptions(event)}>new doc</button>
-          {this.state.labOptions}
-          <button onClick={(event) => this.addLabOptions(event)}>new lab</button>
-          <input type="submit" />
+          <div className="TaskEdit_select-list">
+            <p>Select documents for your students to read with this task</p>
+            {this.state.docOptions}
+            <button className="TaskEdit_new-select" onClick={(event) => this.addDocOptions(event)}>new doc +</button>
+          </div>
+          <div className="TaskEdit_select-list">
+            <p>Select labs for your students to do with this task</p>
+            {this.state.labOptions}
+            <button className="TaskEdit_new-select" onClick={(event) => this.addLabOptions(event)}>new lab +</button>
+          </div>
+          <input className="TaskEdit_submit" type="submit" />
         </form>
       </div>
     );

@@ -29,45 +29,72 @@ ShallowWrapper {
     "props": Object {
       "children": <form
         action="submit"
-        className="TaskCreate_form"
+        className="TaskEdit_form"
         onSubmit={[Function]}
 >
+        <label
+                for="name"
+        >
+                Task name:
+        </label>
         <input
+                className="TaskEdit_input TaskEdit_input-name"
                 name="name"
                 onChange={[Function]}
                 placeholder="name"
                 type="text"
                 value=""
         />
+        <label
+                for="description"
+        >
+                Description of task:
+        </label>
         <input
+                className="TaskEdit_input TaskEdit_input-description"
                 name="description"
                 onChange={[Function]}
                 placeholder="description"
                 type="text"
                 value=""
         />
+        <label
+                for="videoLink"
+        >
+                Link to the lesson video:
+        </label>
         <input
+                className="TaskEdit_input TaskEdit_input-videoLink"
                 name="videoLink"
                 onChange={[Function]}
                 placeholder="url"
                 type="text"
                 value=""
         />
-        <button
-                onClick={[Function]}
+        <div
+                className="TaskEdit_select-list"
         >
-                new doc
-        </button>
-        <button
-                onClick={[Function]}
+                <button
+                        onClick={[Function]}
+                >
+                        new doc
+                </button>
+        </div>
+        <div
+                className="TaskEdit_select-list"
         >
-                new lab
-        </button>
+                <button
+                        onClick={[Function]}
+                >
+                        new lab
+                </button>
+        </div>
         <input
+                className="TaskEdit_submit"
                 type="submit"
         />
 </form>,
-      "className": "TaskCreate_page",
+      "className": "TaskEdit_page",
     },
     "ref": null,
     "rendered": Object {
@@ -77,44 +104,69 @@ ShallowWrapper {
       "props": Object {
         "action": "submit",
         "children": Array [
+          <label
+            for="name"
+>
+            Task name:
+</label>,
           <input
+            className="TaskEdit_input TaskEdit_input-name"
             name="name"
             onChange={[Function]}
             placeholder="name"
             type="text"
             value=""
 />,
+          <label
+            for="description"
+>
+            Description of task:
+</label>,
           <input
+            className="TaskEdit_input TaskEdit_input-description"
             name="description"
             onChange={[Function]}
             placeholder="description"
             type="text"
             value=""
 />,
+          <label
+            for="videoLink"
+>
+            Link to the lesson video:
+</label>,
           <input
+            className="TaskEdit_input TaskEdit_input-videoLink"
             name="videoLink"
             onChange={[Function]}
             placeholder="url"
             type="text"
             value=""
 />,
-          Array [],
-          <button
-            onClick={[Function]}
+          <div
+            className="TaskEdit_select-list"
 >
-            new doc
-</button>,
-          Array [],
-          <button
-            onClick={[Function]}
+            <button
+                        onClick={[Function]}
+            >
+                        new doc
+            </button>
+</div>,
+          <div
+            className="TaskEdit_select-list"
 >
-            new lab
-</button>,
+            <button
+                        onClick={[Function]}
+            >
+                        new lab
+            </button>
+</div>,
           <input
+            className="TaskEdit_submit"
             type="submit"
 />,
         ],
-        "className": "TaskCreate_form",
+        "className": "TaskEdit_form",
         "onSubmit": [Function],
       },
       "ref": null,
@@ -124,6 +176,19 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "Task name:",
+            "for": "name",
+          },
+          "ref": null,
+          "rendered": "Task name:",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "TaskEdit_input TaskEdit_input-name",
             "name": "name",
             "onChange": [Function],
             "placeholder": "name",
@@ -139,6 +204,19 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "Description of task:",
+            "for": "description",
+          },
+          "ref": null,
+          "rendered": "Description of task:",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "TaskEdit_input TaskEdit_input-description",
             "name": "description",
             "onChange": [Function],
             "placeholder": "description",
@@ -154,6 +232,19 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "Link to the lesson video:",
+            "for": "videoLink",
+          },
+          "ref": null,
+          "rendered": "Link to the lesson video:",
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "TaskEdit_input TaskEdit_input-videoLink",
             "name": "videoLink",
             "onChange": [Function],
             "placeholder": "url",
@@ -169,30 +260,71 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "new doc",
-            "onClick": [Function],
+            "children": Array [
+              Array [],
+              <button
+                onClick={[Function]}
+>
+                new doc
+</button>,
+            ],
+            "className": "TaskEdit_select-list",
           },
           "ref": null,
-          "rendered": "new doc",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "new doc",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "new doc",
+              "type": "button",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "new lab",
-            "onClick": [Function],
+            "children": Array [
+              Array [],
+              <button
+                onClick={[Function]}
+>
+                new lab
+</button>,
+            ],
+            "className": "TaskEdit_select-list",
           },
           "ref": null,
-          "rendered": "new lab",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "new lab",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "new lab",
+              "type": "button",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "TaskEdit_submit",
             "type": "submit",
           },
           "ref": null,
@@ -212,45 +344,72 @@ ShallowWrapper {
       "props": Object {
         "children": <form
           action="submit"
-          className="TaskCreate_form"
+          className="TaskEdit_form"
           onSubmit={[Function]}
 >
+          <label
+                    for="name"
+          >
+                    Task name:
+          </label>
           <input
+                    className="TaskEdit_input TaskEdit_input-name"
                     name="name"
                     onChange={[Function]}
                     placeholder="name"
                     type="text"
                     value=""
           />
+          <label
+                    for="description"
+          >
+                    Description of task:
+          </label>
           <input
+                    className="TaskEdit_input TaskEdit_input-description"
                     name="description"
                     onChange={[Function]}
                     placeholder="description"
                     type="text"
                     value=""
           />
+          <label
+                    for="videoLink"
+          >
+                    Link to the lesson video:
+          </label>
           <input
+                    className="TaskEdit_input TaskEdit_input-videoLink"
                     name="videoLink"
                     onChange={[Function]}
                     placeholder="url"
                     type="text"
                     value=""
           />
-          <button
-                    onClick={[Function]}
+          <div
+                    className="TaskEdit_select-list"
           >
-                    new doc
-          </button>
-          <button
-                    onClick={[Function]}
+                    <button
+                              onClick={[Function]}
+                    >
+                              new doc
+                    </button>
+          </div>
+          <div
+                    className="TaskEdit_select-list"
           >
-                    new lab
-          </button>
+                    <button
+                              onClick={[Function]}
+                    >
+                              new lab
+                    </button>
+          </div>
           <input
+                    className="TaskEdit_submit"
                     type="submit"
           />
 </form>,
-        "className": "TaskCreate_page",
+        "className": "TaskEdit_page",
       },
       "ref": null,
       "rendered": Object {
@@ -260,44 +419,69 @@ ShallowWrapper {
         "props": Object {
           "action": "submit",
           "children": Array [
+            <label
+              for="name"
+>
+              Task name:
+</label>,
             <input
+              className="TaskEdit_input TaskEdit_input-name"
               name="name"
               onChange={[Function]}
               placeholder="name"
               type="text"
               value=""
 />,
+            <label
+              for="description"
+>
+              Description of task:
+</label>,
             <input
+              className="TaskEdit_input TaskEdit_input-description"
               name="description"
               onChange={[Function]}
               placeholder="description"
               type="text"
               value=""
 />,
+            <label
+              for="videoLink"
+>
+              Link to the lesson video:
+</label>,
             <input
+              className="TaskEdit_input TaskEdit_input-videoLink"
               name="videoLink"
               onChange={[Function]}
               placeholder="url"
               type="text"
               value=""
 />,
-            Array [],
-            <button
-              onClick={[Function]}
+            <div
+              className="TaskEdit_select-list"
 >
-              new doc
-</button>,
-            Array [],
-            <button
-              onClick={[Function]}
+              <button
+                            onClick={[Function]}
+              >
+                            new doc
+              </button>
+</div>,
+            <div
+              className="TaskEdit_select-list"
 >
-              new lab
-</button>,
+              <button
+                            onClick={[Function]}
+              >
+                            new lab
+              </button>
+</div>,
             <input
+              className="TaskEdit_submit"
               type="submit"
 />,
           ],
-          "className": "TaskCreate_form",
+          "className": "TaskEdit_form",
           "onSubmit": [Function],
         },
         "ref": null,
@@ -307,6 +491,19 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "children": "Task name:",
+              "for": "name",
+            },
+            "ref": null,
+            "rendered": "Task name:",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "TaskEdit_input TaskEdit_input-name",
               "name": "name",
               "onChange": [Function],
               "placeholder": "name",
@@ -322,6 +519,19 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "children": "Description of task:",
+              "for": "description",
+            },
+            "ref": null,
+            "rendered": "Description of task:",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "TaskEdit_input TaskEdit_input-description",
               "name": "description",
               "onChange": [Function],
               "placeholder": "description",
@@ -337,6 +547,19 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "children": "Link to the lesson video:",
+              "for": "videoLink",
+            },
+            "ref": null,
+            "rendered": "Link to the lesson video:",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "TaskEdit_input TaskEdit_input-videoLink",
               "name": "videoLink",
               "onChange": [Function],
               "placeholder": "url",
@@ -352,30 +575,71 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "new doc",
-              "onClick": [Function],
+              "children": Array [
+                Array [],
+                <button
+                  onClick={[Function]}
+>
+                  new doc
+</button>,
+              ],
+              "className": "TaskEdit_select-list",
             },
             "ref": null,
-            "rendered": "new doc",
-            "type": "button",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "new doc",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "new doc",
+                "type": "button",
+              },
+            ],
+            "type": "div",
           },
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "new lab",
-              "onClick": [Function],
+              "children": Array [
+                Array [],
+                <button
+                  onClick={[Function]}
+>
+                  new lab
+</button>,
+              ],
+              "className": "TaskEdit_select-list",
             },
             "ref": null,
-            "rendered": "new lab",
-            "type": "button",
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "new lab",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "new lab",
+                "type": "button",
+              },
+            ],
+            "type": "div",
           },
           Object {
             "instance": null,
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "className": "TaskEdit_submit",
               "type": "submit",
             },
             "ref": null,

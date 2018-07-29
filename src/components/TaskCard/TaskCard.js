@@ -12,15 +12,15 @@ export class TaskCard extends Component {
   }
 
   handleSelectTaskToEdit = () => {
-    const { 
-      id, 
-      name, 
-      description, 
+    const {
+      id,
+      name,
+      description,
       videoLink,
       docs,
       labs,
-      updateCurrentTask, 
-      history } = this.props;    
+      updateCurrentTask,
+      history } = this.props;
     const currentTask = {
       id,
       name,
@@ -30,12 +30,12 @@ export class TaskCard extends Component {
       labs
     };
     updateCurrentTask(currentTask);
-    history.push(TASKS_EDIT);    
+    history.push(TASKS_EDIT);
   }
 
   editBtn = () => {
     return (
-      <button 
+      <button
         className="Task_edit-btn"
         onClick={this.handleSelectTaskToEdit}
       >
@@ -55,8 +55,10 @@ export class TaskCard extends Component {
 
     return (
       <div className="Task_card">
-        <h3 className="Task_name">{name}</h3>
-        {user.roleId === 1 ? adminEditBtn : studentViewBtn}
+        <div className="Task_top">
+          <h3 className="Task_name">{name}</h3>
+          {user.roleId === 1 ? adminEditBtn : studentViewBtn}
+        </div>
         <hr/>
         <p className="Task_desc">
           {description}
