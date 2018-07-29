@@ -13,17 +13,17 @@ describe('CourseCreate', () => {
   let fetch;
 
   beforeEach(() => {
-    mockProps = {
-      history: { push: jest.fn() },
-      currentCourse: mockCurrentCourse
-    };
     mockCurrentCourse = { 
       id: 1, 
       name: '',
       description: '',
-      location: {},
       students: [],
       tasks: []
+    };
+
+    mockProps = {
+      history: { push: jest.fn() },
+      currentCourse: mockCurrentCourse
     };
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
@@ -33,10 +33,6 @@ describe('CourseCreate', () => {
 
     wrapper = shallow(<CourseCreate {...mockProps} />, {disableLifeCycleMethods: true});
   })
-
-  it('should match the snapshot', () => {
-    
-  });
 
   describe('handleChange', () => {
     it('should update the appropriate state', () => {
@@ -56,38 +52,9 @@ describe('CourseCreate', () => {
   });
 
   describe('rearrangeTasks', () => {
-    wrapper.setState({ tasks: [1, 2]});
-    const expected = [2, 1];
+    
 
-    wrapper.instance().rearrangeTasks(expected);
+  });
 
-    let actual = wrapper.state('tasks');
-    expect(actual).toEqual(expected);
-
-  })
-
-  // describe('handleDeletedDocs', () => {
-  //   it('should call  with the correct params', async () => {
-  //     let mockDocs = [{}, {}];
-  //     wrapper.setState({ docsToDelete: mockDocs });
-  //     let expected = mockDocs;
-  //     await wrapper.instance().handleDeletedDocs();
-
-  //     expect(API.deleteDocsFromTask).toHaveBeenCalledWith(expected);
-  //   })
-  // })
-
-  // describe('mapStateToProps', () => {
-  //   it('should return a state with the currentTask prop', () => {
-  //     let mockState = {
-  //       currentTask: { id: null, name: '' },
-  //       user: { id: 1 }
-  //     };
-  //     let mappedProps = mapStateToProps(mockState);
-  //     let actual = mappedProps.currentTask;
-  //     let expected = { id: null, name: '' };
-
-  //     expect(actual).toEqual(expected);
-  //   })
-  // })
-})
+  
+});
