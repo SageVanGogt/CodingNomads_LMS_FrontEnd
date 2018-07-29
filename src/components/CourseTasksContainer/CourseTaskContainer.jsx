@@ -28,15 +28,8 @@ export class CourseTaskContainer extends Component {
   }
 
   onSortEnd = ({ oldIndex, newIndex }) => {
-    let tasks;
-
-    if (this.state.tasks.length !== 0) {
-      tasks = arrayMove(this.state.tasks, oldIndex, newIndex);
-    } else {
-      tasks = arrayMove(this.props.tasks, oldIndex, newIndex);
-    }
+    let tasks = arrayMove(this.props.tasks, oldIndex, newIndex);
     this.props.rearrangeTasks(tasks);
-    this.setState({ tasks });
   };
 
   render() { 
