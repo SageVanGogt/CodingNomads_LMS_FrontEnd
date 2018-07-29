@@ -54,7 +54,7 @@ describe('CourseCreate', () => {
     });
   });
 
-  // describe('handleDeletedLabs', () => {
+  // describe('handleStudentSelect', () => {
   //   it('should call  with the correct params', async () => {
   //     let mockLabs = [{}, {}];
   //     wrapper.setState({ labsToDelete: mockLabs });
