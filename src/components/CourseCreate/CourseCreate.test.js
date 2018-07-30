@@ -34,6 +34,10 @@ describe('CourseCreate', () => {
     wrapper = shallow(<CourseCreate {...mockProps} />, {disableLifeCycleMethods: true});
   })
 
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
   describe('handleChange', () => {
     it('should update the appropriate state', () => {
       let mockEvent = {
