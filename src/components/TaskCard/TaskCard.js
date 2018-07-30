@@ -44,14 +44,9 @@ export class TaskCard extends Component {
     );
   }
 
-  // viewBtn = () => {
-  //   return <button className="Task_edit-btn">view</button>;
-  // }
-
   render() {
     const { name, description, user } = this.props;
     const adminEditBtn = this.editBtn();
-    // const studentViewBtn = this.viewBtn();
 
     return (
       <div className="Task_card">
