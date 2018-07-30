@@ -37,6 +37,9 @@
   cursor: pointer; }
 
 .nav__site li {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
   font-size: .9rem;
   transition: .3s;
   list-style-type: none;
