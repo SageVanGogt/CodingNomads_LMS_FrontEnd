@@ -52,9 +52,15 @@ describe('CourseCreate', () => {
   });
 
   describe('rearrangeTasks', () => {
-    
-
-  });
-
+    it('should rearrange tasks to given array', () => {
+      wrapper.setState({tasks: [1, 2]});
   
+      const expected = [2, 1];
+  
+      wrapper.instance().rearrangeTasks([2, 1]);
+      let actual = wrapper.state('tasks');
+  
+      expect(actual).toEqual(expected);
+    });
+  });
 });
