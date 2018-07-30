@@ -82,7 +82,13 @@ describe('CourseCreate', () => {
     });
 
     it('should not add a task if it already is in state', () => {
+      wrapper.setState({tasks: [{name: 'Loops!'}]});
 
+      mockEvent = { target: { value: 'Loops!' } };
+
+      wrapper.instance().handleTaskSelect(mockEvent);
+      
+      expect(wrapper.state('tasks')).toEqual([{ name: 'Loops!' }]);
     });
   });
 });
