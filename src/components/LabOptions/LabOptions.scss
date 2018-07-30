@@ -1,11 +1,12 @@
 .LabOptions_select {
   width: 240px;
   height: 20px;
-  margin-top: 5px;
-  font-size: .9rem;
+  font-size: 12px;
 }
 
 .LabOptions_delete {
-  background-color: transparent;
   height: 15px;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
 }

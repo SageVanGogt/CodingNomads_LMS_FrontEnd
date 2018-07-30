@@ -234,12 +234,12 @@ export class TaskEdit extends Component {
   render() {
     return (
       <div className="TaskEdit_page">
+        <h1 className="TaskEdit_title">Fill out Task fields</h1>
         <form
           action="submit"
           className="TaskEdit_form"
           onSubmit={this.determineSubmitMethod}
         >
-          <h1 className="TaskEdit_title">EDIT A TASK</h1>
           <label for="name">Task name:</label>
           <input
             type="text"
@@ -271,14 +271,14 @@ export class TaskEdit extends Component {
           <div className="TaskEdit_select-list">
             <p>Select documents for your students to read with this task</p>
             {this.state.docOptions}
-            <button className="TaskEdit_new-select" onClick={(event) => this.addDocOptions(event)}>new doc +</button>
+            <button className="TaskEdit_new-select" onClick={(event) => this.addDocOptions(event)}>New Doc +</button>
           </div>
           <div className="TaskEdit_select-list">
             <p>Select labs for your students to do with this task</p>
             {this.state.labOptions}
-            <button className="TaskEdit_new-select" onClick={(event) => this.addLabOptions(event)}>new lab +</button>
+            <button className="TaskEdit_new-select" onClick={(event) => this.addLabOptions(event)}>New Lab +</button>
           </div>
-          <input className="TaskEdit_submit" type="submit" />
+          <input className="TaskEdit_submit" type="submit"  value="Submit Task Changes"/>
         </form>
       </div>
     );
