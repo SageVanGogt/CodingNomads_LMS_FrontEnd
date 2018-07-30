@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './AdminHome.css';
 import { Redirect } from 'react-router-dom';
-// import LogIn
+import * as routes from '../../constants/routes';
 
 export class AdminHome extends Component {
   constructor(props) {
@@ -10,7 +10,9 @@ export class AdminHome extends Component {
   }
 
   render() {
-    // if this.props.user === null, redirect to LogIn
+    if (this.props.user === null) {
+      return <Redirect to={routes.SIGN_IN} />;
+    }
 
     return (
       <div className="Teacher_home">
