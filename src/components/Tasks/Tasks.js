@@ -42,7 +42,9 @@ export class Tasks extends Component {
         >
           Add New Task
         </button>
-        { tasks }
+        <section className="Task_cards">
+          { tasks }
+        </section>
       </div>
     );
   }

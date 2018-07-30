@@ -4,9 +4,22 @@
   justify-content: space-around;
   align-items: space-around;
   margin-left: 200px;
-  width: 70vw; }
+  width: calc(100vw - 200px);
+  padding-top: 100px;
+  background-color: yellow; }
 
 .Task_new {
   position: absolute;
   top: 0;
-  background-color: #0F94FB; }
+  width: 100px;
+  height: 40px;
+  background-color: #0F94FB;
+  border-radius: 5px; }
+
+.Task_cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  background-color: blue;
+  border-radius: 5px; }

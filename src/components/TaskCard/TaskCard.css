@@ -21,3 +21,7 @@
 .Task_name {
   margin: 10px;
   font-weight: 800; }
+
+.Task_desc {
+  margin-left: 10px;
+  text-align: left; }

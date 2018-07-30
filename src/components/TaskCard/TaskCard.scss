@@ -19,7 +19,6 @@
   height: 20px;
   width: 40px;
   margin: 10px;
-  // visibility: hidden;
 }
 
 .Task_name {
@@ -27,6 +26,8 @@
   font-weight: 800;
 }
 
-// .Task_card:hover .Task_edit-btn {
-//   visibility: visible;
-// }
+.Task_desc {
+  margin-left: 10px;
+  text-align: left;
+}
+
