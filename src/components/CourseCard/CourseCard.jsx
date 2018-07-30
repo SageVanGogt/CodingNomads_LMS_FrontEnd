@@ -32,10 +32,12 @@ export class CourseCard extends Component {
 
     return (
       <div className='course_card'>
-        <h2>{name}</h2>
-        {user.roleId === 1 ? adminEditBtn : courseViewBtn}
+        <div className='course_top'>
+          <h2 className='Course_name'>{name}</h2>
+          {user.roleId === 1 ? adminEditBtn : courseViewBtn}
+        </div>
         <hr/>
-        <p>{description}</p>
+        <p className='Course_desc'>{description}</p>
       </div>
     );
   }
