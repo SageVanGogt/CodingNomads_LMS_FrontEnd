@@ -53,6 +53,19 @@ describe('CourseCreate', () => {
 
       expect(actual).toEqual(expected);
     });
+
+    it('should update the message in state', () => {
+      let mockEvent = {
+        preventDefault: jest.fn(),
+        target: {
+          name: 'name',
+          value: 'javascript'
+        }
+      };
+      wrapper.instance().handleChange(mockEvent);
+
+      expect(wrapper.state('message')).toEqual('Unsaved changes');
+    });
   });
 
   describe('rearrangeTasks', () => {
