@@ -21,7 +21,8 @@
   margin: 10px;
   font-weight: 600;
   color: white;
-  border: none; }
+  border: none;
+  cursor: pointer; }
 
 .Task_name {
   margin: 10px;
