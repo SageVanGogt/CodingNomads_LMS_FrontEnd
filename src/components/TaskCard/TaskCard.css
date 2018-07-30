@@ -2,9 +2,10 @@
   width: 250px;
   height: 200px;
   margin: 20px;
-  background-color: #CECECE;
+  background-color: white;
   font-family: 'Open Sans', sans-serif;
-  border-radius: 5px; }
+  border-radius: 5px;
+  box-shadow: 0 5px 6px -4px rgba(0, 0, 0, 0.22), 0 10px 13px -4px rgba(0, 0, 0, 0.34), inset 0 30px 30px 0 rgba(255, 255, 255, 0.35), inset 0 -30px 30px 0 rgba(0, 0, 0, 0.1); }
 
 .Task_top {
   display: flex;
@@ -12,12 +13,13 @@
 
 .Task_edit-btn {
   position: relative;
-  background-color: #0F94FB;
+  background-color: #4885a2;
   border-radius: 5px;
   height: 20px;
   width: 40px;
   margin: 10px;
-  font-weight: 600; }
+  font-weight: 600;
+  color: white; }
 
 .Task_name {
   margin: 10px;

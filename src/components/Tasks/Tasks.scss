@@ -6,7 +6,7 @@
   margin-left: 200px;
   width: calc(100vw - 200px);
   padding-top: 100px;
-  background-color: yellow;
+  background-color: #efefef;
 }
 
 .Task_new {
@@ -15,10 +15,11 @@
   right: 20px;
   width: 110px;
   height: 40px;
-  background-color: #0F94FB;
+  background-color: #4885a2;
   border-radius: 5px;
   font-weight: 800;
   font-size: .9rem;
+  color: white;
 }
 
 .Task_cards {
@@ -26,6 +27,6 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 80%;
-  background-color: blue;
+  background-color: #efefef;
   border-radius: 5px;
 }
