@@ -51,14 +51,22 @@
   display: none; }
 
 .TaskEdit_new-select {
+  margin-top: 10px;
   width: 90px;
   height: 20px;
   background-color: #0F94FB;
   box-shadow: 0 5px 6px -4px rgba(0, 0, 0, 0.22), 0 10px 13px -4px rgba(0, 0, 0, 0.34), inset 0 30px 30px 0 rgba(255, 255, 255, 0.35), inset 0 -30px 30px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 10px; }
+  border-radius: 10px;
+  color: #efefef;
+  border: none; }
 
 .TaskEdit_submit {
-  height: 30px;
+  height: 40px;
   margin-top: 15px;
+  border: none;
   background-color: #0F94FB;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #efefef;
+  font-weight: 600;
   box-shadow: 0 5px 6px -4px rgba(0, 0, 0, 0.22), 0 10px 13px -4px rgba(0, 0, 0, 0.34), inset 0 30px 30px 0 rgba(255, 255, 255, 0.35), inset 0 -30px 30px 0 rgba(0, 0, 0, 0.1); }
