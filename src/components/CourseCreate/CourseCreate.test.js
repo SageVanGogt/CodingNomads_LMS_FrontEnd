@@ -63,4 +63,26 @@ describe('CourseCreate', () => {
       expect(actual).toEqual(expected);
     });
   });
+
+  describe('handleTaskSelect', () => {
+    let allTasks;
+    let mockEvent;
+
+    beforeEach(() => {
+      allTasks = [{ name: 'GitHub' }, { name: 'Loops!' }]; 
+      wrapper.setState({allTasks});
+    });
+
+    it('should add a task to state if not already', () => {
+      mockEvent = { target: {value: 'GitHub' }};
+
+      wrapper.instance().handleTaskSelect(mockEvent);
+
+      expect(wrapper.state('tasks')).toEqual([{name: 'GitHub'}]);
+    });
+
+    it('should not add a task if it already is in state', () => {
+
+    });
+  });
 });
