@@ -101,6 +101,10 @@ export class CourseCreate extends Component {
     this.fetchStudents();
   }
 
+  componentWillUnmount() {
+    this.props.removeCurrentCourse();
+  }
+
   render() {
     const tasks = this.state.allTasks.map((task, index) => {
       return (
@@ -183,7 +187,7 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  removeCurrentCourse: () => dispatch(removeCurrentCourse)
+  removeCurrentCourse: () => dispatch(removeCurrentCourse())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CourseCreate);
