@@ -1,11 +1,11 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './AdminHome.css';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 export class AdminHome extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
@@ -46,4 +46,8 @@ export class AdminHome extends Component {
   }
 }
 
-export default AdminHome;
+const mapStateToProps = (state) => ({
+  user: state.user
+})
+
+export default connect(mapStateToProps)(AdminHome);
