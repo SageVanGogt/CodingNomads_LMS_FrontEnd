@@ -90,9 +90,9 @@ export class CourseCreate extends Component {
         },
         body: JSON.stringify(updatedCourse)
       });
-      if (response.status !== 200) {
-        throw Error('Error.');
-      }
+      // if (response.status !== 200) {
+      //   throw Error('Error.');
+      // }
     } catch (error) {
       throw error;
     }
@@ -129,7 +129,6 @@ export class CourseCreate extends Component {
       <div className="CourseCreate_page">
         <h1>Edit course</h1>
         <form 
-          action="submit" 
           className="CourseCreate_form"
         >
           <input
@@ -164,7 +163,7 @@ export class CourseCreate extends Component {
           >
             {students}
           </select>
-          <button type="submit" onSubmit={(e) => this.patchCourse(e)}>Submit Course</button>
+          <button type="submit" onClick={(e) => this.patchCourse(e)}>Submit Course</button>
         </form>
       </div>
     );
