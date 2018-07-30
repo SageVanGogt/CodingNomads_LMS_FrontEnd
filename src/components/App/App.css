@@ -23,14 +23,14 @@
 .nav__site h3 {
   line-height: 3;
   font-size: .8rem;
-  color: #626f81; }
+  color: white; }
 
 .nav__site a {
   padding: 13px 60px 13px 30px;
   line-height: 3;
   text-transform: uppercase;
   text-decoration: none;
-  color: #aebacc; }
+  color: white; }
 
 .nav__site a:hover {
   color: #f0f6f7;
@@ -47,7 +47,7 @@
 
 .nav__site li:hover {
   border-left: 3px solid aqua;
-  background-color: #303a4b;
+  background-color: #3c6e86;
   cursor: pointer; }
 
 .nav__icon {

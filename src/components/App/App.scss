@@ -27,7 +27,7 @@
 .nav__site h3 {
   line-height: 3;
   font-size: .8rem;
-  color: rgb(98, 111, 129);
+  color: white;
 }
 
 .nav__site a {
@@ -35,7 +35,7 @@
   line-height: 3;
   text-transform: uppercase;
   text-decoration: none;
-  color: #aebacc;
+  color: white;
 }
 
 .nav__site a:hover {
@@ -55,7 +55,7 @@
 
 .nav__site li:hover {
   border-left: 3px solid aqua;
-  background-color: rgb(48, 58, 75);
+  background-color: #3c6e86;
   cursor: pointer;
 }
 
