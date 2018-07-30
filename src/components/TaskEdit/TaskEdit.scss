@@ -1,11 +1,11 @@
 .TaskEdit_page {
     display: flex;
     justify-content: center;
-    align-items: center;
     background-color: #efefef;
     width: 50vw;
     height: 700px;
     margin: auto;
+    padding: 40px 0;    
     border-radius: 20px;
 }
 
@@ -30,6 +30,7 @@
 
 .TaskEdit_input-description {
   background-color: white;
+  min-height: 100px;
 }
 
 .TaskEdit_submit {
