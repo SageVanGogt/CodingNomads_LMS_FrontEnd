@@ -15,12 +15,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <nav className="nav__site">
-            <article className="user" aria-label="user profile">
-              <img src="" alt="user profile"/>
-              <p aria-label="user profile name">Coconut Head</p>
-            </article>
-            <hr/>
-            <h3>Main</h3>
+           <h3>Admin Home</h3>
             <ul aria-label="main navigation list">
               <li><a href="#"> Profile</a></li>
               <li><a href="#"> Students</a></li>
@@ -29,18 +24,13 @@ class App extends Component {
               <li><a href="#"> Calendar</a></li>
             </ul>
           </nav>
-          <Route 
-            exact path={routes.HOME}
-            component={() => <p>REACT YO FACE!</p>}
-          />
-
           <Route
             exact path={routes.SIGN_IN}
             component={() => <LogIn />}
           />
 
           <Route
-            exact path={routes.ADMIN_HOME}
+            exact path={routes.HOME}
             component={() => <AdminHome />}
           />
 

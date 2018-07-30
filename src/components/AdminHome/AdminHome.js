@@ -1,14 +1,19 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './AdminHome.css';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import * as routes from '../../constants/routes';
 
 export class AdminHome extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
+    if (this.props.user === null) {
+      return <Redirect to={routes.SIGN_IN} />;
+    }
+
     return (
       <div className="Teacher_home">
         <section className="Teacher_board">
@@ -46,4 +51,8 @@ export class AdminHome extends Component {
   }
 }
 
-export default AdminHome;
+const mapStateToProps = (state) => ({
+  user: state.user
+})
+
+export default connect(mapStateToProps)(AdminHome);
