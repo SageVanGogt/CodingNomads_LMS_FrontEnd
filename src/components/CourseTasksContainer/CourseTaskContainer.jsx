@@ -4,15 +4,15 @@ import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-ho
 import { CourseTaskCard } from '../CourseTaskCard/CourseTaskCard';
 
 
-const SortableItem = SortableElement(({ task }) =>
-  <CourseTaskCard {...task} />
+const SortableItem = SortableElement(({ task, deleteTask }) =>
+  <CourseTaskCard {...task} deleteTask={deleteTask}/>
 );
 
-const SortableList = SortableContainer(({ tasks }) => {
+const SortableList = SortableContainer(({ tasks, deleteTask }) => {
   return (
     <ul>
       {tasks.map((task, index) => (
-        <SortableItem key={`item-${index}`} index={index} task={task} />
+        <SortableItem key={`item-${index}`} index={index} task={task} deleteTask={deleteTask}/>
       ))}
     </ul>
   );
@@ -41,7 +41,7 @@ export class CourseTaskContainer extends Component {
   render() { 
     return (
       <div className='tasksArea'>
-        <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} shouldCancelStart={this.shouldCancelStart} />
+        <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} shouldCancelStart={this.shouldCancelStart} deleteTask={this.props.deleteTask} />
       </div>
     );
   }
