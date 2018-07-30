@@ -58,7 +58,9 @@ export class CourseCreate extends Component {
   }
 
   deleteTask = (id) => {
-    console.log(id)
+    const tasks = this.state.tasks.filter(task => task.id !== id);
+
+    this.setState({ tasks });
   }
 
   handleStudentSelect = (e) => {
@@ -145,7 +147,11 @@ export class CourseCreate extends Component {
             value={this.state.description}
           />
           <h2>Tasks</h2>
-          <CourseTaskContainer tasks={this.state.tasks} rearrangeTasks={this.rearrangeTasks}/>
+          <CourseTaskContainer 
+            tasks={this.state.tasks} 
+            deleteTask={this.deleteTask}
+            rearrangeTasks={this.rearrangeTasks}
+          />
           <span>Add task: </span>
           <select
             onChange={(e) => this.handleTaskSelect(e)}
