@@ -7,6 +7,7 @@ import Courses from '../Courses/Courses';
 import CourseCreate from '../CourseCreate/CourseCreate';
 import Tasks from '../Tasks/Tasks';
 import TaskEdit from '../TaskEdit/TaskEdit';
+import Students from '../Students/Students';
 import './App.css';
 
 class App extends Component {
@@ -52,10 +53,15 @@ class App extends Component {
             exact path={routes.COURSE_EDIT}
             component={() => <CourseCreate />}
           />
+
+          <Route
+            exact path={routes.STUDENTS_EDIT}
+            component={() => <Students />}
+          />
         </div>
       </Router>
     );
-  } 
+  }
 }
 
 export default App;
