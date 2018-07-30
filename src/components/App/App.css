@@ -21,6 +21,9 @@
   text-decoration: none;
   color: white; }
 
+a.logo-link {
+  padding: 0; }
+
 .nav__site a:hover {
   color: #f0f6f7;
   cursor: pointer; }

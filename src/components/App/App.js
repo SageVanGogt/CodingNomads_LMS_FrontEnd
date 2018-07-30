@@ -21,7 +21,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <nav className="nav__site">
-            <Link to={routes.HOME}>
+            <Link to={routes.HOME} className="logo-link">
               <img 
                 className="logo" 
                 alt="Coding Nomads" 
