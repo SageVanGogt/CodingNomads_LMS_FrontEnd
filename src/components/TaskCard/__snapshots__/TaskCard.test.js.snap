@@ -25,14 +25,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3
-          className="Task_name"
-/>,
-        <button
-          className="Task_edit-btn"
+        <div
+          className="Task_top"
 >
-          view
-</button>,
+          <h3
+                    className="Task_name"
+          />
+          <button
+                    className="Task_edit-btn"
+          >
+                    view
+          </button>
+</div>,
         <hr />,
         <p
           className="Task_desc"
@@ -47,24 +51,46 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
-          "className": "Task_name",
+          "children": Array [
+            <h3
+              className="Task_name"
+/>,
+            <button
+              className="Task_edit-btn"
+>
+              view
+</button>,
+          ],
+          "className": "Task_top",
         },
         "ref": null,
-        "rendered": null,
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "view",
-          "className": "Task_edit-btn",
-        },
-        "ref": null,
-        "rendered": "view",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "Task_name",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "view",
+              "className": "Task_edit-btn",
+            },
+            "ref": null,
+            "rendered": "view",
+            "type": "button",
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -97,14 +123,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3
-            className="Task_name"
-/>,
-          <button
-            className="Task_edit-btn"
+          <div
+            className="Task_top"
 >
-            view
-</button>,
+            <h3
+                        className="Task_name"
+            />
+            <button
+                        className="Task_edit-btn"
+            >
+                        view
+            </button>
+</div>,
           <hr />,
           <p
             className="Task_desc"
@@ -119,24 +149,46 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
-            "className": "Task_name",
+            "children": Array [
+              <h3
+                className="Task_name"
+/>,
+              <button
+                className="Task_edit-btn"
+>
+                view
+</button>,
+            ],
+            "className": "Task_top",
           },
           "ref": null,
-          "rendered": null,
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "view",
-            "className": "Task_edit-btn",
-          },
-          "ref": null,
-          "rendered": "view",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "Task_name",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "view",
+                "className": "Task_edit-btn",
+              },
+              "ref": null,
+              "rendered": "view",
+              "type": "button",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -198,15 +250,19 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3
-          className="Task_name"
-/>,
-        <button
-          className="Task_edit-btn"
-          onClick={[Function]}
+        <div
+          className="Task_top"
 >
-          edit
-</button>,
+          <h3
+                    className="Task_name"
+          />
+          <button
+                    className="Task_edit-btn"
+                    onClick={[Function]}
+          >
+                    edit
+          </button>
+</div>,
         <hr />,
         <p
           className="Task_desc"
@@ -221,25 +277,48 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
-          "className": "Task_name",
+          "children": Array [
+            <h3
+              className="Task_name"
+/>,
+            <button
+              className="Task_edit-btn"
+              onClick={[Function]}
+>
+              edit
+</button>,
+          ],
+          "className": "Task_top",
         },
         "ref": null,
-        "rendered": null,
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "edit",
-          "className": "Task_edit-btn",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "edit",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "Task_name",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "edit",
+              "className": "Task_edit-btn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "edit",
+            "type": "button",
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -272,15 +351,19 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3
-            className="Task_name"
-/>,
-          <button
-            className="Task_edit-btn"
-            onClick={[Function]}
+          <div
+            className="Task_top"
 >
-            edit
-</button>,
+            <h3
+                        className="Task_name"
+            />
+            <button
+                        className="Task_edit-btn"
+                        onClick={[Function]}
+            >
+                        edit
+            </button>
+</div>,
           <hr />,
           <p
             className="Task_desc"
@@ -295,25 +378,48 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
-            "className": "Task_name",
+            "children": Array [
+              <h3
+                className="Task_name"
+/>,
+              <button
+                className="Task_edit-btn"
+                onClick={[Function]}
+>
+                edit
+</button>,
+            ],
+            "className": "Task_top",
           },
           "ref": null,
-          "rendered": null,
-          "type": "h3",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "edit",
-            "className": "Task_edit-btn",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "edit",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "Task_name",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "edit",
+                "className": "Task_edit-btn",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "edit",
+              "type": "button",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,

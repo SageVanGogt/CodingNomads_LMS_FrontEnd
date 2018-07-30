@@ -26,6 +26,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <button
+          className="Task_new"
           onClick={[Function]}
 >
           Add New Task
@@ -42,6 +43,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Add New Task",
+          "className": "Task_new",
           "onClick": [Function],
         },
         "ref": null,
@@ -59,6 +61,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <button
+            className="Task_new"
             onClick={[Function]}
 >
             Add New Task
@@ -75,6 +78,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Add New Task",
+            "className": "Task_new",
             "onClick": [Function],
           },
           "ref": null,

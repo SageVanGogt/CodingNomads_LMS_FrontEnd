@@ -36,6 +36,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <select
+          className="DocOptions_select"
           name=""
           onChange={[Function]}
           value={1}
@@ -52,9 +53,10 @@ ShallowWrapper {
           </option>
 </select>,
         <button
+          className="DocOptions_delete"
           onClick={[Function]}
 >
-          del
+          X
 </button>,
       ],
     },
@@ -79,6 +81,7 @@ ShallowWrapper {
 </option>,
             ],
           ],
+          "className": "DocOptions_select",
           "name": "",
           "onChange": [Function],
           "value": 1,
@@ -118,11 +121,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "del",
+          "children": "X",
+          "className": "DocOptions_delete",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "del",
+        "rendered": "X",
         "type": "button",
       },
     ],
@@ -136,6 +140,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <select
+            className="DocOptions_select"
             name=""
             onChange={[Function]}
             value={1}
@@ -152,9 +157,10 @@ ShallowWrapper {
             </option>
 </select>,
           <button
+            className="DocOptions_delete"
             onClick={[Function]}
 >
-            del
+            X
 </button>,
         ],
       },
@@ -179,6 +185,7 @@ ShallowWrapper {
 </option>,
               ],
             ],
+            "className": "DocOptions_select",
             "name": "",
             "onChange": [Function],
             "value": 1,
@@ -218,11 +225,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "del",
+            "children": "X",
+            "className": "DocOptions_delete",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "del",
+          "rendered": "X",
           "type": "button",
         },
       ],
@@ -268,6 +276,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <select
+          className="DocOptions_select"
           name=""
           onChange={[Function]}
           value={1}
@@ -278,9 +287,10 @@ ShallowWrapper {
           />
 </select>,
         <button
+          className="DocOptions_delete"
           onClick={[Function]}
 >
-          del
+          X
 </button>,
       ],
     },
@@ -298,6 +308,7 @@ ShallowWrapper {
 />,
             Array [],
           ],
+          "className": "DocOptions_select",
           "name": "",
           "onChange": [Function],
           "value": 1,
@@ -324,11 +335,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "del",
+          "children": "X",
+          "className": "DocOptions_delete",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "del",
+        "rendered": "X",
         "type": "button",
       },
     ],
@@ -342,6 +354,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <select
+            className="DocOptions_select"
             name=""
             onChange={[Function]}
             value={1}
@@ -352,9 +365,10 @@ ShallowWrapper {
             />
 </select>,
           <button
+            className="DocOptions_delete"
             onClick={[Function]}
 >
-            del
+            X
 </button>,
         ],
       },
@@ -372,6 +386,7 @@ ShallowWrapper {
 />,
               Array [],
             ],
+            "className": "DocOptions_select",
             "name": "",
             "onChange": [Function],
             "value": 1,
@@ -398,11 +413,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "del",
+            "children": "X",
+            "className": "DocOptions_delete",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "del",
+          "rendered": "X",
           "type": "button",
         },
       ],
@@ -443,6 +459,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <select
+          className="DocOptions_select"
           name=""
           onChange={[Function]}
           value={undefined}
@@ -453,9 +470,10 @@ ShallowWrapper {
           />
 </select>,
         <button
+          className="DocOptions_delete"
           onClick={[Function]}
 >
-          del
+          X
 </button>,
       ],
     },
@@ -473,6 +491,7 @@ ShallowWrapper {
 />,
             Array [],
           ],
+          "className": "DocOptions_select",
           "name": "",
           "onChange": [Function],
           "value": undefined,
@@ -499,11 +518,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "del",
+          "children": "X",
+          "className": "DocOptions_delete",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "del",
+        "rendered": "X",
         "type": "button",
       },
     ],
@@ -517,6 +537,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <select
+            className="DocOptions_select"
             name=""
             onChange={[Function]}
             value={undefined}
@@ -527,9 +548,10 @@ ShallowWrapper {
             />
 </select>,
           <button
+            className="DocOptions_delete"
             onClick={[Function]}
 >
-            del
+            X
 </button>,
         ],
       },
@@ -547,6 +569,7 @@ ShallowWrapper {
 />,
               Array [],
             ],
+            "className": "DocOptions_select",
             "name": "",
             "onChange": [Function],
             "value": undefined,
@@ -573,11 +596,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "del",
+            "children": "X",
+            "className": "DocOptions_delete",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "del",
+          "rendered": "X",
           "type": "button",
         },
       ],
