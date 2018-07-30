@@ -46,10 +46,12 @@ export class Courses extends Component {
 
     return ( 
       <div className='courses_container'>
-        <button onClick={this.addCourse}>Add New Course</button>
-        {this.state.courses.length ? 
-          courses : 
-          <img height='200' width='200' src='http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif'/>}
+        <button className='new_course_button' onClick={this.addCourse}>Add New Course</button>
+        <section className='course_cards'>
+          {this.state.courses.length ? 
+            courses : 
+            <img height='200' width='200' src='http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif'/>}
+        </section>
       </div>
     );
   }
