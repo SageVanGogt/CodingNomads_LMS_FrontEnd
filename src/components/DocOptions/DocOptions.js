@@ -26,12 +26,11 @@ export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id, docSelected }
         <option value='' selected></option>
         { docOptions }
       </select>
-      <button
+      <img
+        src="/button.png"
         className="DocOptions_delete"
         onClick={(event) => deleteDoc(event, id)}
-      >
-        X
-      </button>
+      />
     </div>
   );
 };

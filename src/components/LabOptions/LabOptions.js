@@ -27,12 +27,11 @@ export const LabOptions = ({ labs, handleSelectLab, deleteLab, id, labSelected }
         <option value='' disabled selected></option>
         { labOptions }
       </select>
-      <button
+      <img
+        src="/button.png"
         className="LabOptions_delete"
         onClick={(event) => deleteLab(event, id)}
-      >
-        X
-      </button>
+      />
     </div>
   );
 };

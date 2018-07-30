@@ -234,12 +234,12 @@ export class TaskEdit extends Component {
   render() {
     return (
       <div className="TaskEdit_page">
+        <h1 className="TaskEdit_title">Fill out Task fields</h1>
         <form
           action="submit"
           className="TaskEdit_form"
           onSubmit={this.determineSubmitMethod}
         >
-          <h1 className="TaskEdit_title">EDIT A TASK</h1>
           <label for="name">Task name:</label>
           <input
             type="text"
