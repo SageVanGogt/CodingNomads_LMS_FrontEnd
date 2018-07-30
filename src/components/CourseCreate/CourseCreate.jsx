@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { mockTasks } from '../../mockData/mockTasks';
 import './CourseCreate.css';
 import PropTypes from 'prop-types';
 import * as apiCalls from '../../apiCalls/apiCalls';
+import { removeCurrentCourse } from '../../actions/currentCourse';
 
 import { CourseTaskContainer } from '../CourseTasksContainer/CourseTaskContainer';
 
@@ -101,6 +101,10 @@ export class CourseCreate extends Component {
     this.fetchStudents();
   }
 
+  componentWillUnmount() {
+    this.props.removeCurrentCourse();
+  }
+
   render() {
     const tasks = this.state.allTasks.map((task, index) => {
       return (
@@ -182,4 +186,8 @@ export const mapStateToProps = (state) => ({
   currentCourse: state.currentCourse
 });
 
-export default connect(mapStateToProps, null)(CourseCreate);
+export const mapDispatchToProps = dispatch => ({
+  removeCurrentCourse: () => dispatch(removeCurrentCourse())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CourseCreate);

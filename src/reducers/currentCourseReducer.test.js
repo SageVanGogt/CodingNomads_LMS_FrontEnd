@@ -26,6 +26,23 @@ describe('currentCourseReducer', () => {
     expect(actual).toEqual(expected);
   })
 
+  it('returns new state if type is REMOVE_CURRENT_COURSE', () => {
+    let mockAction = {
+      type: 'REMOVE_CURRENT_COURSE',
+    };
+    let expected = {};
+
+    let initialState = {
+      id: 1,
+      name: '',
+      description: ''
+    };
+    let actual = currentCourseReducer(initialState, mockAction);
+
+    expect(actual).toEqual(expected);
+
+  })
+
   it('returns default state if action type does not match', () => {
     let mockAction = {
       type: 'I_AM_NOT_AN_ACTION',
