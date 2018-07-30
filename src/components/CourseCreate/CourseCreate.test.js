@@ -119,5 +119,13 @@ describe('CourseCreate', () => {
 
       expect(wrapper.state('students')).toEqual([{firstName: 'Tom', id: 4}]);
     });
+
+    it('shouldn\'t add it if already in state', () => {
+      wrapper.setState({ students: [{ firstName: 'Tom', id: 4 }]});
+
+      wrapper.instance().handleStudentSelect(mockEvent);
+
+      expect(wrapper.state('students')).toEqual([{ firstName: 'Tom', id: 4 }]);
+    });
   });
 });

@@ -66,7 +66,7 @@ export class CourseCreate extends Component {
   handleStudentSelect = (e) => {
     const firstName = e.target.value.split(' ')[0];
     const student = this.state.allStudents.find(student => student.firstName === firstName);
-    if (!this.state.students.includes(student) && student.firstName !== "Select") {
+    if (!this.state.students.find(inStudent => inStudent.id === student.id) && student.firstName !== "Select") {
       this.setState({
         students: [...this.state.students, student]
       });
