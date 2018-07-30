@@ -77,20 +77,15 @@ ShallowWrapper {
           >
                     
           </div>
-          <span>
-                    Add task: 
-          </span>
-          <select
-                    onChange={[Function]}
-          >
-                    
-          </select>
           <button
                     onClick={[Function]}
                     type="submit"
           >
-                    Submit Course
+                    Update Course
           </button>
+          <p
+                    className="course_message"
+          />
 </form>,
       ],
       "className": "CourseCreate_page",
@@ -152,20 +147,15 @@ ShallowWrapper {
 >
               
 </div>,
-            <span>
-              Add task: 
-</span>,
-            <select
-              onChange={[Function]}
->
-              
-</select>,
             <button
               onClick={[Function]}
               type="submit"
 >
-              Submit Course
+              Update Course
 </button>,
+            <p
+              className="course_message"
+/>,
           ],
           "className": "CourseCreate_form",
         },
@@ -276,36 +266,25 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Add task: ",
-            },
-            "ref": null,
-            "rendered": "Add task: ",
-            "type": "span",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [],
-              "onChange": [Function],
-            },
-            "ref": null,
-            "rendered": Array [],
-            "type": "select",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Submit Course",
+              "children": "Update Course",
               "onClick": [Function],
               "type": "submit",
             },
             "ref": null,
-            "rendered": "Submit Course",
+            "rendered": "Update Course",
             "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "",
+              "className": "course_message",
+            },
+            "ref": null,
+            "rendered": "",
+            "type": "p",
           },
         ],
         "type": "form",
@@ -364,20 +343,15 @@ ShallowWrapper {
             >
                         
             </div>
-            <span>
-                        Add task: 
-            </span>
-            <select
-                        onChange={[Function]}
-            >
-                        
-            </select>
             <button
                         onClick={[Function]}
                         type="submit"
             >
-                        Submit Course
+                        Update Course
             </button>
+            <p
+                        className="course_message"
+            />
 </form>,
         ],
         "className": "CourseCreate_page",
@@ -439,20 +413,15 @@ ShallowWrapper {
 >
                 
 </div>,
-              <span>
-                Add task: 
-</span>,
-              <select
-                onChange={[Function]}
->
-                
-</select>,
               <button
                 onClick={[Function]}
                 type="submit"
 >
-                Submit Course
+                Update Course
 </button>,
+              <p
+                className="course_message"
+/>,
             ],
             "className": "CourseCreate_form",
           },
@@ -563,36 +532,25 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Add task: ",
-              },
-              "ref": null,
-              "rendered": "Add task: ",
-              "type": "span",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [],
-                "onChange": [Function],
-              },
-              "ref": null,
-              "rendered": Array [],
-              "type": "select",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Submit Course",
+                "children": "Update Course",
                 "onClick": [Function],
                 "type": "submit",
               },
               "ref": null,
-              "rendered": "Submit Course",
+              "rendered": "Update Course",
               "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+                "className": "course_message",
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "p",
             },
           ],
           "type": "form",
