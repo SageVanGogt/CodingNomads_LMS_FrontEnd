@@ -1,0 +1,613 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CourseCreate should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CourseCreate
+    currentCourse={
+        Object {
+            "description": "",
+            "id": 1,
+            "name": "",
+            "students": Array [],
+            "tasks": Array [],
+          }
+    }
+    history={
+        Object {
+            "push": [Function],
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1>
+          Edit course
+</h1>,
+        <form
+          className="CourseCreate_form"
+>
+          <input
+                    name="name"
+                    onChange={[Function]}
+                    placeholder="Name"
+                    type="text"
+                    value=""
+          />
+          <textarea
+                    name="description"
+                    onChange={[Function]}
+                    placeholder="Description"
+                    type="text"
+                    value=""
+          />
+          <h2>
+                    Tasks
+          </h2>
+          <CourseTaskContainer
+                    deleteTask={[Function]}
+                    rearrangeTasks={[Function]}
+                    tasks={Array []}
+          />
+          <span>
+                    Add task: 
+          </span>
+          <select
+                    onChange={[Function]}
+          >
+                    
+          </select>
+          <h2>
+                    Students
+          </h2>
+          <div
+                    className="studentsArea"
+          >
+                    
+          </div>
+          <span>
+                    Add task: 
+          </span>
+          <select
+                    onChange={[Function]}
+          >
+                    
+          </select>
+          <button
+                    onClick={[Function]}
+                    type="submit"
+          >
+                    Submit Course
+          </button>
+</form>,
+      ],
+      "className": "CourseCreate_page",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Edit course",
+        },
+        "ref": null,
+        "rendered": "Edit course",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              name="name"
+              onChange={[Function]}
+              placeholder="Name"
+              type="text"
+              value=""
+/>,
+            <textarea
+              name="description"
+              onChange={[Function]}
+              placeholder="Description"
+              type="text"
+              value=""
+/>,
+            <h2>
+              Tasks
+</h2>,
+            <CourseTaskContainer
+              deleteTask={[Function]}
+              rearrangeTasks={[Function]}
+              tasks={Array []}
+/>,
+            <span>
+              Add task: 
+</span>,
+            <select
+              onChange={[Function]}
+>
+              
+</select>,
+            <h2>
+              Students
+</h2>,
+            <div
+              className="studentsArea"
+>
+              
+</div>,
+            <span>
+              Add task: 
+</span>,
+            <select
+              onChange={[Function]}
+>
+              
+</select>,
+            <button
+              onClick={[Function]}
+              type="submit"
+>
+              Submit Course
+</button>,
+          ],
+          "className": "CourseCreate_form",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "name": "name",
+              "onChange": [Function],
+              "placeholder": "Name",
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "name": "description",
+              "onChange": [Function],
+              "placeholder": "Description",
+              "type": "text",
+              "value": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "textarea",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Tasks",
+            },
+            "ref": null,
+            "rendered": "Tasks",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "deleteTask": [Function],
+              "rearrangeTasks": [Function],
+              "tasks": Array [],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Add task: ",
+            },
+            "ref": null,
+            "rendered": "Add task: ",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [],
+              "onChange": [Function],
+            },
+            "ref": null,
+            "rendered": Array [],
+            "type": "select",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Students",
+            },
+            "ref": null,
+            "rendered": "Students",
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [],
+              "className": "studentsArea",
+            },
+            "ref": null,
+            "rendered": Array [],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Add task: ",
+            },
+            "ref": null,
+            "rendered": "Add task: ",
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [],
+              "onChange": [Function],
+            },
+            "ref": null,
+            "rendered": Array [],
+            "type": "select",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Submit Course",
+              "onClick": [Function],
+              "type": "submit",
+            },
+            "ref": null,
+            "rendered": "Submit Course",
+            "type": "button",
+          },
+        ],
+        "type": "form",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1>
+            Edit course
+</h1>,
+          <form
+            className="CourseCreate_form"
+>
+            <input
+                        name="name"
+                        onChange={[Function]}
+                        placeholder="Name"
+                        type="text"
+                        value=""
+            />
+            <textarea
+                        name="description"
+                        onChange={[Function]}
+                        placeholder="Description"
+                        type="text"
+                        value=""
+            />
+            <h2>
+                        Tasks
+            </h2>
+            <CourseTaskContainer
+                        deleteTask={[Function]}
+                        rearrangeTasks={[Function]}
+                        tasks={Array []}
+            />
+            <span>
+                        Add task: 
+            </span>
+            <select
+                        onChange={[Function]}
+            >
+                        
+            </select>
+            <h2>
+                        Students
+            </h2>
+            <div
+                        className="studentsArea"
+            >
+                        
+            </div>
+            <span>
+                        Add task: 
+            </span>
+            <select
+                        onChange={[Function]}
+            >
+                        
+            </select>
+            <button
+                        onClick={[Function]}
+                        type="submit"
+            >
+                        Submit Course
+            </button>
+</form>,
+        ],
+        "className": "CourseCreate_page",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Edit course",
+          },
+          "ref": null,
+          "rendered": "Edit course",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                name="name"
+                onChange={[Function]}
+                placeholder="Name"
+                type="text"
+                value=""
+/>,
+              <textarea
+                name="description"
+                onChange={[Function]}
+                placeholder="Description"
+                type="text"
+                value=""
+/>,
+              <h2>
+                Tasks
+</h2>,
+              <CourseTaskContainer
+                deleteTask={[Function]}
+                rearrangeTasks={[Function]}
+                tasks={Array []}
+/>,
+              <span>
+                Add task: 
+</span>,
+              <select
+                onChange={[Function]}
+>
+                
+</select>,
+              <h2>
+                Students
+</h2>,
+              <div
+                className="studentsArea"
+>
+                
+</div>,
+              <span>
+                Add task: 
+</span>,
+              <select
+                onChange={[Function]}
+>
+                
+</select>,
+              <button
+                onClick={[Function]}
+                type="submit"
+>
+                Submit Course
+</button>,
+            ],
+            "className": "CourseCreate_form",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "name": "name",
+                "onChange": [Function],
+                "placeholder": "Name",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "name": "description",
+                "onChange": [Function],
+                "placeholder": "Description",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "textarea",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Tasks",
+              },
+              "ref": null,
+              "rendered": "Tasks",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "deleteTask": [Function],
+                "rearrangeTasks": [Function],
+                "tasks": Array [],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Add task: ",
+              },
+              "ref": null,
+              "rendered": "Add task: ",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [],
+                "onChange": [Function],
+              },
+              "ref": null,
+              "rendered": Array [],
+              "type": "select",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Students",
+              },
+              "ref": null,
+              "rendered": "Students",
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [],
+                "className": "studentsArea",
+              },
+              "ref": null,
+              "rendered": Array [],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Add task: ",
+              },
+              "ref": null,
+              "rendered": "Add task: ",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [],
+                "onChange": [Function],
+              },
+              "ref": null,
+              "rendered": Array [],
+              "type": "select",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Submit Course",
+                "onClick": [Function],
+                "type": "submit",
+              },
+              "ref": null,
+              "rendered": "Submit Course",
+              "type": "button",
+            },
+          ],
+          "type": "form",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+    "disableLifeCycleMethods": true,
+  },
+}
+`;

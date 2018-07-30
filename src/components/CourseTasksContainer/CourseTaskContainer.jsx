@@ -4,15 +4,15 @@ import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-ho
 import { CourseTaskCard } from '../CourseTaskCard/CourseTaskCard';
 
 
-const SortableItem = SortableElement(({ task }) =>
-  <CourseTaskCard {...task} />
+const SortableItem = SortableElement(({ task, deleteTask }) =>
+  <CourseTaskCard {...task} deleteTask={deleteTask}/>
 );
 
-const SortableList = SortableContainer(({ tasks }) => {
+const SortableList = SortableContainer(({ tasks, deleteTask }) => {
   return (
     <ul>
       {tasks.map((task, index) => (
-        <SortableItem key={`item-${index}`} index={index} task={task} />
+        <SortableItem key={`item-${index}`} index={index} task={task} deleteTask={deleteTask}/>
       ))}
     </ul>
   );
@@ -27,25 +27,21 @@ export class CourseTaskContainer extends Component {
     };
   }
 
-  onSortEnd = ({ oldIndex, newIndex }) => {
-    let tasks;
-
-    if (this.state.tasks.length !== 0) {
-      tasks = arrayMove(this.state.tasks, oldIndex, newIndex);
-    } else {
-      tasks = arrayMove(this.props.tasks, oldIndex, newIndex);
+  shouldCancelStart = (e) => {
+    if (['input', 'textarea', 'select', 'option', 'img', 'image'].indexOf(e.target.tagName.toLowerCase()) !== -1) {
+      return true; 
     }
-    this.setState({ tasks });
+  }
+
+  onSortEnd = ({ oldIndex, newIndex }) => {
+    let tasks = arrayMove(this.props.tasks, oldIndex, newIndex);
+    this.props.rearrangeTasks(tasks);
   };
 
   render() { 
     return (
       <div className='tasksArea'>
-        {
-          this.state.tasks.length > 0 ? 
-            <SortableList tasks={this.state.tasks} onSortEnd={this.onSortEnd} />
-            : <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} />
-        }
+        <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} shouldCancelStart={this.shouldCancelStart} deleteTask={this.props.deleteTask} />
       </div>
     );
   }
