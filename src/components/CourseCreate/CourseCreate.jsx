@@ -83,16 +83,13 @@ export class CourseCreate extends Component {
     };
 
     try {
-      const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/courses', {
+      await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/courses', {
         method: 'PATCH',
         headers: {
           'content-type': 'application/json'
         },
         body: JSON.stringify(updatedCourse)
       });
-      // if (response.status !== 200) {
-      //   throw Error('Error.');
-      // }
     } catch (error) {
       throw error;
     }
