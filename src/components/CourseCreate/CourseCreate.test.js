@@ -91,4 +91,14 @@ describe('CourseCreate', () => {
       expect(wrapper.state('tasks')).toEqual([{ name: 'Loops!' }]);
     });
   });
+
+  describe('deleteTask', () => {
+    it('should remove a task with matching ID from state', () => {
+      wrapper.setState({ tasks: [{ name: 'GitHub', id: 1 }, { name: 'Loops!', id: 2 }]});
+
+      wrapper.instance().deleteTask(1);
+
+      expect(wrapper.state('tasks')).toEqual([{ name: 'Loops!', id: 2 }]);
+    });
+  });
 });
