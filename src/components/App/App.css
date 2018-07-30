@@ -1,9 +1,8 @@
 .nav__site {
   position: fixed;
   z-index: 1;
-  height: 100%;
   width: 200px;
-  background-color: #4885a2; }
+  background-color: #364051; }
 
 .user {
   height: 180px;
@@ -21,6 +20,7 @@
   color: #aebacc; }
 
 .nav__site h3 {
+  margin-left: 30px;
   line-height: 3;
   font-size: .8rem;
   color: #626f81; }
@@ -38,9 +38,12 @@
 
 .nav__site li {
   font-size: .9rem;
+<<<<<<< HEAD
   text-align: left;
   width: 100%;
   box-sizing: border-box;
+=======
+>>>>>>> Add course card css to match task cards
   transition: .3s;
   list-style-type: none;
   float: left; }
