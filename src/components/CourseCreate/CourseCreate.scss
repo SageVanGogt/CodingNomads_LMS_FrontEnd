@@ -11,6 +11,7 @@
 
 .CourseCreate_page h2 {
   font-size: 20px;
+  margin-top: 20px;
 }
 
 .CourseCreate_form input {
@@ -37,4 +38,18 @@
   min-height: 200px;
   border: .5px solid;
   margin: 20px auto;
+}
+
+.studentsArea {
+  width: 400px;
+  height: 150px;
+  border: .5px solid;
+  margin: 20px auto;
+  overflow: scroll;
+}
+
+.CourseStudentCard {
+  width: 300px;
+  border: 1px dashed black;
+  margin: 5px auto;
 }

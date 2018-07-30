@@ -6,7 +6,8 @@ export const CourseTaskCard = (props) => {
 
   return (
     <div className='CourseTaskCard' draggable onDragStart={(e) => console.log(e)}>
-      <h4 title={description}>{name}</h4>
+      <h4 title={description} display='inline-block'>{name}</h4>
+      <img src="/button.png" onClick={() => props.deleteTask(id)}/>
     </div>
   );
 };
