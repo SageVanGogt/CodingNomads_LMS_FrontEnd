@@ -40,7 +40,7 @@ export class Tasks extends Component {
           className="Task_new"
           onClick={ this.addTask }
         >
-          Add New Task
+          New Task +
         </button>
         <section className="Task_cards">
           { tasks }

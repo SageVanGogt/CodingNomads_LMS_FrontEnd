@@ -10,12 +10,15 @@
 }
 
 .Task_new {
-  position: absolute;
-  top: 0;
-  width: 100px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 110px;
   height: 40px;
   background-color: #0F94FB;
   border-radius: 5px;
+  font-weight: 800;
+  font-size: .9rem;
 }
 
 .Task_cards {

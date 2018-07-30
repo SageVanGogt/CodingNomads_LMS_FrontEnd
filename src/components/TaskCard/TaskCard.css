@@ -16,7 +16,8 @@
   border-radius: 5px;
   height: 20px;
   width: 40px;
-  margin: 10px; }
+  margin: 10px;
+  font-weight: 600; }
 
 .Task_name {
   margin: 10px;
