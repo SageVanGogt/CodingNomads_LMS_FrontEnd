@@ -5,3 +5,8 @@
   align-items: space-around;
   margin-left: 200px;
   width: 70vw; }
+
+.Task_new {
+  position: absolute;
+  top: 0;
+  background-color: #0F94FB; }

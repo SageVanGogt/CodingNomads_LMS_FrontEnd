@@ -3,6 +3,8 @@
   height: 200px;
   margin: 20px;
   background-color: #CECECE;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 5px;
 }
 
 .Task_top {
@@ -11,10 +13,20 @@
 }
 
 .Task_edit-btn {
-  position: absolute;
-  visibility: hidden;
+  position: relative;
+  background-color: #0F94FB;
+  border-radius: 5px;
+  height: 20px;
+  width: 40px;
+  margin: 10px;
+  // visibility: hidden;
 }
 
-.Task_card:hover .Task_edit-btn {
-  visibility: visible;
+.Task_name {
+  margin: 10px;
+  font-weight: 800;
 }
+
+// .Task_card:hover .Task_edit-btn {
+//   visibility: visible;
+// }

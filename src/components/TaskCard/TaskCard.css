@@ -2,15 +2,22 @@
   width: 250px;
   height: 200px;
   margin: 20px;
-  background-color: #CECECE; }
+  background-color: #CECECE;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 5px; }
 
 .Task_top {
   display: flex;
   justify-content: space-between; }
 
 .Task_edit-btn {
-  position: absolute;
-  visibility: hidden; }
+  position: relative;
+  background-color: #0F94FB;
+  border-radius: 5px;
+  height: 20px;
+  width: 40px;
+  margin: 10px; }
 
-.Task_card:hover .Task_edit-btn {
-  visibility: visible; }
+.Task_name {
+  margin: 10px;
+  font-weight: 800; }
