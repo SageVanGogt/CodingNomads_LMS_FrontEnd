@@ -10,7 +10,8 @@
   margin-left: 200px;
   width: calc(100vw - 200px);
   padding-top: 100px;
-  background-color: #efefef; }
+  background-color: #efefef;
+  min-height: 100vh; }
 
 .course_cards {
   display: -ms-flexbox;
@@ -21,7 +22,8 @@
   flex-wrap: wrap;
   width: 80%;
   background-color: #efefef;
-  border-radius: 5px; }
+  border-radius: 5px;
+  height: fit-content; }
 
 .new_course_button {
   position: fixed;
