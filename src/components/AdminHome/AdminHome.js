@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './AdminHome.css';
 import { Redirect } from 'react-router-dom';
+// import LogIn
 
 export class AdminHome extends Component {
   constructor(props) {
@@ -9,6 +10,8 @@ export class AdminHome extends Component {
   }
 
   render() {
+    // if this.props.user === null, redirect to LogIn
+
     return (
       <div className="Teacher_home">
         <section className="Teacher_board">
