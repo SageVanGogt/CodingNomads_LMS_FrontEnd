@@ -83,6 +83,9 @@ ShallowWrapper {
           >
                     Update Course
           </button>
+          <p
+                    className="course_message"
+          />
 </form>,
       ],
       "className": "CourseCreate_page",
@@ -150,6 +153,9 @@ ShallowWrapper {
 >
               Update Course
 </button>,
+            <p
+              className="course_message"
+/>,
           ],
           "className": "CourseCreate_form",
         },
@@ -268,6 +274,18 @@ ShallowWrapper {
             "rendered": "Update Course",
             "type": "button",
           },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "",
+              "className": "course_message",
+            },
+            "ref": null,
+            "rendered": "",
+            "type": "p",
+          },
         ],
         "type": "form",
       },
@@ -331,6 +349,9 @@ ShallowWrapper {
             >
                         Update Course
             </button>
+            <p
+                        className="course_message"
+            />
 </form>,
         ],
         "className": "CourseCreate_page",
@@ -398,6 +419,9 @@ ShallowWrapper {
 >
                 Update Course
 </button>,
+              <p
+                className="course_message"
+/>,
             ],
             "className": "CourseCreate_form",
           },
@@ -515,6 +539,18 @@ ShallowWrapper {
               "ref": null,
               "rendered": "Update Course",
               "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "",
+                "className": "course_message",
+              },
+              "ref": null,
+              "rendered": "",
+              "type": "p",
             },
           ],
           "type": "form",
