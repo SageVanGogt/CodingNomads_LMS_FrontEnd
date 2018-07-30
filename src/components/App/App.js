@@ -16,7 +16,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <nav className="nav__site">
-           <h3>Coding Nomads</h3>
+           <img className="logo" alt="Coding Nomads" src="/logo.png" />
             <ul aria-label="main navigation list">
               <li><Link to={routes.TASKS}> Profile</Link></li>
               <li><Link to={routes.STUDENTS_EDIT}> Students</Link></li>
