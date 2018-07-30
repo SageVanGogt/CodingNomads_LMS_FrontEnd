@@ -28,9 +28,8 @@ export class CourseTaskContainer extends Component {
   }
 
   shouldCancelStart = (e) => {
-    // Cancel sorting if the event target is an `input`, `textarea`, `select` or `option`
     if (['input', 'textarea', 'select', 'option', 'img', 'image'].indexOf(e.target.tagName.toLowerCase()) !== -1) {
-      return true; // Return true to cancel sorting
+      return true; 
     }
   }
 
