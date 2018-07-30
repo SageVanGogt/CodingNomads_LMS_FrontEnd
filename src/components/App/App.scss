@@ -1,9 +1,8 @@
 .nav__site {
   position: fixed;
   z-index: 1;
-  // left: 0;
+  height: 100%;
   width: 200px;
-  // padding: 0;
   background-color: #364051;
 }
 
@@ -26,7 +25,6 @@
 }
 
 .nav__site h3 {
-  margin-left: 30px;
   line-height: 3;
   font-size: .8rem;
   color: rgb(98, 111, 129);
@@ -47,6 +45,9 @@
 
 .nav__site li {
   font-size: .9rem;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
   transition: .3s;
   list-style-type: none;
   float: left;
