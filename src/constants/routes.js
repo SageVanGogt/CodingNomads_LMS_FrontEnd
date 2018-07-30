@@ -5,6 +5,6 @@ export const COURSES = '/courses';
 export const TASKS = '/tasks';
 export const TASKS_EDIT = '/tasks/edit';
 export const TASK_VIEW = '/tasks';
-export const COURSE_EDIT = '/edit-course';
+export const COURSE_EDIT = '/course/edit';
 export const STUDENTS_EDIT = '/students/edit';
 export const STUDENTS = '/students';
