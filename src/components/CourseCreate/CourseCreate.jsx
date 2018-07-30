@@ -18,8 +18,7 @@ export class CourseCreate extends Component {
       students: this.props.currentCourse.students || [],
       tasksToDelete: [],
       labsToDelete: [],
-      allTasks: [],
-      allStudents: []
+      allTasks: []
     };
   }
 
@@ -42,12 +41,6 @@ export class CourseCreate extends Component {
     this.setState({allTasks: [{name: 'Select Task'}, ...tasks.data]});
   }
 
-  fetchStudents = async () => {
-    const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/students');
-    const students = await response.json();
-    this.setState({ allStudents: [{ firstName: 'Select', lastName: 'Student' }, ...students.data] });
-  }
-  
   handleTaskSelect = (e) => {
     const task = this.state.allTasks.find(task => task.name === e.target.value);
     if (!this.state.tasks.find(courseTask => courseTask.name === task.name) && task.name !== "Select Task") {
@@ -61,16 +54,6 @@ export class CourseCreate extends Component {
     const tasks = this.state.tasks.filter(task => task.id !== id);
 
     this.setState({ tasks });
-  }
-
-  handleStudentSelect = (e) => {
-    const firstName = e.target.value.split(' ')[0];
-    const student = this.state.allStudents.find(student => student.firstName === firstName);
-    if (!this.state.students.find(inStudent => inStudent.id === student.id) && student.firstName !== "Select") {
-      this.setState({
-        students: [...this.state.students, student]
-      });
-    }
   }
 
   patchCourse = async (e) => {
@@ -98,7 +81,6 @@ export class CourseCreate extends Component {
 
   componentDidMount() {
     this.fetchTasks();
-    this.fetchStudents();
   }
 
   componentWillUnmount() {
@@ -113,16 +95,6 @@ export class CourseCreate extends Component {
           name="task"
           title={task.description}>
           {task.name}
-        </option>
-      );
-    });
-
-    const students = this.state.allStudents.map((student, index) => {
-      return (
-        <option
-          key={`student-${index}`}
-          name="student">
-          {student.firstName + ' ' + student.lastName}
         </option>
       );
     });
@@ -169,13 +141,7 @@ export class CourseCreate extends Component {
               })
             }
           </div>
-          <span>Add task: </span>
-          <select
-            onChange={(e) => this.handleStudentSelect(e)}
-          >
-            {students}
-          </select>
-          <button type="submit" onClick={(e) => this.patchCourse(e)}>Submit Course</button>
+          <button type="submit" onClick={(e) => this.patchCourse(e)}>Update Course</button>
         </form>
       </div>
     );
