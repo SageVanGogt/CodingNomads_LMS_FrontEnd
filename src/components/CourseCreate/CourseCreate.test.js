@@ -105,27 +105,4 @@ describe('CourseCreate', () => {
       expect(wrapper.state('tasks')).toEqual([{ name: 'Loops!', id: 2 }]);
     });
   });
-
-  describe('handleStudentSelect', () => {
-    let mockEvent;
-
-    beforeEach(() => {
-      mockEvent = {target: {value: 'Tom Cruise'}};
-      wrapper.setState({ allStudents: [{ firstName: 'Tom', id: 4 }, { firstName: 'Cam', id: 3 }]})
-    });
-
-    it('should add a student to students array in state', () => {
-      wrapper.instance().handleStudentSelect(mockEvent);
-
-      expect(wrapper.state('students')).toEqual([{firstName: 'Tom', id: 4}]);
-    });
-
-    it('shouldn\'t add it if already in state', () => {
-      wrapper.setState({ students: [{ firstName: 'Tom', id: 4 }]});
-
-      wrapper.instance().handleStudentSelect(mockEvent);
-
-      expect(wrapper.state('students')).toEqual([{ firstName: 'Tom', id: 4 }]);
-    });
-  });
 });
