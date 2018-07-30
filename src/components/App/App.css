@@ -1,9 +1,9 @@
 .nav__site {
   position: fixed;
   z-index: 1;
-  width: 200px;
   height: 100%;
-  background-color: #364051; }
+  width: 200px;
+  background-color: #4885a2; }
 
 .user {
   height: 180px;
@@ -37,10 +37,10 @@
   cursor: pointer; }
 
 .nav__site li {
+  font-size: .9rem;
+  text-align: left;
   width: 100%;
   box-sizing: border-box;
-  text-align: left;
-  font-size: .9rem;
   transition: .3s;
   list-style-type: none;
   float: left; }
