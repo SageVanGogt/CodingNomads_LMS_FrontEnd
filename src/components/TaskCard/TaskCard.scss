@@ -2,6 +2,7 @@
   width: 250px;
   height: 200px;
   margin: 20px;
+  padding: 10px;
   background-color: white;
   font-family: 'Open Sans', sans-serif;
   border-radius: 5px;
@@ -22,6 +23,7 @@
   margin: 10px;
   font-weight: 600;
   color: white;
+  border: none;
 }
 
 .Task_name {
@@ -32,5 +34,11 @@
 .Task_desc {
   margin-left: 10px;
   text-align: left;
+  font-size: .9rem;
+}
+
+.Task_card hr {
+  width: 150px;
+  margin-bottom: 15px;
 }
 
