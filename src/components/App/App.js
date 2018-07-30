@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 import LogIn from '../LogIn/LogIn';
 import AdminHome from '../AdminHome/AdminHome';
@@ -7,7 +7,7 @@ import Courses from '../Courses/Courses';
 import CourseCreate from '../CourseCreate/CourseCreate';
 import Tasks from '../Tasks/Tasks';
 import TaskEdit from '../TaskEdit/TaskEdit';
-import Students from '../Students/Students';
+import StudentsEdit from '../Students/Students';
 import './App.css';
 
 class App extends Component {
@@ -18,11 +18,11 @@ class App extends Component {
           <nav className="nav__site">
            <h3>Admin Home</h3>
             <ul aria-label="main navigation list">
-              <li><a href="#"> Profile</a></li>
-              <li><a href="#"> Students</a></li>
-              <li><a href="#"> Courses</a></li>
-              <li><a href="#"> Tasks</a></li>
-              <li><a href="#"> Calendar</a></li>
+              <li><Link to={routes.TASKS}> Profile</Link></li>
+              <li><Link to={routes.STUDENTS_EDIT}> Students</Link></li>
+              <li><Link to={routes.COURSES}> Courses</Link></li>
+              <li><Link to={routes.TASKS}> Tasks</Link></li>
+              <li><Link to={routes.TASKS}> Calendar</Link></li>
             </ul>
           </nav>
           <Route
@@ -56,7 +56,7 @@ class App extends Component {
 
           <Route
             exact path={routes.STUDENTS_EDIT}
-            component={() => <Students />}
+            component={() => <StudentsEdit />}
           />
         </div>
       </Router>

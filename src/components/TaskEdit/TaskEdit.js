@@ -127,6 +127,7 @@ export class TaskEdit extends Component {
   deleteDoc = (event, key) => {
     event.preventDefault();
     const docId = event.target.previousElementSibling.value;
+    console.log(docId)
 
     if (docId) {
       const updatedDocs =
@@ -137,7 +138,7 @@ export class TaskEdit extends Component {
       this.setState({
         docs: updatedDocs,
         docOptions,
-        docsToDelete: [...this.state.docsToDelete, docId]
+        docsToDelete: [...this.state.docsToDelete, {id: parseInt(docId)}]
       });
     }
   }
@@ -155,7 +156,7 @@ export class TaskEdit extends Component {
       this.setState({
         labs: updatedLabs,
         labOptions,
-        labsToDelete: [...this.state.labsToDelete, labId]
+        labsToDelete: [...this.state.labsToDelete, {id: parseInt(labId)}]
       });
     }
   }
@@ -210,21 +211,23 @@ export class TaskEdit extends Component {
 
   handleDeletedDocs = async () => {
     const docsToDelete = this.state.docsToDelete;
-
+    const taskId = this.props.currentTask.id;
+    
     try {
-      await API.deleteDocsFromTask(docsToDelete);
+      await API.deleteDocsFromTask(taskId, docsToDelete);
     } catch (error) {
-      //mdp this error
+      console.log(error)
     }
   }
 
   handleDeletedLabs = async () => {
     const labsToDelete = this.state.labsToDelete;
+    const taskId = this.props.currentTask.id;
 
     try {
-      await API.deleteLabsFromTask(labsToDelete);
+      await API.deleteLabsFromTask(taskId, labsToDelete);
     } catch (error) {
-      //mdp this error
+      console.log(error)
     }
   }
 

@@ -12,8 +12,13 @@ export class StudentsEdit extends Component {
 
   render() {
     return (
-      <div>
+      <div className="StudentsEdit_page">
+        <form type="submit" className="StudentsEdit_form">
+
+        </form>
       </div>
     );
   }
 }
+
+export default StudentsEdit
