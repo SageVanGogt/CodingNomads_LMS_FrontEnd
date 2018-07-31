@@ -1,9 +1,19 @@
+.Teacher_home-container {
+  width: calc(100vw - 200px);
+  height: 100vh;
+  margin-left: 200px;
+  background-color: #efefef;  
+  padding-top: 40px;
+}
+
 .Teacher_board {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 80vw;
-  margin-left: 200px;
+  margin: auto;
+  width: 70vw;
+  height: 80vh;
+  background-color: #efefef;
 }
 
 .Teacher_view {
@@ -13,7 +23,13 @@
   margin-top: 50px;
   width: 400px;
   height: 250px;
+  color: white;
   background-color: grey;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.Teacher_view h3 {
+  font-size: 2rem;
 }
 
 .Teacher_options {
@@ -37,6 +53,10 @@
   visibility: visible
 }
 
-.Teacher_options div:hover {
+.Teacher_options div:hover, img:hover {
   background-color: #0F94FB;
+}
+
+.add-btn {
+  font-size: 3rem;
 }
