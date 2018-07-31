@@ -35,17 +35,22 @@ export class Tasks extends Component {
     });
 
     return (
-      <div className="Task_container">
-        <button
-          className="Task_new"
-          onClick={ this.addTask }
-        >
-          New Task +
-        </button>
-        <section className="Task_cards">
-          { tasks }
-        </section>
-      </div>
+      this.state.allTasks.length ? 
+        <div className="Task_container">
+          <button
+            className="Task_new"
+            onClick={ this.addTask }
+          >
+            New Task +
+          </button>
+          <section className="Task_cards">
+            { tasks }
+          </section>
+        </div>
+        :
+        <div className="Task_container">
+          <img height='200' width='200' src='/loading1.gif' />
+        </div>
     );
   }
 }

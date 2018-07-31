@@ -29,12 +29,12 @@ export class CourseCreate extends Component {
 
     this.setState({
       [name]: value,
-      message: 'Unsaved changes'
+      message: 'You have unsaved changes, submit to save them.'
     });
   }
 
   rearrangeTasks = (tasks) => {
-    this.setState({ tasks, message: 'Unsaved changes' });
+    this.setState({ tasks, message: 'You have unsaved changes, submit to save them.' });
   }
 
   fetchTasks = async () => {
@@ -48,7 +48,7 @@ export class CourseCreate extends Component {
     if (!this.state.tasks.find(courseTask => courseTask.name === task.name) && task.name !== "Select Task") {
       this.setState({
         tasks: [...this.state.tasks, task],
-        message: 'Unsaved changes'
+        message: 'You have unsaved changes, submit to save them.'
       });
     }
   }
@@ -56,7 +56,7 @@ export class CourseCreate extends Component {
   deleteTask = (id) => {
     const tasks = this.state.tasks.filter(task => task.id !== id);
 
-    this.setState({ tasks, message: 'Unsaved changes' });
+    this.setState({ tasks, message: 'You have unsaved changes, submit to save them.' });
   }
 
   patchCourse = async (e) => {
@@ -149,7 +149,7 @@ export class CourseCreate extends Component {
               })
             }
           </div>
-          <button type="submit" onClick={(e) => this.patchCourse(e)}>Update Course</button>
+          <button type="submit"onClick={(e) => this.patchCourse(e)}>Update Course</button>
           <p className='course_message'>{this.state.message}</p>
         </form>
       </div>

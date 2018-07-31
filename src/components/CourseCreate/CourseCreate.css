@@ -1,49 +1,70 @@
 .CourseCreate_page {
   margin-left: 200px;
   width: calc(100% - 200px);
-  padding-top: 20px; }
+  padding-top: 20px;
+  background-color: #efefef; }
 
 .CourseCreate_page h1 {
   font-size: 36px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  color: #666666; }
 
 .CourseCreate_page h2 {
   font-size: 20px;
-  margin-top: 20px; }
+  margin-top: 20px;
+  color: #666666; }
 
 .CourseCreate_form input {
-  display: block;
-  margin: 10px auto;
+  margin-top: 20px;
+  height: 40px;
   width: 400px;
-  height: 20px; }
+  padding-left: 15px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid #4885a2;
+  font-size: 1.2rem;
+  font-family: 'Open Sans', sans-serif;
+  display: block;
+  margin: 10px auto; }
 
 .CourseCreate_form textarea {
   display: block;
   margin: 10px auto;
   width: 400px;
-  min-height: 100px; }
+  min-height: 100px;
+  border: none;
+  border-bottom: 3px solid #4885a2; }
 
 .CourseCreate_form button {
-  display: block;
-  margin: 20px auto; }
+  height: 40px;
+  margin-top: 15px;
+  border: none;
+  background-color: #0F94FB;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #efefef;
+  font-weight: 600;
+  -webkit-box-shadow: 0 5px 6px -4px rgba(0, 0, 0, 0.22), 0 10px 13px -4px rgba(0, 0, 0, 0.34), inset 0 30px 30px 0 rgba(255, 255, 255, 0.35), inset 0 -30px 30px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 6px -4px rgba(0, 0, 0, 0.22), 0 10px 13px -4px rgba(0, 0, 0, 0.34), inset 0 30px 30px 0 rgba(255, 255, 255, 0.35), inset 0 -30px 30px 0 rgba(0, 0, 0, 0.1); }
 
 .tasksArea {
   width: 400px;
   min-height: 200px;
-  border: .5px solid;
+  border: 2px solid #0F94FB;
   margin: 20px auto; }
 
 .studentsArea {
   width: 400px;
   height: 150px;
-  border: .5px solid;
+  border: 2px solid #0F94FB;
   margin: 20px auto;
   overflow: scroll; }
 
 .CourseStudentCard {
   width: 300px;
-  border: 1px dashed black;
+  text-decoration: underline;
+  text-decoration-color: #0F94FB;
   margin: 5px auto; }
 
 .course_message {
-  padding-bottom: 20px; }
+  padding: 20px; }
