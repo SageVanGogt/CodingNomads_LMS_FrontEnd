@@ -25,14 +25,22 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h2 />,
-        <button
-          className="Course_edit-btn"
+        <div
+          className="course_top"
 >
-          View
-</button>,
+          <h2
+                    className="Course_name"
+          />
+          <button
+                    className="Course_edit-btn"
+          >
+                    View
+          </button>
+</div>,
         <hr />,
-        <p />,
+        <p
+          className="Course_desc"
+/>,
       ],
       "className": "course_card",
     },
@@ -43,23 +51,46 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            <h2
+              className="Course_name"
+/>,
+            <button
+              className="Course_edit-btn"
+>
+              View
+</button>,
+          ],
+          "className": "course_top",
         },
         "ref": null,
-        "rendered": null,
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "View",
-          "className": "Course_edit-btn",
-        },
-        "ref": null,
-        "rendered": "View",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "Course_name",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "View",
+              "className": "Course_edit-btn",
+            },
+            "ref": null,
+            "rendered": "View",
+            "type": "button",
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -76,6 +107,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": undefined,
+          "className": "Course_desc",
         },
         "ref": null,
         "rendered": null,
@@ -91,14 +123,22 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h2 />,
-          <button
-            className="Course_edit-btn"
+          <div
+            className="course_top"
 >
-            View
-</button>,
+            <h2
+                        className="Course_name"
+            />
+            <button
+                        className="Course_edit-btn"
+            >
+                        View
+            </button>
+</div>,
           <hr />,
-          <p />,
+          <p
+            className="Course_desc"
+/>,
         ],
         "className": "course_card",
       },
@@ -109,23 +149,46 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": Array [
+              <h2
+                className="Course_name"
+/>,
+              <button
+                className="Course_edit-btn"
+>
+                View
+</button>,
+            ],
+            "className": "course_top",
           },
           "ref": null,
-          "rendered": null,
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "View",
-            "className": "Course_edit-btn",
-          },
-          "ref": null,
-          "rendered": "View",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "Course_name",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "View",
+                "className": "Course_edit-btn",
+              },
+              "ref": null,
+              "rendered": "View",
+              "type": "button",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -142,6 +205,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": undefined,
+            "className": "Course_desc",
           },
           "ref": null,
           "rendered": null,
@@ -186,15 +250,23 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h2 />,
-        <button
-          className="Course_edit-btn"
-          onClick={[Function]}
+        <div
+          className="course_top"
 >
-          Edit
-</button>,
+          <h2
+                    className="Course_name"
+          />
+          <button
+                    className="Course_edit-btn"
+                    onClick={[Function]}
+          >
+                    Edit
+          </button>
+</div>,
         <hr />,
-        <p />,
+        <p
+          className="Course_desc"
+/>,
       ],
       "className": "course_card",
     },
@@ -205,24 +277,48 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            <h2
+              className="Course_name"
+/>,
+            <button
+              className="Course_edit-btn"
+              onClick={[Function]}
+>
+              Edit
+</button>,
+          ],
+          "className": "course_top",
         },
         "ref": null,
-        "rendered": null,
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Edit",
-          "className": "Course_edit-btn",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Edit",
-        "type": "button",
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+              "className": "Course_name",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "h2",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Edit",
+              "className": "Course_edit-btn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Edit",
+            "type": "button",
+          },
+        ],
+        "type": "div",
       },
       Object {
         "instance": null,
@@ -239,6 +335,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": undefined,
+          "className": "Course_desc",
         },
         "ref": null,
         "rendered": null,
@@ -254,15 +351,23 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h2 />,
-          <button
-            className="Course_edit-btn"
-            onClick={[Function]}
+          <div
+            className="course_top"
 >
-            Edit
-</button>,
+            <h2
+                        className="Course_name"
+            />
+            <button
+                        className="Course_edit-btn"
+                        onClick={[Function]}
+            >
+                        Edit
+            </button>
+</div>,
           <hr />,
-          <p />,
+          <p
+            className="Course_desc"
+/>,
         ],
         "className": "course_card",
       },
@@ -273,24 +378,48 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": undefined,
+            "children": Array [
+              <h2
+                className="Course_name"
+/>,
+              <button
+                className="Course_edit-btn"
+                onClick={[Function]}
+>
+                Edit
+</button>,
+            ],
+            "className": "course_top",
           },
           "ref": null,
-          "rendered": null,
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Edit",
-            "className": "Course_edit-btn",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Edit",
-          "type": "button",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": undefined,
+                "className": "Course_name",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "h2",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Edit",
+                "className": "Course_edit-btn",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Edit",
+              "type": "button",
+            },
+          ],
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -307,6 +436,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": undefined,
+            "className": "Course_desc",
           },
           "ref": null,
           "rendered": null,

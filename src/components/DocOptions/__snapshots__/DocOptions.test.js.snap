@@ -52,12 +52,11 @@ ShallowWrapper {
                     doc topic
           </option>
 </select>,
-        <button
+        <img
           className="DocOptions_delete"
           onClick={[Function]}
->
-          X
-</button>,
+          src="/button.png"
+/>,
       ],
     },
     "ref": null,
@@ -121,13 +120,13 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "X",
           "className": "DocOptions_delete",
           "onClick": [Function],
+          "src": "/button.png",
         },
         "ref": null,
-        "rendered": "X",
-        "type": "button",
+        "rendered": null,
+        "type": "img",
       },
     ],
     "type": "div",
@@ -156,12 +155,11 @@ ShallowWrapper {
                         doc topic
             </option>
 </select>,
-          <button
+          <img
             className="DocOptions_delete"
             onClick={[Function]}
->
-            X
-</button>,
+            src="/button.png"
+/>,
         ],
       },
       "ref": null,
@@ -225,13 +223,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "X",
             "className": "DocOptions_delete",
             "onClick": [Function],
+            "src": "/button.png",
           },
           "ref": null,
-          "rendered": "X",
-          "type": "button",
+          "rendered": null,
+          "type": "img",
         },
       ],
       "type": "div",
@@ -286,12 +284,11 @@ ShallowWrapper {
                     value=""
           />
 </select>,
-        <button
+        <img
           className="DocOptions_delete"
           onClick={[Function]}
->
-          X
-</button>,
+          src="/button.png"
+/>,
       ],
     },
     "ref": null,
@@ -335,13 +332,13 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "X",
           "className": "DocOptions_delete",
           "onClick": [Function],
+          "src": "/button.png",
         },
         "ref": null,
-        "rendered": "X",
-        "type": "button",
+        "rendered": null,
+        "type": "img",
       },
     ],
     "type": "div",
@@ -364,12 +361,11 @@ ShallowWrapper {
                         value=""
             />
 </select>,
-          <button
+          <img
             className="DocOptions_delete"
             onClick={[Function]}
->
-            X
-</button>,
+            src="/button.png"
+/>,
         ],
       },
       "ref": null,
@@ -413,13 +409,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "X",
             "className": "DocOptions_delete",
             "onClick": [Function],
+            "src": "/button.png",
           },
           "ref": null,
-          "rendered": "X",
-          "type": "button",
+          "rendered": null,
+          "type": "img",
         },
       ],
       "type": "div",
@@ -469,12 +465,11 @@ ShallowWrapper {
                     value=""
           />
 </select>,
-        <button
+        <img
           className="DocOptions_delete"
           onClick={[Function]}
->
-          X
-</button>,
+          src="/button.png"
+/>,
       ],
     },
     "ref": null,
@@ -518,13 +513,13 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "X",
           "className": "DocOptions_delete",
           "onClick": [Function],
+          "src": "/button.png",
         },
         "ref": null,
-        "rendered": "X",
-        "type": "button",
+        "rendered": null,
+        "type": "img",
       },
     ],
     "type": "div",
@@ -547,12 +542,11 @@ ShallowWrapper {
                         value=""
             />
 </select>,
-          <button
+          <img
             className="DocOptions_delete"
             onClick={[Function]}
->
-            X
-</button>,
+            src="/button.png"
+/>,
         ],
       },
       "ref": null,
@@ -596,13 +590,13 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "X",
             "className": "DocOptions_delete",
             "onClick": [Function],
+            "src": "/button.png",
           },
           "ref": null,
-          "rendered": "X",
-          "type": "button",
+          "rendered": null,
+          "type": "img",
         },
       ],
       "type": "div",

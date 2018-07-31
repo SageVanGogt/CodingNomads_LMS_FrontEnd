@@ -24,33 +24,27 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <button
-          className="Task_new"
-          onClick={[Function]}
->
-          Add New Task
-</button>,
-        Array [],
-      ],
+      "children": <img
+        height="200"
+        src="/loading1.gif"
+        width="200"
+/>,
       "className": "Task_container",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Add New Task",
-          "className": "Task_new",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Add New Task",
-        "type": "button",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "height": "200",
+        "src": "/loading1.gif",
+        "width": "200",
       },
-    ],
+      "ref": null,
+      "rendered": null,
+      "type": "img",
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -59,33 +53,27 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <button
-            className="Task_new"
-            onClick={[Function]}
->
-            Add New Task
-</button>,
-          Array [],
-        ],
+        "children": <img
+          height="200"
+          src="/loading1.gif"
+          width="200"
+/>,
         "className": "Task_container",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Add New Task",
-            "className": "Task_new",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Add New Task",
-          "type": "button",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "height": "200",
+          "src": "/loading1.gif",
+          "width": "200",
         },
-      ],
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
       "type": "div",
     },
   ],
