@@ -921,3 +921,29 @@ describe('deleteStudentsFromCourse', () => {
   })
 })
 
+describe('authUser', () => {
+  let mockUser;
+
+  beforeEach(() => {
+    mockUser = {
+      user: {email: 'sage.com', password: 'seven'}
+    }
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      status: 200,
+      message: 'success',
+      json: jest.fn()
+    }))
+  })
+
+  it('should be called with the correct params', async () => {
+    const url = apiPath + '/users/'; 
+    const options = {
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(mockUser)
+    };
+    
+    await apiCalls.authUser(mockUser);
+    expect(window.fetch).toHaveBeenCalledWith(url, options)
+  })
+})
+

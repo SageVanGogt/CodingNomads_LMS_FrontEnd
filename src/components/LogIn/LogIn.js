@@ -17,8 +17,15 @@ export class LogIn extends Component {
     this.setState({userbase});
   }
 
-  onSubmit = (event) => {
+  onSubmit = async (event) => {
     event.preventDefault();
+    const creds = {
+      email: this.state.email, 
+      password: this.state.password
+    }
+
+    // localStorage.setItem('id_token', user.id_token)
+    // localStorage.setItem('id_token', user.access_token)
 
     this.setState({
       email: '',
