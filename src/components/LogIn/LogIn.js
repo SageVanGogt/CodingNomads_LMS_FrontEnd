@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './Login.css';
+import * as API from '../../apiCalls/apiCalls';
 
 export class LogIn extends Component {
   constructor(props) {
@@ -23,9 +24,17 @@ export class LogIn extends Component {
       email: this.state.email, 
       password: this.state.password
     }
-
-    // localStorage.setItem('id_token', user.id_token)
-    // localStorage.setItem('id_token', user.access_token)
+    try {
+      const response = await API.authUser(creds);
+      const user = {
+        id: response.id,
+        name: response.firstName + response.lastName
+      }
+      localStorage.setItem('id_token', user.id_token)
+      localStorage.setItem('id_token', user.access_token)
+    } catch (error) {
+      throw error;
+    }
 
     this.setState({
       email: '',
