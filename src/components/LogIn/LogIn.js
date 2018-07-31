@@ -1,6 +1,9 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './Login.css';
+import * as API from '../../apiCalls/apiCalls';
+import { signIn } from './../../actions/signin';
+import PropTypes from 'prop-types';
 
 export class LogIn extends Component {
   constructor(props) {
@@ -17,8 +20,24 @@ export class LogIn extends Component {
     this.setState({userbase});
   }
 
-  onSubmit = (event) => {
+  onSubmit = async (event) => {
     event.preventDefault();
+    const creds = {
+      email: this.state.email, 
+      password: this.state.password
+    }
+    try {
+      const response = await API.authUser(creds);
+      const user = {
+        id: response.id,
+        name: response.firstName + response.lastName
+      }
+      localStorage.setItem('id_token', response.id_token)
+      localStorage.setItem('access_token', response.access_token)
+      this.props.signIn(user);
+    } catch (error) {
+      throw error;
+    }
 
     this.setState({
       email: '',
@@ -89,4 +108,12 @@ export class LogIn extends Component {
   }
 }
 
-export default connect(null, null)(LogIn);
+const mapDispatchToProps = (dispatch) => ({
+  signIn: (user) => dispatch(signIn(user))
+})
+
+LogIn.propTypes = {
+  signIn: PropTypes.func
+}
+
+export default connect(null, mapDispatchToProps)(LogIn);

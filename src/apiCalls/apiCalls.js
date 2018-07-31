@@ -14,6 +14,24 @@ export const getAllTasks = async () => {
   }
 };
 
+// export const getAllTasksAuthed = async () => {
+//   const token = localStorage.getItem('access_token') || null;
+//   const url = apiPath + '/tasks';
+//   const options = {
+//     headers: { 'Authorization': `Bearer ${token}` }
+//   }
+//   try {
+//     const response = await fetch(url);
+//     if (response.status !== 200) {
+//       throw Error('Could not fetch tasks');
+//     } else {
+//       return await response.json();
+//     }
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
 export const getTask = async (taskId) => {
   const url = apiPath + `/tasks/${taskId}`;
   try {
@@ -410,3 +428,24 @@ export const deleteStudentsFromCourse = async (courseId, studentsArr) => {
     throw error;
   }
 };
+
+export const authUser = async (user) => {
+  const url = apiPath + '/users'; 
+  const options = {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify(user)
+  };
+  try {
+    const response = await fetch(url, options)
+    if (response.message !== 'success') {
+      throw Error('User does not exist')
+    } 
+    const userAuth = await response.json();
+    return userAuth;
+  } catch (error) {
+    throw error;
+  }
+}
+
+
