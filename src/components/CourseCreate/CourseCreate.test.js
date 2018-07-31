@@ -64,7 +64,7 @@ describe('CourseCreate', () => {
       };
       wrapper.instance().handleChange(mockEvent);
 
-      expect(wrapper.state('message')).toEqual('Unsaved changes');
+      expect(wrapper.state('message')).toEqual('You have unsaved changes, submit to save them.');
     });
   });
 
