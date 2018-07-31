@@ -4,7 +4,20 @@ exports[`AdminHome should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <AdminHome />,
+  Symbol(enzyme.__unrendered__): <AdminHome
+    event={
+        Object {
+            "target": Object {
+              "id": "COURSES",
+            },
+          }
+    }
+    history={
+        Object {
+            "push": [Function],
+          }
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -29,11 +42,21 @@ ShallowWrapper {
                 <div
                         className="Teacher_options"
                 >
-                        <div>
-                                add
+                        <div
+                                className="add-btn"
+                                id="COURSE_EDIT"
+                                onClick={[Function]}
+                        >
+                                +
                         </div>
-                        <div>
-                                view
+                        <div
+                                className="view-btn"
+                                id="COURSES"
+                                onClick={[Function]}
+                        >
+                                <img
+                                        src="/eye.png"
+                                />
                         </div>
                 </div>
         </article>
@@ -46,11 +69,17 @@ ShallowWrapper {
                 <div
                         className="Teacher_options"
                 >
-                        <div>
-                                add
+                        <div
+                                className="add-btn"
+                        >
+                                +
                         </div>
-                        <div>
-                                view
+                        <div
+                                className="view-btn"
+                        >
+                                <img
+                                        src="/eye.png"
+                                />
                         </div>
                 </div>
         </article>
@@ -63,11 +92,21 @@ ShallowWrapper {
                 <div
                         className="Teacher_options"
                 >
-                        <div>
-                                add
+                        <div
+                                className="add-btn"
+                                id="TASKS_EDIT"
+                                onClick={[Function]}
+                        >
+                                +
                         </div>
-                        <div>
-                                view
+                        <div
+                                className="view-btn"
+                                id="TASKS"
+                                onClick={[Function]}
+                        >
+                                <img
+                                        src="/eye.png"
+                                />
                         </div>
                 </div>
         </article>
@@ -80,16 +119,27 @@ ShallowWrapper {
                 <div
                         className="Teacher_options"
                 >
-                        <div>
-                                add
+                        \` 
+                        <div
+                                className="add-btn"
+                                id="STUDENT_EDIT"
+                                onClick={[Function]}
+                        >
+                                +
                         </div>
-                        <div>
-                                view
+                        <div
+                                className="view-btn"
+                                id="STUDENTS"
+                                onClick={[Function]}
+                        >
+                                <img
+                                        src="/eye.png"
+                                />
                         </div>
                 </div>
         </article>
 </section>,
-      "className": "Teacher_home",
+      "className": "Teacher_home-container",
     },
     "ref": null,
     "rendered": Object {
@@ -107,11 +157,21 @@ ShallowWrapper {
             <div
                         className="Teacher_options"
             >
-                        <div>
-                                    add
+                        <div
+                                    className="add-btn"
+                                    id="COURSE_EDIT"
+                                    onClick={[Function]}
+                        >
+                                    +
                         </div>
-                        <div>
-                                    view
+                        <div
+                                    className="view-btn"
+                                    id="COURSES"
+                                    onClick={[Function]}
+                        >
+                                    <img
+                                                src="/eye.png"
+                                    />
                         </div>
             </div>
 </article>,
@@ -124,11 +184,17 @@ ShallowWrapper {
             <div
                         className="Teacher_options"
             >
-                        <div>
-                                    add
+                        <div
+                                    className="add-btn"
+                        >
+                                    +
                         </div>
-                        <div>
-                                    view
+                        <div
+                                    className="view-btn"
+                        >
+                                    <img
+                                                src="/eye.png"
+                                    />
                         </div>
             </div>
 </article>,
@@ -141,11 +207,21 @@ ShallowWrapper {
             <div
                         className="Teacher_options"
             >
-                        <div>
-                                    add
+                        <div
+                                    className="add-btn"
+                                    id="TASKS_EDIT"
+                                    onClick={[Function]}
+                        >
+                                    +
                         </div>
-                        <div>
-                                    view
+                        <div
+                                    className="view-btn"
+                                    id="TASKS"
+                                    onClick={[Function]}
+                        >
+                                    <img
+                                                src="/eye.png"
+                                    />
                         </div>
             </div>
 </article>,
@@ -158,11 +234,22 @@ ShallowWrapper {
             <div
                         className="Teacher_options"
             >
-                        <div>
-                                    add
+                        \` 
+                        <div
+                                    className="add-btn"
+                                    id="STUDENT_EDIT"
+                                    onClick={[Function]}
+                        >
+                                    +
                         </div>
-                        <div>
-                                    view
+                        <div
+                                    className="view-btn"
+                                    id="STUDENTS"
+                                    onClick={[Function]}
+                        >
+                                    <img
+                                                src="/eye.png"
+                                    />
                         </div>
             </div>
 </article>,
@@ -183,11 +270,21 @@ ShallowWrapper {
               <div
                 className="Teacher_options"
 >
-                <div>
-                                add
+                <div
+                                className="add-btn"
+                                id="COURSE_EDIT"
+                                onClick={[Function]}
+                >
+                                +
                 </div>
-                <div>
-                                view
+                <div
+                                className="view-btn"
+                                id="COURSES"
+                                onClick={[Function]}
+                >
+                                <img
+                                                src="/eye.png"
+                                />
                 </div>
 </div>,
             ],
@@ -212,11 +309,21 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <div>
-                    add
+                  <div
+                    className="add-btn"
+                    id="COURSE_EDIT"
+                    onClick={[Function]}
+>
+                    +
 </div>,
-                  <div>
-                    view
+                  <div
+                    className="view-btn"
+                    id="COURSES"
+                    onClick={[Function]}
+>
+                    <img
+                                        src="/eye.png"
+                    />
 </div>,
                 ],
                 "className": "Teacher_options",
@@ -228,10 +335,13 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "add",
+                    "children": "+",
+                    "className": "add-btn",
+                    "id": "COURSE_EDIT",
+                    "onClick": [Function],
                   },
                   "ref": null,
-                  "rendered": "add",
+                  "rendered": "+",
                   "type": "div",
                 },
                 Object {
@@ -239,10 +349,25 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "view",
+                    "children": <img
+                      src="/eye.png"
+/>,
+                    "className": "view-btn",
+                    "id": "COURSES",
+                    "onClick": [Function],
                   },
                   "ref": null,
-                  "rendered": "view",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "src": "/eye.png",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
                   "type": "div",
                 },
               ],
@@ -263,11 +388,17 @@ ShallowWrapper {
               <div
                 className="Teacher_options"
 >
-                <div>
-                                add
+                <div
+                                className="add-btn"
+                >
+                                +
                 </div>
-                <div>
-                                view
+                <div
+                                className="view-btn"
+                >
+                                <img
+                                                src="/eye.png"
+                                />
                 </div>
 </div>,
             ],
@@ -292,11 +423,17 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <div>
-                    add
+                  <div
+                    className="add-btn"
+>
+                    +
 </div>,
-                  <div>
-                    view
+                  <div
+                    className="view-btn"
+>
+                    <img
+                                        src="/eye.png"
+                    />
 </div>,
                 ],
                 "className": "Teacher_options",
@@ -308,10 +445,11 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "add",
+                    "children": "+",
+                    "className": "add-btn",
                   },
                   "ref": null,
-                  "rendered": "add",
+                  "rendered": "+",
                   "type": "div",
                 },
                 Object {
@@ -319,10 +457,23 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "view",
+                    "children": <img
+                      src="/eye.png"
+/>,
+                    "className": "view-btn",
                   },
                   "ref": null,
-                  "rendered": "view",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "src": "/eye.png",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
                   "type": "div",
                 },
               ],
@@ -343,11 +494,21 @@ ShallowWrapper {
               <div
                 className="Teacher_options"
 >
-                <div>
-                                add
+                <div
+                                className="add-btn"
+                                id="TASKS_EDIT"
+                                onClick={[Function]}
+                >
+                                +
                 </div>
-                <div>
-                                view
+                <div
+                                className="view-btn"
+                                id="TASKS"
+                                onClick={[Function]}
+                >
+                                <img
+                                                src="/eye.png"
+                                />
                 </div>
 </div>,
             ],
@@ -372,11 +533,21 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <div>
-                    add
+                  <div
+                    className="add-btn"
+                    id="TASKS_EDIT"
+                    onClick={[Function]}
+>
+                    +
 </div>,
-                  <div>
-                    view
+                  <div
+                    className="view-btn"
+                    id="TASKS"
+                    onClick={[Function]}
+>
+                    <img
+                                        src="/eye.png"
+                    />
 </div>,
                 ],
                 "className": "Teacher_options",
@@ -388,10 +559,13 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "add",
+                    "children": "+",
+                    "className": "add-btn",
+                    "id": "TASKS_EDIT",
+                    "onClick": [Function],
                   },
                   "ref": null,
-                  "rendered": "add",
+                  "rendered": "+",
                   "type": "div",
                 },
                 Object {
@@ -399,10 +573,25 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "view",
+                    "children": <img
+                      src="/eye.png"
+/>,
+                    "className": "view-btn",
+                    "id": "TASKS",
+                    "onClick": [Function],
                   },
                   "ref": null,
-                  "rendered": "view",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "src": "/eye.png",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
                   "type": "div",
                 },
               ],
@@ -423,11 +612,22 @@ ShallowWrapper {
               <div
                 className="Teacher_options"
 >
-                <div>
-                                add
+                \` 
+                <div
+                                className="add-btn"
+                                id="STUDENT_EDIT"
+                                onClick={[Function]}
+                >
+                                +
                 </div>
-                <div>
-                                view
+                <div
+                                className="view-btn"
+                                id="STUDENTS"
+                                onClick={[Function]}
+                >
+                                <img
+                                                src="/eye.png"
+                                />
                 </div>
 </div>,
             ],
@@ -452,26 +652,41 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  <div>
-                    add
+                  "\` ",
+                  <div
+                    className="add-btn"
+                    id="STUDENT_EDIT"
+                    onClick={[Function]}
+>
+                    +
 </div>,
-                  <div>
-                    view
+                  <div
+                    className="view-btn"
+                    id="STUDENTS"
+                    onClick={[Function]}
+>
+                    <img
+                                        src="/eye.png"
+                    />
 </div>,
                 ],
                 "className": "Teacher_options",
               },
               "ref": null,
               "rendered": Array [
+                "\` ",
                 Object {
                   "instance": null,
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "add",
+                    "children": "+",
+                    "className": "add-btn",
+                    "id": "STUDENT_EDIT",
+                    "onClick": [Function],
                   },
                   "ref": null,
-                  "rendered": "add",
+                  "rendered": "+",
                   "type": "div",
                 },
                 Object {
@@ -479,10 +694,25 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "host",
                   "props": Object {
-                    "children": "view",
+                    "children": <img
+                      src="/eye.png"
+/>,
+                    "className": "view-btn",
+                    "id": "STUDENTS",
+                    "onClick": [Function],
                   },
                   "ref": null,
-                  "rendered": "view",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "src": "/eye.png",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "img",
+                  },
                   "type": "div",
                 },
               ],
@@ -514,11 +744,21 @@ ShallowWrapper {
                     <div
                               className="Teacher_options"
                     >
-                              <div>
-                                        add
+                              <div
+                                        className="add-btn"
+                                        id="COURSE_EDIT"
+                                        onClick={[Function]}
+                              >
+                                        +
                               </div>
-                              <div>
-                                        view
+                              <div
+                                        className="view-btn"
+                                        id="COURSES"
+                                        onClick={[Function]}
+                              >
+                                        <img
+                                                  src="/eye.png"
+                                        />
                               </div>
                     </div>
           </article>
@@ -531,11 +771,17 @@ ShallowWrapper {
                     <div
                               className="Teacher_options"
                     >
-                              <div>
-                                        add
+                              <div
+                                        className="add-btn"
+                              >
+                                        +
                               </div>
-                              <div>
-                                        view
+                              <div
+                                        className="view-btn"
+                              >
+                                        <img
+                                                  src="/eye.png"
+                                        />
                               </div>
                     </div>
           </article>
@@ -548,11 +794,21 @@ ShallowWrapper {
                     <div
                               className="Teacher_options"
                     >
-                              <div>
-                                        add
+                              <div
+                                        className="add-btn"
+                                        id="TASKS_EDIT"
+                                        onClick={[Function]}
+                              >
+                                        +
                               </div>
-                              <div>
-                                        view
+                              <div
+                                        className="view-btn"
+                                        id="TASKS"
+                                        onClick={[Function]}
+                              >
+                                        <img
+                                                  src="/eye.png"
+                                        />
                               </div>
                     </div>
           </article>
@@ -565,16 +821,27 @@ ShallowWrapper {
                     <div
                               className="Teacher_options"
                     >
-                              <div>
-                                        add
+                              \` 
+                              <div
+                                        className="add-btn"
+                                        id="STUDENT_EDIT"
+                                        onClick={[Function]}
+                              >
+                                        +
                               </div>
-                              <div>
-                                        view
+                              <div
+                                        className="view-btn"
+                                        id="STUDENTS"
+                                        onClick={[Function]}
+                              >
+                                        <img
+                                                  src="/eye.png"
+                                        />
                               </div>
                     </div>
           </article>
 </section>,
-        "className": "Teacher_home",
+        "className": "Teacher_home-container",
       },
       "ref": null,
       "rendered": Object {
@@ -592,11 +859,21 @@ ShallowWrapper {
               <div
                             className="Teacher_options"
               >
-                            <div>
-                                          add
+                            <div
+                                          className="add-btn"
+                                          id="COURSE_EDIT"
+                                          onClick={[Function]}
+                            >
+                                          +
                             </div>
-                            <div>
-                                          view
+                            <div
+                                          className="view-btn"
+                                          id="COURSES"
+                                          onClick={[Function]}
+                            >
+                                          <img
+                                                        src="/eye.png"
+                                          />
                             </div>
               </div>
 </article>,
@@ -609,11 +886,17 @@ ShallowWrapper {
               <div
                             className="Teacher_options"
               >
-                            <div>
-                                          add
+                            <div
+                                          className="add-btn"
+                            >
+                                          +
                             </div>
-                            <div>
-                                          view
+                            <div
+                                          className="view-btn"
+                            >
+                                          <img
+                                                        src="/eye.png"
+                                          />
                             </div>
               </div>
 </article>,
@@ -626,11 +909,21 @@ ShallowWrapper {
               <div
                             className="Teacher_options"
               >
-                            <div>
-                                          add
+                            <div
+                                          className="add-btn"
+                                          id="TASKS_EDIT"
+                                          onClick={[Function]}
+                            >
+                                          +
                             </div>
-                            <div>
-                                          view
+                            <div
+                                          className="view-btn"
+                                          id="TASKS"
+                                          onClick={[Function]}
+                            >
+                                          <img
+                                                        src="/eye.png"
+                                          />
                             </div>
               </div>
 </article>,
@@ -643,11 +936,22 @@ ShallowWrapper {
               <div
                             className="Teacher_options"
               >
-                            <div>
-                                          add
+                            \` 
+                            <div
+                                          className="add-btn"
+                                          id="STUDENT_EDIT"
+                                          onClick={[Function]}
+                            >
+                                          +
                             </div>
-                            <div>
-                                          view
+                            <div
+                                          className="view-btn"
+                                          id="STUDENTS"
+                                          onClick={[Function]}
+                            >
+                                          <img
+                                                        src="/eye.png"
+                                          />
                             </div>
               </div>
 </article>,
@@ -668,11 +972,21 @@ ShallowWrapper {
                 <div
                   className="Teacher_options"
 >
-                  <div>
-                                    add
+                  <div
+                                    className="add-btn"
+                                    id="COURSE_EDIT"
+                                    onClick={[Function]}
+                  >
+                                    +
                   </div>
-                  <div>
-                                    view
+                  <div
+                                    className="view-btn"
+                                    id="COURSES"
+                                    onClick={[Function]}
+                  >
+                                    <img
+                                                      src="/eye.png"
+                                    />
                   </div>
 </div>,
               ],
@@ -697,11 +1011,21 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    <div>
-                      add
+                    <div
+                      className="add-btn"
+                      id="COURSE_EDIT"
+                      onClick={[Function]}
+>
+                      +
 </div>,
-                    <div>
-                      view
+                    <div
+                      className="view-btn"
+                      id="COURSES"
+                      onClick={[Function]}
+>
+                      <img
+                                            src="/eye.png"
+                      />
 </div>,
                   ],
                   "className": "Teacher_options",
@@ -713,10 +1037,13 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "add",
+                      "children": "+",
+                      "className": "add-btn",
+                      "id": "COURSE_EDIT",
+                      "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "add",
+                    "rendered": "+",
                     "type": "div",
                   },
                   Object {
@@ -724,10 +1051,25 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "view",
+                      "children": <img
+                        src="/eye.png"
+/>,
+                      "className": "view-btn",
+                      "id": "COURSES",
+                      "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "view",
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "src": "/eye.png",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "img",
+                    },
                     "type": "div",
                   },
                 ],
@@ -748,11 +1090,17 @@ ShallowWrapper {
                 <div
                   className="Teacher_options"
 >
-                  <div>
-                                    add
+                  <div
+                                    className="add-btn"
+                  >
+                                    +
                   </div>
-                  <div>
-                                    view
+                  <div
+                                    className="view-btn"
+                  >
+                                    <img
+                                                      src="/eye.png"
+                                    />
                   </div>
 </div>,
               ],
@@ -777,11 +1125,17 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    <div>
-                      add
+                    <div
+                      className="add-btn"
+>
+                      +
 </div>,
-                    <div>
-                      view
+                    <div
+                      className="view-btn"
+>
+                      <img
+                                            src="/eye.png"
+                      />
 </div>,
                   ],
                   "className": "Teacher_options",
@@ -793,10 +1147,11 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "add",
+                      "children": "+",
+                      "className": "add-btn",
                     },
                     "ref": null,
-                    "rendered": "add",
+                    "rendered": "+",
                     "type": "div",
                   },
                   Object {
@@ -804,10 +1159,23 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "view",
+                      "children": <img
+                        src="/eye.png"
+/>,
+                      "className": "view-btn",
                     },
                     "ref": null,
-                    "rendered": "view",
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "src": "/eye.png",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "img",
+                    },
                     "type": "div",
                   },
                 ],
@@ -828,11 +1196,21 @@ ShallowWrapper {
                 <div
                   className="Teacher_options"
 >
-                  <div>
-                                    add
+                  <div
+                                    className="add-btn"
+                                    id="TASKS_EDIT"
+                                    onClick={[Function]}
+                  >
+                                    +
                   </div>
-                  <div>
-                                    view
+                  <div
+                                    className="view-btn"
+                                    id="TASKS"
+                                    onClick={[Function]}
+                  >
+                                    <img
+                                                      src="/eye.png"
+                                    />
                   </div>
 </div>,
               ],
@@ -857,11 +1235,21 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    <div>
-                      add
+                    <div
+                      className="add-btn"
+                      id="TASKS_EDIT"
+                      onClick={[Function]}
+>
+                      +
 </div>,
-                    <div>
-                      view
+                    <div
+                      className="view-btn"
+                      id="TASKS"
+                      onClick={[Function]}
+>
+                      <img
+                                            src="/eye.png"
+                      />
 </div>,
                   ],
                   "className": "Teacher_options",
@@ -873,10 +1261,13 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "add",
+                      "children": "+",
+                      "className": "add-btn",
+                      "id": "TASKS_EDIT",
+                      "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "add",
+                    "rendered": "+",
                     "type": "div",
                   },
                   Object {
@@ -884,10 +1275,25 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "view",
+                      "children": <img
+                        src="/eye.png"
+/>,
+                      "className": "view-btn",
+                      "id": "TASKS",
+                      "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "view",
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "src": "/eye.png",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "img",
+                    },
                     "type": "div",
                   },
                 ],
@@ -908,11 +1314,22 @@ ShallowWrapper {
                 <div
                   className="Teacher_options"
 >
-                  <div>
-                                    add
+                  \` 
+                  <div
+                                    className="add-btn"
+                                    id="STUDENT_EDIT"
+                                    onClick={[Function]}
+                  >
+                                    +
                   </div>
-                  <div>
-                                    view
+                  <div
+                                    className="view-btn"
+                                    id="STUDENTS"
+                                    onClick={[Function]}
+                  >
+                                    <img
+                                                      src="/eye.png"
+                                    />
                   </div>
 </div>,
               ],
@@ -937,26 +1354,41 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    <div>
-                      add
+                    "\` ",
+                    <div
+                      className="add-btn"
+                      id="STUDENT_EDIT"
+                      onClick={[Function]}
+>
+                      +
 </div>,
-                    <div>
-                      view
+                    <div
+                      className="view-btn"
+                      id="STUDENTS"
+                      onClick={[Function]}
+>
+                      <img
+                                            src="/eye.png"
+                      />
 </div>,
                   ],
                   "className": "Teacher_options",
                 },
                 "ref": null,
                 "rendered": Array [
+                  "\` ",
                   Object {
                     "instance": null,
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "add",
+                      "children": "+",
+                      "className": "add-btn",
+                      "id": "STUDENT_EDIT",
+                      "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "add",
+                    "rendered": "+",
                     "type": "div",
                   },
                   Object {
@@ -964,10 +1396,25 @@ ShallowWrapper {
                     "key": undefined,
                     "nodeType": "host",
                     "props": Object {
-                      "children": "view",
+                      "children": <img
+                        src="/eye.png"
+/>,
+                      "className": "view-btn",
+                      "id": "STUDENTS",
+                      "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "view",
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "src": "/eye.png",
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "img",
+                    },
                     "type": "div",
                   },
                 ],
