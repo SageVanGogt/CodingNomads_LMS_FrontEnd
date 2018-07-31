@@ -10,9 +10,9 @@ export class AdminHome extends Component {
     super(props);
   }
 
-  handleRedirect = (event) => {
-    const { name } = event.target;
-    this.props.history.push(routes[name]);
+  handleRoute = (event) => {
+    const { id } = event.target;
+    this.props.history.push(routes[id]);
   }
 
   render() {
@@ -26,29 +26,73 @@ export class AdminHome extends Component {
           <article className="Teacher_view">
             <h3>courses</h3>
             <div className="Teacher_options">
-              <div className="add-btn">+</div>
-              <div><img src="/eye.png"/></div>
+              <div 
+                className="add-btn" 
+                id="COURSE_EDIT"
+                onClick={this.handleRoute}
+              >
+                +
+              </div>
+              <div
+                id="COURSES"
+                onClick={this.handleRoute}
+              >
+                <img src="/eye.png"/>
+              </div>
             </div>
           </article>
           <article className="Teacher_view">
             <h3>notifications</h3>
             <div className="Teacher_options">
-              <div className="add-btn">+</div>
-              <div><img src="/eye.png"/></div>
+              <div 
+                className="add-btn" 
+                // name="COURSE_EDIT"
+                // onClick={this.handleRoute}
+              >
+                +
+              </div>
+              <div
+                // name="COURSES"
+                // onClick={this.handleRoute}
+              >
+                <img src="/eye.png"/>
+              </div>
             </div>
           </article>
           <article className="Teacher_view">
             <h3>tasks</h3>
             <div className="Teacher_options">
-              <div className="add-btn">+</div>
-              <div><img src="/eye.png"/></div>
+              <div 
+                className="add-btn" 
+                id="TASKS_EDIT"
+                onClick={this.handleRoute}
+              >
+                +
+              </div>
+              <div
+                id="TASKS"
+                onClick={this.handleRoute}
+              >
+                <img src="/eye.png"/>
+              </div>
             </div>
           </article>
           <article className="Teacher_view">
             <h3>students</h3>
             <div className="Teacher_options">
-              <div className="add-btn">+</div>
-              <div><img src="/eye.png"/></div>
+            `<div 
+                className="add-btn" 
+                id="STUDENT_EDIT"
+                onClick={this.handleRoute}
+              >
+                +
+              </div>
+              <div
+                id="STUDENTS"
+                onClick={this.handleRoute}
+              >
+                <img src="/eye.png"/>
+              </div>
             </div>
           </article>
         </section>

@@ -34,7 +34,7 @@
 
 .Teacher_options {
   visibility: hidden;
-  position: fixed;
+  position: absolute;
   z-index: 1;
   width: 150px;
   margin-left: 250px;
@@ -47,6 +47,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .Teacher_view:hover .Teacher_options {
