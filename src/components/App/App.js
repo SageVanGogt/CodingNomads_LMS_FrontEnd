@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router, 
   Route, 
   Link,
-  withRouter
 } from 'react-router-dom';
 import * as routes from '../../constants/routes';
 import LogIn from '../LogIn/LogIn';
@@ -74,4 +73,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default App;
