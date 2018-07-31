@@ -149,7 +149,7 @@ export class CourseCreate extends Component {
               })
             }
           </div>
-          <button type="submit" onClick={(e) => this.patchCourse(e)}>Update Course</button>
+          <button type="submit"onClick={(e) => this.patchCourse(e)}>Update Course</button>
           <p className='course_message'>{this.state.message}</p>
         </form>
       </div>
