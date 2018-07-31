@@ -943,7 +943,7 @@ describe('authUser', () => {
     };
     
     await apiCalls.authUser(mockUser);
-    expect(window.fetch).toHaveBeenCalledWith(url, options)
+    expect(window.fetch).toHaveBeenCalledWith(url, options);
   })
 })
 
