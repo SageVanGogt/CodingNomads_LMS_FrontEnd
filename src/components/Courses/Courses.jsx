@@ -50,7 +50,7 @@ export class Courses extends Component {
         <section className='course_cards'>
           {this.state.courses.length ? 
             courses : 
-            <img height='200' width='200' src='http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif'/>}
+            <img height='200' width='200' src='/loading1.gif'/>}
         </section>
       </div>
     );
