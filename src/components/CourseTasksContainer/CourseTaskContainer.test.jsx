@@ -30,7 +30,6 @@ describe('CourseTaskContainer', () => {
       const result = wrapper.instance().shouldCancelStart(mockEvent);
 
       expect(result).toBe(undefined);
-
     })
   })
 });
