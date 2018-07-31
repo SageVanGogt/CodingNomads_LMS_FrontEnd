@@ -19,15 +19,20 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <button
+          className="new_course_button"
           onClick={[Function]}
 >
-          Add New Course
+          New Course +
 </button>,
-        <img
-          height="200"
-          src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif"
-          width="200"
-/>,
+        <section
+          className="course_cards"
+>
+          <img
+                    height="200"
+                    src="/loading1.gif"
+                    width="200"
+          />
+</section>,
       ],
       "className": "courses_container",
     },
@@ -38,11 +43,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Add New Course",
+          "children": "New Course +",
+          "className": "new_course_button",
           "onClick": [Function],
         },
         "ref": null,
-        "rendered": "Add New Course",
+        "rendered": "New Course +",
         "type": "button",
       },
       Object {
@@ -50,13 +56,28 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "height": "200",
-          "src": "http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif",
-          "width": "200",
+          "children": <img
+            height="200"
+            src="/loading1.gif"
+            width="200"
+/>,
+          "className": "course_cards",
         },
         "ref": null,
-        "rendered": null,
-        "type": "img",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "height": "200",
+            "src": "/loading1.gif",
+            "width": "200",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "section",
       },
     ],
     "type": "div",
@@ -69,15 +90,20 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <button
+            className="new_course_button"
             onClick={[Function]}
 >
-            Add New Course
+            New Course +
 </button>,
-          <img
-            height="200"
-            src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif"
-            width="200"
-/>,
+          <section
+            className="course_cards"
+>
+            <img
+                        height="200"
+                        src="/loading1.gif"
+                        width="200"
+            />
+</section>,
         ],
         "className": "courses_container",
       },
@@ -88,11 +114,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Add New Course",
+            "children": "New Course +",
+            "className": "new_course_button",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Add New Course",
+          "rendered": "New Course +",
           "type": "button",
         },
         Object {
@@ -100,13 +127,28 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "height": "200",
-            "src": "http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-2.gif",
-            "width": "200",
+            "children": <img
+              height="200"
+              src="/loading1.gif"
+              width="200"
+/>,
+            "className": "course_cards",
           },
           "ref": null,
-          "rendered": null,
-          "type": "img",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "height": "200",
+              "src": "/loading1.gif",
+              "width": "200",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "section",
         },
       ],
       "type": "div",

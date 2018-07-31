@@ -33,8 +33,9 @@ ShallowWrapper {
           />
           <button
                     className="Task_edit-btn"
+                    onClick={[Function]}
           >
-                    view
+                    edit
           </button>
 </div>,
         <hr />,
@@ -57,8 +58,9 @@ ShallowWrapper {
 />,
             <button
               className="Task_edit-btn"
+              onClick={[Function]}
 >
-              view
+              edit
 </button>,
           ],
           "className": "Task_top",
@@ -82,11 +84,12 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "view",
+              "children": "edit",
               "className": "Task_edit-btn",
+              "onClick": [Function],
             },
             "ref": null,
-            "rendered": "view",
+            "rendered": "edit",
             "type": "button",
           },
         ],
@@ -131,8 +134,9 @@ ShallowWrapper {
             />
             <button
                         className="Task_edit-btn"
+                        onClick={[Function]}
             >
-                        view
+                        edit
             </button>
 </div>,
           <hr />,
@@ -155,8 +159,9 @@ ShallowWrapper {
 />,
               <button
                 className="Task_edit-btn"
+                onClick={[Function]}
 >
-                view
+                edit
 </button>,
             ],
             "className": "Task_top",
@@ -180,11 +185,12 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "view",
+                "children": "edit",
                 "className": "Task_edit-btn",
+                "onClick": [Function],
               },
               "ref": null,
-              "rendered": "view",
+              "rendered": "edit",
               "type": "button",
             },
           ],

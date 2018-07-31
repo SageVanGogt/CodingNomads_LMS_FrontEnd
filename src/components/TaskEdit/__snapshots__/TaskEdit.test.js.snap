@@ -27,401 +27,17 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <form
-        action="submit"
-        className="TaskEdit_form"
-        onSubmit={[Function]}
->
+      "children": Array [
         <h1
-                className="TaskEdit_title"
-        >
-                EDIT A TASK
-        </h1>
-        <label
-                for="name"
-        >
-                Task name:
-        </label>
-        <input
-                className="TaskEdit_input TaskEdit_input-name"
-                name="name"
-                onChange={[Function]}
-                placeholder="name"
-                type="text"
-                value=""
-        />
-        <label
-                for="description"
-        >
-                Description of task:
-        </label>
-        <textarea
-                className="TaskEdit_input TaskEdit_input-description"
-                name="description"
-                onChange={[Function]}
-                placeholder="description"
-                type="text"
-                value=""
-        />
-        <label
-                for="videoLink"
-        >
-                Link to the lesson video:
-        </label>
-        <input
-                className="TaskEdit_input TaskEdit_input-videoLink"
-                name="videoLink"
-                onChange={[Function]}
-                placeholder="url"
-                type="text"
-                value=""
-        />
-        <div
-                className="TaskEdit_select-list"
-        >
-                <p>
-                        Select documents for your students to read with this task
-                </p>
-                <button
-                        className="TaskEdit_new-select"
-                        onClick={[Function]}
-                >
-                        new doc +
-                </button>
-        </div>
-        <div
-                className="TaskEdit_select-list"
-        >
-                <p>
-                        Select labs for your students to do with this task
-                </p>
-                <button
-                        className="TaskEdit_new-select"
-                        onClick={[Function]}
-                >
-                        new lab +
-                </button>
-        </div>
-        <input
-                className="TaskEdit_submit"
-                type="submit"
-        />
-</form>,
-      "className": "TaskEdit_page",
-    },
-    "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "action": "submit",
-        "children": Array [
-          <h1
-            className="TaskEdit_title"
+          className="TaskEdit_title"
 >
-            EDIT A TASK
+          Fill out Task fields
 </h1>,
-          <label
-            for="name"
->
-            Task name:
-</label>,
-          <input
-            className="TaskEdit_input TaskEdit_input-name"
-            name="name"
-            onChange={[Function]}
-            placeholder="name"
-            type="text"
-            value=""
-/>,
-          <label
-            for="description"
->
-            Description of task:
-</label>,
-          <textarea
-            className="TaskEdit_input TaskEdit_input-description"
-            name="description"
-            onChange={[Function]}
-            placeholder="description"
-            type="text"
-            value=""
-/>,
-          <label
-            for="videoLink"
->
-            Link to the lesson video:
-</label>,
-          <input
-            className="TaskEdit_input TaskEdit_input-videoLink"
-            name="videoLink"
-            onChange={[Function]}
-            placeholder="url"
-            type="text"
-            value=""
-/>,
-          <div
-            className="TaskEdit_select-list"
->
-            <p>
-                        Select documents for your students to read with this task
-            </p>
-            <button
-                        className="TaskEdit_new-select"
-                        onClick={[Function]}
-            >
-                        new doc +
-            </button>
-</div>,
-          <div
-            className="TaskEdit_select-list"
->
-            <p>
-                        Select labs for your students to do with this task
-            </p>
-            <button
-                        className="TaskEdit_new-select"
-                        onClick={[Function]}
-            >
-                        new lab +
-            </button>
-</div>,
-          <input
-            className="TaskEdit_submit"
-            type="submit"
-/>,
-        ],
-        "className": "TaskEdit_form",
-        "onSubmit": [Function],
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "EDIT A TASK",
-            "className": "TaskEdit_title",
-          },
-          "ref": null,
-          "rendered": "EDIT A TASK",
-          "type": "h1",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Task name:",
-            "for": "name",
-          },
-          "ref": null,
-          "rendered": "Task name:",
-          "type": "label",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "TaskEdit_input TaskEdit_input-name",
-            "name": "name",
-            "onChange": [Function],
-            "placeholder": "name",
-            "type": "text",
-            "value": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Description of task:",
-            "for": "description",
-          },
-          "ref": null,
-          "rendered": "Description of task:",
-          "type": "label",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "TaskEdit_input TaskEdit_input-description",
-            "name": "description",
-            "onChange": [Function],
-            "placeholder": "description",
-            "type": "text",
-            "value": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "textarea",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Link to the lesson video:",
-            "for": "videoLink",
-          },
-          "ref": null,
-          "rendered": "Link to the lesson video:",
-          "type": "label",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "TaskEdit_input TaskEdit_input-videoLink",
-            "name": "videoLink",
-            "onChange": [Function],
-            "placeholder": "url",
-            "type": "text",
-            "value": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <p>
-                Select documents for your students to read with this task
-</p>,
-              Array [],
-              <button
-                className="TaskEdit_new-select"
-                onClick={[Function]}
->
-                new doc +
-</button>,
-            ],
-            "className": "TaskEdit_select-list",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Select documents for your students to read with this task",
-              },
-              "ref": null,
-              "rendered": "Select documents for your students to read with this task",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "new doc +",
-                "className": "TaskEdit_new-select",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "new doc +",
-              "type": "button",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <p>
-                Select labs for your students to do with this task
-</p>,
-              Array [],
-              <button
-                className="TaskEdit_new-select"
-                onClick={[Function]}
->
-                new lab +
-</button>,
-            ],
-            "className": "TaskEdit_select-list",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Select labs for your students to do with this task",
-              },
-              "ref": null,
-              "rendered": "Select labs for your students to do with this task",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "new lab +",
-                "className": "TaskEdit_new-select",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "new lab +",
-              "type": "button",
-            },
-          ],
-          "type": "div",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "TaskEdit_submit",
-            "type": "submit",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-      ],
-      "type": "form",
-    },
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": <form
+        <form
           action="submit"
           className="TaskEdit_form"
           onSubmit={[Function]}
 >
-          <h1
-                    className="TaskEdit_title"
-          >
-                    EDIT A TASK
-          </h1>
           <label
                     for="name"
           >
@@ -471,7 +87,7 @@ ShallowWrapper {
                               className="TaskEdit_new-select"
                               onClick={[Function]}
                     >
-                              new doc +
+                              New Doc +
                     </button>
           </div>
           <div
@@ -484,29 +100,39 @@ ShallowWrapper {
                               className="TaskEdit_new-select"
                               onClick={[Function]}
                     >
-                              new lab +
+                              New Lab +
                     </button>
           </div>
           <input
                     className="TaskEdit_submit"
                     type="submit"
+                    value="Submit Task Changes"
           />
 </form>,
-        "className": "TaskEdit_page",
+      ],
+      "className": "TaskEdit_page",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Fill out Task fields",
+          "className": "TaskEdit_title",
+        },
+        "ref": null,
+        "rendered": "Fill out Task fields",
+        "type": "h1",
       },
-      "ref": null,
-      "rendered": Object {
+      Object {
         "instance": null,
         "key": undefined,
         "nodeType": "host",
         "props": Object {
           "action": "submit",
           "children": Array [
-            <h1
-              className="TaskEdit_title"
->
-              EDIT A TASK
-</h1>,
             <label
               for="name"
 >
@@ -556,7 +182,7 @@ ShallowWrapper {
                             className="TaskEdit_new-select"
                             onClick={[Function]}
               >
-                            new doc +
+                            New Doc +
               </button>
 </div>,
             <div
@@ -569,12 +195,13 @@ ShallowWrapper {
                             className="TaskEdit_new-select"
                             onClick={[Function]}
               >
-                            new lab +
+                            New Lab +
               </button>
 </div>,
             <input
               className="TaskEdit_submit"
               type="submit"
+              value="Submit Task Changes"
 />,
           ],
           "className": "TaskEdit_form",
@@ -582,18 +209,6 @@ ShallowWrapper {
         },
         "ref": null,
         "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "EDIT A TASK",
-              "className": "TaskEdit_title",
-            },
-            "ref": null,
-            "rendered": "EDIT A TASK",
-            "type": "h1",
-          },
           Object {
             "instance": null,
             "key": undefined,
@@ -692,7 +307,7 @@ ShallowWrapper {
                   className="TaskEdit_new-select"
                   onClick={[Function]}
 >
-                  new doc +
+                  New Doc +
 </button>,
               ],
               "className": "TaskEdit_select-list",
@@ -715,12 +330,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "new doc +",
+                  "children": "New Doc +",
                   "className": "TaskEdit_new-select",
                   "onClick": [Function],
                 },
                 "ref": null,
-                "rendered": "new doc +",
+                "rendered": "New Doc +",
                 "type": "button",
               },
             ],
@@ -740,7 +355,7 @@ ShallowWrapper {
                   className="TaskEdit_new-select"
                   onClick={[Function]}
 >
-                  new lab +
+                  New Lab +
 </button>,
               ],
               "className": "TaskEdit_select-list",
@@ -763,12 +378,12 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "new lab +",
+                  "children": "New Lab +",
                   "className": "TaskEdit_new-select",
                   "onClick": [Function],
                 },
                 "ref": null,
-                "rendered": "new lab +",
+                "rendered": "New Lab +",
                 "type": "button",
               },
             ],
@@ -781,6 +396,7 @@ ShallowWrapper {
             "props": Object {
               "className": "TaskEdit_submit",
               "type": "submit",
+              "value": "Submit Task Changes",
             },
             "ref": null,
             "rendered": null,
@@ -789,6 +405,394 @@ ShallowWrapper {
         ],
         "type": "form",
       },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1
+            className="TaskEdit_title"
+>
+            Fill out Task fields
+</h1>,
+          <form
+            action="submit"
+            className="TaskEdit_form"
+            onSubmit={[Function]}
+>
+            <label
+                        for="name"
+            >
+                        Task name:
+            </label>
+            <input
+                        className="TaskEdit_input TaskEdit_input-name"
+                        name="name"
+                        onChange={[Function]}
+                        placeholder="name"
+                        type="text"
+                        value=""
+            />
+            <label
+                        for="description"
+            >
+                        Description of task:
+            </label>
+            <textarea
+                        className="TaskEdit_input TaskEdit_input-description"
+                        name="description"
+                        onChange={[Function]}
+                        placeholder="description"
+                        type="text"
+                        value=""
+            />
+            <label
+                        for="videoLink"
+            >
+                        Link to the lesson video:
+            </label>
+            <input
+                        className="TaskEdit_input TaskEdit_input-videoLink"
+                        name="videoLink"
+                        onChange={[Function]}
+                        placeholder="url"
+                        type="text"
+                        value=""
+            />
+            <div
+                        className="TaskEdit_select-list"
+            >
+                        <p>
+                                    Select documents for your students to read with this task
+                        </p>
+                        <button
+                                    className="TaskEdit_new-select"
+                                    onClick={[Function]}
+                        >
+                                    New Doc +
+                        </button>
+            </div>
+            <div
+                        className="TaskEdit_select-list"
+            >
+                        <p>
+                                    Select labs for your students to do with this task
+                        </p>
+                        <button
+                                    className="TaskEdit_new-select"
+                                    onClick={[Function]}
+                        >
+                                    New Lab +
+                        </button>
+            </div>
+            <input
+                        className="TaskEdit_submit"
+                        type="submit"
+                        value="Submit Task Changes"
+            />
+</form>,
+        ],
+        "className": "TaskEdit_page",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Fill out Task fields",
+            "className": "TaskEdit_title",
+          },
+          "ref": null,
+          "rendered": "Fill out Task fields",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "action": "submit",
+            "children": Array [
+              <label
+                for="name"
+>
+                Task name:
+</label>,
+              <input
+                className="TaskEdit_input TaskEdit_input-name"
+                name="name"
+                onChange={[Function]}
+                placeholder="name"
+                type="text"
+                value=""
+/>,
+              <label
+                for="description"
+>
+                Description of task:
+</label>,
+              <textarea
+                className="TaskEdit_input TaskEdit_input-description"
+                name="description"
+                onChange={[Function]}
+                placeholder="description"
+                type="text"
+                value=""
+/>,
+              <label
+                for="videoLink"
+>
+                Link to the lesson video:
+</label>,
+              <input
+                className="TaskEdit_input TaskEdit_input-videoLink"
+                name="videoLink"
+                onChange={[Function]}
+                placeholder="url"
+                type="text"
+                value=""
+/>,
+              <div
+                className="TaskEdit_select-list"
+>
+                <p>
+                                Select documents for your students to read with this task
+                </p>
+                <button
+                                className="TaskEdit_new-select"
+                                onClick={[Function]}
+                >
+                                New Doc +
+                </button>
+</div>,
+              <div
+                className="TaskEdit_select-list"
+>
+                <p>
+                                Select labs for your students to do with this task
+                </p>
+                <button
+                                className="TaskEdit_new-select"
+                                onClick={[Function]}
+                >
+                                New Lab +
+                </button>
+</div>,
+              <input
+                className="TaskEdit_submit"
+                type="submit"
+                value="Submit Task Changes"
+/>,
+            ],
+            "className": "TaskEdit_form",
+            "onSubmit": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Task name:",
+                "for": "name",
+              },
+              "ref": null,
+              "rendered": "Task name:",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "TaskEdit_input TaskEdit_input-name",
+                "name": "name",
+                "onChange": [Function],
+                "placeholder": "name",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Description of task:",
+                "for": "description",
+              },
+              "ref": null,
+              "rendered": "Description of task:",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "TaskEdit_input TaskEdit_input-description",
+                "name": "description",
+                "onChange": [Function],
+                "placeholder": "description",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "textarea",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Link to the lesson video:",
+                "for": "videoLink",
+              },
+              "ref": null,
+              "rendered": "Link to the lesson video:",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "TaskEdit_input TaskEdit_input-videoLink",
+                "name": "videoLink",
+                "onChange": [Function],
+                "placeholder": "url",
+                "type": "text",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    Select documents for your students to read with this task
+</p>,
+                  Array [],
+                  <button
+                    className="TaskEdit_new-select"
+                    onClick={[Function]}
+>
+                    New Doc +
+</button>,
+                ],
+                "className": "TaskEdit_select-list",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Select documents for your students to read with this task",
+                  },
+                  "ref": null,
+                  "rendered": "Select documents for your students to read with this task",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "New Doc +",
+                    "className": "TaskEdit_new-select",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "New Doc +",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <p>
+                    Select labs for your students to do with this task
+</p>,
+                  Array [],
+                  <button
+                    className="TaskEdit_new-select"
+                    onClick={[Function]}
+>
+                    New Lab +
+</button>,
+                ],
+                "className": "TaskEdit_select-list",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Select labs for your students to do with this task",
+                  },
+                  "ref": null,
+                  "rendered": "Select labs for your students to do with this task",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "New Lab +",
+                    "className": "TaskEdit_new-select",
+                    "onClick": [Function],
+                  },
+                  "ref": null,
+                  "rendered": "New Lab +",
+                  "type": "button",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "TaskEdit_submit",
+                "type": "submit",
+                "value": "Submit Task Changes",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "form",
+        },
+      ],
       "type": "div",
     },
   ],
