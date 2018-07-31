@@ -127,7 +127,6 @@ export class TaskEdit extends Component {
   deleteDoc = (event, key) => {
     event.preventDefault();
     const docId = event.target.previousElementSibling.value;
-    console.log(docId)
 
     if (docId) {
       const updatedDocs =

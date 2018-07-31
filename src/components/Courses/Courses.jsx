@@ -25,6 +25,7 @@ export class Courses extends Component {
       body: JSON.stringify(newCourse)
     })
     const data = await response.json();
+    console.log(data)
 
     this.props.updateCurrentCourse(data.data);
     this.props.history.push(COURSE_EDIT);
@@ -42,11 +43,16 @@ export class Courses extends Component {
   }
 
   render() {
-    const courses = this.state.courses.map(course => <CourseCard {...course} key={'course' + course.id}/>);
+    const courses = this.state.courses.map(course => {
+      return <CourseCard {...course} key={'course' + course.id}/>
+    });
 
     return ( 
       <div className='courses_container'>
-        <button className='new_course_button' onClick={this.addCourse}>New Course +</button>
+        <button 
+          className='new_course_button' 
+          onClick={this.addCourse}>New Course +
+        </button>
         <section className='course_cards'>
           {this.state.courses.length ? 
             courses : 
@@ -62,7 +68,8 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  updateCurrentCourse: (currentCourse) => dispatch(updateCurrentCourse(currentCourse))
-})
+  updateCurrentCourse: (currentCourse) => {
+    return dispatch(updateCurrentCourse(currentCourse))
+}})
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Courses))

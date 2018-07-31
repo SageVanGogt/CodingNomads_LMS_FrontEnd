@@ -355,10 +355,9 @@ describe('TaskEdit', () => {
     it('calls deleteDocsFromTask with the correct params', async () => {
       let mockDocs = [{}, {}];
       wrapper.setState({docsToDelete: mockDocs});
-      let expected = mockDocs;
       await wrapper.instance().handleDeletedDocs();
 
-      expect(API.deleteDocsFromTask).toHaveBeenCalledWith(expected);
+      expect(API.deleteDocsFromTask).toHaveBeenCalledWith(null, mockDocs);
     })
   })
 
@@ -366,10 +365,9 @@ describe('TaskEdit', () => {
     it('calls deleteLabsFromTask with the correct params', async () => {
       let mockLabs = [{}, {}];
       wrapper.setState({labsToDelete: mockLabs});
-      let expected = mockLabs;
       await wrapper.instance().handleDeletedLabs();
 
-      expect(API.deleteLabsFromTask).toHaveBeenCalledWith(expected);
+      expect(API.deleteLabsFromTask).toHaveBeenCalledWith(null, mockLabs);
     })
   })
 

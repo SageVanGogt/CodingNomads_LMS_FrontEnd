@@ -1,0 +1,1103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <div
+        className="App"
+>
+        <nav
+                className="nav__site"
+        >
+                <Link
+                        className="logo-link"
+                        replace={false}
+                        to="/"
+                >
+                        <img
+                                alt="Coding Nomads"
+                                className="logo"
+                                src="/logo.png"
+                        />
+                </Link>
+                <ul
+                        aria-label="main navigation list"
+                >
+                        <li>
+                                <Link
+                                        replace={false}
+                                        to="/courses"
+                                >
+                                         Courses
+                                </Link>
+                        </li>
+                        <li>
+                                <Link
+                                        replace={false}
+                                        to="/tasks"
+                                >
+                                         Tasks
+                                </Link>
+                        </li>
+                        <li>
+                                <Link
+                                        replace={false}
+                                        to="/students/edit"
+                                >
+                                         Students
+                                </Link>
+                        </li>
+                        <li>
+                                <Link
+                                        replace={false}
+                                        to="/tasks"
+                                >
+                                         Profile
+                                </Link>
+                        </li>
+                </ul>
+        </nav>
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/signin"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/courses"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/tasks"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/tasks/edit"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/course/edit"
+        />
+        <Route
+                component={[Function]}
+                exact={true}
+                path="/students/edit"
+        />
+</div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <nav
+            className="nav__site"
+>
+            <Link
+                        className="logo-link"
+                        replace={false}
+                        to="/"
+            >
+                        <img
+                                    alt="Coding Nomads"
+                                    className="logo"
+                                    src="/logo.png"
+                        />
+            </Link>
+            <ul
+                        aria-label="main navigation list"
+            >
+                        <li>
+                                    <Link
+                                                replace={false}
+                                                to="/courses"
+                                    >
+                                                 Courses
+                                    </Link>
+                        </li>
+                        <li>
+                                    <Link
+                                                replace={false}
+                                                to="/tasks"
+                                    >
+                                                 Tasks
+                                    </Link>
+                        </li>
+                        <li>
+                                    <Link
+                                                replace={false}
+                                                to="/students/edit"
+                                    >
+                                                 Students
+                                    </Link>
+                        </li>
+                        <li>
+                                    <Link
+                                                replace={false}
+                                                to="/tasks"
+                                    >
+                                                 Profile
+                                    </Link>
+                        </li>
+            </ul>
+</nav>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/signin"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/courses"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/tasks"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/tasks/edit"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/course/edit"
+/>,
+          <Route
+            component={[Function]}
+            exact={true}
+            path="/students/edit"
+/>,
+        ],
+        "className": "App",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Link
+                className="logo-link"
+                replace={false}
+                to="/"
+>
+                <img
+                                alt="Coding Nomads"
+                                className="logo"
+                                src="/logo.png"
+                />
+</Link>,
+              <ul
+                aria-label="main navigation list"
+>
+                <li>
+                                <Link
+                                                replace={false}
+                                                to="/courses"
+                                >
+                                                 Courses
+                                </Link>
+                </li>
+                <li>
+                                <Link
+                                                replace={false}
+                                                to="/tasks"
+                                >
+                                                 Tasks
+                                </Link>
+                </li>
+                <li>
+                                <Link
+                                                replace={false}
+                                                to="/students/edit"
+                                >
+                                                 Students
+                                </Link>
+                </li>
+                <li>
+                                <Link
+                                                replace={false}
+                                                to="/tasks"
+                                >
+                                                 Profile
+                                </Link>
+                </li>
+</ul>,
+            ],
+            "className": "nav__site",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": <img
+                  alt="Coding Nomads"
+                  className="logo"
+                  src="/logo.png"
+/>,
+                "className": "logo-link",
+                "replace": false,
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "Coding Nomads",
+                  "className": "logo",
+                  "src": "/logo.png",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "aria-label": "main navigation list",
+                "children": Array [
+                  <li>
+                    <Link
+                                        replace={false}
+                                        to="/courses"
+                    >
+                                         Courses
+                    </Link>
+</li>,
+                  <li>
+                    <Link
+                                        replace={false}
+                                        to="/tasks"
+                    >
+                                         Tasks
+                    </Link>
+</li>,
+                  <li>
+                    <Link
+                                        replace={false}
+                                        to="/students/edit"
+                    >
+                                         Students
+                    </Link>
+</li>,
+                  <li>
+                    <Link
+                                        replace={false}
+                                        to="/tasks"
+                    >
+                                         Profile
+                    </Link>
+</li>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/courses"
+>
+                       Courses
+</Link>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": " Courses",
+                      "replace": false,
+                      "to": "/courses",
+                    },
+                    "ref": null,
+                    "rendered": " Courses",
+                    "type": [Function],
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/tasks"
+>
+                       Tasks
+</Link>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": " Tasks",
+                      "replace": false,
+                      "to": "/tasks",
+                    },
+                    "ref": null,
+                    "rendered": " Tasks",
+                    "type": [Function],
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/students/edit"
+>
+                       Students
+</Link>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": " Students",
+                      "replace": false,
+                      "to": "/students/edit",
+                    },
+                    "ref": null,
+                    "rendered": " Students",
+                    "type": [Function],
+                  },
+                  "type": "li",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <Link
+                      replace={false}
+                      to="/tasks"
+>
+                       Profile
+</Link>,
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "class",
+                    "props": Object {
+                      "children": " Profile",
+                      "replace": false,
+                      "to": "/tasks",
+                    },
+                    "ref": null,
+                    "rendered": " Profile",
+                    "type": [Function],
+                  },
+                  "type": "li",
+                },
+              ],
+              "type": "ul",
+            },
+          ],
+          "type": "nav",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/signin",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/courses",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/tasks",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/tasks/edit",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/course/edit",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "component": [Function],
+            "exact": true,
+            "path": "/students/edit",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <div
+          className="App"
+>
+          <nav
+                    className="nav__site"
+          >
+                    <Link
+                              className="logo-link"
+                              replace={false}
+                              to="/"
+                    >
+                              <img
+                                        alt="Coding Nomads"
+                                        className="logo"
+                                        src="/logo.png"
+                              />
+                    </Link>
+                    <ul
+                              aria-label="main navigation list"
+                    >
+                              <li>
+                                        <Link
+                                                  replace={false}
+                                                  to="/courses"
+                                        >
+                                                   Courses
+                                        </Link>
+                              </li>
+                              <li>
+                                        <Link
+                                                  replace={false}
+                                                  to="/tasks"
+                                        >
+                                                   Tasks
+                                        </Link>
+                              </li>
+                              <li>
+                                        <Link
+                                                  replace={false}
+                                                  to="/students/edit"
+                                        >
+                                                   Students
+                                        </Link>
+                              </li>
+                              <li>
+                                        <Link
+                                                  replace={false}
+                                                  to="/tasks"
+                                        >
+                                                   Profile
+                                        </Link>
+                              </li>
+                    </ul>
+          </nav>
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/signin"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/courses"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/tasks"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/tasks/edit"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/course/edit"
+          />
+          <Route
+                    component={[Function]}
+                    exact={true}
+                    path="/students/edit"
+          />
+</div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <nav
+              className="nav__site"
+>
+              <Link
+                            className="logo-link"
+                            replace={false}
+                            to="/"
+              >
+                            <img
+                                          alt="Coding Nomads"
+                                          className="logo"
+                                          src="/logo.png"
+                            />
+              </Link>
+              <ul
+                            aria-label="main navigation list"
+              >
+                            <li>
+                                          <Link
+                                                        replace={false}
+                                                        to="/courses"
+                                          >
+                                                         Courses
+                                          </Link>
+                            </li>
+                            <li>
+                                          <Link
+                                                        replace={false}
+                                                        to="/tasks"
+                                          >
+                                                         Tasks
+                                          </Link>
+                            </li>
+                            <li>
+                                          <Link
+                                                        replace={false}
+                                                        to="/students/edit"
+                                          >
+                                                         Students
+                                          </Link>
+                            </li>
+                            <li>
+                                          <Link
+                                                        replace={false}
+                                                        to="/tasks"
+                                          >
+                                                         Profile
+                                          </Link>
+                            </li>
+              </ul>
+</nav>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/signin"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/courses"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/tasks"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/tasks/edit"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/course/edit"
+/>,
+            <Route
+              component={[Function]}
+              exact={true}
+              path="/students/edit"
+/>,
+          ],
+          "className": "App",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Link
+                  className="logo-link"
+                  replace={false}
+                  to="/"
+>
+                  <img
+                                    alt="Coding Nomads"
+                                    className="logo"
+                                    src="/logo.png"
+                  />
+</Link>,
+                <ul
+                  aria-label="main navigation list"
+>
+                  <li>
+                                    <Link
+                                                      replace={false}
+                                                      to="/courses"
+                                    >
+                                                       Courses
+                                    </Link>
+                  </li>
+                  <li>
+                                    <Link
+                                                      replace={false}
+                                                      to="/tasks"
+                                    >
+                                                       Tasks
+                                    </Link>
+                  </li>
+                  <li>
+                                    <Link
+                                                      replace={false}
+                                                      to="/students/edit"
+                                    >
+                                                       Students
+                                    </Link>
+                  </li>
+                  <li>
+                                    <Link
+                                                      replace={false}
+                                                      to="/tasks"
+                                    >
+                                                       Profile
+                                    </Link>
+                  </li>
+</ul>,
+              ],
+              "className": "nav__site",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": <img
+                    alt="Coding Nomads"
+                    className="logo"
+                    src="/logo.png"
+/>,
+                  "className": "logo-link",
+                  "replace": false,
+                  "to": "/",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "alt": "Coding Nomads",
+                    "className": "logo",
+                    "src": "/logo.png",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "img",
+                },
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "aria-label": "main navigation list",
+                  "children": Array [
+                    <li>
+                      <Link
+                                            replace={false}
+                                            to="/courses"
+                      >
+                                             Courses
+                      </Link>
+</li>,
+                    <li>
+                      <Link
+                                            replace={false}
+                                            to="/tasks"
+                      >
+                                             Tasks
+                      </Link>
+</li>,
+                    <li>
+                      <Link
+                                            replace={false}
+                                            to="/students/edit"
+                      >
+                                             Students
+                      </Link>
+</li>,
+                    <li>
+                      <Link
+                                            replace={false}
+                                            to="/tasks"
+                      >
+                                             Profile
+                      </Link>
+</li>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Link
+                        replace={false}
+                        to="/courses"
+>
+                         Courses
+</Link>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": " Courses",
+                        "replace": false,
+                        "to": "/courses",
+                      },
+                      "ref": null,
+                      "rendered": " Courses",
+                      "type": [Function],
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Link
+                        replace={false}
+                        to="/tasks"
+>
+                         Tasks
+</Link>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": " Tasks",
+                        "replace": false,
+                        "to": "/tasks",
+                      },
+                      "ref": null,
+                      "rendered": " Tasks",
+                      "type": [Function],
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Link
+                        replace={false}
+                        to="/students/edit"
+>
+                         Students
+</Link>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": " Students",
+                        "replace": false,
+                        "to": "/students/edit",
+                      },
+                      "ref": null,
+                      "rendered": " Students",
+                      "type": [Function],
+                    },
+                    "type": "li",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": <Link
+                        replace={false}
+                        to="/tasks"
+>
+                         Profile
+</Link>,
+                    },
+                    "ref": null,
+                    "rendered": Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "class",
+                      "props": Object {
+                        "children": " Profile",
+                        "replace": false,
+                        "to": "/tasks",
+                      },
+                      "ref": null,
+                      "rendered": " Profile",
+                      "type": [Function],
+                    },
+                    "type": "li",
+                  },
+                ],
+                "type": "ul",
+              },
+            ],
+            "type": "nav",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/signin",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/courses",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/tasks",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/tasks/edit",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/course/edit",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "component": [Function],
+              "exact": true,
+              "path": "/students/edit",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

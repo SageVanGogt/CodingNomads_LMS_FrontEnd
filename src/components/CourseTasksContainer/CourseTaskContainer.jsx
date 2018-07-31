@@ -12,7 +12,11 @@ const SortableList = SortableContainer(({ tasks, deleteTask }) => {
   return (
     <ul>
       {tasks.map((task, index) => (
-        <SortableItem key={`item-${index}`} index={index} task={task} deleteTask={deleteTask}/>
+        <SortableItem 
+          key={`item-${index}`} 
+          index={index} task={task} 
+          deleteTask={deleteTask}
+        />
       ))}
     </ul>
   );
@@ -41,7 +45,12 @@ export class CourseTaskContainer extends Component {
   render() { 
     return (
       <div className='tasksArea'>
-        <SortableList tasks={this.props.tasks} onSortEnd={this.onSortEnd} shouldCancelStart={this.shouldCancelStart} deleteTask={this.props.deleteTask} />
+        <SortableList 
+          tasks={this.props.tasks} 
+          onSortEnd={this.onSortEnd} 
+          shouldCancelStart={this.shouldCancelStart} 
+          deleteTask={this.props.deleteTask} 
+        />
       </div>
     );
   }
