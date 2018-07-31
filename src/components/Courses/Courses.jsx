@@ -15,7 +15,7 @@ export class Courses extends Component {
     };
   }
 
-  addCourse = async () => {
+  addNewCourse = async () => {
     const newCourse = {name: "", description: ""}
     const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/courses', {
       method: 'POST',
@@ -50,7 +50,7 @@ export class Courses extends Component {
       <div className='courses_container'>
         <button 
           className='new_course_button' 
-          onClick={this.addCourse}>New Course +
+          onClick={this.addNewCourse}>New Course +
         </button>
         <section className='course_cards'>
           {this.state.courses.length ? 
