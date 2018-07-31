@@ -80,7 +80,7 @@ export class AdminHome extends Component {
           <article className="Teacher_view">
             <h3>students</h3>
             <div className="Teacher_options">
-            ` <div 
+              <div 
                 className="add-btn" 
                 id="STUDENT_EDIT"
                 onClick={this.handleRoute}
