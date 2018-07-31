@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import './Login.css';
 import * as API from '../../apiCalls/apiCalls';
 import { signIn } from './../../actions/signin';
+import PropTypes from 'prop-types';
 
 export class LogIn extends Component {
   constructor(props) {
@@ -107,9 +108,9 @@ export class LogIn extends Component {
   }
 }
 
-const mapDispatchToProps = () => {
-  signIn = (user) => dispatch(signIn(user))
-}
+const mapDispatchToProps = (dispatch) => ({
+  signIn: (user) => dispatch(signIn(user))
+})
 
 LogIn.propTypes = {
   signIn: PropTypes.func

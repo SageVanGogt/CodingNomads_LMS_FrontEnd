@@ -14,23 +14,23 @@ export const getAllTasks = async () => {
   }
 };
 
-export const getAllTasksAuthed = async () => {
-  // const token = localStorage.getItem('access_token') || null;
-  const url = apiPath + '/tasks';
-  const options = {
-    headers: { 'Authorization': `Bearer ${token}` }
-  }
-  try {
-    const response = await fetch(url);
-    if (response.status !== 200) {
-      throw Error('Could not fetch tasks');
-    } else {
-      return await response.json();
-    }
-  } catch (error) {
-    throw error;
-  }
-};
+// export const getAllTasksAuthed = async () => {
+//   const token = localStorage.getItem('access_token') || null;
+//   const url = apiPath + '/tasks';
+//   const options = {
+//     headers: { 'Authorization': `Bearer ${token}` }
+//   }
+//   try {
+//     const response = await fetch(url);
+//     if (response.status !== 200) {
+//       throw Error('Could not fetch tasks');
+//     } else {
+//       return await response.json();
+//     }
+//   } catch (error) {
+//     throw error;
+//   }
+// };
 
 export const getTask = async (taskId) => {
   const url = apiPath + `/tasks/${taskId}`;
