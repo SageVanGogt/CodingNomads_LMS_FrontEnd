@@ -2,6 +2,7 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './Login.css';
 import * as API from '../../apiCalls/apiCalls';
+import { signIn } from './../../actions/signin';
 
 export class LogIn extends Component {
   constructor(props) {
@@ -32,6 +33,7 @@ export class LogIn extends Component {
       }
       localStorage.setItem('id_token', user.id_token)
       localStorage.setItem('id_token', user.access_token)
+      this.props.signIn(user);
     } catch (error) {
       throw error;
     }
@@ -105,4 +107,12 @@ export class LogIn extends Component {
   }
 }
 
-export default connect(null, null)(LogIn);
+const mapDispatchToProps = () => {
+  signIn = (user) => dispatch(signIn(user))
+}
+
+LogIn.propTypes = {
+  signIn: PropTypes.func
+}
+
+export default connect(null, mapDispatchToProps)(LogIn);
