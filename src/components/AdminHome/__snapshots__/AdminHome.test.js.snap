@@ -119,7 +119,7 @@ ShallowWrapper {
                 <div
                         className="Teacher_options"
                 >
-                        \` 
+                        \`
                         <div
                                 className="add-btn"
                                 id="STUDENT_EDIT"
@@ -234,7 +234,7 @@ ShallowWrapper {
             <div
                         className="Teacher_options"
             >
-                        \` 
+                        \`
                         <div
                                     className="add-btn"
                                     id="STUDENT_EDIT"
@@ -612,7 +612,7 @@ ShallowWrapper {
               <div
                 className="Teacher_options"
 >
-                \` 
+                \`
                 <div
                                 className="add-btn"
                                 id="STUDENT_EDIT"
@@ -652,7 +652,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "\` ",
+                  "\`",
                   <div
                     className="add-btn"
                     id="STUDENT_EDIT"
@@ -674,7 +674,7 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": Array [
-                "\` ",
+                "\`",
                 Object {
                   "instance": null,
                   "key": undefined,
@@ -821,7 +821,7 @@ ShallowWrapper {
                     <div
                               className="Teacher_options"
                     >
-                              \` 
+                              \`
                               <div
                                         className="add-btn"
                                         id="STUDENT_EDIT"
@@ -936,7 +936,7 @@ ShallowWrapper {
               <div
                             className="Teacher_options"
               >
-                            \` 
+                            \`
                             <div
                                           className="add-btn"
                                           id="STUDENT_EDIT"
@@ -1314,7 +1314,7 @@ ShallowWrapper {
                 <div
                   className="Teacher_options"
 >
-                  \` 
+                  \`
                   <div
                                     className="add-btn"
                                     id="STUDENT_EDIT"
@@ -1354,7 +1354,7 @@ ShallowWrapper {
                 "nodeType": "host",
                 "props": Object {
                   "children": Array [
-                    "\` ",
+                    "\`",
                     <div
                       className="add-btn"
                       id="STUDENT_EDIT"
@@ -1376,7 +1376,7 @@ ShallowWrapper {
                 },
                 "ref": null,
                 "rendered": Array [
-                  "\` ",
+                  "\`",
                   Object {
                     "instance": null,
                     "key": undefined,

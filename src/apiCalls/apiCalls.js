@@ -361,7 +361,7 @@ export const deleteDocsFromTask = async (taskId, docsArr) => {
 };
 
 export const deleteLabsFromTask = async (taskId, labsArr) => {
-  const url = apiPath + `/task/${taskId}/labs/`;
+  const url = apiPath + `/task/${taskId}/labs`;
   const options = {
     method: 'DELETE',
     headers: { 'content-type': 'application/json' },
