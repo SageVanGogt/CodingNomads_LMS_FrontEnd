@@ -12,6 +12,7 @@ export class AdminHome extends Component {
 
   handleRoute = (event) => {
     const { id } = event.target;
+    console.log(id)
     this.props.history.push(routes[id]);
   }
 
@@ -34,6 +35,7 @@ export class AdminHome extends Component {
                 +
               </div>
               <div
+                className="view-btn"
                 id="COURSES"
                 onClick={this.handleRoute}
               >
@@ -52,6 +54,7 @@ export class AdminHome extends Component {
                 +
               </div>
               <div
+                className="view-btn"
                 // name="COURSES"
                 // onClick={this.handleRoute}
               >
@@ -70,6 +73,7 @@ export class AdminHome extends Component {
                 +
               </div>
               <div
+                className="view-btn"
                 id="TASKS"
                 onClick={this.handleRoute}
               >
@@ -88,6 +92,7 @@ export class AdminHome extends Component {
                 +
               </div>
               <div
+                className="view-btn"
                 id="STUDENTS"
                 onClick={this.handleRoute}
               >

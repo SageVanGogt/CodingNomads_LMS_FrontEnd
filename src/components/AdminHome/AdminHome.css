@@ -37,17 +37,22 @@
   height: 250px;
   background-color: #0F94FB50; }
 
-.Teacher_options div {
+.add-btn,
+.view-btn {
   height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer; }
 
+.view-btn img {
+  pointer-events: none; }
+
 .Teacher_view:hover .Teacher_options {
   visibility: visible; }
 
-.Teacher_options div:hover, img:hover {
+.Teacher_options div:hover,
+.Teacher_options img:hover {
   background-color: #0F94FB; }
 
 .add-btn {
