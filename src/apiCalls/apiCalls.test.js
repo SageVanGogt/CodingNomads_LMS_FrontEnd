@@ -936,8 +936,9 @@ describe('authUser', () => {
   })
 
   it('should be called with the correct params', async () => {
-    const url = apiPath + '/users/'; 
+    const url = apiPath + '/users'; 
     const options = {
+      method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(mockUser)
     };

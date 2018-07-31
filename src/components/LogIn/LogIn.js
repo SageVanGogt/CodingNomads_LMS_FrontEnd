@@ -31,8 +31,8 @@ export class LogIn extends Component {
         id: response.id,
         name: response.firstName + response.lastName
       }
-      localStorage.setItem('id_token', user.id_token)
-      localStorage.setItem('id_token', user.access_token)
+      localStorage.setItem('id_token', response.id_token)
+      localStorage.setItem('access_token', response.access_token)
       this.props.signIn(user);
     } catch (error) {
       throw error;

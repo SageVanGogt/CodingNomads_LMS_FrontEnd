@@ -430,8 +430,9 @@ export const deleteStudentsFromCourse = async (courseId, studentsArr) => {
 };
 
 export const authUser = async (user) => {
-  const url = apiPath + '/users/'; 
+  const url = apiPath + '/users'; 
   const options = {
+    method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(user)
   };
