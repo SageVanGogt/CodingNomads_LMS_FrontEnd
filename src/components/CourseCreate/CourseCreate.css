@@ -29,18 +29,22 @@
   margin: 10px auto; }
 
 .CourseCreate_form textarea {
-  display: block;
-  margin: 10px auto;
+  margin-top: 20px;
+  height: 40px;
   width: 400px;
-  min-height: 100px;
+  padding-left: 15px;
+  background-color: transparent;
   border: none;
-  border-bottom: 3px solid #4885a2; }
+  border-bottom: 3px solid #4885a2;
+  font-size: 1.2rem;
+  font-family: 'Open Sans', sans-serif;
+  min-height: 100px; }
 
 .CourseCreate_form button {
   height: 40px;
   margin-top: 15px;
   border: none;
-  background-color: #0F94FB;
+  background-color: #4885a2;
   font-size: 1.2rem;
   cursor: pointer;
   color: #efefef;
@@ -51,13 +55,13 @@
 .tasksArea {
   width: 400px;
   min-height: 200px;
-  border: 2px solid #0F94FB;
+  border: 2px solid #4885a2;
   margin: 20px auto; }
 
 .studentsArea {
   width: 400px;
   height: 150px;
-  border: 2px solid #0F94FB;
+  border: 2px solid #4885a2;
   margin: 20px auto;
   overflow: scroll; }
 
