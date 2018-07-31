@@ -3,10 +3,16 @@ import { connect } from 'react-redux';
 import './AdminHome.css';
 import { Redirect } from 'react-router-dom';
 import * as routes from '../../constants/routes';
+import { withRouter } from 'react-router-dom';
 
 export class AdminHome extends Component {
   constructor(props) {
     super(props);
+  }
+
+  handleRedirect = (event) => {
+    const { name } = event.target;
+    this.props.history.push(routes[name]);
   }
 
   render() {
@@ -55,4 +61,4 @@ const mapStateToProps = (state) => ({
   user: state.user
 })
 
-export default connect(mapStateToProps)(AdminHome);
+export default withRouter(connect(mapStateToProps)(AdminHome));
