@@ -62,7 +62,8 @@
 
 .CourseStudentCard {
   width: 300px;
-  border: 1px dashed black;
+  text-decoration: underline;
+  text-decoration-color: #0F94FB;
   margin: 5px auto; }
 
 .course_message {
