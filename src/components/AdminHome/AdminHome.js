@@ -15,34 +15,34 @@ export class AdminHome extends Component {
     }
 
     return (
-      <div className="Teacher_home">
+      <div className="Teacher_home-container">
         <section className="Teacher_board">
           <article className="Teacher_view">
             <h3>courses</h3>
             <div className="Teacher_options">
-              <div>add</div>
-              <div>view</div>
+              <div className="add-btn">+</div>
+              <div><img src="/eye.png"/></div>
             </div>
           </article>
           <article className="Teacher_view">
             <h3>notifications</h3>
             <div className="Teacher_options">
-              <div>add</div>
-              <div>view</div>
+              <div className="add-btn">+</div>
+              <div><img src="/eye.png"/></div>
             </div>
           </article>
           <article className="Teacher_view">
             <h3>tasks</h3>
             <div className="Teacher_options">
-              <div>add</div>
-              <div>view</div>
+              <div className="add-btn">+</div>
+              <div><img src="/eye.png"/></div>
             </div>
           </article>
           <article className="Teacher_view">
             <h3>students</h3>
             <div className="Teacher_options">
-              <div>add</div>
-              <div>view</div>
+              <div className="add-btn">+</div>
+              <div><img src="/eye.png"/></div>
             </div>
           </article>
         </section>
