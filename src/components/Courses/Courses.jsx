@@ -46,7 +46,7 @@ export class Courses extends Component {
 
     return ( 
       <div className='courses_container'>
-        <button className='new_course_button' onClick={this.addCourse}>Add New Course</button>
+        <button className='new_course_button' onClick={this.addCourse}>New Course +</button>
         <section className='course_cards'>
           {this.state.courses.length ? 
             courses : 
