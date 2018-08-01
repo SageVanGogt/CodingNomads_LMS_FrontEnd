@@ -6,6 +6,7 @@ import CourseCard from '../CourseCard/CourseCard';
 import { updateCurrentCourse } from '../../actions/currentCourse';
 import { COURSE_EDIT } from '../../constants/routes';
 import PropTypes from 'prop-types';
+import * as apiCalls from '../../apiCalls/apiCalls';
 
 export class Courses extends Component {
   constructor(props) {
