@@ -270,7 +270,7 @@ describe('addCourse', () => {
   beforeEach(() => {
     newCourse = { name: 'this is a new course' };
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      status: 201,
+      status: 200,
       json: () => Promise.resolve({ id: 3, name: 'this is a new course' })
     }))
   })
@@ -322,7 +322,7 @@ describe('updateCourse', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = apiPath + '/courses/3';
+    const url = apiPath + '/courses';
     const options = {
       method: 'PATCH',
       headers: { 'content-type': 'application/json' },
