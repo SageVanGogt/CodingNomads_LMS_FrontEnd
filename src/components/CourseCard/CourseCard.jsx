@@ -7,10 +7,6 @@ import { updateCurrentCourse } from '../../actions/currentCourse';
 import { COURSE_EDIT } from '../../constants/routes';
 
 export class CourseCard extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   updateCourse = async () => {
     this.props.updateCurrentCourse(this.props);
     this.props.history.push(COURSE_EDIT);
