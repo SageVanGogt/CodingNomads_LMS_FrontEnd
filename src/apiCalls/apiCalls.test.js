@@ -322,7 +322,7 @@ describe('updateCourse', () => {
   })
 
   it('calls fetch with the correct arguments', () => {
-    const url = apiPath + '/courses/3';
+    const url = apiPath + '/courses';
     const options = {
       method: 'PATCH',
       headers: { 'content-type': 'application/json' },
