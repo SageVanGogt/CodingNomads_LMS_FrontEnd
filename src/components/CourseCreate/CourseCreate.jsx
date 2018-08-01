@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import './CourseCreate.css';
 import PropTypes from 'prop-types';
 import { removeCurrentCourse } from '../../actions/currentCourse';
-
-import { CourseTaskContainer } from '../CourseTasksContainer/CourseTaskContainer';
+import { 
+  CourseTaskContainer 
+} from '../CourseTasksContainer/CourseTaskContainer';
 
 export class CourseCreate extends Component {
   constructor(props) {
@@ -45,8 +46,9 @@ export class CourseCreate extends Component {
     this.setState({allTasks: [{name: 'Select Task'}, ...tasks.data]});
   }
 
-  handleTaskSelect = (e) => {
-    const task = this.state.allTasks.find(task => task.name === e.target.value);
+  handleTaskSelect = (event) => {
+    const { value } = event.target;
+    const task = this.state.allTasks.find(task => task.name === value);
     if (!this.state.tasks.find(courseTask => courseTask.name === task.name) 
       && task.name !== "Select Task") {
       this.setState({
@@ -65,8 +67,8 @@ export class CourseCreate extends Component {
     });
   }
 
-  patchCourse = async (e) => {
-    e.preventDefault();
+  patchCourse = async (event) => {
+    event.preventDefault();
     const { name, description, tasks } = this.state;
     const updatedCourse = {
       id: this.props.currentCourse.id,
@@ -142,7 +144,7 @@ export class CourseCreate extends Component {
           />
           <span>Add task: </span>
           <select
-            onChange={(e) => this.handleTaskSelect(e)}
+            onChange={(event) => this.handleTaskSelect(event)}
           >
             {tasks}
           </select>
@@ -161,7 +163,10 @@ export class CourseCreate extends Component {
               })
             }
           </div>
-          <button type="submit"onClick={(e) => this.patchCourse(e)}>Update Course</button>
+          <button 
+            type="submit"
+            onClick={(event) => this.patchCourse(event)}
+          >Update Course</button>
           <p className='course_message'>{this.state.message}</p>
         </form>
       </div>
@@ -178,7 +183,8 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 CourseCreate.propTypes = {
-  currentCourse: PropTypes.object
-}
+  currentCourse: PropTypes.object,
+  removeCurrentCourse: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(CourseCreate);
