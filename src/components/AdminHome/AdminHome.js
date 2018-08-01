@@ -112,10 +112,11 @@ export class AdminHome extends Component {
 
 export const mapStateToProps = (state) => ({
   user: state.user
-})
+});
 
 AdminHome.propTypes = {
-  user: PropTypes.object
-}
+  user: PropTypes.object,
+  history: PropTypes.object
+};
 
 export default withRouter(connect(mapStateToProps)(AdminHome));
