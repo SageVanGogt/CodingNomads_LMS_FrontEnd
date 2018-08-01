@@ -41,6 +41,6 @@ DocOptions.propTypes = {
   handleSelectDoc: PropTypes.func,
   deleteDoc: PropTypes.func,
   docs: PropTypes.array,
-  id: PropTypes.number,
+  id: PropTypes.string,
   docSelected: PropTypes.object
 };

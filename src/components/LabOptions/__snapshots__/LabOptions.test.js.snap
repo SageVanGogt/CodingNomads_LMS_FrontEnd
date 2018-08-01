@@ -7,7 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Unknown
     deleteLab={[Function]}
     handleSelectLab={[Function]}
-    id={1}
+    id="1"
     labSelected={
         Object {
             "id": 1,
@@ -260,7 +260,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Unknown
     deleteLab={[Function]}
     handleSelectLab={[Function]}
-    id={1}
+    id="1"
     labSelected={
         Object {
             "id": 1,
@@ -456,7 +456,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Unknown
     deleteLab={[Function]}
     handleSelectLab={[Function]}
-    id={1}
+    id="1"
     labs={Array []}
 />,
   Symbol(enzyme.__renderer__): Object {

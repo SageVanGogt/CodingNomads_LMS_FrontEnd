@@ -79,7 +79,7 @@ describe('TaskEdit', () => {
     it('sets state with a new DocOptions component', () => {
       expect(wrapper.state('docOptions').length).toEqual(0);
 
-      const newDoc = 'mockDoc';
+      const newDoc = { id: '1' };
       wrapper.instance().addDocOptions(newDoc);
 
       expect(wrapper.state('docOptions').length).toEqual(1);
@@ -91,7 +91,7 @@ describe('TaskEdit', () => {
     it('sets state with a new LabOptions component', () => {
       expect(wrapper.state('labOptions').length).toEqual(0);
 
-      const newLab = 'mockLab';
+      const newLab = { id: '1' };
       wrapper.instance().addLabOptions(newLab);
 
       expect(wrapper.state('labOptions').length).toEqual(1);
