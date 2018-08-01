@@ -29,6 +29,7 @@ export const LabOptions = ({ labs, handleSelectLab, deleteLab, id, labSelected }
       </select>
       <img
         src="/button.png"
+        alt="delete lab"
         className="LabOptions_delete"
         onClick={(event) => deleteLab(event, id)}
       />
