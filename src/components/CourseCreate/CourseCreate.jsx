@@ -71,7 +71,12 @@ export class CourseCreate extends Component {
   postCourse = async () => {
     const { name, description, tasks } = this.state;
     const newCourse = { name, description, tasks };
-    apiCalls.addCourse(newCourse);
+    apiCalls.addCourse(newCourse)
+      .then(() => {
+        this.setState({
+          message: 'Course updated!'
+        });
+      });
   }
 
   patchCourse = async () => {
@@ -84,7 +89,7 @@ export class CourseCreate extends Component {
     };
 
     try {
-      await apiCalls.updateCourse(updatedCourse)
+      apiCalls.updateCourse(updatedCourse)
         .then(() => {
           this.setState({
             message: 'Course updated!'
