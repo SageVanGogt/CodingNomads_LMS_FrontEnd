@@ -1,11 +1,20 @@
 language: node_js
 node_js:
-  - "stable"
+- stable
 cache:
   directories:
-    - node_modules
+  - node_modules
 script:
-  - npm test
-  - npm run build
-on:
+- npm test
+- npm run build
+true:
   branch: master
+deploy:
+  provider: s3
+  access_key_id: AKIAJMP33OISXVTFHRIQ
+  secret_access_key:
+    secure: nwjUVzlKZ6bVpp/PfJShsIlmC2bZNNGYhm5YG7djZMzEoDv7xu3alBes3pRzmmAbktplLni/vS3guh/akXOGwCxOyVZnHuwK7o6H19zBfLYP7Kpx+f8LWB+Y7wS0wRrcswFC1gPM/HAlMcNBBBCpwrgYUdR/EzZ7yDuZJXdkEUwakeo9ph270DaVCpfx2kspRvZoADsMw/AnLHdYEewdcUx78lIsjjP5lkBxlPOASErlKHsliJ2q97NZyKBr1HaUqL8OohogbBo3NUmynTtKh15AGAkj7KRldQk6BOILhYatIbE7qpGWTsbcYwPPs7lLwUqB7muFvT5SBP4KEULqI2qUEEqw5iz+PR2wrW4Iz0IPiwdcr/GMJ7FRuSJ1be2ZL/zBOiguehidyFxSyPVCLwEMmGfMorCJXbrDmcxUoTVM/WV30YG3L50o/sqkfUU61SKPI9Ck9Lb3A4mBpzn+CmfuIUtR/IJnYBP+5/vB3p9VdEjHhlRy+ddToHxX+Qal+UB/uuVsJKZbk0OoOmNfuFtDHjVG8iAYUBHiBkUBc9aFlIjg1E9rIexTC2+TtQ3mdX9eTo0VskXYRjNJNHcmItQo/MV/+h1YnzXnWsl0nc1tZF7NvNi8qlQQ42Y3t4k8rcc76y3U296Vo2HQ3aYs1yf5fAPBkjaMupHnmyX4sHg=
+  bucket: codingnomads-lms
+  acl: ''
+  on:
+    repo: SageVanGogt/CodingNomads_LMS_FrontEnd
