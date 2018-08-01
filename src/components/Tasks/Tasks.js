@@ -4,6 +4,7 @@ import './Tasks.css';
 import TaskCard from '../TaskCard/TaskCard';
 import { TASKS_EDIT } from '../../constants/routes';
 import { getAllTasks } from '../../apiCalls/apiCalls';
+import PropTypes from 'prop-types';
 
 export class Tasks extends Component {
   constructor(props) {
@@ -57,6 +58,10 @@ export class Tasks extends Component {
     );
   }
 }
+
+Tasks.propTypes = {
+  history: PropTypes.object
+};
 
 export default withRouter(Tasks);
 
