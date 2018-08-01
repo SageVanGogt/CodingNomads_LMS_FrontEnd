@@ -41,7 +41,7 @@ export class TaskCard extends Component {
   }
 
   render() {
-    const { name, description, user } = this.props;
+    const { name, description } = this.props;
     const adminEditBtn = this.editBtn();
 
     return (
