@@ -18,6 +18,7 @@
 
 .Teacher_view {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
@@ -35,9 +36,9 @@
 .Teacher_options {
   visibility: hidden;
   position: absolute;
+  right: 0;
   z-index: 1;
   width: 150px;
-  margin-left: 125px;
   height: 250px;
   background-color: #0F94FB50;
 }
