@@ -137,7 +137,7 @@ export const addCourse = async (newCourse) => {
   };
   try {
     const response = await fetch(url, options);
-    if (response.status !== 201) {
+    if (response.status !== 200) {
       throw Error('Could not add course');
     } else {
       return await response.json();

@@ -270,7 +270,7 @@ describe('addCourse', () => {
   beforeEach(() => {
     newCourse = { name: 'this is a new course' };
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      status: 201,
+      status: 200,
       json: () => Promise.resolve({ id: 3, name: 'this is a new course' })
     }))
   })
