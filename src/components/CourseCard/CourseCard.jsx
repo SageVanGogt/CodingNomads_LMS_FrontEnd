@@ -13,7 +13,12 @@ export class CourseCard extends Component {
   }
 
   editBtn = () => {
-    return <button className="Course_edit-btn" onClick={this.updateCourse}>Edit</button>;
+    return (
+      <button 
+        className="Course_edit-btn" 
+        onClick={this.updateCourse}
+      >Edit</button>
+    );
   }
 
   viewBtn = () => {
@@ -43,7 +48,9 @@ CourseCard.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
   description: PropTypes.string,
-  user: PropTypes.object
+  user: PropTypes.object,
+  updateCurrentCourse: PropTypes.func,
+  history: PropTypes.object
 };
 
 export const mapStateToProps = (state) => ({
@@ -51,7 +58,11 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  updateCurrentCourse: (currentCourse) => dispatch(updateCurrentCourse(currentCourse))
+  updateCurrentCourse: (currentCourse) => {
+    return dispatch(updateCurrentCourse(currentCourse));
+  }
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CourseCard));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(CourseCard)
+);
