@@ -23,6 +23,7 @@ ShallowWrapper {
           title={undefined}
 />,
         <img
+          alt="delete task"
           onClick={[Function]}
           src="/button.png"
 />,
@@ -51,6 +52,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "delete task",
           "onClick": [Function],
           "src": "/button.png",
         },
@@ -73,6 +75,7 @@ ShallowWrapper {
             title={undefined}
 />,
           <img
+            alt="delete task"
             onClick={[Function]}
             src="/button.png"
 />,
@@ -101,6 +104,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "delete task",
             "onClick": [Function],
             "src": "/button.png",
           },

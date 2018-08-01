@@ -28,6 +28,7 @@ ShallowWrapper {
           className="course_cards"
 >
           <img
+                    alt="loading"
                     height="200"
                     src="/loading1.gif"
                     width="200"
@@ -57,6 +58,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <img
+            alt="loading"
             height="200"
             src="/loading1.gif"
             width="200"
@@ -69,6 +71,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "loading",
             "height": "200",
             "src": "/loading1.gif",
             "width": "200",
@@ -99,6 +102,7 @@ ShallowWrapper {
             className="course_cards"
 >
             <img
+                        alt="loading"
                         height="200"
                         src="/loading1.gif"
                         width="200"
@@ -128,6 +132,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <img
+              alt="loading"
               height="200"
               src="/loading1.gif"
               width="200"
@@ -140,6 +145,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "alt": "loading",
               "height": "200",
               "src": "/loading1.gif",
               "width": "200",

@@ -53,6 +53,7 @@ ShallowWrapper {
           />
 </select>,
         <img
+          alt="delete lab"
           className="LabOptions_delete"
           onClick={[Function]}
           src="/button.png"
@@ -122,6 +123,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "delete lab",
           "className": "LabOptions_delete",
           "onClick": [Function],
           "src": "/button.png",
@@ -158,6 +160,7 @@ ShallowWrapper {
             />
 </select>,
           <img
+            alt="delete lab"
             className="LabOptions_delete"
             onClick={[Function]}
             src="/button.png"
@@ -227,6 +230,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "delete lab",
             "className": "LabOptions_delete",
             "onClick": [Function],
             "src": "/button.png",
@@ -290,6 +294,7 @@ ShallowWrapper {
           />
 </select>,
         <img
+          alt="delete lab"
           className="LabOptions_delete"
           onClick={[Function]}
           src="/button.png"
@@ -339,6 +344,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "delete lab",
           "className": "LabOptions_delete",
           "onClick": [Function],
           "src": "/button.png",
@@ -370,6 +376,7 @@ ShallowWrapper {
             />
 </select>,
           <img
+            alt="delete lab"
             className="LabOptions_delete"
             onClick={[Function]}
             src="/button.png"
@@ -419,6 +426,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "delete lab",
             "className": "LabOptions_delete",
             "onClick": [Function],
             "src": "/button.png",
@@ -477,6 +485,7 @@ ShallowWrapper {
           />
 </select>,
         <img
+          alt="delete lab"
           className="LabOptions_delete"
           onClick={[Function]}
           src="/button.png"
@@ -526,6 +535,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "delete lab",
           "className": "LabOptions_delete",
           "onClick": [Function],
           "src": "/button.png",
@@ -557,6 +567,7 @@ ShallowWrapper {
             />
 </select>,
           <img
+            alt="delete lab"
             className="LabOptions_delete"
             onClick={[Function]}
             src="/button.png"
@@ -606,6 +617,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "delete lab",
             "className": "LabOptions_delete",
             "onClick": [Function],
             "src": "/button.png",
