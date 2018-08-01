@@ -17,17 +17,7 @@ export class Courses extends Component {
     };
   }
 
-  addCourse = async () => {
-    // const newCourse = {name: "", description: ""};
-    // const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/courses', {
-    //   method: 'POST',
-    //   headers: {
-    //     "content-type": 'application/json'
-    //   },
-    //   body: JSON.stringify(newCourse)
-    // });
-    // const data = await response.json();
-
+  addCourse = async () => { 
     this.props.updateCurrentCourse({
       name: "",
       description: "",
@@ -38,11 +28,7 @@ export class Courses extends Component {
   }
 
   componentDidMount() {
-    fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/courses', {
-      method: "GET",
-      mode: "cors"
-    })
-      .then(response => response.json())
+    apiCalls.getAllCourses()
       .then(results => {
         this.setState({courses: results.data});
       });
