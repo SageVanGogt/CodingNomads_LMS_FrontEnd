@@ -86,15 +86,11 @@ export class CourseCreate extends Component {
       description,
       tasks
     };
-
-    try {
-      await apiCalls.updateCourse(updatedCourse)
-      this.setState({
-        message: 'Course updated!'
-      });
-    } catch (error) {
-      throw error;
-    }
+    
+    apiCalls.updateCourse(updatedCourse);
+    this.setState({
+      message: 'Course updated!'
+    });
   }
 
   handleSubmit = (event) => {
