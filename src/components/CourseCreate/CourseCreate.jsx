@@ -88,12 +88,10 @@ export class CourseCreate extends Component {
     };
 
     try {
-      apiCalls.updateCourse(updatedCourse)
-        .then(() => {
-          this.setState({
-            message: 'Course updated!'
-          });
-        });
+      await apiCalls.updateCourse(updatedCourse)
+      this.setState({
+        message: 'Course updated!'
+      });
     } catch (error) {
       throw error;
     }
