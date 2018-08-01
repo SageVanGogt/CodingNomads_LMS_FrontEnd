@@ -1,9 +1,9 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './AdminHome.css';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import * as routes from '../../constants/routes';
-import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class AdminHome extends Component {
   handleRoute = (event) => {
@@ -110,8 +110,12 @@ export class AdminHome extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   user: state.user
 })
+
+AdminHome.propTypes = {
+  user: PropTypes.object
+}
 
 export default withRouter(connect(mapStateToProps)(AdminHome));

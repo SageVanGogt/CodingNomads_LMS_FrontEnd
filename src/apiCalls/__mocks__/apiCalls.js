@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { mockDocs } from './../../mockData/mockDocs';
 import { mockLabs } from './../../mockData/mockLabs';
 import { mockTasks } from './../../mockData/mockTasks';
