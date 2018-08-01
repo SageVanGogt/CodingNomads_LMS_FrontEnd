@@ -47,7 +47,12 @@ export class Tasks extends Component {
         </div>
         :
         <div className="Task_container">
-          <img height='200' width='200' src='/loading1.gif' />
+          <img 
+            height='200' 
+            width='200' 
+            alt="loading"
+            src='/loading1.gif' 
+          />
         </div>
     );
   }
