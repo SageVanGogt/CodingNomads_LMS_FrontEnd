@@ -6,6 +6,7 @@ import { removeCurrentCourse } from '../../actions/currentCourse';
 import { 
   CourseTaskContainer 
 } from '../CourseTasksContainer/CourseTaskContainer';
+import * as apiCalls from '../../apiCalls/apiCalls';
 
 export class CourseCreate extends Component {
   constructor(props) {
@@ -67,8 +68,13 @@ export class CourseCreate extends Component {
     });
   }
 
-  patchCourse = async (event) => {
-    event.preventDefault();
+  postCourse = async () => {
+    const { name, description, tasks } = this.state;
+    const newCourse = { name, description, tasks };
+    apiCalls.postCourse(newCourse);
+  }
+
+  patchCourse = async () => {
     const { name, description, tasks } = this.state;
     const updatedCourse = {
       id: this.props.currentCourse.id,
@@ -78,13 +84,7 @@ export class CourseCreate extends Component {
     };
 
     try {
-      await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/courses', {
-        method: 'PATCH',
-        headers: {
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(updatedCourse)
-      })
+      await apiCalls.updateCourse(updatedCourse)
         .then(() => {
           this.setState({
             message: 'Course updated!'
@@ -93,6 +93,15 @@ export class CourseCreate extends Component {
     } catch (error) {
       throw error;
     }
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    if (this.props.currentCourse.id) {
+      this.patchCourse();
+    } else (
+      this.postCourse()
+    );
   }
 
   componentDidMount() {
@@ -165,7 +174,7 @@ export class CourseCreate extends Component {
           </div>
           <button 
             type="submit"
-            onClick={(event) => this.patchCourse(event)}
+            onClick={(event) => this.handleSubmit(event)}
           >Update Course</button>
           <p className='course_message'>{this.state.message}</p>
         </form>
