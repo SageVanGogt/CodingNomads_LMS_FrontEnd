@@ -66,4 +66,4 @@ CourseTaskContainer.propTypes = {
   tasks: PropTypes.array,
   rearrangeTasks: PropTypes.func,
   deleteTask: PropTypes.func
-}
+};
