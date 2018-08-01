@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './CourseCreate.css';
 import PropTypes from 'prop-types';
-import * as apiCalls from '../../apiCalls/apiCalls';
 import { removeCurrentCourse } from '../../actions/currentCourse';
 
 import { CourseTaskContainer } from '../CourseTasksContainer/CourseTaskContainer';
@@ -34,7 +33,10 @@ export class CourseCreate extends Component {
   }
 
   rearrangeTasks = (tasks) => {
-    this.setState({ tasks, message: 'You have unsaved changes, submit to save them.' });
+    this.setState({ 
+      tasks, 
+      message: 'You have unsaved changes, submit to save them.' 
+    });
   }
 
   fetchTasks = async () => {
@@ -45,7 +47,8 @@ export class CourseCreate extends Component {
 
   handleTaskSelect = (e) => {
     const task = this.state.allTasks.find(task => task.name === e.target.value);
-    if (!this.state.tasks.find(courseTask => courseTask.name === task.name) && task.name !== "Select Task") {
+    if (!this.state.tasks.find(courseTask => courseTask.name === task.name) 
+      && task.name !== "Select Task") {
       this.setState({
         tasks: [...this.state.tasks, task],
         message: 'You have unsaved changes, submit to save them.'
@@ -56,7 +59,10 @@ export class CourseCreate extends Component {
   deleteTask = (id) => {
     const tasks = this.state.tasks.filter(task => task.id !== id);
 
-    this.setState({ tasks, message: 'You have unsaved changes, submit to save them.' });
+    this.setState({ 
+      tasks, 
+      message: 'You have unsaved changes, submit to save them.' 
+    });
   }
 
   patchCourse = async (e) => {
@@ -145,7 +151,13 @@ export class CourseCreate extends Component {
           <div className='studentsArea'>
             {
               this.state.students.map((student, index) => {
-                return <div className='CourseStudentCard' key={`student-${index}`}>{student.firstName + ' ' + student.lastName}</div>;
+                return (
+                  <div 
+                    className='CourseStudentCard' 
+                    key={`student-${index}`} >
+                    {student.firstName + ' ' + student.lastName}
+                  </div>
+                );
               })
             }
           </div>
@@ -164,5 +176,9 @@ export const mapStateToProps = (state) => ({
 export const mapDispatchToProps = dispatch => ({
   removeCurrentCourse: () => dispatch(removeCurrentCourse())
 });
+
+CourseCreate.propTypes = {
+  currentCourse: PropTypes.object
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(CourseCreate);
