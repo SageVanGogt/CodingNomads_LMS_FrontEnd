@@ -3,7 +3,7 @@ export const currentCourseReducer = (state = {}, action) => {
     case 'UPDATE_CURRENT_COURSE':
       return action.currentCourse;
     case 'REMOVE_CURRENT_COURSE':
-      return {}
+      return {};
     default:
       return state;
   }

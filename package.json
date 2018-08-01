@@ -25,7 +25,7 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "eslint": "./node_modules/eslint/bin/eslint.js --ext .js --ext .jsx src --ignore-pattern *.test.js --ignore-pattern *.css"
+    "eslint": "./node_modules/eslint/bin/eslint.js --ext .js --ext .jsx src --ignore-pattern *.test.js --ignore-pattern *.test.jsx --ignore-pattern *.css"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",

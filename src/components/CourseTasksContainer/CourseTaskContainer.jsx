@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
-import { SortableContainer, SortableElement, arrayMove } from 'react-sortable-hoc';
+import { 
+  SortableContainer, 
+  SortableElement, 
+  arrayMove 
+} from 'react-sortable-hoc';
 import { CourseTaskCard } from '../CourseTaskCard/CourseTaskCard';
-
+import PropTypes from 'prop-types';
 
 const SortableItem = SortableElement(({ task, deleteTask }) =>
   <CourseTaskCard {...task} deleteTask={deleteTask}/>
@@ -23,15 +27,18 @@ const SortableList = SortableContainer(({ tasks, deleteTask }) => {
 
 export class CourseTaskContainer extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       tasks: []
     };
   }
 
-  shouldCancelStart = (e) => {
-    if (['input', 'textarea', 'select', 'option', 'img', 'image'].indexOf(e.target.tagName.toLowerCase()) !== -1) {
+  shouldCancelStart = (event) => {
+    if (
+      ['input', 'textarea', 'select', 'option', 'img', 'image']
+        .indexOf(event.target.tagName.toLowerCase()) !== -1
+    ) {
       return true; 
     }
   }
@@ -54,3 +61,9 @@ export class CourseTaskContainer extends Component {
     );
   }
 }
+
+CourseTaskContainer.propTypes = {
+  tasks: PropTypes.array,
+  rearrangeTasks: PropTypes.func,
+  deleteTask: PropTypes.func
+};

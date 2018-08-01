@@ -30,7 +30,6 @@ ShallowWrapper {
       ],
       "className": "CourseTaskCard",
       "draggable": true,
-      "onDragStart": [Function],
     },
     "ref": null,
     "rendered": Array [
@@ -82,7 +81,6 @@ ShallowWrapper {
         ],
         "className": "CourseTaskCard",
         "draggable": true,
-        "onDragStart": [Function],
       },
       "ref": null,
       "rendered": Array [

@@ -25,15 +25,17 @@ export class LogIn extends Component {
     const creds = {
       username: this.state.username, 
       password: this.state.password
-    }
+    };
+
     try {
       const response = await API.authUser(creds);
       const user = {
         id: response.id,
         name: response.firstName + response.lastName
-      }
-      localStorage.setItem('id_token', response.id_token)
-      localStorage.setItem('access_token', response.access_token)
+      };
+
+      localStorage.setItem('id_token', response.id_token);
+      localStorage.setItem('access_token', response.access_token);
       this.props.signIn(user);
     } catch (error) {
       throw error;
@@ -110,10 +112,10 @@ export class LogIn extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   signIn: (user) => dispatch(signIn(user))
-})
+});
 
 LogIn.propTypes = {
   signIn: PropTypes.func
-}
+};
 
 export default connect(null, mapDispatchToProps)(LogIn);

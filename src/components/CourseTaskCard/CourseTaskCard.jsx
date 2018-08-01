@@ -1,5 +1,6 @@
 import React from 'react';
 import './CourseTaskCard.css';
+import PropTypes from 'prop-types';
 
 export const CourseTaskCard = (props) => {
   const {id, name, description} = props;
@@ -8,7 +9,7 @@ export const CourseTaskCard = (props) => {
     <div 
       className='CourseTaskCard' 
       draggable 
-      onDragStart={(e) => console.log(e)} >
+    >
       <h4 
         title={description} 
         display='inline-block'>{name}
@@ -20,4 +21,11 @@ export const CourseTaskCard = (props) => {
       />
     </div>
   );
+};
+
+CourseTaskCard.propTypes = {
+  id: PropTypes.number,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  deleteTask: PropTypes.func
 };
