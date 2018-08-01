@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const mockLabs = {
   data: [
     {id: 1, name: 'while lab', description: 'do the numbers', link: 'github.com'},

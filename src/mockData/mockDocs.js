@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 export const mockDocs = {
   data: [
     {id: 1, topic: 'sonic', link: 'github.com'},

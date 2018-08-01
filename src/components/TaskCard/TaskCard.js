@@ -7,10 +7,6 @@ import { TASKS_EDIT } from '../../constants/routes';
 import { withRouter } from 'react-router-dom';
 
 export class TaskCard extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleSelectTaskToEdit = () => {
     const {
       id,
@@ -45,7 +41,7 @@ export class TaskCard extends Component {
   }
 
   render() {
-    const { name, description, user } = this.props;
+    const { name, description } = this.props;
     const adminEditBtn = this.editBtn();
 
     return (

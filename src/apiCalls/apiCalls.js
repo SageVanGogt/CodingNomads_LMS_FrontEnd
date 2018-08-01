@@ -437,15 +437,15 @@ export const authUser = async (user) => {
     body: JSON.stringify(user)
   };
   try {
-    const response = await fetch(url, options)
+    const response = await fetch(url, options);
     if (response.message !== 'success') {
-      throw Error('User does not exist')
+      throw Error('User does not exist');
     } 
     const userAuth = await response.json();
     return userAuth;
   } catch (error) {
     throw error;
   }
-}
+};
 
 

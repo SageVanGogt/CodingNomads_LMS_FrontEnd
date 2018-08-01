@@ -56,7 +56,12 @@ export class Courses extends Component {
         <section className='course_cards'>
           {this.state.courses.length ? 
             courses : 
-            <img height='200' width='200' src='/loading1.gif'/>}
+              <img 
+                height='200' 
+                width='200' 
+                alt='loading'
+                src='/loading1.gif'
+              />}
         </section>
       </div>
     );

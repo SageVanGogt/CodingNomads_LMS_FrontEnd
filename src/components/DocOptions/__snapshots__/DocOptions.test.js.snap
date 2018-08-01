@@ -53,6 +53,7 @@ ShallowWrapper {
           </option>
 </select>,
         <img
+          alt="delete doc"
           className="DocOptions_delete"
           onClick={[Function]}
           src="/button.png"
@@ -120,6 +121,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "delete doc",
           "className": "DocOptions_delete",
           "onClick": [Function],
           "src": "/button.png",
@@ -156,6 +158,7 @@ ShallowWrapper {
             </option>
 </select>,
           <img
+            alt="delete doc"
             className="DocOptions_delete"
             onClick={[Function]}
             src="/button.png"
@@ -223,6 +226,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "delete doc",
             "className": "DocOptions_delete",
             "onClick": [Function],
             "src": "/button.png",
@@ -285,6 +289,7 @@ ShallowWrapper {
           />
 </select>,
         <img
+          alt="delete doc"
           className="DocOptions_delete"
           onClick={[Function]}
           src="/button.png"
@@ -332,6 +337,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "delete doc",
           "className": "DocOptions_delete",
           "onClick": [Function],
           "src": "/button.png",
@@ -362,6 +368,7 @@ ShallowWrapper {
             />
 </select>,
           <img
+            alt="delete doc"
             className="DocOptions_delete"
             onClick={[Function]}
             src="/button.png"
@@ -409,6 +416,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "delete doc",
             "className": "DocOptions_delete",
             "onClick": [Function],
             "src": "/button.png",
@@ -466,6 +474,7 @@ ShallowWrapper {
           />
 </select>,
         <img
+          alt="delete doc"
           className="DocOptions_delete"
           onClick={[Function]}
           src="/button.png"
@@ -513,6 +522,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "delete doc",
           "className": "DocOptions_delete",
           "onClick": [Function],
           "src": "/button.png",
@@ -543,6 +553,7 @@ ShallowWrapper {
             />
 </select>,
           <img
+            alt="delete doc"
             className="DocOptions_delete"
             onClick={[Function]}
             src="/button.png"
@@ -590,6 +601,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "delete doc",
             "className": "DocOptions_delete",
             "onClick": [Function],
             "src": "/button.png",

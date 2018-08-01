@@ -1,7 +1,5 @@
 import React, { Component} from 'react';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { func } from 'prop-types';
 import './Tasks.css';
 import TaskCard from '../TaskCard/TaskCard';
 import { TASKS_EDIT } from '../../constants/routes';
@@ -49,7 +47,12 @@ export class Tasks extends Component {
         </div>
         :
         <div className="Task_container">
-          <img height='200' width='200' src='/loading1.gif' />
+          <img 
+            height='200' 
+            width='200' 
+            alt="loading"
+            src='/loading1.gif' 
+          />
         </div>
     );
   }

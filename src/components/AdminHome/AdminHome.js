@@ -1,15 +1,11 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import './AdminHome.css';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import * as routes from '../../constants/routes';
-import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class AdminHome extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleRoute = (event) => {
     const { id } = event.target;
 
@@ -39,7 +35,10 @@ export class AdminHome extends Component {
                 id="COURSES"
                 onClick={this.handleRoute}
               >
-                <img src="/eye.png"/>
+                <img 
+                  alt='loading'
+                  src="/eye.png"
+                />
               </div>
             </div>
           </article>
@@ -54,7 +53,10 @@ export class AdminHome extends Component {
               <div
                 className="view-btn"
               >
-                <img src="/eye.png"/>
+                <img 
+                  alt='loading'
+                  src="/eye.png"
+                />
               </div>
             </div>
           </article>
@@ -73,7 +75,10 @@ export class AdminHome extends Component {
                 id="TASKS"
                 onClick={this.handleRoute}
               >
-                <img src="/eye.png"/>
+                <img 
+                  alt='loading'
+                  src="/eye.png"
+                />
               </div>
             </div>
           </article>
@@ -92,7 +97,10 @@ export class AdminHome extends Component {
                 id="STUDENTS"
                 onClick={this.handleRoute}
               >
-                <img src="/eye.png"/>
+                <img 
+                  alt='loading'
+                  src="/eye.png"
+                />
               </div>
             </div>
           </article>
@@ -102,8 +110,12 @@ export class AdminHome extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   user: state.user
 })
+
+AdminHome.propTypes = {
+  user: PropTypes.object
+}
 
 export default withRouter(connect(mapStateToProps)(AdminHome));
