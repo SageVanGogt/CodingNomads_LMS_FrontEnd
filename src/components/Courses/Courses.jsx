@@ -5,6 +5,7 @@ import './Courses.css';
 import CourseCard from '../CourseCard/CourseCard';
 import { updateCurrentCourse } from '../../actions/currentCourse';
 import { COURSE_EDIT } from '../../constants/routes';
+import PropTypes from 'prop-types';
 
 export class Courses extends Component {
   constructor(props) {
@@ -16,16 +17,15 @@ export class Courses extends Component {
   }
 
   addCourse = async () => {
-    const newCourse = {name: "", description: ""}
+    const newCourse = {name: "", description: ""};
     const response = await fetch('https://cors-anywhere.herokuapp.com/54.191.130.113:8080/api/admin/v1/courses', {
       method: 'POST',
       headers: {
         "content-type": 'application/json'
       },
       body: JSON.stringify(newCourse)
-    })
+    });
     const data = await response.json();
-    console.log(data)
 
     this.props.updateCurrentCourse(data.data);
     this.props.history.push(COURSE_EDIT);
@@ -44,7 +44,7 @@ export class Courses extends Component {
 
   render() {
     const courses = this.state.courses.map(course => {
-      return <CourseCard {...course} key={'course' + course.id}/>
+      return <CourseCard {...course} key={'course' + course.id} />;
     });
 
     return ( 
@@ -54,14 +54,16 @@ export class Courses extends Component {
           onClick={this.addCourse}>New Course +
         </button>
         <section className='course_cards'>
-          {this.state.courses.length ? 
-            courses : 
+          {
+            this.state.courses.length ? 
+              courses : 
               <img 
                 height='200' 
                 width='200' 
                 alt='loading'
                 src='/loading1.gif'
-              />}
+              />
+          }
         </section>
       </div>
     );
@@ -74,7 +76,16 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = (dispatch) => ({
   updateCurrentCourse: (currentCourse) => {
-    return dispatch(updateCurrentCourse(currentCourse))
-}})
+    return dispatch(updateCurrentCourse(currentCourse));
+  }
+});
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Courses))
+Courses.propTypes = {
+  history: PropTypes.object,
+  user: PropTypes.object,
+  updateCurrentCourse: PropTypes.func
+};
+
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Courses)
+);
