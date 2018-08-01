@@ -2,7 +2,8 @@ import React from 'react';
 import './LabOptions.css';
 import PropTypes from 'prop-types';
 
-export const LabOptions = ({ labs, handleSelectLab, deleteLab, id, labSelected }) => {
+export const LabOptions = (props) => {
+  const { labs, handleSelectLab, deleteLab, id, labSelected } = props;
   const labOptions = labs.map((lab, index) => {
     return (
       <option
@@ -39,5 +40,8 @@ export const LabOptions = ({ labs, handleSelectLab, deleteLab, id, labSelected }
 
 LabOptions.propTypes = {
   handleSelectLab: PropTypes.func,
-  labs: PropTypes.array
+  labs: PropTypes.array,
+  deleteLab: PropTypes.func,
+  id: PropTypes.number,
+  labSelected: PropTypes.object
 };
