@@ -11,7 +11,7 @@ export class LogIn extends Component {
 
     this.state = {
       userbase: 'student',
-      email: '',
+      username: '',
       password: ''
     };
   }
@@ -23,7 +23,7 @@ export class LogIn extends Component {
   onSubmit = async (event) => {
     event.preventDefault();
     const creds = {
-      email: this.state.email, 
+      username: this.state.username, 
       password: this.state.password
     }
     try {
@@ -40,7 +40,7 @@ export class LogIn extends Component {
     }
 
     this.setState({
-      email: '',
+      username: '',
       password: ''
     });
   }
@@ -77,20 +77,20 @@ export class LogIn extends Component {
         </div>
       </div>;
 
-    const { email, password } = this.state;
+    const { username, password } = this.state;
 
-    const isInvalid = password === '' || email === '';
+    const isInvalid = password === '' || username === '';
 
     return (
       <div className='LogIn'>
         {tabs}
         <form onSubmit={this.onSubmit} className='signIn authentication'>
           <input
-            className='LogIn__email'
-            value={email}
-            onChange={event => this.setState({email: event.target.value})}
+            className='LogIn__username'
+            value={username}
+            onChange={event => this.setState({username: event.target.value})}
             type="text"
-            placeholder="Email Address"
+            placeholder="Username"
           />
           <input
             className='LogIn__password'
