@@ -148,7 +148,7 @@ export const addCourse = async (newCourse) => {
 }; 
 
 export const updateCourse = async (updatedCourse) => {
-  const url = apiPath + `/courses/${updatedCourse.id}`;
+  const url = apiPath + `/courses`;
   const options = {
     method: 'PATCH',
     headers: { 'content-type': 'application/json' },
