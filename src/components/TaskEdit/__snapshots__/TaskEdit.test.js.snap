@@ -39,7 +39,7 @@ ShallowWrapper {
           onSubmit={[Function]}
 >
           <label
-                    for="name"
+                    htmlFor="name"
           >
                     Task name:
           </label>
@@ -52,7 +52,7 @@ ShallowWrapper {
                     value=""
           />
           <label
-                    for="description"
+                    htmlFor="description"
           >
                     Description of task:
           </label>
@@ -65,7 +65,7 @@ ShallowWrapper {
                     value=""
           />
           <label
-                    for="videoLink"
+                    htmlFor="videoLink"
           >
                     Link to the lesson video:
           </label>
@@ -134,7 +134,7 @@ ShallowWrapper {
           "action": "submit",
           "children": Array [
             <label
-              for="name"
+              htmlFor="name"
 >
               Task name:
 </label>,
@@ -147,7 +147,7 @@ ShallowWrapper {
               value=""
 />,
             <label
-              for="description"
+              htmlFor="description"
 >
               Description of task:
 </label>,
@@ -160,7 +160,7 @@ ShallowWrapper {
               value=""
 />,
             <label
-              for="videoLink"
+              htmlFor="videoLink"
 >
               Link to the lesson video:
 </label>,
@@ -215,7 +215,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Task name:",
-              "for": "name",
+              "htmlFor": "name",
             },
             "ref": null,
             "rendered": "Task name:",
@@ -243,7 +243,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Description of task:",
-              "for": "description",
+              "htmlFor": "description",
             },
             "ref": null,
             "rendered": "Description of task:",
@@ -271,7 +271,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Link to the lesson video:",
-              "for": "videoLink",
+              "htmlFor": "videoLink",
             },
             "ref": null,
             "rendered": "Link to the lesson video:",
@@ -426,7 +426,7 @@ ShallowWrapper {
             onSubmit={[Function]}
 >
             <label
-                        for="name"
+                        htmlFor="name"
             >
                         Task name:
             </label>
@@ -439,7 +439,7 @@ ShallowWrapper {
                         value=""
             />
             <label
-                        for="description"
+                        htmlFor="description"
             >
                         Description of task:
             </label>
@@ -452,7 +452,7 @@ ShallowWrapper {
                         value=""
             />
             <label
-                        for="videoLink"
+                        htmlFor="videoLink"
             >
                         Link to the lesson video:
             </label>
@@ -521,7 +521,7 @@ ShallowWrapper {
             "action": "submit",
             "children": Array [
               <label
-                for="name"
+                htmlFor="name"
 >
                 Task name:
 </label>,
@@ -534,7 +534,7 @@ ShallowWrapper {
                 value=""
 />,
               <label
-                for="description"
+                htmlFor="description"
 >
                 Description of task:
 </label>,
@@ -547,7 +547,7 @@ ShallowWrapper {
                 value=""
 />,
               <label
-                for="videoLink"
+                htmlFor="videoLink"
 >
                 Link to the lesson video:
 </label>,
@@ -602,7 +602,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Task name:",
-                "for": "name",
+                "htmlFor": "name",
               },
               "ref": null,
               "rendered": "Task name:",
@@ -630,7 +630,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Description of task:",
-                "for": "description",
+                "htmlFor": "description",
               },
               "ref": null,
               "rendered": "Description of task:",
@@ -658,7 +658,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Link to the lesson video:",
-                "for": "videoLink",
+                "htmlFor": "videoLink",
               },
               "ref": null,
               "rendered": "Link to the lesson video:",
