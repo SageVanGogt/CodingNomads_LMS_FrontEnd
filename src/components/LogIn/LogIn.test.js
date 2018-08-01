@@ -19,12 +19,12 @@ describe('LogIn', () => {
   });
 
   it('should update email state when an input field is changed', () => {
-    const emailField = wrapper.find('.LogIn__email');
-    emailField.simulate('change', {target: {
+    const usernameField = wrapper.find('.LogIn__username');
+    usernameField.simulate('change', {target: {
       value: 'chad@coding.com'
     }});
 
-    expect(wrapper.state().email).toEqual('chad@coding.com');
+    expect(wrapper.state().username).toEqual('chad@coding.com');
   });
 
   it('should update password state when an input field is changed', () => {
