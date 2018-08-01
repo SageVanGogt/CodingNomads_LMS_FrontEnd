@@ -71,7 +71,7 @@ export class CourseCreate extends Component {
   postCourse = async () => {
     const { name, description, tasks } = this.state;
     const newCourse = { name, description, tasks };
-    apiCalls.postCourse(newCourse);
+    apiCalls.addCourse(newCourse);
   }
 
   patchCourse = async () => {
