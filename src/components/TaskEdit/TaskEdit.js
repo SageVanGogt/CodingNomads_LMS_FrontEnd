@@ -293,7 +293,8 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 TaskEdit.propTypes = {
-  currentTask: PropTypes.object
+  currentTask: PropTypes.object,
+  removeCurrentTask: PropTypes.func
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(TaskEdit);
