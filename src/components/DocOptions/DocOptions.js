@@ -2,7 +2,8 @@ import React from 'react';
 import './DocOptions.css';
 import PropTypes from 'prop-types';
 
-export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id, docSelected }) => {
+export const DocOptions = (props) => {
+  const { docs, handleSelectDoc, deleteDoc, id, docSelected } = props;
   const docOptions = docs.map((doc, index) => {
     return (
       <option
@@ -38,5 +39,8 @@ export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id, docSelected }
 
 DocOptions.propTypes = {
   handleSelectDoc: PropTypes.func,
-  docs: PropTypes.array
+  deleteDoc: PropTypes.func,
+  docs: PropTypes.array,
+  id: PropTypes.number,
+  docSelected: PropTypes.object
 };
