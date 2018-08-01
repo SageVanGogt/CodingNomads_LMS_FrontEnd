@@ -29,6 +29,7 @@ export const DocOptions = ({ docs, handleSelectDoc, deleteDoc, id, docSelected }
       <img
         src="/button.png"
         className="DocOptions_delete"
+        alt="delete doc"
         onClick={(event) => deleteDoc(event, id)}
       />
     </div>
