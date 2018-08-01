@@ -71,7 +71,14 @@ TaskCard.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
   description: PropTypes.string,
-  user: PropTypes.object
+  videoLink: PropTypes.string,
+  docs: PropTypes.array,
+  labs: PropTypes.array,
+  user: PropTypes.object,
+  updateCurrentTask: PropTypes.func,
+  history: PropTypes.object
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(TaskCard));
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(TaskCard)
+);
