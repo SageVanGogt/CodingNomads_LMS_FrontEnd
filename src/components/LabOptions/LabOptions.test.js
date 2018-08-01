@@ -8,7 +8,7 @@ describe('LabOptions', () => {
       labs: [],
       handleSelectLab: () => {},
       deleteLab: () => {},
-      id: 1,
+      id: '1',
       labSelected: { id: 1 }
     }
     const wrapper = shallow(<LabOptions { ...mockProps } />)
@@ -21,7 +21,7 @@ describe('LabOptions', () => {
       labs: [],
       handleSelectLab: () => {},
       deleteLab: () => {},
-      id: 1,
+      id: '1',
     }
     const wrapper = shallow(<LabOptions { ...mockProps } />)
 
@@ -33,7 +33,7 @@ describe('LabOptions', () => {
       labs: [{ id: 1, topic: 'lab topic' }],
       handleSelectLab: () => {},
       deleteLab: () => {},
-      id: 1,
+      id: '1',
       labSelected: { id: 1 }
     }
     const wrapper = shallow(<LabOptions { ...mockProps } />)

@@ -8,7 +8,7 @@ describe('DocOptions', () => {
       docs: [],
       handleSelectDoc: () => {},
       deleteDoc: () => {},
-      id: 1,
+      id: '1',
       docSelected: { id: 1 }
     }
     const wrapper = shallow(<DocOptions { ...mockProps } />)
@@ -21,7 +21,7 @@ describe('DocOptions', () => {
       docs: [],
       handleSelectDoc: () => {},
       deleteDoc: () => {},
-      id: 1,
+      id: '1',
     }
     const wrapper = shallow(<DocOptions { ...mockProps } />)
 
@@ -33,7 +33,7 @@ describe('DocOptions', () => {
       docs: [{ id: 1, topic: 'doc topic' }],
       handleSelectDoc: () => {},
       deleteDoc: () => {},
-      id: 1,
+      id: '1',
       docSelected: { id: 1 }
     }
     const wrapper = shallow(<DocOptions { ...mockProps } />)

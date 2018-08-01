@@ -20,7 +20,7 @@ ShallowWrapper {
           ]
     }
     handleSelectDoc={[Function]}
-    id={1}
+    id="1"
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -262,7 +262,7 @@ ShallowWrapper {
     }
     docs={Array []}
     handleSelectDoc={[Function]}
-    id={1}
+    id="1"
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -447,7 +447,7 @@ ShallowWrapper {
     deleteDoc={[Function]}
     docs={Array []}
     handleSelectDoc={[Function]}
-    id={1}
+    id="1"
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

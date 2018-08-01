@@ -42,6 +42,6 @@ LabOptions.propTypes = {
   handleSelectLab: PropTypes.func,
   labs: PropTypes.array,
   deleteLab: PropTypes.func,
-  id: PropTypes.number,
+  id: PropTypes.string,
   labSelected: PropTypes.object
 };
