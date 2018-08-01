@@ -101,7 +101,7 @@ export class TaskEdit extends Component {
   handleSelectDoc = (event) => {
     event.preventDefault();
     const newDoc = {
-      id: parseInt(event.target.value)
+      id: parseInt(event.target.value, 10)
     };
 
     if (!this.state.docs.find(doc => doc.id === newDoc.id)) {
@@ -114,7 +114,7 @@ export class TaskEdit extends Component {
   handleSelectLab = (event) => {
     event.preventDefault();
     const newLab = {
-      id: parseInt(event.target.value)
+      id: parseInt(event.target.value, 10)
     };
 
     if (!this.state.labs.find(lab => lab.id === newLab.id)) {
@@ -137,7 +137,7 @@ export class TaskEdit extends Component {
       this.setState({
         docs: updatedDocs,
         docOptions,
-        docsToDelete: [...this.state.docsToDelete, {id: parseInt(docId)}]
+        docsToDelete: [...this.state.docsToDelete, {id: parseInt(docId, 10)}]
       });
     }
   }
@@ -155,7 +155,7 @@ export class TaskEdit extends Component {
       this.setState({
         labs: updatedLabs,
         labOptions,
-        labsToDelete: [...this.state.labsToDelete, {id: parseInt(labId)}]
+        labsToDelete: [...this.state.labsToDelete, {id: parseInt(labId, 10)}]
       });
     }
   }
