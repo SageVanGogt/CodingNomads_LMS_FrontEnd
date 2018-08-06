@@ -9,7 +9,15 @@ Administrators can add courses and tasks. They can add tasks to a course and reo
 ## Install
 1. Clone down this repo
 2. `npm install`
-3. werk werk werk werk werk
+
+## Run locally
+1. `npm start`
+2. Watchmen will be running and updates will appear real-time
+3. Make any .scss file changes while watchmen is running to avoid .css build issues. 
+
+## Production Build
+1. `npm run build`
+2. Production files will be found in the build directory
 
 This project was built using React, Redux, Router, TravisCI, Jest, Enzyme and hosted on AWS. 
 
